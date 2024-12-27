@@ -104,26 +104,12 @@ define([
                 'startPhysics',
                 'startRaycast'
             );
-            var sounds = _.map(this.model.get('sounds'), function(item){
-
-                var sound = new Howler.Howl({ src: [Config.CDN + item.src], sprite: item.sprite });
-
-                // sound.once('load', onSoundLoaded);
-
-                return {
-                    id: item.id,
-                    src: item.src,
-                    sound: sound
-                };
-            });
-
+          
             // console.info('Awwward.initialize');
 
             this.compileAndAppendTemplate(_.partial(Templates.r, 'awwward'), {});
 
-            AudioCollection.add(sounds.filter(function (sound) { return sound; }), { merge: true });
-
-            this.setup();
+           this.setup();
         },
 
         setup: function() {

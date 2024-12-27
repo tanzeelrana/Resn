@@ -67,10 +67,7 @@ define([
             this.actors.push(this.mesh);
 
             if(!Config.MOBILE){
-
-                var soundUrl = Config.CDN + this.model.get('sounds')[this.INDEX].src;
-
-                this.sound = new Howler.Howl(
+      this.sound = new Howler.Howl(
                 {
                     urls: [soundUrl],
                     volume: 0.2

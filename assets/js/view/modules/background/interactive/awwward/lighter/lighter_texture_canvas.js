@@ -1,373 +1,373 @@
-define([
+// define([
 
-    'jquery',
-    'backbone',
-    'underscore',
-    'config',
-    'three',
-    'TweenMax',
+//     'jquery',
+//     'backbone',
+//     'underscore',
+//     'config',
+//     'three',
+//     'TweenMax',
 
-    'model/app_model',
+//     'model/app_model',
 
-    'view/common/base_view',
-    'view/modules/background/interactive/awwward/meshes/awwward/burn_item',
+//     'view/common/base_view',
+//     'view/modules/background/interactive/awwward/meshes/awwward/burn_item',
 
-    'text!view/modules/background/interactive/awwward/meshes/awwward/shaders/basic_vertex.shader',
-    'text!view/modules/background/interactive/awwward/meshes/awwward/shaders/basic_fragment.shader',
+//     'text!view/modules/background/interactive/awwward/meshes/awwward/shaders/basic_vertex.shader',
+//     'text!view/modules/background/interactive/awwward/meshes/awwward/shaders/basic_fragment.shader',
 
-    'text!view/modules/background/interactive/awwward/meshes/awwward/shaders/buffer_vertex.shader',
-    'text!view/modules/background/interactive/awwward/meshes/awwward/shaders/buffer_fragment.shader'
+//     'text!view/modules/background/interactive/awwward/meshes/awwward/shaders/buffer_vertex.shader',
+//     'text!view/modules/background/interactive/awwward/meshes/awwward/shaders/buffer_fragment.shader'
 
-], function(
+// ], function(
 
-    $,
-    Backbone,
-    _,
-    Config,
-    THREE,
-    TweenMax,
+//     $,
+//     Backbone,
+//     _,
+//     Config,
+//     THREE,
+//     TweenMax,
 
-    AppModel,
+//     AppModel,
 
-    BaseView,
-    BurnItemView,
+//     BaseView,
+//     BurnItemView,
 
-    basicVertexShader,
-    basicFragmentShader,
+//     basicVertexShader,
+//     basicFragmentShader,
 
-    bufferVertexShader,
-    bufferFragmentShader
+//     bufferVertexShader,
+//     bufferFragmentShader
 
-) {
-    'use strict';
+// ) {
+//     'use strict';
 
-    return BaseView.extend({
+//     return BaseView.extend({
 
-        tW: 128, // 1024
-        tH: 128, // 1024
+//         tW: 128, // 1024
+//         tH: 128, // 1024
 
-        _burnTexturePt: null,
+//         _burnTexturePt: null,
 
-        _timer: 0,
-        _indexOut: 0,
+//         _timer: 0,
+//         _indexOut: 0,
 
-        _burnPlanes: [],
-        _burnZoneNumber: 6,
+//         _burnPlanes: [],
+//         _burnZoneNumber: 6,
 
-        _maxPlanesBurn: 30,
+//         _maxPlanesBurn: 30,
 
-        isPhysicCalled: false,
+//         isPhysicCalled: false,
 
-        initialize: function(opts) {
+//         initialize: function(opts) {
 
-            _.bindAll(this, 'onDelayedReadPixels');
+//             _.bindAll(this, 'onDelayedReadPixels');
 
-            this.init(opts);
-        },
+//             this.init(opts);
+//         },
 
-        init: function(opts) {
+//         init: function(opts) {
 
-            this.setup(opts);
-        },
+//             this.setup(opts);
+//         },
 
-        setup: function(opts) {
+//         setup: function(opts) {
 
-            this._setupWebgl(opts);
-            this._setupFBO();
-        },
+//             this._setupWebgl(opts);
+//             this._setupFBO();
+//         },
 
-        _setupWebgl: function(opts) {
+//         _setupWebgl: function(opts) {
 
-            this.assets = opts.assets;
+//             this.assets = opts.assets;
 
-            this._burnTexturePt = new THREE.Vector2();
+//             this._burnTexturePt = new THREE.Vector2();
 
-            this._cameraPos = new THREE.Vector3( 0, 0, 0 );
+//             this._cameraPos = new THREE.Vector3( 0, 0, 0 );
 
-            this._renderer = opts.renderer;
-            this._mainTexture = opts.texture;
+//             this._renderer = opts.renderer;
+//             this._mainTexture = opts.texture;
 
-            this._bufferScene = new THREE.Scene();
+//             this._bufferScene = new THREE.Scene();
 
-            this._camera = new THREE.OrthographicCamera(
-                this.tW / -2,
-                this.tW / 2,
-                this.tH / 2,
-                this.tH / -2,
-                -10000,
-                10000
-            );
+//             this._camera = new THREE.OrthographicCamera(
+//                 this.tW / -2,
+//                 this.tW / 2,
+//                 this.tH / 2,
+//                 this.tH / -2,
+//                 -10000,
+//                 10000
+//             );
 
-            this._camera.position.copy(this._cameraPos);
-        },
+//             this._camera.position.copy(this._cameraPos);
+//         },
 
-        _setupFBO: function() {
+//         _setupFBO: function() {
 
-            var params = {
-                minFilter: THREE.LinearFilter,
-                magFilter: THREE.LinearFilter,
-                format: THREE.RGBAFormat,
-                transparent: true
-            };
+//             var params = {
+//                 minFilter: THREE.LinearFilter,
+//                 magFilter: THREE.LinearFilter,
+//                 format: THREE.RGBAFormat,
+//                 transparent: true
+//             };
 
-            this._FBO_1 = new THREE.WebGLRenderTarget(this.tW, this.tH, params);
-            this._FBO_2 = new THREE.WebGLRenderTarget(this.tW, this.tH, params);
+//             this._FBO_1 = new THREE.WebGLRenderTarget(this.tW, this.tH, params);
+//             this._FBO_2 = new THREE.WebGLRenderTarget(this.tW, this.tH, params);
 
-            this._planeBufferGeometry = new THREE.PlaneGeometry(this.tW, this.tH, 1, 1);
+//             this._planeBufferGeometry = new THREE.PlaneGeometry(this.tW, this.tH, 1, 1);
 
-            this._planeBufferUniforms = {
-                u_diffuse: { type: 't', value: this._FBO_1.texture },
-                u_resolution: { type: 'v', value: new THREE.Vector2(1 / this.tW, 1 / this.tH) }
-            };
+//             this._planeBufferUniforms = {
+//                 u_diffuse: { type: 't', value: this._FBO_1.texture },
+//                 u_resolution: { type: 'v', value: new THREE.Vector2(1 / this.tW, 1 / this.tH) }
+//             };
 
-            var matBuffer = new THREE.ShaderMaterial({
-                uniforms: this._planeBufferUniforms,
-                transparent: true,
-                fragmentShader: bufferFragmentShader,
-                vertexShader: bufferVertexShader
-            });
+//             var matBuffer = new THREE.ShaderMaterial({
+//                 uniforms: this._planeBufferUniforms,
+//                 transparent: true,
+//                 fragmentShader: bufferFragmentShader,
+//                 vertexShader: bufferVertexShader
+//             });
 
-            var matOutput = new THREE.ShaderMaterial({
-                uniforms: this._planeBufferUniforms,
-                transparent: true,
-                fragmentShader: basicFragmentShader,
-                vertexShader: basicVertexShader
-            });
+//             var matOutput = new THREE.ShaderMaterial({
+//                 uniforms: this._planeBufferUniforms,
+//                 transparent: true,
+//                 fragmentShader: basicFragmentShader,
+//                 vertexShader: basicVertexShader
+//             });
 
-            this._planeBufferMesh = new THREE.Mesh(this._planeBufferGeometry, matBuffer);
-            this._planeOutputMesh = new THREE.Mesh(this._planeBufferGeometry, matOutput);
+//             this._planeBufferMesh = new THREE.Mesh(this._planeBufferGeometry, matBuffer);
+//             this._planeOutputMesh = new THREE.Mesh(this._planeBufferGeometry, matOutput);
 
-            this._bufferScene.add(this._planeBufferMesh);
+//             this._bufferScene.add(this._planeBufferMesh);
 
-            /**
-             * FOR TESTING
-             */
+//             /**
+//              * FOR TESTING
+//              */
 
-            /*$(window).on('click', function() {
-                this._renderer.clearTarget(this._FBO_1);
-                this._renderer.clearTarget(this._FBO_2);
-            }.bind(this));*/
-        },
+//             /*$(window).on('click', function() {
+//                 this._renderer.clearTarget(this._FBO_1);
+//                 this._renderer.clearTarget(this._FBO_2);
+//             }.bind(this));*/
+//         },
 
-        // state ---------------------------------------------------------------
+//         // state ---------------------------------------------------------------
 
-        _setCanvasDrawPosition: function(x, y) {
+//         _setCanvasDrawPosition: function(x, y) {
 
-            var newPoint = new THREE.Vector2(x * this.tW - this.tW * 0.5, (y * this.tH - this.tH * 0.5) * -1);
+//             var newPoint = new THREE.Vector2(x * this.tW - this.tW * 0.5, (y * this.tH - this.tH * 0.5) * -1);
 
-            this._burnTexturePt.copy(newPoint);
-        },
+//             this._burnTexturePt.copy(newPoint);
+//         },
 
-        start: function() {
+//         start: function() {
 
-            if (this._started) { return; }
-            this._started = true;
+//             if (this._started) { return; }
+//             this._started = true;
 
-            this.isRenderable = true;
+//             this.isRenderable = true;
 
-            this.onDelayedReadPixels();
-        },
+//             this.onDelayedReadPixels();
+//         },
 
-        stop: function() {
+//         stop: function() {
 
-            if (!this._started) { return; }
-            this._started = false;
+//             if (!this._started) { return; }
+//             this._started = false;
 
-            this.isRenderable = false;
+//             this.isRenderable = false;
 
-            this._clearItems();
+//             this._clearItems();
 
-            TweenMax.killDelayedCallsTo(this.onDelayedReadPixels);
-        },
+//             TweenMax.killDelayedCallsTo(this.onDelayedReadPixels);
+//         },
 
-        _clearItems: function() {
+//         _clearItems: function() {
 
-            for (var i = 0; i < this._burnPlanes.length; i++) {
-                var mesh = this._burnPlanes[i].getMesh();
-                this._bufferScene.remove(mesh);
-            }
+//             for (var i = 0; i < this._burnPlanes.length; i++) {
+//                 var mesh = this._burnPlanes[i].getMesh();
+//                 this._bufferScene.remove(mesh);
+//             }
 
-            this._burnPlanes = [];
-        },
+//             this._burnPlanes = [];
+//         },
 
-        // pixels ---------------------------------------------------------------
+//         // pixels ---------------------------------------------------------------
 
-        readFBOPixels: function() {
+//         readFBOPixels: function() {
 
-            var pixelBuffer = new Uint8Array(this.tW * this.tH * 4);
+//             var pixelBuffer = new Uint8Array(this.tW * this.tH * 4);
 
-            var blockSize = 20;
-            var red = 0;
-            var i = -4;
-            var length = pixelBuffer.length;
-            var count = 0;
+//             var blockSize = 20;
+//             var red = 0;
+//             var i = -4;
+//             var length = pixelBuffer.length;
+//             var count = 0;
 
-            this._renderer.readRenderTargetPixels(this._FBO_2, 0, 0, this.tW, this.tH, pixelBuffer);
+//             this._renderer.readRenderTargetPixels(this._FBO_2, 0, 0, this.tW, this.tH, pixelBuffer);
 
-            while ((i += blockSize * 4) < length) {
-                ++count;
-                red += pixelBuffer[i];
-            }
+//             while ((i += blockSize * 4) < length) {
+//                 ++count;
+//                 red += pixelBuffer[i];
+//             }
 
-            // ~~ used to floor values
-            red = ~~(red / count);
+//             // ~~ used to floor values
+//             red = ~~(red / count);
 
-            return red;
-        },
+//             return red;
+//         },
 
-        // getters ---------------------------------------------------------------
+//         // getters ---------------------------------------------------------------
 
-        getFBOTexture: function() {
+//         getFBOTexture: function() {
 
-            return this._FBO_2.texture;
-        },
+//             return this._FBO_2.texture;
+//         },
 
-        // handlers ---------------------------------------------------------------
+//         // handlers ---------------------------------------------------------------
 
-        onIntersect: function(x, y) {
+//         onIntersect: function(x, y) {
 
-            this._setCanvasDrawPosition(x, y);
-        },
+//             this._setCanvasDrawPosition(x, y);
+//         },
 
-        onDelayedReadPixels: function() {
+//         onDelayedReadPixels: function() {
 
-            var pixelVal = this.readFBOPixels();
+//             var pixelVal = this.readFBOPixels();
 
-            if (pixelVal > 200) {
-                Backbone.trigger('AWWWARD:LIGHTER:TEXTURE_CLEAR_ALMOST');
-            }
+//             if (pixelVal > 200) {
+//                 Backbone.trigger('AWWWARD:LIGHTER:TEXTURE_CLEAR_ALMOST');
+//             }
 
-            if (pixelVal >= 254) {
-                this.stop();
-                Backbone.trigger('AWWWARD:LIGHTER:TEXTURE_CLEAR_COMPLETE');
-            } else {
-                TweenMax.delayedCall(3.2, this.onDelayedReadPixels);
-            }
-        },
+//             if (pixelVal >= 254) {
+//                 this.stop();
+//                 Backbone.trigger('AWWWARD:LIGHTER:TEXTURE_CLEAR_COMPLETE');
+//             } else {
+//                 TweenMax.delayedCall(3.2, this.onDelayedReadPixels);
+//             }
+//         },
 
-        // destroy ---------------------------------------------------------------
+//         // destroy ---------------------------------------------------------------
             
-        destroy: function() {
+//         destroy: function() {
             
-            this.stop();
+//             this.stop();
 
-            this._bufferScene.remove(this._planeBufferMesh);
-            this._bufferScene.remove(this._planeOutputMesh);
+//             this._bufferScene.remove(this._planeBufferMesh);
+//             this._bufferScene.remove(this._planeOutputMesh);
 
-            this._planeBufferMesh.geometry.dispose();
-            this._planeOutputMesh.geometry.dispose();
+//             this._planeBufferMesh.geometry.dispose();
+//             this._planeOutputMesh.geometry.dispose();
 
-            this._planeBufferMesh.material.dispose();
-            this._planeOutputMesh.material.dispose();
+//             this._planeBufferMesh.material.dispose();
+//             this._planeOutputMesh.material.dispose();
 
-            this._bufferScene = null;
-            this._camera = null;
+//             this._bufferScene = null;
+//             this._camera = null;
 
-            this._renderer.clearTarget(this._FBO_1);
-            this._renderer.clearTarget(this._FBO_2);
+//             this._renderer.clearTarget(this._FBO_1);
+//             this._renderer.clearTarget(this._FBO_2);
 
-            this._FBO_1.dispose();
-            this._FBO_2.dispose();
-        },
+//             this._FBO_1.dispose();
+//             this._FBO_2.dispose();
+//         },
 
-        // update ---------------------------------------------------------------
+//         // update ---------------------------------------------------------------
 
-        _draw: function() {
+//         _draw: function() {
 
-            this._timer++;
+//             this._timer++;
 
-            if (this._burnPlanes.length <= this._maxPlanesBurn && this._timer > 2) {
+//             if (this._burnPlanes.length <= this._maxPlanesBurn && this._timer > 2) {
 
-                var texture = this.assets['AWWWARD_BURN_TEXTURE'].texture;
+//                 var texture = this.assets['AWWWARD_BURN_TEXTURE'].texture;
 
-                var size = this.tW * 2.2 * 0.7 * Math.random() + this.tW * 0.3;
-                // var scale = Math.random() * 0.5 + 0.4;
-                var scale = 2.0;
-                var speed = 3.0 + Math.random() * 1.5;
-                var angle = Math.random() * (2 * Math.PI);
+//                 var size = this.tW * 2.2 * 0.7 * Math.random() + this.tW * 0.3;
+//                 // var scale = Math.random() * 0.5 + 0.4;
+//                 var scale = 2.0;
+//                 var speed = 3.0 + Math.random() * 1.5;
+//                 var angle = Math.random() * (2 * Math.PI);
 
-                var x = 0 + Math.random() * 92;
-                var y = 0 + Math.random() * 92;
+//                 var x = 0 + Math.random() * 92;
+//                 var y = 0 + Math.random() * 92;
 
-                var burnItem = new BurnItemView({
-                    center: { x: x, y: y },
-                    size: size,
-                    scale: scale,
-                    radius: 0,
-                    angle: angle,
-                    easeValue: 0,
-                    opacity: 0.22, // 0.00003
-                    speed: speed,
-                    assets: this.assets
-                });
+//                 var burnItem = new BurnItemView({
+//                     center: { x: x, y: y },
+//                     size: size,
+//                     scale: scale,
+//                     radius: 0,
+//                     angle: angle,
+//                     easeValue: 0,
+//                     opacity: 0.22, // 0.00003
+//                     speed: speed,
+//                     assets: this.assets
+//                 });
 
-                var burnMesh = burnItem.getMesh();
+//                 var burnMesh = burnItem.getMesh();
 
-                this._burnPlanes.push(burnItem);
+//                 this._burnPlanes.push(burnItem);
 
-                this._bufferScene.add(burnMesh);
+//                 this._bufferScene.add(burnMesh);
 
-                burnItem.animateBurn();
+//                 burnItem.animateBurn();
 
-                this._timer = 0;
-            }
-        },
+//                 this._timer = 0;
+//             }
+//         },
 
-        update: function() {
+//         update: function() {
 
-            if (!this._started) { return; }
+//             if (!this._started) { return; }
 
-            var baseSize =  this.tW * 0.03;
+//             var baseSize =  this.tW * 0.03;
 
-            if (this.isRenderable) {
+//             if (this.isRenderable) {
 
-                this._timer += 1;
+//                 this._timer += 1;
 
-                this._draw();
-            }
+//                 this._draw();
+//             }
 
-            this._updateBurn();
+//             this._updateBurn();
 
-            this._renderer.render(this._bufferScene, this._camera, this._FBO_2, true);
+//             this._renderer.render(this._bufferScene, this._camera, this._FBO_2, true);
 
-            var t = this._FBO_1;
-            this._FBO_1 = this._FBO_2;
-            this._FBO_2 = t;
+//             var t = this._FBO_1;
+//             this._FBO_1 = this._FBO_2;
+//             this._FBO_2 = t;
 
-            this._planeOutputMesh.material.uniforms.u_diffuse.value = this._FBO_2.texture;
-            this._planeBufferMesh.material.uniforms.u_diffuse.value = this._FBO_1.texture;
-        },
+//             this._planeOutputMesh.material.uniforms.u_diffuse.value = this._FBO_2.texture;
+//             this._planeBufferMesh.material.uniforms.u_diffuse.value = this._FBO_1.texture;
+//         },
 
-        _updateBurn: function() {
+//         _updateBurn: function() {
 
-            var length = this._burnPlanes.length;
+//             var length = this._burnPlanes.length;
 
-            for (var i = 0; i < length; i++) {
+//             for (var i = 0; i < length; i++) {
 
-                var burnItem = this._burnPlanes[i];
+//                 var burnItem = this._burnPlanes[i];
 
-                if (burnItem.toRemove) {
+//                 if (burnItem.toRemove) {
 
-                    var mesh = burnItem.getMesh();
+//                     var mesh = burnItem.getMesh();
 
-                    this._bufferScene.remove( burnItem.getMesh() );
-                    this._burnPlanes.splice(i, 1);
+//                     this._bufferScene.remove( burnItem.getMesh() );
+//                     this._burnPlanes.splice(i, 1);
 
-                    length--;
+//                     length--;
 
-                    this._indexOut--;
+//                     this._indexOut--;
 
-                    continue;
-                }
+//                     continue;
+//                 }
 
-                burnItem.update();
-            }
-        },
+//                 burnItem.update();
+//             }
+//         },
 
-        // resize ---------------------------------------------------------------
+//         // resize ---------------------------------------------------------------
 
-        resize: function( w, h ) {}
+//         resize: function( w, h ) {}
 
-    });
+//     });
 
-});
+// });

@@ -2,9 +2,9 @@ define([] , function () {
 
     var soundStates = {
         MUTE   : "sound:state:mute",
-        UNMUTE : "sound:state:unmute",
-        PAUSE  : "sound:state:pause",
-        RESUME : "sound:state:resume"
+        UNMUTE : "sound:state:mute",
+        PAUSE  : "sound:state:mute",
+        RESUME : "sound:state:mute"
     };
 
     return soundStates;

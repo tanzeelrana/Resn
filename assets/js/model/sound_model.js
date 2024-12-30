@@ -527,19 +527,19 @@ define([
                         this.mute();
                         break;
 
-                    case SoundStates.UNMUTE:
+                    case SoundStates.MUTE:
 
-                        this.unmute();
+                    this.mute();
                         break;
 
-                    case SoundStates.PAUSE:
+                    case SoundStates.MUTE:
 
-                        this.pause();
+                    this.mute();
                         break;
 
-                    case SoundStates.RESUME:
+                    case SoundStates.MUTE:
 
-                        this.resume();
+                    this.mute();
                         break;
 
                     default:

@@ -38,15 +38,15 @@
             "enabled": true,
             "featured": true,
             "globaltitle": "",
-            "title": "Below the Surface AR",
-            "description": "Deadly legal fishing methods are killing thousands of dolphins every year. Below the Surface AR immerses you in the shocking reality of bycatch.",
-            "client": "Sea Shepherd Conservation Society",
+            "title": "booking appointment App",
+            "description": "Project Description",
+            "client": "Client Name",
             "date": "February, 2020",
             "role": "Concept, Creative Direction, Design, Development, 3D, Sound Design & Composition, Sponsor",
             "platforms": "",
             "url": "https://belowthesurface.resn.co.nz",
-            "poster": "img/projects/seashepherd/seashepherd-poster.jpg",
-            "poster_m": "img/projects/seashepherd/seashepherd-poster-m.jpg",
+            "poster": "img/projects/web-booking-appointment/web-booking-appointment.png",
+            "poster_m": "img/projects/web-booking-appointment/web-booking-appointment.png",
             "categories": ["mobile", "Web AR"],
             "awards": [],
             "items": [
@@ -68,7 +68,7 @@
                     "type": "headline",
                     "data": {
                         "title": "The Concept",
-                        "body": "Below the Surface aims to raise awareness of the true horrors of commercial fishing bycatch by using the immersive power of AR. Made with Jelly, Resn’s industry-leading real-time Web3D pipeline, the experience lets you see the reality of bycatch on a mobile device.",
+                        "body": "body",
                         "top_offset": 120
                     }
                 },
@@ -244,15 +244,15 @@
             "enabled": true,
             "featured": true,
             "globaltitle": "",
-            "title": "Corn. Revolutionized.",
-            "description": "A look at the cutting-edge science behind Pioneer corn told through the choreography of real-time 3D assets and animation.",
-            "client": "Pioneer Hi Bred International",
+            "title": "Baseball sports mobile App",
+            "description": "Project Description",
+            "client": "Client Name",
             "date": "September, 2019",
             "role": "Design, Development, Animation, UI, UX",
             "platforms": "",
             "url": "https://go.pioneer.com/cornrevolution",
-            "poster": "img/projects/pioneer/pioneer-poster.png",
-            "poster_m": "img/projects/pioneer/pioneer-poster-m.jpg",
+            "poster": "img/projects/baseball/baseball.png",
+            "poster_m": "img/projects/baseball/baseball.png",
             "categories": ["design", "development", "Jelly Project", "Website"],
             "awards": [],
             "items": [
@@ -274,7 +274,7 @@
                     "type": "headline",
                     "data": {
                         "title": "The Challenge",
-                        "body": "Resn & Bader Rutter teamed up to create a revolutionary online experience that tells the story of how Pioneer develops new varieties of corn. We wanted to captivate our audience with stunning imagery of the development process and turn skeptics into believers.",
+                        "body": "Devflovv & Bader Rutter teamed up to create a revolutionary online experience that tells the story of how Pioneer develops new varieties of corn. We wanted to captivate our audience with stunning imagery of the development process and turn skeptics into believers.",
                         "top_offset": 120
                     }
                 },
@@ -706,15 +706,15 @@
             "enabled": true,
             "featured": true,
             "globaltitle": "",
-            "title": "Jelly - Realtime 3D Pipeline",
-            "description": "Jelly is Resn’s Web3D pipeline: our in-house production and development methodology that allows us to deliver premium real-time 3D that fits your budget.",
-            "client": "Various",
+            "title": "Operate on any device & is available in more than 25 different languages to support research initiatives",
+            "description": "Add Descrription",
+            "client": "Client Name",
             "date": "Dec, 2019",
             "role": "Developer",
             "platforms": "",
             "url": "",
-            "poster": "img/projects/jelly-3d/Jelly_Hero_Poster1.jpg",
-            "poster_m": "img/projects/jelly-3d/Jelly_Hero_Poster_Mobile.jpg",
+            "poster": "img/projects/language-research-initiative/language-research-initiative.png",
+            "poster_m": "img/projects/language-research-initiative/language-research-initiative.png",
             "categories": [],
             "awards": [],
             "items": [
@@ -860,7 +860,7 @@
                     "type": "text",
                     "data": {
                         "title": "Lower Overhead",
-                        "body": "Jelly’s pipeline is robust and efficient, enabling Resn’s experienced developers to navigate complex workflows with ease. Compared to similar offerings, Jelly means lower overheads and shortened production schedules.",
+                        "body": "Jelly’s pipeline is robust and efficient, enabling Devflovv’s experienced developers to navigate complex workflows with ease. Compared to similar offerings, Jelly means lower overheads and shortened production schedules.",
                         "top_offset": 120
                     }
                 },
@@ -1135,15 +1135,15 @@
             "enabled": true,
             "featured": true,
             "globaltitle": "",
-            "title": "LES MILLS GRIT",
-            "description": "LES MILLS GRIT, high impact cross platform advertising spots for the intense HIIT workout program.",
-            "client": "Colenso BBDO",
+            "title": "A CRM for mortgage brokers with the built-in messaging system and automations",
+            "description": "Add Descrription",
+            "client": "Client Name",
             "date": "April, 2019",
             "role": "Art Direction, Design, Animation, Editing, Sound Design",
             "platforms": "",
             "url": "",
-            "poster": "img/projects/les-mills-grit/10_Gallery_Card.jpg",
-            "poster_m": "img/projects/les-mills-grit/10_Mobile_Hero_Poster.jpg",
+            "poster": "img/projects/morgtage-crm/morgtage-crm.png",
+            "poster_m": "img/projects/morgtage-crm/morgtage-crm.png",
             "categories": [],
             "awards": [],
             "items": [
@@ -1397,15 +1397,15 @@
             "enabled": true,
             "featured": true,
             "globaltitle": "",
-            "title": "Discover Lexus",
-            "description": "Discover Lexus is a home for Lexus to communicate its many amazing stories that go well beyond the automotive.",
-            "client": "Saatchi & Saatchi Tokyo + Lexus International",
+            "title": "A cybersecurity tool that helps you analyse your network better and faster.",
+            "description": "Add Description",
+            "client": "Client Name",
             "date": "July, 2018",
             "role": "Creative, Strategic and Production Partner",
             "platforms": "",
             "url": "https://discoverlexus.com/",
-            "poster": "img/projects/discover-lexus/00_Lexus_Thumbnail.jpg",
-            "poster_m": "img/projects/discover-lexus/mobile/00_Lexus_Thumbnail_Mobile.jpg",
+            "poster": "img/projects/cyber-security-analyser/cyber-security-analyser.png",
+            "poster_m": "img/projects/cyber-security-analyser/cyber-security-analyser.png",
             "categories": ["strategy", "creative", "design", "development"],
             "awards": [
                 {
@@ -1444,7 +1444,7 @@
                     "type": "headline",
                     "data": {
                         "title": "The Challenge",
-                        "body": "Resn and Saatchi & Saatchi Tokyo teamed up to reimagine how Lexus engaged with users online. Our challenge was to streamline their digital comms and give users a broader appreciation for all things Lexus.",
+                        "body": "Devflovv and Saatchi & Saatchi Tokyo teamed up to reimagine how Lexus engaged with users online. Our challenge was to streamline their digital comms and give users a broader appreciation for all things Lexus.",
                         "top_offset": 120
                     }
                 },
@@ -1711,15 +1711,15 @@
             "enabled": true,
             "featured": true,
             "globaltitle": "",
-            "title": "adidas Futurecraft.Loop Event",
-            "description": "The adidas Futurecraft.Loop launch event in New York City brought together 200 handpicked influencers from around the world. From here, they started their journey as the first ever generation of adidas’ groundbreaking product movement.",
-            "client": "adidas",
+            "title": "There is a need to move large files with speed, reliability, and security",
+            "description": "Add Description",
+            "client": "Client Name",
             "date": "April, 2019",
             "role": "Event Conceptualisation, Creative, Content Production",
             "platforms": "",
             "url": "https://www.adidas.co.uk/futurecraft",
-            "poster": "img/projects/loop/adidas-loop-poster-desktop.jpg",
-            "poster_m": "img/projects/loop/mobile/adidas-loop-poster-mobile.jpg",
+            "poster": "img/projects/file-transfer-software/file-transfer-software.png",
+            "poster_m": "img/projects/file-transfer-software/file-transfer-software.png",
             "categories": [],
             "awards": [],
             "items": [
@@ -1978,7 +1978,7 @@
                     "type": "text",
                     "data": {
                         "title": "THE SPEAKERS",
-                        "body": "Eric Liedtke, CMO at adidas revealed the physical shoe product on stage before Paul Gaudio, adidas’ Global Creative Director discussed Futurecraft and the work that went into creating a fully recyclable product. Each topic in the speeches contained custom video content displayed on all surfaces that was switched in real-time via Resn direction.",
+                        "body": "Eric Liedtke, CMO at adidas revealed the physical shoe product on stage before Paul Gaudio, adidas’ Global Creative Director discussed Futurecraft and the work that went into creating a fully recyclable product. Each topic in the speeches contained custom video content displayed on all surfaces that was switched in real-time via Devflovv direction.",
                         "top_offset": 120
                     }
                 },
@@ -2087,8 +2087,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "Resn Content Creation",
-                        "body": "Resn handled the design, animation, editing and asset management for all projected video content in-house. A significant amount of content was created to play for the two hour event duration with the very high resolution video split across multiple projectors.",
+                        "title": "Devflovv Content Creation",
+                        "body": "Devflovv handled the design, animation, editing and asset management for all projected video content in-house. A significant amount of content was created to play for the two hour event duration with the very high resolution video split across multiple projectors.",
                         "top_offset": 120
                     }
                 },
@@ -2109,7 +2109,7 @@
                     "type": "text",
                     "data": {
                         "title": "A LOOP FROM PHYSICAL TO WEB",
-                        "body": "Each pair of shoes came with a QR code printed on the tongue to allow guests to link out to the web hub. From here they explored deeper information about the technology and product. The site was designed and built by Resn — <a>https://www.adidas.co.uk/futurecraft</a>",
+                        "body": "Each pair of shoes came with a QR code printed on the tongue to allow guests to link out to the web hub. From here they explored deeper information about the technology and product. The site was designed and built by Devflovv — <a>https://www.adidas.co.uk/futurecraft</a>",
                         "top_offset": 120
                     }
                 }
@@ -2121,15 +2121,15 @@
             "enabled": true,
             "featured": true,
             "globaltitle": "",
-            "title": "Banditø",
-            "description": "Escape DEMA in the new interactive video for Banditø by Twenty Øne Piløts and Spotify.",
-            "client": "Spotify",
+            "title": "They are a leading provider of powerful and affordable IT management software.",
+            "description": "Add Description",
+            "client": "Client Name",
             "date": "Dec, 2018",
             "role": "Design, Development, Animation, UX, UI",
             "platforms": "",
             "url": "https://www.imabandi.to/",
-            "poster": "img/projects/bandito/bandito-poster.jpg",
-            "poster_m": "img/projects/bandito/mobile/bandito-poster-m.jpg",
+            "poster": "img/projects/network-visualisation-management-software/network-visualisation-management-software.png",
+            "poster_m": "img/projects/network-visualisation-management-software/network-visualisation-management-software.png",
             "categories": ["animation", "creative", "design", "development"],
             "awards": [
                 {
@@ -2495,15 +2495,15 @@
             "enabled": true,
             "featured": true,
             "globaltitle": "",
-            "title": "Hellboy – Join the B.P.R.D.",
-            "description": "Join Hellboy at the B.P.R.D. Browse the agency’s secret archives and have an A.I.-powered conversation with the real Hellboy.",
-            "client": "Lionsgate",
+            "title": "They record activities, building community and getting motivated.",
+            "description": "Add Description",
+            "client": "Client Name",
             "date": "Apr, 2019",
             "role": "Creative and Production",
             "platforms": "",
             "url": "",
-            "poster": "img/projects/hellboy/00_hellboy_desktop_thumbnail.jpg",
-            "poster_m": "img/projects/hellboy/mobile/00_Hellboy_Thumbnail.jpg",
+            "poster": "img/projects/file-sharing-software/file-sharing-software.png",
+            "poster_m": "img/projects/file-sharing-software/file-sharing-software.png",
             "categories": ["creative", "design", "development"],
             "awards": [
                 {
@@ -2534,7 +2534,7 @@
                     "type": "headline",
                     "data": {
                         "title": "Hellboy Wants You!",
-                        "body": "Resn partnered with Lionsgate to create a unique mobile promotion for the Hellboy film, by recruiting you into Hellboy’s secret agency.",
+                        "body": "Devflovv partnered with Lionsgate to create a unique mobile promotion for the Hellboy film, by recruiting you into Hellboy’s secret agency.",
                         "top_offset": 120
                     }
                 },
@@ -3862,7 +3862,7 @@
                     "type": "headline",
                     "data": {
                         "title": "The Brief",
-                        "body": "adidas approached Resn with the brief to create an event space, housing multiple installations that spoke to the three key messaging aspects of Speedfactory.",
+                        "body": "adidas approached Devflovv with the brief to create an event space, housing multiple installations that spoke to the three key messaging aspects of Speedfactory.",
                         "top_offset": 120
                     }
                 },
@@ -4158,7 +4158,7 @@
                     "type": "headline",
                     "data": {
                         "title": "Zone Three: Foot Scanners",
-                        "body": "Via a custom Resn-made iPad controller we could control two scanners at one time.",
+                        "body": "Via a custom Devflovv-made iPad controller we could control two scanners at one time.",
                         "top_offset": 120
                     }
                 },
@@ -4234,7 +4234,7 @@
                     "type": "text",
                     "data": {
                         "title": "Run Test Output",
-                        "body": "A couple of minutes later a unique video was sent to their app, with their actual running data, skeletal tracking, and adidas branding baked in. As demand was higher with only one person allowed in the room at a time, Resn created a digital queuing system that notified the creator when it was their turn removing the need for a physical line.",
+                        "body": "A couple of minutes later a unique video was sent to their app, with their actual running data, skeletal tracking, and adidas branding baked in. As demand was higher with only one person allowed in the room at a time, Devflovv created a digital queuing system that notified the creator when it was their turn removing the need for a physical line.",
                         "top_offset": 100
                     }
                 },
@@ -4475,7 +4475,7 @@
                     "type": "text",
                     "data": {
                         "title": "The Right Ingredients",
-                        "body": "The project needed a scalable digital solution that could quickly create a dynamically-edited and rendered video. Resn’s recently enhanced interactive video platform, Cake, provided just the right tools.",
+                        "body": "The project needed a scalable digital solution that could quickly create a dynamically-edited and rendered video. Devflovv’s recently enhanced interactive video platform, Cake, provided just the right tools.",
                         "top_offset": 116
                     }
                 },
@@ -5197,11 +5197,11 @@
             "route": "jethro",
             "enabled": false,
             "featured": false,
-            "menutitle": "Resn's Little HelpAR",
+            "menutitle": "Devflovv's Little HelpAR",
             "globaltitle": "",
-            "title": "Resn's Little HelpAR",
-            "description": "Resn’s Little HelpAR is an update of a very Resn yuletide tradition. This year in trembling anticipation for AR on the Web we forged a new experience that was built on the last, one which tips a bell- festooned hat to the emerging world of augmented browser experiences.",
-            "client": "Resn",
+            "title": "Devflovv's Little HelpAR",
+            "description": "Devflovv’s Little HelpAR is an update of a very Devflovv yuletide tradition. This year in trembling anticipation for AR on the Web we forged a new experience that was built on the last, one which tips a bell- festooned hat to the emerging world of augmented browser experiences.",
+            "client": "Devflovv",
             "date": "Dec, 2018",
             "role": " Creative, Design, Development",
             "url": "",
@@ -6428,7 +6428,7 @@
             "menutitle": "",
             "globaltitle": "",
             "title": "adidas Originals",
-            "description": "Resn's evolving collaboration with adidas Originals has produced a series of eye-popping microsites for numerous Originals' collections. Each site reflected the themes and designs of the collection with playful and surprising moments.",
+            "description": "Devflovv's evolving collaboration with adidas Originals has produced a series of eye-popping microsites for numerous Originals' collections. Each site reflected the themes and designs of the collection with playful and surprising moments.",
             "client": "adidas",
             "role": "Creative and Production Partner",
             "date": "Apr & Nov 2016",
@@ -6739,7 +6739,7 @@
                     "type": "text",
                     "data": {
                         "title": "The Proposal",
-                        "body": "Resn teamed up with Y&R New Zealand to create McWhopper.com. The custom Tumblr experience was an open letter from Burger King to McDonald's, detailing every aspect of the Peace Day plan, from the co-branded designs to the recipe for the McWhopper itself.",
+                        "body": "Devflovv teamed up with Y&R New Zealand to create McWhopper.com. The custom Tumblr experience was an open letter from Burger King to McDonald's, detailing every aspect of the Peace Day plan, from the co-branded designs to the recipe for the McWhopper itself.",
                         "top_offset": 110
                     }
                 },
@@ -6956,7 +6956,7 @@
                     "type": "text",
                     "data": {
                         "title": "Simple Sign Up",
-                        "body": "Queuing is made easy with a simple Resn-made iPad app. Each visitor enters the digital queue by supplying the host with their name, and email - information we need to deliver their video output. The host iPad also allows for full control of the installations recording system.",
+                        "body": "Queuing is made easy with a simple Devflovv-made iPad app. Each visitor enters the digital queue by supplying the host with their name, and email - information we need to deliver their video output. The host iPad also allows for full control of the installations recording system.",
                         "top_offset": 120
                     }
                 },
@@ -7244,7 +7244,7 @@
                     "type": "text",
                     "data": {
                         "title": "Stay Frosty",
-                        "body": "This is the fifth collaboration in three years between Resn and the adidas Clima team. For this iteration, we supported the campaign's 'Not Made For Normal' aesthetic of heat and location based photography, by creating an evocative and fashion-centric, single scroll experience.",
+                        "body": "This is the fifth collaboration in three years between Devflovv and the adidas Clima team. For this iteration, we supported the campaign's 'Not Made For Normal' aesthetic of heat and location based photography, by creating an evocative and fashion-centric, single scroll experience.",
                         "top_offset": 120
                     }
                 },
@@ -7418,7 +7418,7 @@
                     "type": "text",
                     "data": {
                         "title": "Welcome to Wetropolis",
-                        "body": "Resn was asked to showcase the cutting-edge, water resistance features of the new Converse Chuck II’s by creating an interactive music video featuring a 23 year old Korean rapping superstar, Keith Ape. The result is Converse Diamonds, our WebGL-saturated, interactive music video, made in partnership wih Anomaly and BRTHR.",
+                        "body": "Devflovv was asked to showcase the cutting-edge, water resistance features of the new Converse Chuck II’s by creating an interactive music video featuring a 23 year old Korean rapping superstar, Keith Ape. The result is Converse Diamonds, our WebGL-saturated, interactive music video, made in partnership wih Anomaly and BRTHR.",
                         "top_offset": 120
                     }
                 },
@@ -8498,7 +8498,7 @@
             "globaltitle": "",
             "title": "Dim-Sum",
             "description": "Dim-Sum is a heaping plateful of experimental nibbles with piping hot centres. Get lost in this Tumblr-hacked, digital smorgasbord of insanity.",
-            "client": "Resn",
+            "client": "Devflovv",
             "date": "Dec 2015",
             "role": "Creative and Production Partner",
             "url": "http://resn-experiments.tumblr.com/",
@@ -8693,7 +8693,7 @@
                     "type": "text",
                     "data": {
                         "title": "When they only see an athlete's looks...",
-                        "body": "...they don't see her at all. Every day, the media judges female athletes on their appearance. The more we focus on an athlete’s appearance, the less we see her achievements and performance. To convey this, Resn used a visual metaphor: an athlete hidden behind a barrage of sexist media quotes.",
+                        "body": "...they don't see her at all. Every day, the media judges female athletes on their appearance. The more we focus on an athlete’s appearance, the less we see her achievements and performance. To convey this, Devflovv used a visual metaphor: an athlete hidden behind a barrage of sexist media quotes.",
                         "top_offset": 120
                     }
                 },
@@ -8821,7 +8821,7 @@
             "globaltitle": "",
             "title": "Face Arcade",
             "description": "Face Arcade gives you not none, not two, not even three, but four lifelike games! Use your face to control this cacophony of fast-paced and addictive mini-games. Compete with your Google Hangouts friends and emerge as the Face Arcade champion.",
-            "client": "Resn",
+            "client": "Devflovv",
             "date": "Nov 2012",
             "role": "Creative and Production Partner",
             "url": "",
@@ -8852,7 +8852,7 @@
                     "type": "text",
                     "data": {
                         "title": "Face Off",
-                        "body": "Do you want to play games online, but get tired of all the cables? Using powerful Google and Resn technologies, you can now control games using only your face and a webcam.",
+                        "body": "Do you want to play games online, but get tired of all the cables? Using powerful Google and Devflovv technologies, you can now control games using only your face and a webcam.",
                         "top_offset": 120
                     }
                 },
@@ -9711,9 +9711,9 @@
             "featured": false,
             "menutitle": "",
             "globaltitle": "",
-            "title": "Resn Legacy Website",
+            "title": "Devflovv Legacy Website",
             "description": "Hailed as the greatest website of all time, it mysteriously vanished for a crime that doesn't exist. Still wanted by the government, it now roams the shadowy underbelly of the dank web, protecting the innocent from the evil forces of Smellator.",
-            "client": "Resn",
+            "client": "Devflovv",
             "date": "Feb 2009",
             "role": "Creative and Production Partner",
             "url": "",
@@ -9743,7 +9743,7 @@
                     "type": "text",
                     "data": {
                         "title": "When Flash Ruled the Earth",
-                        "body": "Radiocarbon dating reveals Resn ruled the internet in the prehistoric Flash Era. Sciencetits believe it was the king of all websites, but what do sciencetits know? Today, its decomposing remains shine as a bacon of hope for the creatively oppressed and a symbol of peace for anyone who dreamed of a world where swans, wolves and vampire bats could live together in harmony.",
+                        "body": "Radiocarbon dating reveals Devflovv ruled the internet in the prehistoric Flash Era. Sciencetits believe it was the king of all websites, but what do sciencetits know? Today, its decomposing remains shine as a bacon of hope for the creatively oppressed and a symbol of peace for anyone who dreamed of a world where swans, wolves and vampire bats could live together in harmony.",
                         "top_offset": 120
                     }
                 },
@@ -9800,9 +9800,9 @@
             "featured": false,
             "menutitle": "",
             "globaltitle": "",
-            "title": "Resn's Little Helper",
+            "title": "Devflovv's Little Helper",
             "description": "A long time ago, before St. Nick, Father Christmas, Kris Kringle, Santa or whatever you wanna call him, there was an elf, some ’shrooms and a flute. The real first Christmas. Truth.",
-            "client": "Resn",
+            "client": "Devflovv",
             "date": "Dec 2017",
             "role": "Creative and Production Partner",
             "url": "http://littlehelper.resn.global/",
@@ -9880,7 +9880,7 @@
                     "type": "text",
                     "data": {
                         "title": "Beautiful Music",
-                        "body": "Resn's Little Helper is an award-winning, musical experience that incorporates only the finest instruments and the most beautiful notes available to us at the time. We hope it will give aural pleasure to Christmas lovers for generations to come.",
+                        "body": "Devflovv's Little Helper is an award-winning, musical experience that incorporates only the finest instruments and the most beautiful notes available to us at the time. We hope it will give aural pleasure to Christmas lovers for generations to come.",
                         "top_offset": 120
                     }
                 },
@@ -9900,7 +9900,7 @@
                     "data": {
                         "vimeo_id": "265339067",
                         "vimeo_video_url": "https://player.vimeo.com/external/265339067.hd.mp4?s=8093679b1cfafa9e191bd804d2ef9276f623a292&profile_id=175",
-                        "video_name": "Resn's Little Helper",
+                        "video_name": "Devflovv's Little Helper",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 6,
@@ -10192,7 +10192,7 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "Resn_will_stab_you",
+                        "title": "Devflovv_will_stab_you",
                         "body": "Our Approach: Phase 1: Use gentle persuasion and reward through new gamification prototypes. Phase 2: Forcibly take control of subject's mind sack. Phase 3: Go for a nice walk along the beach in our newly acquired body.",
                         "top_offset": 120
                     }
@@ -10303,7 +10303,7 @@
             "globaltitle": "",
             "title": "Wildflower",
             "description": "Grow a unique Wildflower and send it to someone special. Let users experience the creation of a unique virtual object and to share it with someone special for Valentine's Day.",
-            "client": "Resn",
+            "client": "Devflovv",
             "date": "Mar 2015",
             "role": "Creative and Production Partner",
             "url": "http://wildflower.resn.co.nz",
@@ -10919,7 +10919,7 @@
                     "type": "text",
                     "data": {
                         "title": "An Edible World",
-                        "body": "Resn meticulously built and painstakingly animated the 'Panera Land of Clean', with the help of renowned food artist Carl Warner. The result was a beautiful, tranquil and delicious world made entirely of foods from the Panera pantry.",
+                        "body": "Devflovv meticulously built and painstakingly animated the 'Panera Land of Clean', with the help of renowned food artist Carl Warner. The result was a beautiful, tranquil and delicious world made entirely of foods from the Panera pantry.",
                         "top_offset": 120
                     }
                 },
@@ -11094,7 +11094,7 @@
                     "type": "text",
                     "data": {
                         "title": "A Premier Event",
-                        "body": "Riot Games asked Resn to create an interactive timeline for the League of Legends World Championship, to track its rise to become one of the premier events in all of eSports. We drew on the rich content from the brief but glorious five-year history of the event, to inspire appreciation for its growth and accomplishments.",
+                        "body": "Riot Games asked Devflovv to create an interactive timeline for the League of Legends World Championship, to track its rise to become one of the premier events in all of eSports. We drew on the rich content from the brief but glorious five-year history of the event, to inspire appreciation for its growth and accomplishments.",
                         "top_offset": 120
                     }
                 },
@@ -11126,7 +11126,7 @@
                     "type": "text",
                     "data": {
                         "title": "The Summoner's Cup",
-                        "body": "Resn centred the experience around the Summoner's Cup - the trophy competitors fight for at the World Championship. Users can spin a 3D Summoner's Cup to navigate through the history of the tournament from 2011 to 2016.",
+                        "body": "Devflovv centred the experience around the Summoner's Cup - the trophy competitors fight for at the World Championship. Users can spin a 3D Summoner's Cup to navigate through the history of the tournament from 2011 to 2016.",
                         "top_offset": 120
                     }
                 },
@@ -11949,7 +11949,7 @@
                     "type": "text",
                     "data": {
                         "title": "The Most Thrilling Read Ever",
-                        "body": "For the launch of James Patterson's 'Private Vegas', Resn and Mother New York wanted to make sure the experience was as exhilarating as possible. To do this, we created the Self-Destructing Book, an electrifying, digitally augmented thrill-ride, befitting the Master of Suspense.",
+                        "body": "For the launch of James Patterson's 'Private Vegas', Devflovv and Mother New York wanted to make sure the experience was as exhilarating as possible. To do this, we created the Self-Destructing Book, an electrifying, digitally augmented thrill-ride, befitting the Master of Suspense.",
                         "top_offset": 120
                     }
                 },
@@ -12136,7 +12136,7 @@
                     "type": "text",
                     "data": {
                         "title": "A Collaborative Collaboration",
-                        "body": "The highly collaborative creative process saw both Resn and Droga5 pitching game ideas. We tabled any suggestion, as long as it sounded sufficiently absurd. After selecting the strongest concepts, we turned them into silly pictures. Then we threw away the worst pictures and punished those responsible. Careers and lives were lost in the process. Also, limbs.",
+                        "body": "The highly collaborative creative process saw both Devflovv and Droga5 pitching game ideas. We tabled any suggestion, as long as it sounded sufficiently absurd. After selecting the strongest concepts, we turned them into silly pictures. Then we threw away the worst pictures and punished those responsible. Careers and lives were lost in the process. Also, limbs.",
                         "top_offset": 120
                     }
                 },
@@ -12329,7 +12329,7 @@
             "menutitle": "",
             "globaltitle": "",
             "title": "Play Your Stripes",
-            "description": "Resn and Wieden+Kennedy New York partnered to create Gap: Play Your Stripes, an augmented reality experience that turns your winter wardrobe into a musical masterpiece.",
+            "description": "Devflovv and Wieden+Kennedy New York partnered to create Gap: Play Your Stripes, an augmented reality experience that turns your winter wardrobe into a musical masterpiece.",
             "client": "Wieden+Kennedy NY & GAP",
             "date": "Dec 2014",
             "role": "Design, Animation, Development, UX, Technical Discovery",

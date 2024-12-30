@@ -149,7 +149,7 @@ define([
                         (!AppModel.has('awww-realSFX') ||
                         !AppModel.get('awww-realSFX').playing())
                         ) {
-                            // console.log('MADE IN RESN');
+                            
 
                             intersects[0].object.material.needsUpdate = true;
 

@@ -96323,20 +96323,20 @@ define('view/mobile/modules/background/background_drop_view',[
 
         setupInteractive: function() {
 
-            this.hideLoadingMessage();
+            // this.hideLoadingMessage();
 
-            //console.log('Setup interactive:', this.currentInteractive.get('id'));
+            // //console.log('Setup interactive:', this.currentInteractive.get('id'));
 
-            var Class = this.currentInteractive.get('Class');
-            this.interactiveView = new Class({el:this.$interactiveHolder, model: this.currentInteractive});
-            this.interactiveView.onResize();
+            // var Class = this.currentInteractive.get('Class');
+            // this.interactiveView = new Class({el:this.$interactiveHolder, model: this.currentInteractive});
+            // this.interactiveView.onResize();
 
-            this.loading = false;
+            // this.loading = false;
 
-            if (this.interactiveStarted) {
-                this.interactiveStarted = false;
-                this.onShowTransInt();
-            }
+            // if (this.interactiveStarted) {
+            //     this.interactiveStarted = false;
+            //     this.onShowTransInt();
+            // }
         },
 
         showLoadingMessage:function(){

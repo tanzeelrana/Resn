@@ -24369,19 +24369,19 @@ define('model/sound_model',[
                         this.mute();
                         break;
 
-                    case SoundStates.UNMUTE:
+                    case SoundStates.MUTE:
 
-                        this.unmute();
+                        this.mute();
                         break;
 
-                    case SoundStates.PAUSE:
+                    case SoundStates.MUTE:
 
-                        this.pause();
+					this.mute();
                         break;
 
-                    case SoundStates.RESUME:
+                    case SoundStates.MUTE:
 
-                        this.resume();
+                        this.mute();
                         break;
 
                     default:
@@ -26176,13 +26176,13 @@ define('controller/ambient_sound_controller',[
         // VISIBLY HANDLERS ------------------------------------------------------
 
         onWindowVisible:function () {
-            SoundModel.update(SoundStates.RESUME);
+            SoundModel.update(SoundStates.MUTE);
 
             GlobalAudioFaderController.fadeIn();
         },
 
         onWindowHidden:function () {
-            SoundModel.update(SoundStates.PAUSE);
+            SoundModel.update(SoundStates.MUTE);
 
             GlobalAudioFaderController.fadeOut();
         },
@@ -26207,19 +26207,19 @@ define('controller/ambient_sound_controller',[
         onUnmuteRequest:function () {
 
             // console.log('unmute request...');
-            SoundModel.update(SoundStates.UNMUTE);
+            SoundModel.update(SoundStates.MUTE);
         },
 
         onPauseRequest:function () {
 
             // console.log('pause request...');
-            SoundModel.update(SoundStates.PAUSE);
+            SoundModel.update(SoundStates.MUTE);
         },
 
         onResumeRequest:function () {
 
             // console.log('resume request...');
-            SoundModel.update(SoundStates.RESUME);
+            SoundModel.update(SoundStates.MUTE);
         },
 
 
@@ -124014,19 +124014,19 @@ define('view/modules/background/background_drop_view',[
 
         setupInteractive: function() {
 
-            this.hideLoadingMessage();
-            //console.log('Setup interactive:', this.currentInteractive.get('id'));
+            // this.hideLoadingMessage();
+            // //console.log('Setup interactive:', this.currentInteractive.get('id'));
 
-            var Class = this.currentInteractive.get('Class');
-            this.interactiveView = new Class({el:this.$interactiveHolder, model: this.currentInteractive});
-            this.interactiveView.onResize();
+            // var Class = this.currentInteractive.get('Class');
+            // // this.interactiveView = new Class({el:this.$interactiveHolder, model: this.currentInteractive});
+            // this.interactiveView.onResize();
 
-            this.loading = false;
+            // this.loading = false;
 
-            if (this.interactiveStarted) {
-                this.interactiveStarted = false;
-                this.onShowTransInt();
-            }
+            // if (this.interactiveStarted) {
+            //     this.interactiveStarted = false;
+            //     this.onShowTransInt();
+            // }
         },
 
         showLoadingMessage:function(){

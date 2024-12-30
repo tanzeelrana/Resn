@@ -80,7 +80,7 @@ define([
         hitSoundB      : null,
         hitSoundC      : null,
         hitSoundD      : null,
-
+        hitSounds      : null,
 
         muted          : false,
 
@@ -126,7 +126,9 @@ define([
                 speed          : new THREE.Vector2()
             };
 
-         
+            if(!Config.MOBILE){
+                this.setupSounds();
+            }
 
             this.renderer = new THREE.WebGLRenderer({ 'antialias': true, 'alpha': true });
 
@@ -146,7 +148,66 @@ define([
             this.loadTextures();
         },
 
-      
+        setupSounds: function () {
+
+            this.hitSounds = [];
+
+            this.lightSound = new Howler.Howl(
+            {
+                urls: [ Config.CDN + this.model.get('sounds')[0].src ],
+                volume: 1,
+                loop: true
+            });
+
+            this.darkSound = new Howler.Howl(
+            {
+                urls: [ Config.CDN + this.model.get('sounds')[1].src ],
+                volume: 1,
+                loop: true
+            });
+
+            this.hitSoundA = new Howler.Howl(
+            {
+                urls: [ Config.CDN + this.model.get('sounds')[2].src ],
+                volume: 0.7
+            });
+
+            this.hitSoundB = new Howler.Howl(
+            {
+                urls: [ Config.CDN + this.model.get('sounds')[3].src ],
+                volume: 0.7
+            });
+
+            this.hitSoundC = new Howler.Howl(
+            {
+                urls: [ Config.CDN + this.model.get('sounds')[4].src ],
+                volume: 0.7
+            });
+
+            this.hitSoundD = new Howler.Howl(
+            {
+                urls: [ Config.CDN + this.model.get('sounds')[5].src ],
+                volume: 0.7
+            });
+
+            this.hitSounds.push(this.hitSoundA);
+            this.hitSounds.push(this.hitSoundB);
+            this.hitSounds.push(this.hitSoundC);
+            this.hitSounds.push(this.hitSoundD);
+
+            if ( SoundModel.muted === true ) {
+
+                this.lightSound.volume( 0 );
+                this.darkSound.volume( 0 );
+                this.hitSoundA.volume( 0 );
+                this.hitSoundB.volume( 0 );
+                this.hitSoundC.volume( 0 );
+                this.hitSoundD.volume( 0 );
+
+                this.muted = true;
+            }
+        },
+
         loadTextures: function () {
 
             this.TEXTURES_COUNT = this.model.get('textures').length;
@@ -303,7 +364,10 @@ define([
 
         onItemCollision: function () {
 
-        
+            if(!Config.MOBILE){
+                var hitSound = this.hitSounds[ parseInt( Math.random() * 4, 10 ) ];
+                hitSound.play();
+            }
 
             if ( this.collisions >= this.COLLIDE_COUNT ) {
 

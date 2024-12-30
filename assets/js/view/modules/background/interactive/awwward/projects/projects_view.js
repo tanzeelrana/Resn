@@ -45,6 +45,25 @@ define([
 
         _trigger: 0,
 
+        _sounds: {
+            "batty_jones.1": "aw-bat-new",
+            "can": "aw-can-new",
+            "cup": "aw-lol",
+            "Cone.1": "aw-vlc-new",
+            "drop": "aw-madeinresn",
+            "Durries.1": "aw-ashtray-05",
+            "fire_hydrant.1": "aw-fire-hydrant-siren",
+            "joystick.2": "aw-joystick",
+            "octo.1": "aw-squad",
+            "paintbrush": "aw-paintbrush-short",
+            "palmtree.1": "aw-palm-tree-new",
+            "panana": "aw-balloon-new",
+            "racket": "aw-racket-applause",
+            "shoe": "aw-converse",
+            "sword.1": "aw-sword-1",
+            "wine": "aw-wine-bot",
+
+        },
 
         initialize: function(camera) {
 
@@ -145,7 +164,12 @@ define([
 
                             AppModel.set(
                                 'awww-realSFX',
-                            
+                                AudioController.play(
+                                    this._sounds[objectName] || 'aw-bounce-07',
+                                    {
+                                        volume: AudioController.Levels.sfx
+                                    }
+                                )
                             );
                         }
                         this._trigger++;

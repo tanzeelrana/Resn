@@ -100,7 +100,7 @@ define([
         maxImages: 100,
         outSpeed: 0.01,
 
-    
+        sounds : null,
         soundIndex : 0,
 
         lastImageTime : -1,
@@ -134,7 +134,16 @@ define([
                 this.outSpeed = 0.015;
             }
 
-         
+            if(this.model.get("sounds")){
+                var sounds = this.model.get("sounds");
+                this.sounds = [];
+                sounds.forEach(function(sound){
+                    this.sounds.push(new Howler.Howl({
+                        urls : [Config.CDN + sound.src],
+                        volume : 0.4
+                    }));
+                }, this);
+            }
             this.setup();
         },
 
@@ -476,7 +485,11 @@ define([
                 this.activePlanes[i].off('out', this.onImageOut, this);
             }
 
-        
+            if(this.sounds){
+                this.sounds.forEach(function(sound){
+                    sound.unload();
+                });
+            }
 
             this.activePlanes = null;
 
@@ -651,6 +664,22 @@ define([
         },
 
 
+        triggerSound : function(){
+
+            if(this.sounds){
+                var nextSound = this.sounds[this.soundIndex ++ % this.sounds.length];
+
+                //we'll fade out the sounds the closer together they get played
+                // (it's too annoying otherwise!)
+                var elapsed = this.time - this.lastImageTime;
+                var minInterval = 1000;
+                var volume = Math.min(1.0, Math.pow(elapsed / minInterval, 2) * 0.9 + 0.1);
+                nextSound.volume(volume);
+                nextSound.play();
+            }
+
+            this.lastImageTime = this.time;
+        },
 
         show : function(){
 

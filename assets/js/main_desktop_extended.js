@@ -2862,7 +2862,8 @@ this.createjs = this.createjs || {};
 	 */
 	s.isAudioTag = function(item) {
 		if (window.HTMLAudioElement) {
-			return item instanceof HTMLAudioElement;
+			// return item instanceof HTMLAudioElement;
+			return false;
 		} else {
 			return false;
 		}
@@ -24004,11 +24005,11 @@ define('model/sound_model',[
 
                     delay = delay || 0;
                     fadeDuration = fadeDuration !== undefined ? fadeDuration / 1000 : 0.5;
-                    volume = volume || 1;
+                    volume = volume || 0;
 
                     clearTimeout(track.interval);
                     var restart = !track.playing;
-                    track.playing = true;
+                    track.playing = false;
 
 
                     track.interval = setTimeout(function () {
@@ -24078,7 +24079,7 @@ define('model/sound_model',[
                 clip.play = function (id,delay,volume) {
 
                     delay = delay || 0;
-                    volume = volume || 1;
+                    volume = volume || 0;
                     var index = self._sounds.indexOf(clip);
 
                     if (index === -1) {
@@ -25454,7 +25455,7 @@ define('view/modules/common/ambient_player_view',[
     var View = Backbone.View.extend({
         FADE_IN_AMOUNT: 0.02,
         FADE_AMOUNT: 0.02,
-        MAX_VOLUME: 1,
+        MAX_VOLUME: 0,
         index: null,
         // player: null,
         fader: null,
@@ -25480,7 +25481,7 @@ define('view/modules/common/ambient_player_view',[
                 'onTick'
             );
 
-            this.MAX_VOLUME = options.volume !== undefined ? options.volume : 1;
+            this.MAX_VOLUME = options.volume !== undefined ? options.volume : 0;
 
             // @TODO CW
             // var AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -25497,7 +25498,7 @@ define('view/modules/common/ambient_player_view',[
             request.onload = function(){
                 ctx.decodeAudioData(request.response, function(buffer){
                     self.buffer = buffer;
-                    self.ready = true;
+                    self.ready = false;
                     self.trigger("audio:canplay");
                 });
             };
@@ -25637,7 +25638,7 @@ define('view/modules/common/ambient_player_view',[
             var newVolume = this.faderPosition;
 
             if (newVolume > 0.999) {
-                this.setVolume(1);
+                this.setVolume(0);
                 this.fader.postMessage("stop");
                 this.faderCallback();
             } else if (newVolume < 0.001) {
@@ -25645,7 +25646,7 @@ define('view/modules/common/ambient_player_view',[
                 this.fader.postMessage("stop");
                 this.faderCallback();
             } else {
-                this.setVolume(newVolume);
+                this.setVolume(0);
             }
         },
 
@@ -25967,11 +25968,11 @@ define('controller/ambient_sound_controller',[
 
             // Returned from model
             SoundModel.on(AppEvents.Audio.Mute,this.onAmbientMute,this);
-            SoundModel.on(AppEvents.Audio.Unmute,this.onAmbientUnmute,this);
+            SoundModel.on(AppEvents.Audio.Mute,this.onAmbientMute,this);
             SoundModel.on(AppEvents.Audio.MuteAmbinet,this.onAmbientMute,this);
-            SoundModel.on(AppEvents.Audio.UnMuteAmbinet,this.onAmbientUnmute,this);
-            SoundModel.on(AppEvents.Audio.Pause,this.onAmbientPause,this);
-            SoundModel.on(AppEvents.Audio.Resume,this.onAmbientResume,this);
+            SoundModel.on(AppEvents.Audio.MuteAmbinet,this.onAmbientMute,this);
+            SoundModel.on(AppEvents.Audio.Mute,this.onAmbientMute,this);
+            SoundModel.on(AppEvents.Audio.Mute,this.onAmbient,this);
 
             this.initiatePlayers();
         },
@@ -25999,7 +26000,7 @@ define('controller/ambient_sound_controller',[
             //create all players
             var player,volume,tracks = SoundModel.get("ambients").tracks;
             for (var i = 0; i < tracks.length; i++) {
-                volume = tracks[i].volume !== undefined ? tracks[i].volume : 1;
+                volume = tracks[i].volume !== undefined ? tracks[i].volume : 0;
                 player = new AmbientPlayerView({
                     src   :Config.CDN + tracks[i].src,
                     volume:volume,
@@ -26052,7 +26053,7 @@ define('controller/ambient_sound_controller',[
         },
 
         onInteractivesHide:function () {
-            SoundModel.unMuteAmbient();
+            SoundModel.muteAmbient();
         },
 
         onChangePage:function () {
@@ -26069,10 +26070,10 @@ define('controller/ambient_sound_controller',[
                 case AppModel.PAGES.WORK:
                     //reset index, alway want to play first track
                     SoundModel.reset();
-                    SoundModel.unMuteAmbient();
+                    SoundModel.muteAmbient();
                     break;
                 default :
-                    SoundModel.unMuteAmbient();
+                    SoundModel.muteAmbient();
                     break;
             }
 
@@ -26100,7 +26101,7 @@ define('controller/ambient_sound_controller',[
             if (this._triggerNext) {
                 this._triggerNext = false;
                 //force change
-                playNext = true;
+                playNext = false;
             }
 
             if (playNext) {
@@ -26136,7 +26137,7 @@ define('controller/ambient_sound_controller',[
                     self._currentAmbient.setVolume(0);
                     this.fading = false;
                     self.stopListening(this._currentAmbient,"audio:ended");
-                    self.playNext();
+                    // self.playNext();
                 });
             } else {
                 if (previousPlayer) {
@@ -26146,14 +26147,14 @@ define('controller/ambient_sound_controller',[
                     });
                 }
 
-                this.playNext();
+                // this.playNext();
             }
         },
 
         playNext:function () {
             if (!SoundModel.muted && !SoundModel.ambientMuted) {
-                this._currentAmbient.reset();
-                this._currentAmbient.fadeIn();
+                this._currentAmbient.pause();
+                this._currentAmbient.pause();
                 this._triggerNext = false;
             }
         },
@@ -26234,7 +26235,7 @@ define('controller/ambient_sound_controller',[
         onAmbientUnmute:function () {
             // console.log('unmute accepted...');
             //SoundModel.unMuteAmbient();
-            this.ambientOn();
+            this.ambientOff();
         },
 
         onAmbientPause:function () {
@@ -26246,7 +26247,7 @@ define('controller/ambient_sound_controller',[
         onAmbientResume:function () {
 
             // console.log('resume accepted...');
-            this.ambientOn();
+            this.ambientOff();
         },
 
         ambientOn:function () {
@@ -26258,11 +26259,11 @@ define('controller/ambient_sound_controller',[
             //console.log("on");
             if (window.Worker) {
 
-                this._currentAmbient.fadeIn();
+                this._currentAmbient.pause();
             }
             else {
 
-                this._currentAmbient.play();
+                this._currentAmbient.pause();
             }
         },
 
@@ -127543,7 +127544,7 @@ define('view/modules/resize/resize_view',[
 
                 TweenMax.killTweensOf(this);
                 this.progressSound = 1;
-                this.updateSound();
+                this.killSound();
                 TweenMax.to(this,4,{progressSound:0, delay:1, ease:'Sine.easeInOut', onUpdate:this.updateSound});
             }else{
                 if(this.isAttached){
@@ -127558,120 +127559,120 @@ define('view/modules/resize/resize_view',[
         },
 
         draw:function(width, height){
-            var deltaTop = 0;
-            var ratio = height / 950;
-            if(ratio > 1){
-                ratio = 1;
-                deltaTop = height - 950;
-            }
-            this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
-            var sliceResizedWidth = this.canvas.width / this.sliceNumber;
-            this.ctx.beginPath();
-            this.ctx.rect(0,0,this.canvas.width,this.canvas.height);
-            this.ctx.fillStyle = "black";
-            this.ctx.fill();
-            this.ctx.closePath();
-            this.drawLegs(ratio, deltaTop);
-            this.drawBody(ratio, deltaTop);
-            this.drawFace(ratio, deltaTop);
+            // var deltaTop = 0;
+            // var ratio = height / 950;
+            // if(ratio > 1){
+            //     ratio = 1;
+            //     deltaTop = height - 950;
+            // }
+            // this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+            // var sliceResizedWidth = this.canvas.width / this.sliceNumber;
+            // this.ctx.beginPath();
+            // this.ctx.rect(0,0,this.canvas.width,this.canvas.height);
+            // this.ctx.fillStyle = "black";
+            // this.ctx.fill();
+            // this.ctx.closePath();
+            // this.drawLegs(ratio, deltaTop);
+            // this.drawBody(ratio, deltaTop);
+            // this.drawFace(ratio, deltaTop);
         },
 
         drawLegs:function(ratio, deltaTop){
             //left leg
-            this.ctx.save();
+            // this.ctx.save();
 
-            var angle = (ratio*90 - 90)*3;
-            if(angle>0){angle=0;}
-            if(angle<-90){angle=-90;}
-            this.ctx.translate(this.canvas.width / 2 - 60, deltaTop + ratio * 200 + 370);
-            this.ctx.rotate(-angle*Math.PI/180);
-            this.ctx.drawImage(this.legLeftImg[this.keyIndex], -150/2, 0);
-            this.ctx.restore();
-            //left foot
-            var LFCenter = [this.canvas.width / 2 - 60, deltaTop + ratio * 200 + 370];
-            var LFRadius = 290;
-            var LFAngle = (-angle+90)*Math.PI/180;
-            var LFX = Math.cos(LFAngle) * LFRadius + LFCenter[0];
-            var LFY = Math.sin(LFAngle) * LFRadius + LFCenter[1];
-            this.ctx.save();
-            this.ctx.translate(LFX, LFY);
-            this.ctx.rotate(LFAngle-Math.PI/2);
-            this.ctx.drawImage(this.footLeftImg, -76, -20);
-            this.ctx.restore();
+            // var angle = (ratio*90 - 90)*3;
+            // if(angle>0){angle=0;}
+            // if(angle<-90){angle=-90;}
+            // this.ctx.translate(this.canvas.width / 2 - 60, deltaTop + ratio * 200 + 370);
+            // this.ctx.rotate(-angle*Math.PI/180);
+            // this.ctx.drawImage(this.legLeftImg[this.keyIndex], -150/2, 0);
+            // this.ctx.restore();
+            // //left foot
+            // var LFCenter = [this.canvas.width / 2 - 60, deltaTop + ratio * 200 + 370];
+            // var LFRadius = 290;
+            // var LFAngle = (-angle+90)*Math.PI/180;
+            // var LFX = Math.cos(LFAngle) * LFRadius + LFCenter[0];
+            // var LFY = Math.sin(LFAngle) * LFRadius + LFCenter[1];
+            // this.ctx.save();
+            // this.ctx.translate(LFX, LFY);
+            // this.ctx.rotate(LFAngle-Math.PI/2);
+            // this.ctx.drawImage(this.footLeftImg, -76, -20);
+            // this.ctx.restore();
 
-            //right leg
-            this.ctx.save();
-            this.ctx.translate(this.canvas.width / 2 + 70, deltaTop + ratio * 200 + 370);
-            this.ctx.rotate(angle*Math.PI/180);
-            this.ctx.drawImage(this.legRightImg, -150/2, 0);
-            this.ctx.restore();
-            //right foot
-            var RFCenter = [this.canvas.width / 2 + 70, deltaTop + ratio * 200 + 370];
-            var RFRadius = 290;
-            var RFAngle = (angle+90)*Math.PI/180;
-            var RFX = Math.cos(RFAngle) * RFRadius + RFCenter[0];
-            var RFY = Math.sin(RFAngle) * RFRadius + RFCenter[1];
+            // //right leg
+            // this.ctx.save();
+            // this.ctx.translate(this.canvas.width / 2 + 70, deltaTop + ratio * 200 + 370);
+            // this.ctx.rotate(angle*Math.PI/180);
+            // this.ctx.drawImage(this.legRightImg, -150/2, 0);
+            // this.ctx.restore();
+            // //right foot
+            // var RFCenter = [this.canvas.width / 2 + 70, deltaTop + ratio * 200 + 370];
+            // var RFRadius = 290;
+            // var RFAngle = (angle+90)*Math.PI/180;
+            // var RFX = Math.cos(RFAngle) * RFRadius + RFCenter[0];
+            // var RFY = Math.sin(RFAngle) * RFRadius + RFCenter[1];
 
-            this.ctx.save();
-            this.ctx.translate(RFX, RFY);
-            this.ctx.rotate(RFAngle-Math.PI/2);
-            this.ctx.drawImage(this.footRightImg, -45, -20);
-            this.ctx.restore();
+            // this.ctx.save();
+            // this.ctx.translate(RFX, RFY);
+            // this.ctx.rotate(RFAngle-Math.PI/2);
+            // this.ctx.drawImage(this.footRightImg, -45, -20);
+            // this.ctx.restore();
         },
 
         drawBody:function(ratio, deltaTop){
-            var deltaLeft = 100;
-            var dletaRight = 174;
-            var spaceSlice = this.canvas.width - deltaLeft - dletaRight;
-            if(spaceSlice < 80){
-                spaceSlice = 80;
-            }
-            var sliceResizedWidth = spaceSlice / this.sliceNumber;
-            var offsetX = (this.canvas.width - (deltaLeft + dletaRight + spaceSlice)) * 0.5;
-            if(offsetX > 0){
-                offsetX = 0;
-            }
-            this.ctx.drawImage(this.bodyImg, (this.canvas.width - 300) / 2, deltaTop + ratio * 200);
-            for (var i = 0; i < this.sliceNumber; i++){
-                var img = this.sliceImg0;
-                var bar = this.sliceImg1;
-                if(i % 2 === 0){
-                    img = this.sliceImg2;
-                    bar = this.sliceImg3;
-                }
-                this.ctx.drawImage(
-                    img,
-                    0,
-                    0,
-                    this.sliceWidth,
-                    this.sliceHeight,
-                    i * sliceResizedWidth + deltaLeft + offsetX,
-                    deltaTop + ratio * 300,
-                    sliceResizedWidth,
-                    this.sliceHeight
-                );
-                this.ctx.drawImage(
-                    bar,
-                    i * sliceResizedWidth + deltaLeft + offsetX - 3,
-                    -3 + (i%2) * 18  + deltaTop + ratio * 300
-                );
-            }
+            // var deltaLeft = 100;
+            // var dletaRight = 174;
+            // var spaceSlice = this.canvas.width - deltaLeft - dletaRight;
+            // if(spaceSlice < 80){
+            //     spaceSlice = 80;
+            // }
+            // var sliceResizedWidth = spaceSlice / this.sliceNumber;
+            // var offsetX = (this.canvas.width - (deltaLeft + dletaRight + spaceSlice)) * 0.5;
+            // if(offsetX > 0){
+            //     offsetX = 0;
+            // }
+            // this.ctx.drawImage(this.bodyImg, (this.canvas.width - 300) / 2, deltaTop + ratio * 200);
+            // for (var i = 0; i < this.sliceNumber; i++){
+            //     var img = this.sliceImg0;
+            //     var bar = this.sliceImg1;
+            //     if(i % 2 === 0){
+            //         img = this.sliceImg2;
+            //         bar = this.sliceImg3;
+            //     }
+            //     this.ctx.drawImage(
+            //         img,
+            //         0,
+            //         0,
+            //         this.sliceWidth,
+            //         this.sliceHeight,
+            //         i * sliceResizedWidth + deltaLeft + offsetX,
+            //         deltaTop + ratio * 300,
+            //         sliceResizedWidth,
+            //         this.sliceHeight
+            //     );
+            //     this.ctx.drawImage(
+            //         bar,
+            //         i * sliceResizedWidth + deltaLeft + offsetX - 3,
+            //         -3 + (i%2) * 18  + deltaTop + ratio * 300
+            //     );
+            // }
 
-            this.ctx.drawImage(this.leftHand[this.keyIndex], offsetX, deltaTop + ratio * 300 - 5);
-            this.ctx.drawImage(this.rightHand[this.keyIndex], offsetX + deltaLeft + spaceSlice , deltaTop + ratio * 300 - 5);
+            // this.ctx.drawImage(this.leftHand[this.keyIndex], offsetX, deltaTop + ratio * 300 - 5);
+            // this.ctx.drawImage(this.rightHand[this.keyIndex], offsetX + deltaLeft + spaceSlice , deltaTop + ratio * 300 - 5);
         },
 
         drawFace:function(ratio, deltaTop){
-            var sliceResizedWidth = this.canvas.width / this.sliceNumber;
-            this.ctx.save();
-            this.ctx.translate(this.canvas.width / 2, deltaTop + ratio * 200);
-            //this.ctx.globalAlpha = this.keyIndex%2;
-            var angle = (ratio*90 - 90) * 2;
-            if(angle>0){angle=0;}
-            if(angle<-90){angle=-90;}
-            this.ctx.rotate(angle*Math.PI/180);
-            this.ctx.drawImage(this.faceImg[this.keyIndex], -this.faceW/2, -this.faceH + 80);
-            this.ctx.restore();
+            // var sliceResizedWidth = this.canvas.width / this.sliceNumber;
+            // this.ctx.save();
+            // this.ctx.translate(this.canvas.width / 2, deltaTop + ratio * 200);
+            // //this.ctx.globalAlpha = this.keyIndex%2;
+            // var angle = (ratio*90 - 90) * 2;
+            // if(angle>0){angle=0;}
+            // if(angle<-90){angle=-90;}
+            // this.ctx.rotate(angle*Math.PI/180);
+            // this.ctx.drawImage(this.faceImg[this.keyIndex], -this.faceW/2, -this.faceH + 80);
+            // this.ctx.restore();
         },
 
         update: function() {

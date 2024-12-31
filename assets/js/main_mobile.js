@@ -98320,266 +98320,266 @@ define('view/mobile/modules/shell/shell_view',[
     });
 });
 
-define('view/mobile/modules/rotate_view',[
+// define('view/mobile/modules/rotate_view',[
 
-    'jquery',
-    'underscore',
-    'model/loader_collection',
-    'view/common/base_view',
-    'util/anim_frame',
-    'util/resn/math'
+//     'jquery',
+//     'underscore',
+//     'model/loader_collection',
+//     'view/common/base_view',
+//     'util/anim_frame',
+//     'util/resn/math'
 
-], function(
+// ], function(
 
-    $,
-    _,
-    LoaderCollection,
-    BaseView,
-    AnimFrame,
-    MathUtils
+//     $,
+//     _,
+//     LoaderCollection,
+//     BaseView,
+//     AnimFrame,
+//     MathUtils
 
-) {
+// ) {
 
-    'use strict';
+//     'use strict';
 
-    return BaseView.extend({
+//     return BaseView.extend({
 
-        isLandscape: false,
+//         isLandscape: false,
         
-        tHeadAngle: 0,
-        headAngle: 0,
+//         tHeadAngle: 0,
+//         headAngle: 0,
 
-        initialize: function() {
+//         initialize: function() {
 
-            _.bindAll(this,
-                'onDeviceOrientation',
-                'onTouches',
-                'loop'
-            );
+//             _.bindAll(this,
+//                 'onDeviceOrientation',
+//                 'onTouches',
+//                 'loop'
+//             );
 
-            this.$window = $(window);
+//             this.$window = $(window);
 
-            this.cnv = document.createElement('canvas');
-            this.ctx = this.cnv.getContext('2d');
+//             this.cnv = document.createElement('canvas');
+//             this.ctx = this.cnv.getContext('2d');
 
-            this.$cnv = $(this.cnv);
+//             this.$cnv = $(this.cnv);
 
-            this.setup();
-        },
+//             this.setup();
+//         },
 
-        setup: function() {
+//         setup: function() {
 
-            this.imgFaces = [
-                LoaderCollection.getResult('ROTATE_FACE_3'),
-                LoaderCollection.getResult('ROTATE_FACE_1'),
-                LoaderCollection.getResult('ROTATE_FACE_4'),
-                LoaderCollection.getResult('ROTATE_FACE_0'),
-                LoaderCollection.getResult('ROTATE_FACE_2')
-            ];
+//             this.imgFaces = [
+//                 LoaderCollection.getResult('ROTATE_FACE_3'),
+//                 LoaderCollection.getResult('ROTATE_FACE_1'),
+//                 LoaderCollection.getResult('ROTATE_FACE_4'),
+//                 LoaderCollection.getResult('ROTATE_FACE_0'),
+//                 LoaderCollection.getResult('ROTATE_FACE_2')
+//             ];
             
-            this.imgBody = LoaderCollection.getResult('ROTATE_BODY');
-            this.imgLegs = LoaderCollection.getResult('ROTATE_LEGS');
+//             this.imgBody = LoaderCollection.getResult('ROTATE_BODY');
+//             this.imgLegs = LoaderCollection.getResult('ROTATE_LEGS');
 
-            this.imgLeftArm = LoaderCollection.getResult('ROTATE_L_ARM');
-            this.imgRightArm = LoaderCollection.getResult('ROTATE_R_ARM');
-        },
+//             this.imgLeftArm = LoaderCollection.getResult('ROTATE_L_ARM');
+//             this.imgRightArm = LoaderCollection.getResult('ROTATE_R_ARM');
+//         },
 
-        handleLandscape: function() {
+//         handleLandscape: function() {
 
-            if (this.isLandscape) {
-                return;
-            }
+//             if (this.isLandscape) {
+//                 return;
+//             }
 
-            this.isLandscape = true;
+//             this.isLandscape = true;
 
-            this.$el.append(this.cnv);
+//             this.$el.append(this.cnv);
 
-            this.$window.on('touchstart touchend touchmove tap', this.onTouches);
-            this.$window[0].addEventListener('deviceorientation', this.onDeviceOrientation);
+//             this.$window.on('touchstart touchend touchmove tap', this.onTouches);
+//             this.$window[0].addEventListener('deviceorientation', this.onDeviceOrientation);
 
-            this.tAngle = 0;
-            this.angle = 0;
+//             this.tAngle = 0;
+//             this.angle = 0;
             
-            this.keyIndex = 0;
-            this.totalKeys = 5;
+//             this.keyIndex = 0;
+//             this.totalKeys = 5;
 
-            AnimFrame.on('anim_frame', this.loop);
-        },
+//             AnimFrame.on('anim_frame', this.loop);
+//         },
 
-        handlePortrait: function() {
+//         handlePortrait: function() {
 
-            if (!this.isLandscape) {
-                return;
-            }
+//             if (!this.isLandscape) {
+//                 return;
+//             }
 
-            this.isLandscape = false;
+//             this.isLandscape = false;
 
-            this.$cnv.detach();
+//             this.$cnv.detach();
 
-            this.$window.off('touchstart touchend touchmove tap', this.onTouches);
-            this.$window[0].removeEventListener('deviceorientation', this.onDeviceOrientation);
+//             this.$window.off('touchstart touchend touchmove tap', this.onTouches);
+//             this.$window[0].removeEventListener('deviceorientation', this.onDeviceOrientation);
 
-            AnimFrame.off('anim_frame', this.loop);
-        },
+//             AnimFrame.off('anim_frame', this.loop);
+//         },
 
-        // draw ---------------------------------------------------------------
+//         // draw ---------------------------------------------------------------
 
-        draw: function() {
+//         draw: function() {
 
-            var w = this.w;
-            var h = this.h;
+//             var w = this.w;
+//             var h = this.h;
 
-            var r = h / 750;
+//             var r = h / 750;
 
-            this.ctx.clearRect(0, 0, w, h);
-            this.ctx.fillStyle = '#000';
-            this.ctx.fillRect(0, 0, w, h);
+//             this.ctx.clearRect(0, 0, w, h);
+//             this.ctx.fillStyle = '#000';
+//             this.ctx.fillRect(0, 0, w, h);
 
-            this.drawArms(r);
-            this.drawLegs(r);
-            this.drawBody(r);
-            this.drawFace(r);
-        },
+//             this.drawArms(r);
+//             this.drawLegs(r);
+//             this.drawBody(r);
+//             this.drawFace(r);
+//         },
 
-        drawFace: function(r) {
+//         drawFace: function(r) {
 
-            var imgBaseW = this.imgFaces[0].naturalWidth;
-            var imgBaseH = this.imgFaces[0].naturalHeight;
+//             var imgBaseW = this.imgFaces[0].naturalWidth;
+//             var imgBaseH = this.imgFaces[0].naturalHeight;
 
-            var imgW = imgBaseW * r;
-            var imgH = imgBaseH * r;
+//             var imgW = imgBaseW * r;
+//             var imgH = imgBaseH * r;
 
-            var angle = -90 + this.angle;
+//             var angle = -90 + this.angle;
 
-            this.ctx.save();
-            this.ctx.translate(this.w * 0.5, 150 * r);
+//             this.ctx.save();
+//             this.ctx.translate(this.w * 0.5, 150 * r);
 
-            this.ctx.rotate(angle * Math.PI / 180);
-            this.ctx.drawImage(this.imgFaces[this.keyIndex],
-                0, 0, imgBaseW, imgBaseH, 
-                -imgW * 0.5 - 15 * r, -imgH * 0.5 - 80 * r, imgW, imgH
-            );
+//             this.ctx.rotate(angle * Math.PI / 180);
+//             this.ctx.drawImage(this.imgFaces[this.keyIndex],
+//                 0, 0, imgBaseW, imgBaseH, 
+//                 -imgW * 0.5 - 15 * r, -imgH * 0.5 - 80 * r, imgW, imgH
+//             );
 
-            this.ctx.restore();
-        },
+//             this.ctx.restore();
+//         },
 
-        drawLegs: function(r) {
+//         drawLegs: function(r) {
 
-            var imgBaseW = this.imgLegs.naturalWidth;
-            var imgBaseH = this.imgLegs.naturalHeight;
+//             var imgBaseW = this.imgLegs.naturalWidth;
+//             var imgBaseH = this.imgLegs.naturalHeight;
 
-            var imgW = imgBaseW * r;
-            var imgH = imgBaseH * r;
+//             var imgW = imgBaseW * r;
+//             var imgH = imgBaseH * r;
 
-            this.ctx.save();
-            this.ctx.translate(this.w * 0.5, r * 450);
-            // this.ctx.rotate(-7 * Math.PI / 180);
-            this.ctx.drawImage(this.imgLegs,
-                0, 0, imgBaseW, imgBaseH, 
-                -imgW * 0.5, 0, imgW, imgH
-            );
-            this.ctx.restore();
-        },
+//             this.ctx.save();
+//             this.ctx.translate(this.w * 0.5, r * 450);
+//             // this.ctx.rotate(-7 * Math.PI / 180);
+//             this.ctx.drawImage(this.imgLegs,
+//                 0, 0, imgBaseW, imgBaseH, 
+//                 -imgW * 0.5, 0, imgW, imgH
+//             );
+//             this.ctx.restore();
+//         },
 
-        drawBody: function(r) {
+//         drawBody: function(r) {
 
-            var imgBaseW = this.imgBody.naturalWidth;
-            var imgBaseH = this.imgBody.naturalHeight;
+//             var imgBaseW = this.imgBody.naturalWidth;
+//             var imgBaseH = this.imgBody.naturalHeight;
 
-            var imgW = imgBaseW * r;
-            var imgH = imgBaseH * r;
+//             var imgW = imgBaseW * r;
+//             var imgH = imgBaseH * r;
 
-            this.ctx.save();
-            this.ctx.translate(this.w * 0.5, 0);
-            this.ctx.drawImage(this.imgBody,
-                0, 0, imgBaseW, imgBaseH, 
-                -imgW * 0.5, 120 * r, imgW, imgH
-            );
-            this.ctx.restore();
-        },
+//             this.ctx.save();
+//             this.ctx.translate(this.w * 0.5, 0);
+//             this.ctx.drawImage(this.imgBody,
+//                 0, 0, imgBaseW, imgBaseH, 
+//                 -imgW * 0.5, 120 * r, imgW, imgH
+//             );
+//             this.ctx.restore();
+//         },
 
-        drawArms: function(r) {
+//         drawArms: function(r) {
 
-            var imgBaseW = this.imgLeftArm.naturalWidth;
-            var imgBaseH = this.imgLeftArm.naturalHeight;
+//             var imgBaseW = this.imgLeftArm.naturalWidth;
+//             var imgBaseH = this.imgLeftArm.naturalHeight;
 
-            var imgW = imgBaseW * r;
-            var imgH = imgBaseH * r;
+//             var imgW = imgBaseW * r;
+//             var imgH = imgBaseH * r;
 
-            this.ctx.save();
-            this.ctx.translate(this.w * 0.5, 0);
-            this.ctx.drawImage(this.imgLeftArm,
-                0, 0, imgBaseW, imgBaseH, 
-                -imgW - (120 * r), 0, imgW, imgH
-            );
-            this.ctx.restore();
+//             this.ctx.save();
+//             this.ctx.translate(this.w * 0.5, 0);
+//             this.ctx.drawImage(this.imgLeftArm,
+//                 0, 0, imgBaseW, imgBaseH, 
+//                 -imgW - (120 * r), 0, imgW, imgH
+//             );
+//             this.ctx.restore();
 
-            imgBaseW = this.imgRightArm.naturalWidth;
-            imgBaseH = this.imgRightArm.naturalHeight;
+//             imgBaseW = this.imgRightArm.naturalWidth;
+//             imgBaseH = this.imgRightArm.naturalHeight;
 
-            imgW = imgBaseW * r;
-            imgH = imgBaseH * r;
+//             imgW = imgBaseW * r;
+//             imgH = imgBaseH * r;
 
-            this.ctx.save();
-            this.ctx.translate(this.w * 0.5, 0);
-            this.ctx.drawImage(this.imgRightArm,
-                0, 0, imgBaseW, imgBaseH, (140 * r), 0, imgW, imgH
-            );
-            this.ctx.restore();
-        },
+//             this.ctx.save();
+//             this.ctx.translate(this.w * 0.5, 0);
+//             this.ctx.drawImage(this.imgRightArm,
+//                 0, 0, imgBaseW, imgBaseH, (140 * r), 0, imgW, imgH
+//             );
+//             this.ctx.restore();
+//         },
 
-        loop: function() {
+//         loop: function() {
 
-            if (this.isLandscape) {
+//             if (this.isLandscape) {
                 
-                this.angle += (this.tAngle - this.angle) * 0.2;
+//                 this.angle += (this.tAngle - this.angle) * 0.2;
 
-                this.keyIndex = Math.floor(this.angle / (90 / this.totalKeys));
+//                 this.keyIndex = Math.floor(this.angle / (90 / this.totalKeys));
 
-                this.draw();
-            }
-        },
+//                 this.draw();
+//             }
+//         },
 
-        // handlers ---------------------------------------------------------------
+//         // handlers ---------------------------------------------------------------
 
-        onDeviceOrientation: function(e) {
+//         onDeviceOrientation: function(e) {
 
-            var maxAngle = 90;
+//             var maxAngle = 90;
             
-            var beta = e.beta;
-            var betaNormalized = MathUtils.clamp(beta / 42, 0, 1);
+//             var beta = e.beta;
+//             var betaNormalized = MathUtils.clamp(beta / 42, 0, 1);
 
-            this.tAngle = betaNormalized * maxAngle;
-        },
+//             this.tAngle = betaNormalized * maxAngle;
+//         },
 
-        onTouches: function(e) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-        },
+//         onTouches: function(e) {
+//             e.preventDefault();
+//             e.stopImmediatePropagation();
+//         },
 
-        onResize: function(w, h) {
+//         onResize: function(w, h) {
 
-            var pixelRatio = this.pixelRatio = window.devicePixelRatio;
+//             var pixelRatio = this.pixelRatio = window.devicePixelRatio;
 
-            this.w = w;
-            this.h = h;
+//             this.w = w;
+//             this.h = h;
 
-            this.cnv.width = this.w * pixelRatio;
-            this.cnv.height = this.h * pixelRatio;
+//             this.cnv.width = this.w * pixelRatio;
+//             this.cnv.height = this.h * pixelRatio;
 
-            this.ctx.scale(pixelRatio, pixelRatio);
+//             this.ctx.scale(pixelRatio, pixelRatio);
 
-            this.$cnv.css({ 'position': 'absolute', 'left': 0, 'top': 0, 'width': w, 'height': h, 'z-index': 100 });
+//             this.$cnv.css({ 'position': 'absolute', 'left': 0, 'top': 0, 'width': w, 'height': h, 'z-index': 100 });
 
-            var isLandscape = this.w > this.h;
-            if (isLandscape) {
-                this.handleLandscape();
-            } else {
-                this.handlePortrait();
-            }
-        }
-    });
-});
+//             var isLandscape = this.w > this.h;
+//             if (isLandscape) {
+//                 this.handleLandscape();
+//             } else {
+//                 this.handlePortrait();
+//             }
+//         }
+//     });
+// });
 define('view/app_mobile_view',[
 
     'backbone',
@@ -98604,7 +98604,7 @@ define('view/app_mobile_view',[
     'view/mobile/modules/work/mobile_work_project_view',
     'view/mobile/modules/background/background_view',
     'view/mobile/modules/shell/shell_view',
-    'view/mobile/modules/rotate_view'
+    // 'view/mobile/modules/rotate_view'
 
 ], function(
 
@@ -98630,7 +98630,7 @@ define('view/app_mobile_view',[
     WorkProjectView,
     BackgroundView,
     ShellView,
-    RotateView
+    // RotateView
 
 ) {
     'use strict';
@@ -98738,9 +98738,9 @@ define('view/app_mobile_view',[
 
         createRotate: function() {
             
-            this.rotate = new RotateView({
-                'el': $('.js-rotate')
-            });
+            // this.rotate = new RotateView({
+            //     'el': $('.js-rotate')
+            // });
         },
 
         webAudioFix: function() {

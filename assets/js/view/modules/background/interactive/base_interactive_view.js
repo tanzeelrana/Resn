@@ -1,133 +1,133 @@
-define([
+// define([
 
-    'jquery',
-    'underscore',
-    'backbone',
-    'config',
-    'TweenMax',
-    'util/anim_frame',
-    'route/router',
-    'events/app_events',
-    'model/app_model',
-    'view/common/base_view'
+//     'jquery',
+//     'underscore',
+//     'backbone',
+//     'config',
+//     'TweenMax',
+//     'util/anim_frame',
+//     'route/router',
+//     'events/app_events',
+//     'model/app_model',
+//     'view/common/base_view'
 
-], function (
+// ], function (
 
-    $,
-    _,
-    Backbone,
-    Config,
-    TweenMax,
-    AnimFrame,
-    Router,
-    AppEvents,
-    AppModel,
-    BaseView
+//     $,
+//     _,
+//     Backbone,
+//     Config,
+//     TweenMax,
+//     AnimFrame,
+//     Router,
+//     AppEvents,
+//     AppModel,
+//     BaseView
 
-) { 'use strict';
+// ) { 'use strict';
 
-    return BaseView.extend({
+//     return BaseView.extend({
 
-        // SETUP ---------------------------------------------------------------
+//         // SETUP ---------------------------------------------------------------
 
-        isActivated: false,
-        animFrameRunning: false,
+//         isActivated: false,
+//         animFrameRunning: false,
 
-        initialMx: 0,
-        initialMy: 0,
+//         initialMx: 0,
+//         initialMy: 0,
 
-        initialize: function(options) {
+//         initialize: function(options) {
 
-            // _.bindAll(this, '');
-            this.setup();
-        },
+//             // _.bindAll(this, '');
+//             this.setup();
+//         },
 
-        setup: function () {
+//         setup: function () {
 
-        },
+//         },
 
-        startAnimFrame: function () {
+//         startAnimFrame: function () {
 
-            if ( !this.animFrameRunning ) {
-                AnimFrame.on('anim_frame', this.onAnimFrame, this);
-                this.animFrameRunning = true;
-            }
-        },
+//             if ( !this.animFrameRunning ) {
+//                 AnimFrame.on('anim_frame', this.onAnimFrame, this);
+//                 this.animFrameRunning = true;
+//             }
+//         },
 
-        stopAnimFrame: function () {
+//         stopAnimFrame: function () {
 
-            AnimFrame.off('anim_frame', this.onAnimFrame, this);
-            this.animFrameRunning = false;
-        },
+//             AnimFrame.off('anim_frame', this.onAnimFrame, this);
+//             this.animFrameRunning = false;
+//         },
 
-        show: function () {
+//         show: function () {
 
-            TweenMax.set(this.$el,{'opacity':0, scaleX:0.9, scaleY:0.9, scaleZ:0.9 });
+//             TweenMax.set(this.$el,{'opacity':0, scaleX:0.9, scaleY:0.9, scaleZ:0.9 });
 
-            TweenMax.to(this.$el, 0.48,{ scaleX:1, scaleY:1, scaleZ:1, delay:0, force3D: true, ease:'Expo.easeOut'});
-            TweenMax.to(this.$el, 0.58,{'opacity':1, delay:0, ease:'Sine.easeInOut'});
+//             TweenMax.to(this.$el, 0.48,{ scaleX:1, scaleY:1, scaleZ:1, delay:0, force3D: true, ease:'Expo.easeOut'});
+//             TweenMax.to(this.$el, 0.58,{'opacity':1, delay:0, ease:'Sine.easeInOut'});
 
-            this.startAnimFrame();
-        },
+//             this.startAnimFrame();
+//         },
 
-        hide: function () {
+//         hide: function () {
 
-            this.stopAnimFrame();
-        },
+//             this.stopAnimFrame();
+//         },
 
-        activate: function () {
+//         activate: function () {
 
-            if (this.isActivated) {
-                return;
-            }
+//             if (this.isActivated) {
+//                 return;
+//             }
 
-            this.isActivated = true;
-            this.onActivate();
-        },
+//             this.isActivated = true;
+//             this.onActivate();
+//         },
 
-        onActivate: function () {},
+//         onActivate: function () {},
 
-        deactivate: function () {
+//         deactivate: function () {
 
-            if (!this.isActivated) {
-                return;
-            }
+//             if (!this.isActivated) {
+//                 return;
+//             }
 
-            this.isActivated = false;
-            this.onDeactivate();
-        },
+//             this.isActivated = false;
+//             this.onDeactivate();
+//         },
 
-        onDeactivate: function () {},
+//         onDeactivate: function () {},
 
-        onResize: function(width, height) {
-        },
+//         onResize: function(width, height) {
+//         },
 
-        onAnimFrame: function () {
-        },
+//         onAnimFrame: function () {
+//         },
 
-        addEvents: function () {
-        },
+//         addEvents: function () {
+//         },
 
-        removeEvents: function () {
-        },
+//         removeEvents: function () {
+//         },
 
-        setMousePos: function(pos) {
+//         setMousePos: function(pos) {
 
-            pos = pos || [0, 0];
+//             pos = pos || [0, 0];
 
-            this.initialMx = pos[0];
-            this.initialMy = pos[1];
-        },
+//             this.initialMx = pos[0];
+//             this.initialMy = pos[1];
+//         },
 
-        destroy: function () {
+//         destroy: function () {
 
-            this.stopAnimFrame();
-            this.removeEvents();
-            if ( this.$node ) {
-                this.$node.remove();
-                this.$node[0].innerHTML = "";
-                this.$node = null;
-            }
-        }
-    });
-});
+//             this.stopAnimFrame();
+//             this.removeEvents();
+//             if ( this.$node ) {
+//                 this.$node.remove();
+//                 this.$node[0].innerHTML = "";
+//                 this.$node = null;
+//             }
+//         }
+//     });
+// });

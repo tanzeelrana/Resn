@@ -1,107 +1,107 @@
-define([
+// define([
 
-    'underscore',
-    'jquery',
-    'three'
+//     'underscore',
+//     'jquery',
+//     'three'
 
-], function(
+// ], function(
 
-    _,
-    $,
-    THREE
+//     _,
+//     $,
+//     THREE
 
-) { 'use strict';
+// ) { 'use strict';
 
-    return {
-
-
-        handleGeo    : null,
-        geometry     : null,
-        material     : null,
-        mesh         : null,
-
-        origin       : null,
-
-        actors       : null,
-
-        width        : 0,
-        height       : 0,
-        windowRatio  : 0,
-        mouseVectors : null,
-
-        rWidth       : 0,
-        rHeight      : 0,
-
-        CAMERA_FOV   : 45,  // To be updated if camera changes
-        CAMERA_Z     : 150, // To be updated if camera changes
-        MALLET_Z     : 100,
+//     return {
 
 
-        init: function (options) {
+//         handleGeo    : null,
+//         geometry     : null,
+//         material     : null,
+//         mesh         : null,
 
-            this.mouseVectors = options.mouseVectors;
+//         origin       : null,
 
-            this.setup(options);
-        },
+//         actors       : null,
 
-        setup: function () {
+//         width        : 0,
+//         height       : 0,
+//         windowRatio  : 0,
+//         mouseVectors : null,
 
-            this.actors = [];
+//         rWidth       : 0,
+//         rHeight      : 0,
 
-            this.origin = new THREE.Object3D();
-            this.actors.push( this.origin );
+//         CAMERA_FOV   : 45,  // To be updated if camera changes
+//         CAMERA_Z     : 150, // To be updated if camera changes
+//         MALLET_Z     : 100,
 
-            this.geometry = new THREE.SphereGeometry( 2, 24, 24 );
-            this.material = new THREE.MeshNormalMaterial({ wireframe: false });
 
-            this.mesh = new THREE.Mesh( this.geometry, this.material );
+//         init: function (options) {
 
-            this.origin.add( this.mesh );
-        },
+//             this.mouseVectors = options.mouseVectors;
 
-        destroy: function () {
+//             this.setup(options);
+//         },
 
-            this.origin = null;
-            this.mesh = null;
+//         setup: function () {
 
-            this.geometry.dispose();
-            this.material.dispose();
-        },
+//             this.actors = [];
 
-        resize: function ( width, height, windowRatio ) {
+//             this.origin = new THREE.Object3D();
+//             this.actors.push( this.origin );
 
-            this.width = width;
-            this.height = height;
-            this.windowRatio = windowRatio;
+//             this.geometry = new THREE.SphereGeometry( 2, 24, 24 );
+//             this.material = new THREE.MeshNormalMaterial({ wireframe: false });
 
-            this.calcRenderedDimensions();
-        },
+//             this.mesh = new THREE.Mesh( this.geometry, this.material );
 
-        calcRenderedDimensions: function () {
+//             this.origin.add( this.mesh );
+//         },
 
-            var vFov = this.CAMERA_FOV * Math.PI / 180;
-            this.rHeight = 2 * Math.tan( vFov / 2 ) * ( this.CAMERA_Z - this.MALLET_Z );
-            this.rWidth = this.rHeight * this.windowRatio;
-        },
+//         destroy: function () {
 
-        draw: function () {
+//             this.origin = null;
+//             this.mesh = null;
 
-            var malletX = this.mouseVectors.ratioPosSmooth.x * ( this.rWidth * 0.5 );
-            var malletY = this.mouseVectors.ratioPosSmooth.y * ( this.rHeight * 0.5 );
+//             this.geometry.dispose();
+//             this.material.dispose();
+//         },
 
-            this.origin.position.set(malletX, malletY, this.MALLET_Z);
-        },
+//         resize: function ( width, height, windowRatio ) {
 
-        getActors: function () {
+//             this.width = width;
+//             this.height = height;
+//             this.windowRatio = windowRatio;
 
-            return this.actors;
-        },
+//             this.calcRenderedDimensions();
+//         },
 
-        degToRad: function (degrees) {
+//         calcRenderedDimensions: function () {
 
-            return degrees * ( Math.PI / 180 );
-        }
+//             var vFov = this.CAMERA_FOV * Math.PI / 180;
+//             this.rHeight = 2 * Math.tan( vFov / 2 ) * ( this.CAMERA_Z - this.MALLET_Z );
+//             this.rWidth = this.rHeight * this.windowRatio;
+//         },
 
-    };
+//         draw: function () {
 
-});
+//             var malletX = this.mouseVectors.ratioPosSmooth.x * ( this.rWidth * 0.5 );
+//             var malletY = this.mouseVectors.ratioPosSmooth.y * ( this.rHeight * 0.5 );
+
+//             this.origin.position.set(malletX, malletY, this.MALLET_Z);
+//         },
+
+//         getActors: function () {
+
+//             return this.actors;
+//         },
+
+//         degToRad: function (degrees) {
+
+//             return degrees * ( Math.PI / 180 );
+//         }
+
+//     };
+
+// });

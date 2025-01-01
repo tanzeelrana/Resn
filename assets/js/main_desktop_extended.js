@@ -23166,7 +23166,7 @@ define('events/sound_states',[] , function () {
       // if the sound hasn't been loaded, add it to the event queue
       if (!self._loaded) {
         self.on('play', function() {
-          self.unmute(id);
+          self.mute(id);
         });
 
         return self;
@@ -24017,7 +24017,7 @@ define('model/sound_model',[
 
                         if (restart) {
                             track.sound.pos(0,track.id);
-                            track.sound.play(track.id);
+                            track.sound.stop(track.id);
                         }
 
                         TweenMax.killTweensOf(track.tween);
@@ -24076,22 +24076,22 @@ define('model/sound_model',[
                 clip.sound = sound;
                 clip.interval = null;
                 clip.type = "clip";
-                clip.play = function (id,delay,volume) {
+                // clip.play = function (id,delay,volume) {
 
-                    delay = delay || 0;
-                    volume = volume || 0;
-                    var index = self._sounds.indexOf(clip);
+                //     delay = delay || 0;
+                //     volume = volume || 0;
+                //     var index = self._sounds.indexOf(clip);
 
-                    if (index === -1) {
-                        //only play if deactivated
-                        clearTimeout(clip.interval);
-                        clip.interval = setTimeout(function () {
-                            self.addActiveSound(clip,500);
-                            clip.sound.volume(volume,id);
-                            clip.sound.play(id);
-                        },delay);
-                    }
-                };
+                //     if (index === -1) {
+                //         //only play if deactivated
+                //         clearTimeout(clip.interval);
+                //         // clip.interval = setTimeout(function () {
+                //         //     self.addActiveSound(clip,500);
+                //         //     clip.sound.volume(volume,id);
+                //         //     // clip.sound.play(id);
+                //         // },delay);
+                //     }
+                // };
 
             },
 
@@ -24130,8 +24130,9 @@ define('model/sound_model',[
             addActiveSound:function (sound,duration) {
                 try {
                     sound.startTime = Date.now();
-                    sound.duration = duration || 0;
-                    sound.endTime = sound.startTime + duration;
+                    sound.duration = 0 || 0;
+					console.log("sound.duration-___----", sound.duration);
+                    sound.endTime = 0 + 0;
 
                     this._sounds.push(sound);
                 } catch (e) {
@@ -25079,15 +25080,15 @@ define('controller/sound_controller',[
                 this.listenTo(Backbone,AppEvents.Menu.Out,this.onMenuOut);
             }
 
-            this.listenTo(Backbone,AppEvents.Audio.RegisterAudioSource,this.onRegisterAudioSource);
+            this.listenTo(Backbone,AppEvents.Audio.DestroyAudioSource,this.onDestroyAudioSource);
             this.listenTo(Backbone,AppEvents.Audio.DestroyAudioSource,this.onDestroyAudioSource);
 
-            Backbone.on(AppEvents.Audio.Play,this.onPlay,this);
+            Backbone.on(AppEvents.Audio.Stop,this.onStop,this);
             Backbone.on(AppEvents.Audio.Stop,this.onStop,this);
 
 
             SoundModel.on(AppEvents.Audio.Mute,this.onMute,this);
-            SoundModel.on(AppEvents.Audio.Unmute,this.onUnmute,this);
+            SoundModel.on(AppEvents.Audio.Mute,this.onMute,this);
 
             if (SoundModel.muted) {
                 this.onMute();
@@ -25102,10 +25103,10 @@ define('controller/sound_controller',[
             var self = this;
             setTimeout(function () {
                 var nextRandomClipId = SoundModel.getNextRandomId();
-                if (nextRandomClipId && !this.interactiveVisible && !SoundModel.paused) {
-                    SoundModel.getClipById(nextRandomClipId).sound.volume(0.2,nextRandomClipId);
-                    SoundModel.getClipById(nextRandomClipId).sound.play(nextRandomClipId);
-                }
+                // if (nextRandomClipId && !this.interactiveVisible && !SoundModel.paused) {
+                //     SoundModel.getClipById(nextRandomClipId).sound.volume(0.2,nextRandomClipId);
+                //     SoundModel.getClipById(nextRandomClipId).sound.play(nextRandomClipId);
+                // }
                 self.loadNextRandom();
             },time);
         },
@@ -25174,7 +25175,7 @@ define('controller/sound_controller',[
         },
 
         onRegisterAudioSource:function (e) {
-            SoundModel.addSource(e.target);
+            SoundModel.removeSource(e.target);
         },
 
         onMute:function () {
@@ -25182,7 +25183,7 @@ define('controller/sound_controller',[
         },
 
         onUnmute:function () {
-            Howler.Howler.unmute();
+            Howler.Howler.mute();
         },
 
         onTriggerAccordian:function (e) {
@@ -25218,8 +25219,8 @@ define('controller/sound_controller',[
 
             var self = this;
             setTimeout(function () {
-                track.sound.unmute();
-                track.sound.play(self.currentID);
+                track.sound.mute();
+                track.sound.mute(self.currentID);
                 self.previousID = self.currentID;
             },1);
 
@@ -25274,17 +25275,17 @@ define('controller/sound_controller',[
         },
 
         onGemShowText:function () {
-            SoundModel.getClipById("word_appear").sound.volume(0.1,"word_appear");
-            SoundModel.getClipById("word_appear").sound.play("word_appear");
+            // SoundModel.getClipById("word_appear").sound.volume(0.1,"word_appear");
+            // SoundModel.getClipById("word_appear").sound.play("word_appear");
         },
 
         onShellShowClose:function () {
-                SoundModel.getClipById("resnX").play("resnX",320);
+                // SoundModel.getClipById("resnX").play("resnX",320);
         },
 
         onShellShowButton:function () {
-            SoundModel.getClipById("word_appear").sound.volume(0.05,"word_appear");
-            SoundModel.getClipById("word_appear").sound.play("word_appear");
+            // SoundModel.getClipById("word_appear").sound.volume(0.05,"word_appear");
+            // SoundModel.getClipById("word_appear").sound.play("word_appear");
         },
 
         onOverShellItem:function (e) {
@@ -25395,10 +25396,10 @@ define('controller/sound_controller',[
 
             switch (e.type) {
                 case 'clip':
-                    this.playClip(e);
+                    this.onStopClip(e);
                     break;
                 case 'track' :
-                    this.playTrack(e);
+                    this.onStopClip(e);
                     break;
             }
         },
@@ -25406,10 +25407,10 @@ define('controller/sound_controller',[
         playClip:function (e) {
 
             //only play if not active/monitored
-            var clip = SoundModel.getClipById(e.id);
-            if (!SoundModel.isSoundActive(clip)) {
-                clip.play(e.id,e.delay,e.volume);
-            }
+            // var clip = SoundModel.getClipById(e.id);
+            // if (!SoundModel.isSoundActive(clip)) {
+            //     clip.play(e.id,e.delay,e.volume);
+            // }
         },
 
         playTrack:function (e) {
@@ -25559,7 +25560,7 @@ define('view/modules/common/ambient_player_view',[
 
         play: function() {
             if (!this.playing) {
-                this.playing = true;
+                this.playing = false;
 
                 this.startTime = ctx.currentTime;
 
@@ -25983,7 +25984,7 @@ define('controller/ambient_sound_controller',[
             //todo move to main loader
 
             if (SoundModel.get("loaded")) {
-                this.createPlayers();
+                // this.createPlayers();
             } else {
                 var self = this;
                 this.listenTo(SoundModel,"change:loaded",function () {

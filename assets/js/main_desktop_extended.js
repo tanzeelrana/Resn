@@ -22472,18 +22472,18 @@ define('controller/tracking_controller',[
 	return controller;
 });
 
-define('events/sound_states',[] , function () {
+// define('events/sound_states',[] , function () {
 
-    var soundStates = {
-        MUTE   : "sound:state:mute",
-        UNMUTE : "sound:state:unmute",
-        PAUSE  : "sound:state:pause",
-        RESUME : "sound:state:resume"
-    };
+//     var soundStates = {
+//         MUTE   : "sound:state:mute",
+//         UNMUTE : "sound:state:unmute",
+//         PAUSE  : "sound:state:pause",
+//         RESUME : "sound:state:resume"
+//     };
 
-    return soundStates;
+//     return soundStates;
 
-});
+// });
 /*!
  *  howler.js v1.1.29
  *  howlerjs.com
@@ -23849,7 +23849,7 @@ define('model/sound_model',[
         'TweenMax',
         'config',
         'events/app_events',
-        'events/sound_states',
+        // 'events/sound_states',
         "howler",
         'model/app_model',
         "model/loader_collection",
@@ -23861,7 +23861,7 @@ define('model/sound_model',[
         TweenMax,
         Config,
         AppEvents,
-        SoundStates,
+        // SoundStates,
         Howler,
         AppModel,
         LoaderCollection,
@@ -24362,37 +24362,37 @@ define('model/sound_model',[
                 return this._ambientCollections["default"];
             },
 
-            update:function (state) {
+            // update:function (state) {
 
-                switch (state) {
+            //     switch (state) {
 
-                    case SoundStates.MUTE:
+            //         case SoundStates.MUTE:
 
-                        this.mute();
-                        break;
+            //             this.mute();
+            //             break;
 
-                    case SoundStates.MUTE:
+            //         case SoundStates.MUTE:
 
-                        this.mute();
-                        break;
+            //             this.mute();
+            //             break;
 
-                    case SoundStates.MUTE:
+            //         case SoundStates.MUTE:
 
-					this.mute();
-                        break;
+			// 		this.mute();
+            //             break;
 
-                    case SoundStates.MUTE:
+            //         case SoundStates.MUTE:
 
-                        this.mute();
-                        break;
+            //             this.mute();
+            //             break;
 
-                    default:
-                        console.error('Sound Model didn\'t receive a state in it\'s update()...');
-                        break;
+            //         default:
+            //             console.error('Sound Model didn\'t receive a state in it\'s update()...');
+            //             break;
 
-                }
+            //     }
 
-            },
+            // },
 
             mute:function () {
 
@@ -25005,439 +25005,439 @@ define('text',['module'], function (module) {
 
 define('text!util/fader-worker.js',[],function () { return '(function () {\n\n    var fading = false;\n    var interval;\n\n    onmessage = function (e) {\n        var self = this;\n\n        switch (e.data) {\n\n            case \'start\':\n\n                if ( !fading ) {\n\n                    fading = true;\n\n                    interval = setInterval( function () {\n                        self.postMessage(\'tick\');\n                    }, 50);\n                }\n\n                break;\n\n            case \'stop\':\n\n                clearInterval(interval);\n                fading = false;\n\n                break;\n        }\n    };\n\n})();';});
 
-define('controller/sound_controller',[
-    'underscore',
-    'backbone',
-    'config',
-    'route/router',
-    'model/app_model',
-    'model/loader_collection',
-    'model/sound_model',
-    'events/app_events',
-    'events/sound_states',
-    'visibly',
-    'text!util/fader-worker.js',
-    'howler'
-
-],function (_,
-    Backbone,
-    Config,
-    Router,
-    AppModel,
-    LoaderCollection,
-    SoundModel,
-    AppEvents,
-    SoundStates,
-    Visibily,
-    FaderWorkerSnippet,
-    Howler) {
-    'use strict';
-
-
-    var controller = {
-
-        previousID:-1,
-        currentID :-1,
-
-        accordianIndex:0,
-        numAccordianSprites : 0,
-
-        interactiveVisible : false,
-
-        shellActivated:false,
-
-        _audioSources:null,
-
-        _overMenuInterval : null,
-        _tunnelInterval : null,
-        _tunnelSounds : [],
-
-        init:function () {
-
-            this._audioSources = [];
-
-            this.listenTo(AppModel,"change:page",this.onPageChange);
-            this.listenTo(Backbone,AppEvents.Interactives.Show,this.onInteractiveShow,this);
-            this.listenTo(Backbone,AppEvents.Interactives.Hide,this.onInteractiveHide,this);
-
-
-            //this plays a little clip when the button shows..
-            //this.listenTo(Backbone, AppEvents.Shell.ShowButton, this.onShellShowButton);
-
-            if (!Config.TABLET) {
-
-                Backbone.on(AppEvents.Shell.OverItem,this.onOverShellItem,this);
-                Backbone.on(AppEvents.Shell.OutItem,this.onOutShellItem,this);
-
-                this.listenTo(Backbone,AppEvents.Resize.TriggerSound,this.onTriggerAccordian,this);
-                this.listenTo(Backbone,AppEvents.Resize.KillSound,this.onKillAccordian,this);
-                this.listenTo(Backbone,AppEvents.Resize.UpdateSound,this.onUpdateAccordian,this);
-
-                this.listenTo(Backbone,AppEvents.Shell.ShowClose,this.onShellShowClose);
-                this.listenTo(Backbone,AppEvents.Gem.ShowText,this.onGemShowText);
-
-                this.listenTo(Backbone,AppEvents.Menu.Over,this.onMenuOver);
-                this.listenTo(Backbone,AppEvents.Menu.Out,this.onMenuOut);
-            }
-
-            this.listenTo(Backbone,AppEvents.Audio.DestroyAudioSource,this.onDestroyAudioSource);
-            this.listenTo(Backbone,AppEvents.Audio.DestroyAudioSource,this.onDestroyAudioSource);
-
-            Backbone.on(AppEvents.Audio.Stop,this.onStop,this);
-            Backbone.on(AppEvents.Audio.Stop,this.onStop,this);
-
-
-            SoundModel.on(AppEvents.Audio.Mute,this.onMute,this);
-            SoundModel.on(AppEvents.Audio.Mute,this.onMute,this);
-
-            if (SoundModel.muted) {
-                this.onMute();
-            }
-
-            this.loadNextRandom();
-        },
-
-        loadNextRandom:function () {
-
-            var time = Math.random() * 20000 + 30000;
-            var self = this;
-            setTimeout(function () {
-                var nextRandomClipId = SoundModel.getNextRandomId();
-                // if (nextRandomClipId && !this.interactiveVisible && !SoundModel.paused) {
-                //     SoundModel.getClipById(nextRandomClipId).sound.volume(0.2,nextRandomClipId);
-                //     SoundModel.getClipById(nextRandomClipId).sound.play(nextRandomClipId);
-                // }
-                self.loadNextRandom();
-            },time);
-        },
-
-        onMenuOut:function () {
-           /* var self = this;
-            this._overMenuInterval = setTimeout(function(){
-                if(self._overMenuInterval) {
-                    self._overMenuInterval = null;
-                    //console.log("stop");
-                    self.onStopTrack({
-                        id  :"menu_drop",
-                        fade:true
-                    });
-                }
-            }, 1000);*/
-
-             this.onStopTrack({
-                        id  :"menu_drop",
-                        fade:true
-                    });
-        },
-
-        onMenuOver:function (e) {
-
-            /*if(this._overMenuInterval){
-                clearTimeout(this._overMenuInterval);
-                this._overMenuInterval = null;
-            }else{
-                //console.log("play");
-                this.playTrack({
-                    id:"menu_drop"
-                });
-            }*/
-
-            this.playTrack({
-                    id:"menu_drop"
-                });
-
-            var id;
-            var delay = 0;
-            switch (e) {
-                case 'about':
-                    id = "menu1";
-                    break;
-                case 'work' :
-                    id = "menu1";
-                    break;
-                case 'contact' :
-                    id = "menu1";
-                    break;
-            }
-
-            if (id) {
-                this.playClip({
-                    id    :id,
-                    delay :delay,
-                    volume:0.2
-                });
-            }
-
-        },
-
-        onDestroyAudioSource:function (e) {
-            SoundModel.removeSource(e.target);
-        },
-
-        onRegisterAudioSource:function (e) {
-            SoundModel.removeSource(e.target);
-        },
-
-        onMute:function () {
-            Howler.Howler.mute();
-        },
-
-        onUnmute:function () {
-            Howler.Howler.mute();
-        },
-
-        onTriggerAccordian:function (e) {
-            var track = SoundModel.getTrackById("accordian");
-            var sprites = track.sprites;
-            var id;
-
-            if(!this.numAccordianSprites){
-                for (id in sprites) {
-                    this.numAccordianSprites ++;
-                }
-            }
-
-            var key = this.accordianIndex++ % this.numAccordianSprites;
-            //find key by index
-            for (id in sprites) {
-                if (key-- === 0) {
-                    break;
-                }
-            }
-
-            if (this.currentID === id) {
-                return;
-            }
-            this.currentID = id;
-
-            try {
-                if (this.previousID !== -1) {
-                    track.sound.stop(this.previousID);
-                }
-            } catch (e) {
-            }
-
-            var self = this;
-            setTimeout(function () {
-                track.sound.mute();
-                track.sound.mute(self.currentID);
-                self.previousID = self.currentID;
-            },1);
-
-        },
-
-        onKillAccordian:function () {
-            var sound = SoundModel.getTrackById("accordian").sound;
-            sound.fade(sound.volume(),0,500,function () {
-                sound.mute();
-                sound.stop();
-            });
-            //fade(sound.volume(),0,500);
-            this.previousID = this.currentID = -1;
-        },
-
-        onUpdateAccordian:function (e) {
-            var sound = SoundModel.getTrackById("accordian").sound;
-            if (this.currentID !== -1) {
-                sound.volume(e.volume,this.currentID);
-            }
-        },
-
-        onPageChange:function () {
-
-            //clear all (just in case)
-            SoundModel.killTracks();
-
-            var page = AppModel.get("page");
-            if(page === AppModel.PAGES.ABOUT || page === AppModel.PAGES.CONTACT){
-                /*this.onPlay({
-                    "type"        :"track",
-                    "id"          :"inside_drop",
-                    "fadeDuration":100,
-                    "volume"      :0.6,
-                    "delay"       :100
-                });*/
-            }
-
-        },
-
-        onInteractiveShow:function (e) {
-
-            if (e.interactive.id !== "SHAPESHIFTER") {
-                SoundModel.killTracks();
-            }
-
-            this.interactiveVisible = true;
-        },
-
-        onInteractiveHide : function(e){
-            this.interactiveVisible = false;
-        },
-
-        onGemShowText:function () {
-            // SoundModel.getClipById("word_appear").sound.volume(0.1,"word_appear");
-            // SoundModel.getClipById("word_appear").sound.play("word_appear");
-        },
-
-        onShellShowClose:function () {
-                // SoundModel.getClipById("resnX").play("resnX",320);
-        },
-
-        onShellShowButton:function () {
-            // SoundModel.getClipById("word_appear").sound.volume(0.05,"word_appear");
-            // SoundModel.getClipById("word_appear").sound.play("word_appear");
-        },
-
-        onOverShellItem:function (e) {
-
-            if (Config.TABLET) {
-                return;
-            }
-
-            var sounds = [
-                {
-                    id: "1",
-                    delay: 400
-                },
-                {
-                    id: "2",
-                    delay: 450
-                },
-                {
-                    id: "3",
-                    delay: 550
-                },
-                {
-                    id: "4",
-                    delay: 550
-                }
-            ];
-
-            var randomID = parseInt( Math.random() * 4, 10 );
-            var soundData;
-            // console.log(randomID);
-
-            var page = AppModel.get("page");
-            var id;
-            var delay = 0;
-
-            // console.log(e);
-
-            switch (e) {
-                case 0 :
-                    //discover
-                    if ( page === AppModel.PAGES.MENU ) { return; }
-                    soundData = sounds[ randomID ];
-                    break;
-                case 1 :
-                    //drop
-                    if ( page === AppModel.PAGES.HOME ) { return; }
-                    soundData = sounds[ randomID ];
-                    break;
-                case 2 :
-                    //showreel
-                    if ( page === AppModel.PAGES.REEL ) { return; }
-                    soundData = sounds[ randomID ];
-                    break;
-                case 3 :
-                    //audio
-                    soundData = sounds[ randomID ];
-                    break;
-            }
-
-            if (soundData) {
-                this.onPlay({
-                    type  :"clip",
-                    id    :soundData.id,
-                    delay :soundData.delay,
-                    volume:0.5
-                });
-            }
-
-        },
-
-        onOutShellItem:function () {
-        },
-
-
-        onStop:function (e) {
-            switch (e.type) {
-                case 'clip':
-                    this.onStopClip(e);
-                    break;
-                case 'track' :
-                    this.onStopTrack(e);
-                    break;
-            }
-        },
-
-
-        /**
-         * Buttons get monitored via SoundModel, shouldn't be a need to
-         * explicitly remove or stop them here!
-         *
-         * @param e
-         */
-        onStopClip:function (e) {
-        },
-
-        onStopTrack:function (e) {
-            var track = SoundModel.getTrackById(e.id);
-            if (track) {
-                track.stop(e.fade);
-            }
-        },
-
-        onPlay:function (e) {
-
-            if (SoundModel.muted) {
-                return;
-            }
-
-            switch (e.type) {
-                case 'clip':
-                    this.onStopClip(e);
-                    break;
-                case 'track' :
-                    this.onStopClip(e);
-                    break;
-            }
-        },
-
-        playClip:function (e) {
+// define('controller/sound_controller',[
+//     'underscore',
+//     'backbone',
+//     'config',
+//     'route/router',
+//     'model/app_model',
+//     'model/loader_collection',
+//     'model/sound_model',
+//     'events/app_events',
+//     'events/sound_states',
+//     'visibly',
+//     'text!util/fader-worker.js',
+//     'howler'
+
+// ],function (_,
+//     Backbone,
+//     Config,
+//     Router,
+//     AppModel,
+//     LoaderCollection,
+//     SoundModel,
+//     AppEvents,
+//     SoundStates,
+//     Visibily,
+//     FaderWorkerSnippet,
+//     Howler) {
+//     'use strict';
+
+
+//     // var controller = {
+
+//     //     previousID:-1,
+//     //     currentID :-1,
+
+//     //     accordianIndex:0,
+//     //     numAccordianSprites : 0,
+
+//     //     interactiveVisible : false,
+
+//     //     shellActivated:false,
+
+//     //     _audioSources:null,
+
+//     //     _overMenuInterval : null,
+//     //     _tunnelInterval : null,
+//     //     _tunnelSounds : [],
+
+//     //     init:function () {
+
+//     //         this._audioSources = [];
+
+//     //         this.listenTo(AppModel,"change:page",this.onPageChange);
+//     //         this.listenTo(Backbone,AppEvents.Interactives.Show,this.onInteractiveShow,this);
+//     //         this.listenTo(Backbone,AppEvents.Interactives.Hide,this.onInteractiveHide,this);
+
+
+//     //         //this plays a little clip when the button shows..
+//     //         //this.listenTo(Backbone, AppEvents.Shell.ShowButton, this.onShellShowButton);
+
+//     //         if (!Config.TABLET) {
+
+//     //             Backbone.on(AppEvents.Shell.OverItem,this.onOverShellItem,this);
+//     //             Backbone.on(AppEvents.Shell.OutItem,this.onOutShellItem,this);
+
+//     //             this.listenTo(Backbone,AppEvents.Resize.TriggerSound,this.onTriggerAccordian,this);
+//     //             this.listenTo(Backbone,AppEvents.Resize.KillSound,this.onKillAccordian,this);
+//     //             this.listenTo(Backbone,AppEvents.Resize.UpdateSound,this.onUpdateAccordian,this);
+
+//     //             this.listenTo(Backbone,AppEvents.Shell.ShowClose,this.onShellShowClose);
+//     //             this.listenTo(Backbone,AppEvents.Gem.ShowText,this.onGemShowText);
+
+//     //             this.listenTo(Backbone,AppEvents.Menu.Over,this.onMenuOver);
+//     //             this.listenTo(Backbone,AppEvents.Menu.Out,this.onMenuOut);
+//     //         }
+
+//     //         this.listenTo(Backbone,AppEvents.Audio.DestroyAudioSource,this.onDestroyAudioSource);
+//     //         this.listenTo(Backbone,AppEvents.Audio.DestroyAudioSource,this.onDestroyAudioSource);
+
+//     //         Backbone.on(AppEvents.Audio.Stop,this.onStop,this);
+//     //         Backbone.on(AppEvents.Audio.Stop,this.onStop,this);
+
+
+//     //         SoundModel.on(AppEvents.Audio.Mute,this.onMute,this);
+//     //         SoundModel.on(AppEvents.Audio.Mute,this.onMute,this);
+
+//     //         if (SoundModel.muted) {
+//     //             this.onMute();
+//     //         }
+
+//     //         this.loadNextRandom();
+//     //     },
+
+//     //     // loadNextRandom:function () {
+
+//     //     //     var time = Math.random() * 20000 + 30000;
+//     //     //     var self = this;
+//     //     //     setTimeout(function () {
+//     //     //         var nextRandomClipId = SoundModel.getNextRandomId();
+//     //             // if (nextRandomClipId && !this.interactiveVisible && !SoundModel.paused) {
+//     //             //     SoundModel.getClipById(nextRandomClipId).sound.volume(0.2,nextRandomClipId);
+//     //             //     SoundModel.getClipById(nextRandomClipId).sound.play(nextRandomClipId);
+//     //             // }
+//     //     //         self.loadNextRandom();
+//     //     //     },time);
+//     //     // },
+
+//     //     // onMenuOut:function () {
+//     //        /* var self = this;
+//     //         this._overMenuInterval = setTimeout(function(){
+//     //             if(self._overMenuInterval) {
+//     //                 self._overMenuInterval = null;
+//     //                 //console.log("stop");
+//     //                 self.onStopTrack({
+//     //                     id  :"menu_drop",
+//     //                     fade:true
+//     //                 });
+//     //             }
+//     //         }, 1000);*/
+
+//     //     //      this.onStopTrack({
+//     //     //                 id  :"menu_drop",
+//     //     //                 fade:true
+//     //     //             });
+//     //     // },
+
+//     //     // onMenuOver:function (e) {
+
+//     //         /*if(this._overMenuInterval){
+//     //             clearTimeout(this._overMenuInterval);
+//     //             this._overMenuInterval = null;
+//     //         }else{
+//     //             //console.log("play");
+//     //             this.playTrack({
+//     //                 id:"menu_drop"
+//     //             });
+//     //         }*/
+
+//     //     //     this.playTrack({
+//     //     //             id:"menu_drop"
+//     //     //         });
+
+//     //     //     var id;
+//     //     //     var delay = 0;
+//     //     //     switch (e) {
+//     //     //         case 'about':
+//     //     //             id = "menu1";
+//     //     //             break;
+//     //     //         case 'work' :
+//     //     //             id = "menu1";
+//     //     //             break;
+//     //     //         case 'contact' :
+//     //     //             id = "menu1";
+//     //     //             break;
+//     //     //     }
+
+//     //     //     if (id) {
+//     //     //         this.playClip({
+//     //     //             id    :id,
+//     //     //             delay :delay,
+//     //     //             volume:0.2
+//     //     //         });
+//     //     //     }
+
+//     //     // },
+
+//     //     // onDestroyAudioSource:function (e) {
+//     //     //     SoundModel.removeSource(e.target);
+//     //     // },
+
+//     //     // onRegisterAudioSource:function (e) {
+//     //     //     SoundModel.removeSource(e.target);
+//     //     // },
+
+//     //     // onMute:function () {
+//     //     //     Howler.Howler.mute();
+//     //     // },
+
+//     //     // onUnmute:function () {
+//     //     //     Howler.Howler.mute();
+//     //     // },
+
+//     //     // onTriggerAccordian:function (e) {
+//     //     //     var track = SoundModel.getTrackById("accordian");
+//     //     //     var sprites = track.sprites;
+//     //     //     var id;
+
+//     //     //     if(!this.numAccordianSprites){
+//     //     //         for (id in sprites) {
+//     //     //             this.numAccordianSprites ++;
+//     //     //         }
+//     //     //     }
+
+//     //     //     var key = this.accordianIndex++ % this.numAccordianSprites;
+//     //     //     //find key by index
+//     //     //     for (id in sprites) {
+//     //     //         if (key-- === 0) {
+//     //     //             break;
+//     //     //         }
+//     //     //     }
+
+//     //     //     if (this.currentID === id) {
+//     //     //         return;
+//     //     //     }
+//     //     //     this.currentID = id;
+
+//     //     //     try {
+//     //     //         if (this.previousID !== -1) {
+//     //     //             track.sound.stop(this.previousID);
+//     //     //         }
+//     //     //     } catch (e) {
+//     //     //     }
+
+//     //     //     var self = this;
+//     //     //     setTimeout(function () {
+//     //     //         track.sound.mute();
+//     //     //         track.sound.mute(self.currentID);
+//     //     //         self.previousID = self.currentID;
+//     //     //     },1);
+
+//     //     // },
+
+//     //     // onKillAccordian:function () {
+//     //     //     var sound = SoundModel.getTrackById("accordian").sound;
+//     //     //     sound.fade(sound.volume(),0,500,function () {
+//     //     //         sound.mute();
+//     //     //         sound.stop();
+//     //     //     });
+//     //     //     //fade(sound.volume(),0,500);
+//     //     //     this.previousID = this.currentID = -1;
+//     //     // },
+
+//     //     // onUpdateAccordian:function (e) {
+//     //     //     var sound = SoundModel.getTrackById("accordian").sound;
+//     //     //     if (this.currentID !== -1) {
+//     //     //         sound.volume(e.volume,this.currentID);
+//     //     //     }
+//     //     // },
+
+//     //     // onPageChange:function () {
+
+//     //     //     //clear all (just in case)
+//     //     //     SoundModel.killTracks();
+
+//     //     //     var page = AppModel.get("page");
+//     //     //     if(page === AppModel.PAGES.ABOUT || page === AppModel.PAGES.CONTACT){
+//     //     //         /*this.onPlay({
+//     //     //             "type"        :"track",
+//     //     //             "id"          :"inside_drop",
+//     //     //             "fadeDuration":100,
+//     //     //             "volume"      :0.6,
+//     //     //             "delay"       :100
+//     //     //         });*/
+//     //     //     }
+
+//     //     // },
+
+//     //     // onInteractiveShow:function (e) {
+
+//     //     //     if (e.interactive.id !== "SHAPESHIFTER") {
+//     //     //         SoundModel.killTracks();
+//     //     //     }
+
+//     //     //     this.interactiveVisible = true;
+//     //     // },
+
+//     //     // onInteractiveHide : function(e){
+//     //     //     this.interactiveVisible = false;
+//     //     // },
+
+//     //     // onGemShowText:function () {
+//     //         // SoundModel.getClipById("word_appear").sound.volume(0.1,"word_appear");
+//     //         // SoundModel.getClipById("word_appear").sound.play("word_appear");
+//     //     // },
+
+//     //     // onShellShowClose:function () {
+//     //             // SoundModel.getClipById("resnX").play("resnX",320);
+//     //     // },
+
+//     //     // onShellShowButton:function () {
+//     //         // SoundModel.getClipById("word_appear").sound.volume(0.05,"word_appear");
+//     //         // SoundModel.getClipById("word_appear").sound.play("word_appear");
+//     //     // },
+
+//     //     // onOverShellItem:function (e) {
+
+//     //     //     if (Config.TABLET) {
+//     //     //         return;
+//     //     //     }
+
+//     //         // var sounds = [
+//     //         //     {
+//     //         //         id: "1",
+//     //         //         delay: 400
+//     //         //     },
+//     //         //     {
+//     //         //         id: "2",
+//     //         //         delay: 450
+//     //         //     },
+//     //         //     {
+//     //         //         id: "3",
+//     //         //         delay: 550
+//     //         //     },
+//     //         //     {
+//     //         //         id: "4",
+//     //         //         delay: 550
+//     //         //     }
+//     //         // ];
+
+//     //         // var randomID = parseInt( Math.random() * 4, 10 );
+//     //         // var soundData;
+//     //         // console.log(randomID);
+
+//     //         // var page = AppModel.get("page");
+//     //         // var id;
+//     //         // var delay = 0;
+
+//     //         // console.log(e);
+
+//     //         // switch (e) {
+//     //         //     case 0 :
+//     //         //         //discover
+//     //         //         if ( page === AppModel.PAGES.MENU ) { return; }
+//     //         //         soundData = sounds[ randomID ];
+//     //         //         break;
+//     //         //     case 1 :
+//     //         //         //drop
+//     //         //         if ( page === AppModel.PAGES.HOME ) { return; }
+//     //         //         soundData = sounds[ randomID ];
+//     //         //         break;
+//     //         //     case 2 :
+//     //         //         //showreel
+//     //         //         if ( page === AppModel.PAGES.REEL ) { return; }
+//     //         //         soundData = sounds[ randomID ];
+//     //         //         break;
+//     //         //     case 3 :
+//     //         //         //audio
+//     //         //         soundData = sounds[ randomID ];
+//     //         //         break;
+//     //         // }
+
+//     //         // if (soundData) {
+//     //         //     this.onPlay({
+//     //         //         type  :"clip",
+//     //         //         id    :soundData.id,
+//     //         //         delay :soundData.delay,
+//     //         //         volume:0.5
+//     //         //     });
+//     //         // }
+
+//     //     },
+
+//         // onOutShellItem:function () {
+//         // },
+
+
+//         // onStop:function (e) {
+//             // switch (e.type) {
+//             //     case 'clip':
+//             //         this.onStopClip(e);
+//             //         break;
+//             //     case 'track' :
+//             //         this.onStopTrack(e);
+//             //         break;
+//             // }
+//         // },
+
+
+//         /**
+//          * Buttons get monitored via SoundModel, shouldn't be a need to
+//          * explicitly remove or stop them here!
+//          *
+//          * @param e
+//          */
+//         // onStopClip:function (e) {
+//         // },
+
+//         // onStopTrack:function (e) {
+//         //     var track = SoundModel.getTrackById(e.id);
+//         //     if (track) {
+//         //         track.stop(e.fade);
+//         //     }
+//         // },
+
+//         // onPlay:function (e) {
+
+//             // if (SoundModel.muted) {
+//             //     return;
+//             // }
+
+//             // switch (e.type) {
+//             //     case 'clip':
+//             //         this.onStopClip(e);
+//             //         break;
+//             //     case 'track' :
+//             //         this.onStopClip(e);
+//             //         break;
+//             // }
+//         },
+
+        // playClip:function (e) {
 
             //only play if not active/monitored
             // var clip = SoundModel.getClipById(e.id);
             // if (!SoundModel.isSoundActive(clip)) {
             //     clip.play(e.id,e.delay,e.volume);
             // }
-        },
+        // },
 
-        playTrack:function (e) {
+        // playTrack:function (e) {
 
             //fade out previous track
-            var priority = e.priority || -1;
-            if (priority === 1) {
-                //stop all others
-                SoundModel.killTracks();
-            }
+            // var priority = e.priority || -1;
+            // if (priority === 1) {
+            //     //stop all others
+            //     SoundModel.killTracks();
+            // }
 
-            //set next (only one track plays at a time)
-            try {
-                SoundModel.getTrackById(e.id).play(e.id,e.delay,e.volume,e.fadeDuration);
-            } catch (e) {
-                console.error("NO SOUND FOUND : " + e.id);
-            }
-        }
+            // //set next (only one track plays at a time)
+            // try {
+            //     SoundModel.getTrackById(e.id).play(e.id,e.delay,e.volume,e.fadeDuration);
+            // } catch (e) {
+            //     console.error("NO SOUND FOUND : " + e.id);
+            // }
+        // }
 
-    };
+    // };
 
-    _.extend(controller,Backbone.Events);
-    controller.init();
+//     _.extend(controller,Backbone.Events);
+//     controller.init();
 
-    return controller;
+//     return controller;
 
-});
+// });
 define('view/modules/common/ambient_player_view',[
     "underscore",
     "backbone",
@@ -25748,141 +25748,141 @@ define('view/modules/common/ambient_player_view',[
     return View;
 });
 
-define('controller/global_audio_fader_controller',[
-    'underscore',
-    'backbone',
-    'config',
-    'model/app_model',
-    'text!util/fader-worker.js'
+// define('controller/global_audio_fader_controller',[
+//     'underscore',
+//     'backbone',
+//     'config',
+//     'model/app_model',
+//     'text!util/fader-worker.js'
 
-],function (
-    _,
-    Backbone,
-    Config,
-    AppModel,
-    FaderWorkerSnippet
+// ],function (
+//     _,
+//     Backbone,
+//     Config,
+//     AppModel,
+//     FaderWorkerSnippet
 
-) { 'use strict';
+// ) { 'use strict';
 
-    var controller = {
+//     var controller = {
 
-        FADE_AMOUNT       : 0.02,
+//         FADE_AMOUNT       : 0.02,
 
-        fader             : null,
-        faderPosition     : null,
-        faderTargetVolume : null,
+//         fader             : null,
+//         faderPosition     : null,
+//         faderTargetVolume : null,
 
-        init:function () {
+//         init:function () {
 
-            _.bindAll(this,
-                'fadeTo',
-                'onWorkerMessage'
-            );
+//             _.bindAll(this,
+//                 'fadeTo',
+//                 'onWorkerMessage'
+//             );
 
-            this.fader = this.setupWorker();
-            this.faderPosition = 0;
-            this.faderTargetVolume = 1;
+//             this.fader = this.setupWorker();
+//             this.faderPosition = 0;
+//             this.faderTargetVolume = 1;
 
-            this.fader.addEventListener( 'message', this.onWorkerMessage, false );
+//             this.fader.addEventListener( 'message', this.onWorkerMessage, false );
 
-            this.defaultFaderCallback = this.faderCallback;
-        },
+//             this.defaultFaderCallback = this.faderCallback;
+//         },
 
-        faderCallback:function () {
+//         faderCallback:function () {
 
-        },
+//         },
 
-        fadeTo:function (volume, callback) {
+//         fadeTo:function (volume, callback) {
 
-            this.faderCallback = callback ? callback : this.defaultFaderCallback;
+//             this.faderCallback = callback ? callback : this.defaultFaderCallback;
 
-            this.faderPosition = window.Howler.volume();
-            this.faderTargetVolume = volume;
-            this.fader.postMessage('start');
-        },
+//             this.faderPosition = window.Howler.volume();
+//             this.faderTargetVolume = volume;
+//             this.fader.postMessage('start');
+//         },
 
-        fadeIn:function (callback) {
+//         fadeIn:function (callback) {
 
-            callback = callback || function () {};
+//             callback = callback || function () {};
 
-            this.fadeTo( 1, callback );
-        },
+//             this.fadeTo( 1, callback );
+//         },
 
-        fadeOut:function (callback) {
+//         fadeOut:function (callback) {
 
-            callback = callback || function () {};
+//             callback = callback || function () {};
 
-            this.fadeTo( 0, callback );
-        },
+//             this.fadeTo( 0, callback );
+//         },
 
-        onWorkerMessage:function (e) {
+//         onWorkerMessage:function (e) {
 
-            if (this.faderTargetVolume > window.Howler.volume()) {
+//             if (this.faderTargetVolume > window.Howler.volume()) {
 
-                this.faderPosition += 0.1;
-            }
-            else {
+//                 this.faderPosition += 0.1;
+//             }
+//             else {
 
-                this.faderPosition -= this.FADE_AMOUNT;
-            }
+//                 this.faderPosition -= this.FADE_AMOUNT;
+//             }
 
-            var newVolume = this.faderPosition;
+//             var newVolume = this.faderPosition;
 
-            if (newVolume > 0.999) {
+//             if (newVolume > 0.999) {
 
-                this.setVolume(1);
-                this.fader.postMessage('stop');
-                this.faderCallback();
-            }
-            else if (newVolume < 0.001) {
+//                 this.setVolume(1);
+//                 this.fader.postMessage('stop');
+//                 this.faderCallback();
+//             }
+//             else if (newVolume < 0.001) {
 
-                this.setVolume(0);
-                this.fader.postMessage('stop');
-                this.faderCallback();
-            }
-            else {
-                this.setVolume(newVolume);
-            }
-        },
+//                 this.setVolume(0);
+//                 this.fader.postMessage('stop');
+//                 this.faderCallback();
+//             }
+//             else {
+//                 this.setVolume(newVolume);
+//             }
+//         },
 
-        setupWorker:function () {
+//         setupWorker:function () {
 
-            /*
-             * NOTE: This follows a method that uses Blobs instead of referencing a separate
-             * js file as is usual for workers. This way we can pull it in as plain text with
-             * require, rather than referencing the file directly, which could be tricky when
-             * stuff gets built/combined.
-             *
-             * Info on this method here:
-             * https://stackoverflow.com/questions/5408406/web-workers-without-a-separate-javascript-file
-             */
+//             /*
+//              * NOTE: This follows a method that uses Blobs instead of referencing a separate
+//              * js file as is usual for workers. This way we can pull it in as plain text with
+//              * require, rather than referencing the file directly, which could be tricky when
+//              * stuff gets built/combined.
+//              *
+//              * Info on this method here:
+//              * https://stackoverflow.com/questions/5408406/web-workers-without-a-separate-javascript-file
+//              */
 
-            // Create a Blob to wrap the worker JS so that we don't need to reference the JS file manually
-            var blobURL = URL.createObjectURL(
-                new Blob([FaderWorkerSnippet],{type:'application/javascript'})
-            );
+//             // Create a Blob to wrap the worker JS so that we don't need to reference the JS file manually
+//             var blobURL = URL.createObjectURL(
+//                 new Blob([FaderWorkerSnippet],{type:'application/javascript'})
+//             );
 
-            // Create the worker
-            var fader = new Worker(blobURL);
+//             // Create the worker
+//             var fader = new Worker(blobURL);
 
-            // Clean up the Blob
-            URL.revokeObjectURL(blobURL);
+//             // Clean up the Blob
+//             URL.revokeObjectURL(blobURL);
 
-            return fader;
-        },
+//             return fader;
+//         },
 
-        setVolume: function (volume) {
+//         setVolume: function (volume) {
 
-            window.Howler.volume( volume );
-        }
+//             window.Howler.volume( volume );
+//         }
 
-    };
+//     };
 
-    _.extend(controller, Backbone.Events);
-    controller.init();
+//     _.extend(controller, Backbone.Events);
+//     controller.init();
 
-    return controller;
-});
+//     return controller;
+// });
 /**
  * Created by kev on 2016-04-25.
  */
@@ -25895,10 +25895,10 @@ define('controller/ambient_sound_controller',[
     'model/loader_collection',
     'model/sound_model',
     'events/app_events',
-    'events/sound_states',
+    // 'events/sound_states',
     'visibly',
     'view/modules/common/ambient_player_view',
-    'controller/global_audio_fader_controller',
+    // 'controller/global_audio_fader_controller',
     'text!util/fader-worker.js'
 
 ],function (_,
@@ -25909,10 +25909,10 @@ define('controller/ambient_sound_controller',[
     LoaderCollection,
     SoundModel,
     AppEvents,
-    SoundStates,
+    // SoundStates,
     Visibily,
     AmbientPlayerView,
-    GlobalAudioFaderController,
+    // GlobalAudioFaderController,
     FaderWorkerSnippet) {
     'use strict';
 
@@ -25968,12 +25968,12 @@ define('controller/ambient_sound_controller',[
             Backbone.on(AppEvents.Loader.PreHidden, this.onLo);
 
             // Returned from model
-            SoundModel.on(AppEvents.Audio.Mute,this.onAmbientMute,this);
-            SoundModel.on(AppEvents.Audio.Mute,this.onAmbientMute,this);
-            SoundModel.on(AppEvents.Audio.MuteAmbinet,this.onAmbientMute,this);
-            SoundModel.on(AppEvents.Audio.MuteAmbinet,this.onAmbientMute,this);
-            SoundModel.on(AppEvents.Audio.Mute,this.onAmbientMute,this);
-            SoundModel.on(AppEvents.Audio.Mute,this.onAmbient,this);
+            // SoundModel.on(AppEvents.Audio.Mute,this.onAmbientMute,this);
+            // SoundModel.on(AppEvents.Audio.Mute,this.onAmbientMute,this);
+            // SoundModel.on(AppEvents.Audio.MuteAmbinet,this.onAmbientMute,this);
+            // SoundModel.on(AppEvents.Audio.MuteAmbinet,this.onAmbientMute,this);
+            // SoundModel.on(AppEvents.Audio.Mute,this.onAmbientMute,this);
+            // SoundModel.on(AppEvents.Audio.Mute,this.onAmbient,this);
 
             this.initiatePlayers();
         },
@@ -26178,15 +26178,15 @@ define('controller/ambient_sound_controller',[
         // VISIBLY HANDLERS ------------------------------------------------------
 
         onWindowVisible:function () {
-            SoundModel.update(SoundStates.MUTE);
+            // SoundModel.update(SoundStates.MUTE);
 
-            GlobalAudioFaderController.fadeIn();
+            // GlobalAudioFaderController.fadeIn();
         },
 
         onWindowHidden:function () {
-            SoundModel.update(SoundStates.MUTE);
+            // SoundModel.update(SoundStates.MUTE);
 
-            GlobalAudioFaderController.fadeOut();
+            // GlobalAudioFaderController.fadeOut();
         },
 
 
@@ -26199,7 +26199,7 @@ define('controller/ambient_sound_controller',[
         onMuteRequest:function () {
 
             // console.log('mute request...');
-            SoundModel.update(SoundStates.MUTE);
+            // SoundModel.update(SoundStates.MUTE);
         },
 
         /*
@@ -26209,19 +26209,19 @@ define('controller/ambient_sound_controller',[
         onUnmuteRequest:function () {
 
             // console.log('unmute request...');
-            SoundModel.update(SoundStates.MUTE);
+            // SoundModel.update(SoundStates.MUTE);
         },
 
         onPauseRequest:function () {
 
             // console.log('pause request...');
-            SoundModel.update(SoundStates.MUTE);
+            // SoundModel.update(SoundStates.MUTE);
         },
 
         onResumeRequest:function () {
 
             // console.log('resume request...');
-            SoundModel.update(SoundStates.MUTE);
+            // SoundModel.update(SoundStates.MUTE);
         },
 
 
@@ -127374,313 +127374,313 @@ define('view/modules/shell/shell_view',[
     });
 });
 
-define('view/modules/resize/resize_view',[
-    'jquery',
-    'underscore',
-    'backbone',
-    'config',
-    'TweenMax',
-    'route/router',
-    'events/app_events',
-    'model/app_model',
-    // 'model/sound_model',
-    "util/anim_frame",
-    "model/loader_collection",
-    'view/common/base_view'
+// define('view/modules/resize/resize_view',[
+//     'jquery',
+//     'underscore',
+//     'backbone',
+//     'config',
+//     'TweenMax',
+//     'route/router',
+//     'events/app_events',
+//     'model/app_model',
+//     // 'model/sound_model',
+//     "util/anim_frame",
+//     "model/loader_collection",
+//     'view/common/base_view'
 
-], function (
-    $,
-    _,
-    Backbone,
-    Config,
-    TweenMax,
-    Router,
-    AppEvents,
-    AppModel,
-    // SoundModel,
-    AnimFrame,
-    LoaderCollection,
-    BaseView
+// ], function (
+//     $,
+//     _,
+//     Backbone,
+//     Config,
+//     TweenMax,
+//     Router,
+//     AppEvents,
+//     AppModel,
+//     // SoundModel,
+//     AnimFrame,
+//     LoaderCollection,
+//     BaseView
 
-) { 'use strict';
+// ) { 'use strict';
 
-    return BaseView.extend({
+//     return BaseView.extend({
 
-        canvas: null,
-        ctx: null,
-        pixelRatio: 1,
+//         canvas: null,
+//         ctx: null,
+//         pixelRatio: 1,
 
-        isAttached: false,
-        sliceNumber: 0,
+//         isAttached: false,
+//         sliceNumber: 0,
 
-        sliceWidth: 53,
-        sliceHeight: 256,
-        faceW:260,
-        faceH:274,
-        sliceImg0: null,
-        sliceImg1: null,
-        sliceImg2: null,
-        sliceImg3: null,
-        faceImg: null,
-        bodyImg: null,
-        legLeftImg: null,
-        footLeftImg: null,
-        legRightImg: null,
-        footRightImg: null,
+//         sliceWidth: 53,
+//         sliceHeight: 256,
+//         faceW:260,
+//         faceH:274,
+//         sliceImg0: null,
+//         sliceImg1: null,
+//         sliceImg2: null,
+//         sliceImg3: null,
+//         faceImg: null,
+//         bodyImg: null,
+//         legLeftImg: null,
+//         footLeftImg: null,
+//         legRightImg: null,
+//         footRightImg: null,
 
-        leftHand: null,
-        rightHand: null,
+//         leftHand: null,
+//         rightHand: null,
 
-        keyIndex: 0,
-        totalKeys : -1,
-        triggerInterval : null,
+//         keyIndex: 0,
+//         totalKeys : -1,
+//         triggerInterval : null,
 
-        progressSound:1,
+//         progressSound:1,
 
-        reduceIndex:0,
+//         reduceIndex:0,
 
-        // SETUP ---------------------------------------------------------------
+//         // SETUP ---------------------------------------------------------------
 
-        initialize: function(options) {
+//         initialize: function(options) {
 
-            this.totalKeys = 6;//SoundModel.getTrackById("accordian").sprites.length;
+//             this.totalKeys = 6;//SoundModel.getTrackById("accordian").sprites.length;
 
-            _.bindAll(this,'updateSound');
-            this.$window = $(window);
-            //this.pixelRatio     = window.devicePixelRatio;
+//             _.bindAll(this,'updateSound');
+//             this.$window = $(window);
+//             //this.pixelRatio     = window.devicePixelRatio;
 
-            this.sliceNumber    = 25;//Config.MIN_WIDTH / this.sliceWidth;
-            this.sliceImg0      = LoaderCollection.getResult('RESIZE_SLICE_0');
-            this.sliceImg1      = LoaderCollection.getResult('RESIZE_SLICE_1');
-            this.sliceImg2      = LoaderCollection.getResult('RESIZE_SLICE_2');
-            this.sliceImg3      = LoaderCollection.getResult('RESIZE_SLICE_3');
-            this.faceImg        = [LoaderCollection.getResult('RESIZE_FACE_0'),LoaderCollection.getResult('RESIZE_FACE_1'),LoaderCollection.getResult('RESIZE_FACE_2'),LoaderCollection.getResult('RESIZE_FACE_3'),LoaderCollection.getResult('RESIZE_FACE_4'),LoaderCollection.getResult('RESIZE_FACE_5')];
-            this.bodyImg        = LoaderCollection.getResult('RESIZE_BODY');
-            this.legLeftImg     = [LoaderCollection.getResult('RESIZE_LEG_LEFT_0'),LoaderCollection.getResult('RESIZE_LEG_LEFT_1'),LoaderCollection.getResult('RESIZE_LEG_LEFT_2'),LoaderCollection.getResult('RESIZE_LEG_LEFT_3'),LoaderCollection.getResult('RESIZE_LEG_LEFT_4'),LoaderCollection.getResult('RESIZE_LEG_LEFT_5')];
-            this.footLeftImg    = LoaderCollection.getResult('RESIZE_FOOT_LEFT');
-            this.legRightImg    = LoaderCollection.getResult('RESIZE_LEG_RIGHT');
-            this.footRightImg   = LoaderCollection.getResult('RESIZE_FOOT_RIGHT');
+//             this.sliceNumber    = 25;//Config.MIN_WIDTH / this.sliceWidth;
+//             // this.sliceImg0      = LoaderCollection.getResult('RESIZE_SLICE_0');
+//             // this.sliceImg1      = LoaderCollection.getResult('RESIZE_SLICE_1');
+//             // this.sliceImg2      = LoaderCollection.getResult('RESIZE_SLICE_2');
+//             // this.sliceImg3      = LoaderCollection.getResult('RESIZE_SLICE_3');
+//             // this.faceImg        = [LoaderCollection.getResult('RESIZE_FACE_0'),LoaderCollection.getResult('RESIZE_FACE_1'),LoaderCollection.getResult('RESIZE_FACE_2'),LoaderCollection.getResult('RESIZE_FACE_3'),LoaderCollection.getResult('RESIZE_FACE_4'),LoaderCollection.getResult('RESIZE_FACE_5')];
+//             // this.bodyImg        = LoaderCollection.getResult('RESIZE_BODY');
+//             // this.legLeftImg     = [LoaderCollection.getResult('RESIZE_LEG_LEFT_0'),LoaderCollection.getResult('RESIZE_LEG_LEFT_1'),LoaderCollection.getResult('RESIZE_LEG_LEFT_2'),LoaderCollection.getResult('RESIZE_LEG_LEFT_3'),LoaderCollection.getResult('RESIZE_LEG_LEFT_4'),LoaderCollection.getResult('RESIZE_LEG_LEFT_5')];
+//             // this.footLeftImg    = LoaderCollection.getResult('RESIZE_FOOT_LEFT');
+//             // this.legRightImg    = LoaderCollection.getResult('RESIZE_LEG_RIGHT');
+//             // this.footRightImg   = LoaderCollection.getResult('RESIZE_FOOT_RIGHT');
 
-            this.leftHand       = [LoaderCollection.getResult('RESIZE_HAND_LEFT_0'),LoaderCollection.getResult('RESIZE_HAND_LEFT_1'),LoaderCollection.getResult('RESIZE_HAND_LEFT_2'),LoaderCollection.getResult('RESIZE_HAND_LEFT_3'),LoaderCollection.getResult('RESIZE_HAND_LEFT_4'),LoaderCollection.getResult('RESIZE_HAND_LEFT_5')];
-            this.rightHand      = [LoaderCollection.getResult('RESIZE_HAND_RIGHT_0'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_1'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_2'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_3'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_4'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_5')];
+//             // this.leftHand       = [LoaderCollection.getResult('RESIZE_HAND_LEFT_0'),LoaderCollection.getResult('RESIZE_HAND_LEFT_1'),LoaderCollection.getResult('RESIZE_HAND_LEFT_2'),LoaderCollection.getResult('RESIZE_HAND_LEFT_3'),LoaderCollection.getResult('RESIZE_HAND_LEFT_4'),LoaderCollection.getResult('RESIZE_HAND_LEFT_5')];
+//             // this.rightHand      = [LoaderCollection.getResult('RESIZE_HAND_RIGHT_0'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_1'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_2'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_3'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_4'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_5')];
 
-            this.create();
-        },
+//             this.create();
+//         },
 
-        create:function(){
+//         create:function(){
 
-            this.canvas = document.createElement('canvas');
-            this.ctx = this.canvas.getContext('2d');
-        },
+//             this.canvas = document.createElement('canvas');
+//             this.ctx = this.canvas.getContext('2d');
+//         },
 
-        triggerSound:function(){
-            //console.log('trigger sound');
-            if(this.triggerInterval){
-                return;
-            }
+//         triggerSound:function(){
+//             //console.log('trigger sound');
+//             if(this.triggerInterval){
+//                 return;
+//             }
 
-            var self = this;
-            this.triggerInterval = setTimeout(function(){
-                self.triggerInterval = null;
-            }, 1000);
+//             var self = this;
+//             this.triggerInterval = setTimeout(function(){
+//                 self.triggerInterval = null;
+//             }, 1000);
 
-            Backbone.trigger(AppEvents.Resize.TriggerSound, { key : self.keyIndex});
+//             Backbone.trigger(AppEvents.Resize.TriggerSound, { key : self.keyIndex});
 
-        },
+//         },
 
-        killSound:function(){
+//         killSound:function(){
 
-            Backbone.trigger(AppEvents.Resize.KillSound,{ key : this.keyIndex});
+//             Backbone.trigger(AppEvents.Resize.KillSound,{ key : this.keyIndex});
 
-            TweenMax.killTweensOf(this);
-            //console.log('kill sound');
-        },
+//             TweenMax.killTweensOf(this);
+//             //console.log('kill sound');
+//         },
 
-        updateSound:function(){
-            Backbone.trigger(AppEvents.Resize.UpdateSound, { volume : this.progressSound });
-            //console.log('change volume to:',this.progressSound);
-        },
+//         updateSound:function(){
+//             Backbone.trigger(AppEvents.Resize.UpdateSound, { volume : this.progressSound });
+//             //console.log('change volume to:',this.progressSound);
+//         },
 
-        onResize: function() {
+//         onResize: function() {
 
-            var width = this.$window.width();
-            var height = this.$window.height();
+//             var width = this.$window.width();
+//             var height = this.$window.height();
 
-            if(width < Config.MIN_WIDTH || height < Config.MIN_HEIGHT){
+//             if(width < Config.MIN_WIDTH || height < Config.MIN_HEIGHT){
 
-                Backbone.trigger(AppEvents.Resize.Attached);
+//                 Backbone.trigger(AppEvents.Resize.Attached);
 
-                if(!this.isAttached){
-                    this.isAttached = true;
-                    this.$el.append(this.canvas);
-                    this.triggerSound();
-                }
+//                 if(!this.isAttached){
+//                     this.isAttached = true;
+//                     this.$el.append(this.canvas);
+//                     this.triggerSound();
+//                 }
 
-                if(this.canvas){
-                    this.canvas.width = width * this.pixelRatio;
-                    this.canvas.height = height * this.pixelRatio;
-                    this.windowW = width;
-                    this.windowH = height;
-                    $(this.canvas).css({
-                        'position':'fixed',
-                        'top':0,
-                        'left':0,
-                        'width':width,
-                        'height':height,
-                        'z-index':1005
-                    });
-                }
+//                 if(this.canvas){
+//                     this.canvas.width = width * this.pixelRatio;
+//                     this.canvas.height = height * this.pixelRatio;
+//                     this.windowW = width;
+//                     this.windowH = height;
+//                     $(this.canvas).css({
+//                         'position':'fixed',
+//                         'top':0,
+//                         'left':0,
+//                         'width':width,
+//                         'height':height,
+//                         'z-index':1005
+//                     });
+//                 }
 
-                if(this.reduceIndex%10 === 0){
-                    if(this.keyIndex + 1 >= this.totalKeys){
-                        this.keyIndex = 0;
-                    }else{
-                        this.keyIndex++;
-                    }
-                    this.triggerSound();
-                }
-                this.reduceIndex++;
+//                 if(this.reduceIndex%10 === 0){
+//                     if(this.keyIndex + 1 >= this.totalKeys){
+//                         this.keyIndex = 0;
+//                     }else{
+//                         this.keyIndex++;
+//                     }
+//                     this.triggerSound();
+//                 }
+//                 this.reduceIndex++;
 
-                this.draw(width, height);
+//                 this.draw(width, height);
 
-                TweenMax.killTweensOf(this);
-                this.progressSound = 1;
-                this.killSound();
-                TweenMax.to(this,4,{progressSound:0, delay:1, ease:'Sine.easeInOut', onUpdate:this.updateSound});
-            }else{
-                if(this.isAttached){
+//                 TweenMax.killTweensOf(this);
+//                 this.progressSound = 1;
+//                 this.killSound();
+//                 TweenMax.to(this,4,{progressSound:0, delay:1, ease:'Sine.easeInOut', onUpdate:this.updateSound});
+//             }else{
+//                 if(this.isAttached){
 
-                    Backbone.trigger(AppEvents.Resize.Detached);
+//                     Backbone.trigger(AppEvents.Resize.Detached);
 
-                    this.isAttached = false;
-                    $(this.canvas).detach();
-                    this.killSound();
-                }
-            }
-        },
+//                     this.isAttached = false;
+//                     $(this.canvas).detach();
+//                     this.killSound();
+//                 }
+//             }
+//         },
 
-        draw:function(width, height){
-            // var deltaTop = 0;
-            // var ratio = height / 950;
-            // if(ratio > 1){
-            //     ratio = 1;
-            //     deltaTop = height - 950;
-            // }
-            // this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
-            // var sliceResizedWidth = this.canvas.width / this.sliceNumber;
-            // this.ctx.beginPath();
-            // this.ctx.rect(0,0,this.canvas.width,this.canvas.height);
-            // this.ctx.fillStyle = "black";
-            // this.ctx.fill();
-            // this.ctx.closePath();
-            // this.drawLegs(ratio, deltaTop);
-            // this.drawBody(ratio, deltaTop);
-            // this.drawFace(ratio, deltaTop);
-        },
+//         draw:function(width, height){
+//             // var deltaTop = 0;
+//             // var ratio = height / 950;
+//             // if(ratio > 1){
+//             //     ratio = 1;
+//             //     deltaTop = height - 950;
+//             // }
+//             // this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+//             // var sliceResizedWidth = this.canvas.width / this.sliceNumber;
+//             // this.ctx.beginPath();
+//             // this.ctx.rect(0,0,this.canvas.width,this.canvas.height);
+//             // this.ctx.fillStyle = "black";
+//             // this.ctx.fill();
+//             // this.ctx.closePath();
+//             // this.drawLegs(ratio, deltaTop);
+//             // this.drawBody(ratio, deltaTop);
+//             // this.drawFace(ratio, deltaTop);
+//         },
 
-        drawLegs:function(ratio, deltaTop){
-            //left leg
-            // this.ctx.save();
+//         drawLegs:function(ratio, deltaTop){
+//             //left leg
+//             // this.ctx.save();
 
-            // var angle = (ratio*90 - 90)*3;
-            // if(angle>0){angle=0;}
-            // if(angle<-90){angle=-90;}
-            // this.ctx.translate(this.canvas.width / 2 - 60, deltaTop + ratio * 200 + 370);
-            // this.ctx.rotate(-angle*Math.PI/180);
-            // this.ctx.drawImage(this.legLeftImg[this.keyIndex], -150/2, 0);
-            // this.ctx.restore();
-            // //left foot
-            // var LFCenter = [this.canvas.width / 2 - 60, deltaTop + ratio * 200 + 370];
-            // var LFRadius = 290;
-            // var LFAngle = (-angle+90)*Math.PI/180;
-            // var LFX = Math.cos(LFAngle) * LFRadius + LFCenter[0];
-            // var LFY = Math.sin(LFAngle) * LFRadius + LFCenter[1];
-            // this.ctx.save();
-            // this.ctx.translate(LFX, LFY);
-            // this.ctx.rotate(LFAngle-Math.PI/2);
-            // this.ctx.drawImage(this.footLeftImg, -76, -20);
-            // this.ctx.restore();
+//             // var angle = (ratio*90 - 90)*3;
+//             // if(angle>0){angle=0;}
+//             // if(angle<-90){angle=-90;}
+//             // this.ctx.translate(this.canvas.width / 2 - 60, deltaTop + ratio * 200 + 370);
+//             // this.ctx.rotate(-angle*Math.PI/180);
+//             // this.ctx.drawImage(this.legLeftImg[this.keyIndex], -150/2, 0);
+//             // this.ctx.restore();
+//             // //left foot
+//             // var LFCenter = [this.canvas.width / 2 - 60, deltaTop + ratio * 200 + 370];
+//             // var LFRadius = 290;
+//             // var LFAngle = (-angle+90)*Math.PI/180;
+//             // var LFX = Math.cos(LFAngle) * LFRadius + LFCenter[0];
+//             // var LFY = Math.sin(LFAngle) * LFRadius + LFCenter[1];
+//             // this.ctx.save();
+//             // this.ctx.translate(LFX, LFY);
+//             // this.ctx.rotate(LFAngle-Math.PI/2);
+//             // this.ctx.drawImage(this.footLeftImg, -76, -20);
+//             // this.ctx.restore();
 
-            // //right leg
-            // this.ctx.save();
-            // this.ctx.translate(this.canvas.width / 2 + 70, deltaTop + ratio * 200 + 370);
-            // this.ctx.rotate(angle*Math.PI/180);
-            // this.ctx.drawImage(this.legRightImg, -150/2, 0);
-            // this.ctx.restore();
-            // //right foot
-            // var RFCenter = [this.canvas.width / 2 + 70, deltaTop + ratio * 200 + 370];
-            // var RFRadius = 290;
-            // var RFAngle = (angle+90)*Math.PI/180;
-            // var RFX = Math.cos(RFAngle) * RFRadius + RFCenter[0];
-            // var RFY = Math.sin(RFAngle) * RFRadius + RFCenter[1];
+//             // //right leg
+//             // this.ctx.save();
+//             // this.ctx.translate(this.canvas.width / 2 + 70, deltaTop + ratio * 200 + 370);
+//             // this.ctx.rotate(angle*Math.PI/180);
+//             // this.ctx.drawImage(this.legRightImg, -150/2, 0);
+//             // this.ctx.restore();
+//             // //right foot
+//             // var RFCenter = [this.canvas.width / 2 + 70, deltaTop + ratio * 200 + 370];
+//             // var RFRadius = 290;
+//             // var RFAngle = (angle+90)*Math.PI/180;
+//             // var RFX = Math.cos(RFAngle) * RFRadius + RFCenter[0];
+//             // var RFY = Math.sin(RFAngle) * RFRadius + RFCenter[1];
 
-            // this.ctx.save();
-            // this.ctx.translate(RFX, RFY);
-            // this.ctx.rotate(RFAngle-Math.PI/2);
-            // this.ctx.drawImage(this.footRightImg, -45, -20);
-            // this.ctx.restore();
-        },
+//             // this.ctx.save();
+//             // this.ctx.translate(RFX, RFY);
+//             // this.ctx.rotate(RFAngle-Math.PI/2);
+//             // this.ctx.drawImage(this.footRightImg, -45, -20);
+//             // this.ctx.restore();
+//         },
 
-        drawBody:function(ratio, deltaTop){
-            // var deltaLeft = 100;
-            // var dletaRight = 174;
-            // var spaceSlice = this.canvas.width - deltaLeft - dletaRight;
-            // if(spaceSlice < 80){
-            //     spaceSlice = 80;
-            // }
-            // var sliceResizedWidth = spaceSlice / this.sliceNumber;
-            // var offsetX = (this.canvas.width - (deltaLeft + dletaRight + spaceSlice)) * 0.5;
-            // if(offsetX > 0){
-            //     offsetX = 0;
-            // }
-            // this.ctx.drawImage(this.bodyImg, (this.canvas.width - 300) / 2, deltaTop + ratio * 200);
-            // for (var i = 0; i < this.sliceNumber; i++){
-            //     var img = this.sliceImg0;
-            //     var bar = this.sliceImg1;
-            //     if(i % 2 === 0){
-            //         img = this.sliceImg2;
-            //         bar = this.sliceImg3;
-            //     }
-            //     this.ctx.drawImage(
-            //         img,
-            //         0,
-            //         0,
-            //         this.sliceWidth,
-            //         this.sliceHeight,
-            //         i * sliceResizedWidth + deltaLeft + offsetX,
-            //         deltaTop + ratio * 300,
-            //         sliceResizedWidth,
-            //         this.sliceHeight
-            //     );
-            //     this.ctx.drawImage(
-            //         bar,
-            //         i * sliceResizedWidth + deltaLeft + offsetX - 3,
-            //         -3 + (i%2) * 18  + deltaTop + ratio * 300
-            //     );
-            // }
+//         drawBody:function(ratio, deltaTop){
+//             // var deltaLeft = 100;
+//             // var dletaRight = 174;
+//             // var spaceSlice = this.canvas.width - deltaLeft - dletaRight;
+//             // if(spaceSlice < 80){
+//             //     spaceSlice = 80;
+//             // }
+//             // var sliceResizedWidth = spaceSlice / this.sliceNumber;
+//             // var offsetX = (this.canvas.width - (deltaLeft + dletaRight + spaceSlice)) * 0.5;
+//             // if(offsetX > 0){
+//             //     offsetX = 0;
+//             // }
+//             // this.ctx.drawImage(this.bodyImg, (this.canvas.width - 300) / 2, deltaTop + ratio * 200);
+//             // for (var i = 0; i < this.sliceNumber; i++){
+//             //     var img = this.sliceImg0;
+//             //     var bar = this.sliceImg1;
+//             //     if(i % 2 === 0){
+//             //         img = this.sliceImg2;
+//             //         bar = this.sliceImg3;
+//             //     }
+//             //     this.ctx.drawImage(
+//             //         img,
+//             //         0,
+//             //         0,
+//             //         this.sliceWidth,
+//             //         this.sliceHeight,
+//             //         i * sliceResizedWidth + deltaLeft + offsetX,
+//             //         deltaTop + ratio * 300,
+//             //         sliceResizedWidth,
+//             //         this.sliceHeight
+//             //     );
+//             //     this.ctx.drawImage(
+//             //         bar,
+//             //         i * sliceResizedWidth + deltaLeft + offsetX - 3,
+//             //         -3 + (i%2) * 18  + deltaTop + ratio * 300
+//             //     );
+//             // }
 
-            // this.ctx.drawImage(this.leftHand[this.keyIndex], offsetX, deltaTop + ratio * 300 - 5);
-            // this.ctx.drawImage(this.rightHand[this.keyIndex], offsetX + deltaLeft + spaceSlice , deltaTop + ratio * 300 - 5);
-        },
+//             // this.ctx.drawImage(this.leftHand[this.keyIndex], offsetX, deltaTop + ratio * 300 - 5);
+//             // this.ctx.drawImage(this.rightHand[this.keyIndex], offsetX + deltaLeft + spaceSlice , deltaTop + ratio * 300 - 5);
+//         },
 
-        drawFace:function(ratio, deltaTop){
-            // var sliceResizedWidth = this.canvas.width / this.sliceNumber;
-            // this.ctx.save();
-            // this.ctx.translate(this.canvas.width / 2, deltaTop + ratio * 200);
-            // //this.ctx.globalAlpha = this.keyIndex%2;
-            // var angle = (ratio*90 - 90) * 2;
-            // if(angle>0){angle=0;}
-            // if(angle<-90){angle=-90;}
-            // this.ctx.rotate(angle*Math.PI/180);
-            // this.ctx.drawImage(this.faceImg[this.keyIndex], -this.faceW/2, -this.faceH + 80);
-            // this.ctx.restore();
-        },
+//         drawFace:function(ratio, deltaTop){
+//             // var sliceResizedWidth = this.canvas.width / this.sliceNumber;
+//             // this.ctx.save();
+//             // this.ctx.translate(this.canvas.width / 2, deltaTop + ratio * 200);
+//             // //this.ctx.globalAlpha = this.keyIndex%2;
+//             // var angle = (ratio*90 - 90) * 2;
+//             // if(angle>0){angle=0;}
+//             // if(angle<-90){angle=-90;}
+//             // this.ctx.rotate(angle*Math.PI/180);
+//             // this.ctx.drawImage(this.faceImg[this.keyIndex], -this.faceW/2, -this.faceH + 80);
+//             // this.ctx.restore();
+//         },
 
-        update: function() {
+//         update: function() {
 
-        }
-    });
-});
+//         }
+//     });
+// });
 define('view/app_view',[
 
     'backbone',
@@ -127705,7 +127705,7 @@ define('view/app_view',[
     'view/modules/work/work_project_view',
     'view/modules/background/background_view',
     'view/modules/shell/shell_view',
-    'view/modules/resize/resize_view',
+    // 'view/modules/resize/resize_view',
     'controller/scale_controller',
     'controller/keyboard_controller',
     "howler",
@@ -127735,7 +127735,7 @@ define('view/app_view',[
     WorkProjectView,
     BackgroundView,
     ShellView,
-    ResizeView,
+    // ResizeView,
     ScaleController,
     KeyboardController,
     Howler,
@@ -127822,9 +127822,9 @@ define('view/app_view',[
             this.background = new BackgroundView({ el:$('.js-background') });
             this.shell = new ShellView({ el:$('.js-shell') });
 
-            if(!Config.TABLET){
-                this.resize_view = new ResizeView({el:$('body')});
-            }
+            // if(!Config.TABLET){
+            //     this.resize_view = new ResizeView({el:$('body')});
+            // }
 
             // this.webAudioFix();
             
@@ -127938,7 +127938,7 @@ define('main_desktop_extended',[
     "controller/tracking_controller",
     "model/loader_collection",
     "model/sound_model",
-    "controller/sound_controller",
+    // "controller/sound_controller",
     "controller/ambient_sound_controller",
     "view/app_view",
     "model/app_model",
@@ -127954,7 +127954,7 @@ define('main_desktop_extended',[
     TrackingController,
     LoaderCollection,
     soundModel,
-    SoundController,
+    // SoundController,
     AmbientSoundController,
     AppView,
     AppModel,
@@ -127994,38 +127994,38 @@ define('main_desktop_extended',[
 
             LoaderCollection.add({src:Config.CDN + '/data/letters.json',id:'letters',group:'main'});
 
-            LoaderCollection.add({group:'main',id:'RESIZE_SLICE_0',src:Config.CDN + '/img/resize/slice0.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_SLICE_2',src:Config.CDN + '/img/resize/slice2.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_SLICE_1',src:Config.CDN + '/img/resize/slice1.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_SLICE_3',src:Config.CDN + '/img/resize/slice3.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FACE_0',src:Config.CDN + '/img/resize/face_0.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FACE_1',src:Config.CDN + '/img/resize/face_1.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FACE_2',src:Config.CDN + '/img/resize/face_2.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FACE_3',src:Config.CDN + '/img/resize/face_3.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FACE_4',src:Config.CDN + '/img/resize/face_4.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FACE_5',src:Config.CDN + '/img/resize/face_5.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_BODY',src:Config.CDN + '/img/resize/body.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_0',src:Config.CDN + '/img/resize/leg_left_0.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_1',src:Config.CDN + '/img/resize/leg_left_1.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_2',src:Config.CDN + '/img/resize/leg_left_2.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_3',src:Config.CDN + '/img/resize/leg_left_3.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_4',src:Config.CDN + '/img/resize/leg_left_4.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_5',src:Config.CDN + '/img/resize/leg_left_5.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FOOT_LEFT',src:Config.CDN + '/img/resize/foot_left.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_LEG_RIGHT',src:Config.CDN + '/img/resize/leg_right.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FOOT_RIGHT',src:Config.CDN + '/img/resize/foot_right.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_0',src:Config.CDN + '/img/resize/hand_left_0.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_1',src:Config.CDN + '/img/resize/hand_left_1.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_2',src:Config.CDN + '/img/resize/hand_left_2.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_3',src:Config.CDN + '/img/resize/hand_left_3.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_4',src:Config.CDN + '/img/resize/hand_left_4.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_5',src:Config.CDN + '/img/resize/hand_left_5.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_0',src:Config.CDN + '/img/resize/hand_right_0.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_1',src:Config.CDN + '/img/resize/hand_right_1.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_2',src:Config.CDN + '/img/resize/hand_right_2.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_3',src:Config.CDN + '/img/resize/hand_right_3.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_4',src:Config.CDN + '/img/resize/hand_right_4.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_5',src:Config.CDN + '/img/resize/hand_right_5.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_SLICE_0',src:Config.CDN + '/img/resize/slice0.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_SLICE_2',src:Config.CDN + '/img/resize/slice2.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_SLICE_1',src:Config.CDN + '/img/resize/slice1.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_SLICE_3',src:Config.CDN + '/img/resize/slice3.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FACE_0',src:Config.CDN + '/img/resize/face_0.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FACE_1',src:Config.CDN + '/img/resize/face_1.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FACE_2',src:Config.CDN + '/img/resize/face_2.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FACE_3',src:Config.CDN + '/img/resize/face_3.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FACE_4',src:Config.CDN + '/img/resize/face_4.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FACE_5',src:Config.CDN + '/img/resize/face_5.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_BODY',src:Config.CDN + '/img/resize/body.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_0',src:Config.CDN + '/img/resize/leg_left_0.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_1',src:Config.CDN + '/img/resize/leg_left_1.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_2',src:Config.CDN + '/img/resize/leg_left_2.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_3',src:Config.CDN + '/img/resize/leg_left_3.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_4',src:Config.CDN + '/img/resize/leg_left_4.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_5',src:Config.CDN + '/img/resize/leg_left_5.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FOOT_LEFT',src:Config.CDN + '/img/resize/foot_left.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_LEG_RIGHT',src:Config.CDN + '/img/resize/leg_right.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FOOT_RIGHT',src:Config.CDN + '/img/resize/foot_right.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_0',src:Config.CDN + '/img/resize/hand_left_0.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_1',src:Config.CDN + '/img/resize/hand_left_1.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_2',src:Config.CDN + '/img/resize/hand_left_2.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_3',src:Config.CDN + '/img/resize/hand_left_3.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_4',src:Config.CDN + '/img/resize/hand_left_4.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_5',src:Config.CDN + '/img/resize/hand_left_5.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_0',src:Config.CDN + '/img/resize/hand_right_0.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_1',src:Config.CDN + '/img/resize/hand_right_1.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_2',src:Config.CDN + '/img/resize/hand_right_2.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_3',src:Config.CDN + '/img/resize/hand_right_3.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_4',src:Config.CDN + '/img/resize/hand_right_4.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_5',src:Config.CDN + '/img/resize/hand_right_5.png'});
 
             LoaderCollection.add({group:'main',id:'GRAIN_1',src:Config.CDN + '/img/textures/bg_grain_01.jpg'});
             LoaderCollection.add({group:'main',id:'GRAIN_2',src:Config.CDN + '/img/textures/bg_grain_02.jpg'});

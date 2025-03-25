@@ -709,9 +709,9 @@
             "globaltitle": "",
             "title": "Operate on any device & is available in more than 25 different languages to support research initiatives",
             "description": "Add Descrription",
-            "client": "Client Name",
+            "client": "Business",
             "date": "Dec, 2019",
-            "role": "Developer",
+            "role": "Devflovv built Coursology’s frontend and backend, integrating ChatGPT, secure payments, and authentication for a seamless AI-powered learning experience.",
             "platforms": "",
             "url": "",
             "poster": "img/projects/language-research-initiative/language-research-initiative.png",
@@ -736,8 +736,8 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "Blazing Trails",
-                        "body": "Jelly propels real-time 3D into the future. Over the last 10 years, we’ve built the framework and capabilities that allow us to achieve a level of quality and performance that wasn’t thought possible—until now.",
+                        "title": "Problem",
+                        "body": "Devflovv took on the project of making Coursology, a smart study aid, even better for students. The goal was to make sure students could get smart, instant help right where they needed it.",
                         "top_offset": 120
                     }
                 },
@@ -802,16 +802,16 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "Superior Quality",
-                        "body": "Jelly can achieve unparalleled photorealism with convincing depth of field, dynamic lighting and thousands of animated particles. And we do it while maintaining consistent stroke widths and smooth edges regardless of screen size or pixel density.",
+                        "title": "Challenges",
+                        "body": "The team faced the challenge of adding a smart assistant, ChatGPT, into Coursology and making it simple for students to use.",
                         "top_offset": 120
                     }
                 },
                 {
                     "type": "headline",
                     "data": {
-                        "title": "In short, Jelly delivers the highest-quality Web3D out there.",
-                        "body": "",
+                        "title": "Solution",
+                        "body": "Devflovv's solution was to use React for building the platform, ensuring it was easy and friendly for students to ask questions and get answers. They also set up a way for students to pay for services easily and securely sign into their accounts.",
                         "top_offset": 120
                     }
                 },
@@ -860,8 +860,8 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "Lower Overhead",
-                        "body": "Jelly’s pipeline is robust and efficient, enabling Devflovv’s experienced developers to navigate complex workflows with ease. Compared to similar offerings, Jelly means lower overheads and shortened production schedules.",
+                        "title": "TECH STACK",
+                        "body": "JavaScript frameworks | React | styled-components | Emotion | Next.js | Stripe | Node.js | Apple Sign-in | NextAuth.js | OpenAI ChatGPT ",
                         "top_offset": 120
                     }
                 },
@@ -2491,19 +2491,19 @@
             ]
         },
         {
-            "route": "community-motivation-app",
+            "route": "strava-ios-app",
             "menutitle": "",
             "enabled": true,
             "featured": true,
             "globaltitle": "",
             "title": "They record activities, building community and getting motivated.",
             "description": "Add Description",
-            "client": "Client Name",
+            "client": "Individual",
             "date": "Apr, 2019",
-            "role": "Creative and Production",
+            "role": "Developed and optimized Strava’s iOS app with intuitive UI/UX, a robust backend, and enhanced security for a seamless fitness experience.",
             "platforms": "",
             "url": "",
-            "poster": "img/projects/file-sharing-software/file-sharing-software.png",
+            "poster": "img/projects/file-sharing-software/strava-title.jpg",
             "poster_m": "img/projects/file-sharing-software/file-sharing-software.png",
             "categories": ["creative", "design", "development"],
             "awards": [
@@ -2518,12 +2518,9 @@
             ],
             "items": [
                 {
-                    "type": "video",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "341679778",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341679778.hd.mp4?s=fa37bd0339faf6952213630772d9d1ec600c4c35&profile_id=175",
-                        "video_name": "Hellboy_Case_Study_Final",
-                        "video_poster": "img/projects/hellboy/01_hellboy_video_thumbnail.jpg",
+                        "src": "img/projects/file-sharing-software/strava-start.jpg",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 8,
@@ -2534,8 +2531,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "Hellboy Wants You!",
-                        "body": "Devflovv partnered with Lionsgate to create a unique mobile promotion for the Hellboy film, by recruiting you into Hellboy’s secret agency.",
+                        "title": "Problem",
+                        "body": "Devflovv set out to develop Strava's iOS app, aiming to provide a seamless experience for fitness enthusiasts to track activities and engage with a community on their Apple devices.",
                         "top_offset": 120
                     }
                 },
@@ -2544,7 +2541,7 @@
                     "data": {
                         "portrait": true,
                         "scrollable": false,
-                        "src": "img/projects/hellboy/02_hellboy_interview.jpg",
+                        "src": "img/projects/file-sharing-software/strava-loading-ss.png",
                         "src_width": 750,
                         "src_height": 1334,
                         "left_columns": 0.83,
@@ -2556,7 +2553,7 @@
                     "data": {
                         "portrait": true,
                         "scrollable": false,
-                        "src": "img/projects/hellboy/03_hellboy_interview.jpg",
+                        "src": "img/projects/file-sharing-software/strava-home.png",
                         "src_width": 750,
                         "src_height": 1334,
                         "left_columns": 4.83,
@@ -2566,8 +2563,8 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "Got What It Takes?",
-                        "body": "When you apply for a job, Hellboy calls to interview you. The conversation is powered by an A.l. engine with voice-acting by Hellboy actor David Harbour.",
+                        "title": "Challenges",
+                        "body": "Deflovv's team overcame the hurdles of designing an intuitive yet feature-rich interface with Swift and UIKit, managing extensive user data with Node.js and MongoDB, and ensuring user privacy with robust security measures.",
                         "top_offset": 160
                     }
                 },
@@ -2600,8 +2597,8 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "B.P.R.D. Archive",
-                        "body": "Browse selected dossiers from the B.P.R.D. archive, including personnel files of characters from the film.",
+                        "title": "Solution",
+                        "body": "The result was a user-friendly Strava app with a reliable backend and strong security features, offering users a straightforward and safe way to connect and share their fitness journeys.",
                         "top_offset": 115
                     }
                 },
@@ -2634,15 +2631,15 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "Operating System",
-                        "body": "Inspired by intelligence documents from the 1950s, the archive looks like a clandestine operating system lost in time. Sensitive material has been carefully redacted—until you land the job.",
+                        "title": "Client Review's",
+                        "body": "Devflovv delivered an exceptional Strava iOS app with a seamless UI, robust backend, and top-notch security. Their expertise in Swift, Node.js, and MongoDB ensured a smooth and engaging user experience. Highly impressed with their dedication and precision!",
                         "top_offset": 190
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/hellboy/08_hellboy_card_01.jpg",
+                        "src": "img/projects/file-sharing-software/strava-profile.png",
                         "src_width": 750,
                         "src_height": 1334,
                         "width_columns": 2.25,
@@ -2653,7 +2650,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/hellboy/09_hellboy_card_02.jpg",
+                        "src": "img/projects/file-sharing-software/strava-admin.png",
                         "src_width": 750,
                         "src_height": 1334,
                         "width_columns": 2.25,
@@ -2664,7 +2661,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/hellboy/10_hellboy_card_04.jpg",
+                        "src": "img/projects/file-sharing-software/strava-map.png",
                         "src_width": 750,
                         "src_height": 1334,
                         "width_columns": 2.25,
@@ -2675,15 +2672,15 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "Give ‘Em Hell",
-                        "body": "The site launched on ‘Hellboy Day, celebrating the 25th Anniversary of the first Hellboy comic. The experience received the coveted seal of approval from the hardcore Hellboy fan base and introduced brand new fans to the Hellboy universe.",
+                        "title": "TECH STACK",
+                        "body": "Swift, UIKit, Node.js, MongoDB, Express.js, RESTful API, SSL/TLS, Apple App Store Services, Google Analytics, Git or Bitbucket, Testing Frameworks",
                         "top_offset": 234
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/hellboy/11_hellboy_trolls.jpg",
+                        "src": "img/projects/file-sharing-software/strava-cover.jpg",
                         "src_width": 1600,
                         "src_height": 900,
                         "width_columns": 8,
@@ -2692,209 +2689,6 @@
                     }
                 }
             ]
-        },
-        {
-            "route": "hellboy",
-            "menutitle": "",
-            "enabled": true,
-            "featured": true,
-            "globaltitle": "",
-            "title": "They record activities, building community and getting motivated.",
-            "description": "Add Description",
-            "client": "Client Name",
-            "date": "Apr, 2019",
-            "role": "Creative and Production",
-            "platforms": "",
-            "url": "",
-            "poster": "img/projects/file-sharing-software/file-sharing-software.png",
-            "poster_m": "img/projects/file-sharing-software/file-sharing-software.png",
-            "categories": ["creative", "design", "development"],
-            "awards": [
-                {
-                    "type": "fwa-sotd",
-                    "name": "FWA of the Day"
-                },
-                {
-                    "type": "awwwards-sotd",
-                    "name": "Site of the Day"
-                }
-            ],
-            "items": [
-                {
-                    "type": "video",
-                    "data": {
-                        "vimeo_id": "341679778",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341679778.hd.mp4?s=fa37bd0339faf6952213630772d9d1ec600c4c35&profile_id=175",
-                        "video_name": "Hellboy_Case_Study_Final",
-                        "video_poster": "img/projects/hellboy/01_hellboy_video_thumbnail.jpg",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 70
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Hellboy Wants You!",
-                        "body": "Devflovv partnered with Lionsgate to create a unique mobile promotion for the Hellboy film, by recruiting you into Hellboy’s secret agency.",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "mobile",
-                    "data": {
-                        "portrait": true,
-                        "scrollable": false,
-                        "src": "img/projects/hellboy/02_hellboy_interview.jpg",
-                        "src_width": 750,
-                        "src_height": 1334,
-                        "left_columns": 0.83,
-                        "top_offset": 135
-                    }
-                },
-                {
-                    "type": "mobile",
-                    "data": {
-                        "portrait": true,
-                        "scrollable": false,
-                        "src": "img/projects/hellboy/03_hellboy_interview.jpg",
-                        "src_width": 750,
-                        "src_height": 1334,
-                        "left_columns": 4.83,
-                        "top_offset": -300
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Got What It Takes?",
-                        "body": "When you apply for a job, Hellboy calls to interview you. The conversation is powered by an A.l. engine with voice-acting by Hellboy actor David Harbour.",
-                        "top_offset": 160
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "341726417",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341726417.hd.mp4?s=461fe2be27626968d663507e8d2b6be6ae66172d&profile_id=174",
-                        "video_name": "05_hellboy_interview",
-                        "src_width": 720,
-                        "src_height": 1280,
-                        "width_columns": 3.25,
-                        "left_columns": 0,
-                        "top_offset": 170
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "344693590",
-                        "vimeo_video_url": "https://player.vimeo.com/external/344693590.sd.mp4?s=3f7fa3102359df5e8c891d9be25a4426ca3db834&profile_id=165",
-                        "video_name": "05_hellboy_card_reveal",
-                        "src_width": 720,
-                        "src_height": 1280,
-                        "width_columns": 3.25,
-                        "left_columns": 4.75,
-                        "top_offset": -425
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "B.P.R.D. Archive",
-                        "body": "Browse selected dossiers from the B.P.R.D. archive, including personnel files of characters from the film.",
-                        "top_offset": 115
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "344693607",
-                        "vimeo_video_url": "https://player.vimeo.com/external/344693607.sd.mp4?s=aef6bac9932a6d34d4300df6d1f7ac1013c70961&profile_id=165",
-                        "video_name": "06_hellboy_archives",
-                        "src_width": 720,
-                        "src_height": 1280,
-                        "width_columns": 3.25,
-                        "left_columns": 0,
-                        "top_offset": 170
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "344693621",
-                        "vimeo_video_url": "https://player.vimeo.com/external/344693621.sd.mp4?s=7a39986f7913d14183d158c1678654a7c91ed011&profile_id=165",
-                        "video_name": "07_hellboy_goblins",
-                        "src_width": 720,
-                        "src_height": 1280,
-                        "width_columns": 3.25,
-                        "left_columns": 4.75,
-                        "top_offset": -500
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Operating System",
-                        "body": "Inspired by intelligence documents from the 1950s, the archive looks like a clandestine operating system lost in time. Sensitive material has been carefully redacted—until you land the job.",
-                        "top_offset": 190
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/hellboy/08_hellboy_card_01.jpg",
-                        "src_width": 750,
-                        "src_height": 1334,
-                        "width_columns": 2.25,
-                        "left_columns": 0,
-                        "top_offset": 136
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/hellboy/09_hellboy_card_02.jpg",
-                        "src_width": 750,
-                        "src_height": 1334,
-                        "width_columns": 2.25,
-                        "left_columns": 2.82,
-                        "top_offset": -512
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/hellboy/10_hellboy_card_04.jpg",
-                        "src_width": 750,
-                        "src_height": 1334,
-                        "width_columns": 2.25,
-                        "left_columns": 5.75,
-                        "top_offset": -512
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Give ‘Em Hell",
-                        "body": "The site launched on ‘Hellboy Day, celebrating the 25th Anniversary of the first Hellboy comic. The experience received the coveted seal of approval from the hardcore Hellboy fan base and introduced brand new fans to the Hellboy universe.",
-                        "top_offset": 234
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/hellboy/11_hellboy_trolls.jpg",
-                        "src_width": 1600,
-                        "src_height": 900,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 73
-                    }
-                }
-            ]
-        }     
+        }
     ]
 }

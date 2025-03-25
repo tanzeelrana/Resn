@@ -29320,7 +29320,7 @@ module.exports = function (props) {
     }
 
     if (!props.clientheader) {
-        props.clientheader = 'AGENCY + CLIENT';
+        props.clientheader = 'Business + Individual';
     }
 
     var launchDom = props.url ? h(

@@ -1,16 +1,16 @@
 {
     "projects": [
         {
-            "route": "seashepherd",
+            "route": "living_ai",
             "menutitle": "",
             "enabled": true,
             "featured": true,
             "globaltitle": "",
-            "title": "Booking appointment App",
-            "description": "Add Description",
-            "client": "Client Name",
+            "title": "LIVING AI",
+            "description": "Smarter Shopping Through AI Innovation.",
+            "client": "Business",
             "date": "February, 2020",
-            "role": "Concept, Creative Direction, Design, Development, 3D, Sound Design & Composition, Sponsor",
+            "role": "integrated AI into e-commerce platform, enabling smart shopping, avatar videos, and seamless ChatGPT-powered interactions with scalable infrastructure.",
             "platforms": "",
             "url": "https://belowthesurface.resn.co.nz/",
             "poster": "img/projects/seashepherd/seashepherd-poster-m.jpg",
@@ -34,8 +34,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Concept",
-                        "body": "body"
+                        "title": "The Problem",
+                        "body": "Devflovv led the charge in integrating groundbreaking AI into the e-commerce space with Living AI, becoming one of the first to feature an app on the ChatGPT store. They aimed to enhance the shopping experience with smart voice commands and a unique AI that could create content on its own."
 					}
                 },
                 {
@@ -53,7 +53,7 @@
                     "type": "headline",
                     "data": {
                         "title": "The Challenge",
-                        "body": "In 2019 alone, over 11,000 dolphins were killed as bycatch off the west coast of France. Our challenge was to shine a light on what bycatch really is: the brutal extermination of sea life."
+                        "body": "Their task was to weave this AI seamlessly into the existing platform without losing the simple and engaging feel users love. Plus, we developed the LivingAI plugin, allowing shoppers to make and customize their own avatar videos – a fresh twist for online shopping."
 					}
                 },
                 {
@@ -81,8 +81,8 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "A Tranquil Beginning",
-                        "body": "The experience begins with a beautiful sphere of water floating in front of you. A fishing boat cruises its surface. As you zoom in, you are transported to a pristine undersea world."
+                        "title": "The Solution",
+                        "body": "Using Python and Django, Devflovv’s team built a robust system that brought Chat GPT into the mix without a hitch. On the front end, core-js and jQuery made sure everything ran smoothly for users. The LivingAI plugin, now live on the ChatGPT store, is proof of Devflovv's trailblazing spirit and knack for making AI user-friendly."
 					}
                 },
                 {
@@ -115,42 +115,37 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "A Deadly End",
-                        "body": "Floating in front of you is a dolphin struggling in a net. From every direction, you can hear the sounds of dolphins in distress. A fishing boat passes overhead and hauls the dolphins out of the water before dumping their dead bodies overboard. This is bycatch."
+                        "title": "Seamless Scheduling",
+                        "body": "As your appointment is confirmed, a calming animation sweeps across the screen. A gentle notification reassures you—everything is set. With one final glance, you leave with confidence, knowing your schedule is seamlessly managed, bringing peace to your busy day."
 					}
                 },
                 {
-                    "type": "videoloop",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "390929846",
-                        "video_name": "ssvid3",
-                        "vimeo_video_url": "https://player.vimeo.com/external/390929846.sd.mp4?s=43d5cc15c069c7bb5987276880452ce3fd6b0300&profile_id=165",
-                        "src_width": 550,
-                        "src_height": 957,
-                        "width_columns": 3,
-                        "left_columns": 4,
-                        "z_index": 99
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "390930200",
-                        "video_name": "ssvid4",
-                        "vimeo_video_url": "https://player.vimeo.com/external/390930200.sd.mp4?s=0d8edb34b4be331253b0379ca58419c670ff0af8&profile_id=165",
-                        "src_width": 550,
-                        "src_height": 957,
+                        "src": "img/projects/seashepherd/ss-img-03.png",
+                        "src_width": 519,
+                        "src_height": 921,
                         "width_columns": 3,
                         "left_columns": 0,
-                        "z_index": 99
+                        "z_index": 100
 					}
                 },
-
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/seashepherd/ss-img-04.png",
+                        "src_width": 519,
+                        "src_height": 921,
+                        "width_columns": 3,
+                        "left_columns": 4,
+                        "z_index": 100
+					}
+                },
                 {
                     "type": "text",
                     "data": {
-                        "title": "A Call to Action",
-                        "body": "To finish, a bold CTA invites you to donate to Sea Shepherd to help end dolphin slaughter. It doesn’t have to be this way, but the change starts on your plate."
+                        "title": "Client Review's",
+                        "body": "Devflovv seamlessly integrated AI into our e-commerce platform, making Living AI a pioneer on the ChatGPT store. Their expertise in Python, Django, and OpenAI ensured a smooth, user-friendly experience. The innovative LivingAI plugin transformed online shopping with personalized avatar videos. Their dedication and technical excellence exceeded our expectations!"
 					}
                 },
                 {
@@ -178,15 +173,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "Creating an Underwater Environment",
-                        "body": "Jelly allowed us to realistically render an underwater environment in real-time 3D. We used a combination of VFX techniques, such as volumetric lights, distance fog, caustics and micro-particles, to simulate real physical behaviours. We applied a similar approach to the sphere of water to create its ocean surface and water disturbance effects."
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "AR Elements",
-                        "body": "Our simulated AR approach used the gyroscope to synchronise the position of the sphere of water with the user’s phone movements. To convincingly blend our 3D render with the user’s environment, we simulated light reflections on the water’s surface by extracting colors from the users camera feed. These techniques allowed us to approximate an AR experience inside a mobile browser."
+                        "title": "TECHNOLOGIES",
+                        "body": "Python | Django | OpenAI Chat GPT Integration | Core-js | jQuery | JavaScript | AWS Lamda | CodeCommit | API Gateway | CDK | S3 | DynamoDB | Node-JS | Google Slides | Drive API"
 					}
                 }
             ]
@@ -197,9 +185,9 @@
             "enabled": true,
             "featured": true,
             "globaltitle": "",
-            "title": "Corn. Revolutionized.",
-            "description": "A look at the cutting-edge science behind Pioneer corn told through the choreography of real-time 3D assets and animation.",
-            "client": "Pioneer Hi Bred International",
+            "title": "CADE INSIGHTS",
+            "description": "Empowering Businesses with Smart Insights.",
+            "client": "Business",
             "date": "September, 2019",
             "role": "Design, Development, Animation, UI, UX",
             "platforms": "",
@@ -223,8 +211,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Challenge",
-                        "body": "Devflovv & Bader Rutter teamed up to create a revolutionary online experience that tells the story of how Pioneer develops new varieties of corn. We wanted to captivate our audience with stunning imagery of the development process and turn skeptics into believers."
+                        "title": "The Problem",
+                        "body": "Devflovv tackled the creation of Cade Insights, a Business Network Intelligence platform aimed at offering in-depth data analysis and interactive reporting. The objective was to design a tool adept at managing complex data while providing a smooth user experience."
 					}
                 },
                 {
@@ -238,8 +226,8 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "A life cycle",
-                        "body": "We wrapped experience in an infinite loop to represent the cycle of nature—from seed to plant and back to seed again—with some data and DNA added along the way."
+                        "title": "The Challenges",
+                        "body": "Key challenges included developing an engaging, responsive dashboard, implementing an advanced language-model analysis tool, and crafting a user-friendly AI chatbot. These tasks demanded a blend of skills in both frontend and backend development to ensure ease of use and effective data handling."
 					}
                 },
                 {
@@ -327,8 +315,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "Scenes in Jelly",
-                        "body": "Our Jelly pipeline allowed us to compose stunning animated scenes that combine 2D assets, 3D models and interactive elements without forcing users to endure long load times."
+                        "title": "Solution",
+                        "body": "Devflovv used Next JS and TypeScript for a dynamic front end and Python with Parse, Postgres, and Neo4J for backend data management and analysis. The outcome was Cade Insights, a platform featuring an advanced analysis tool and AI chatbot, boosting user business intelligence capabilities."
 					}
                 },
                 {
@@ -436,8 +424,8 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "The Result",
-                        "body": "The result was an endlessly looping, best-in-class 3D experience that demonstrates the benefits and technology of Pioneer corn."
+                        "title": "TECH STACK",
+                        "body": "Next JS | Python | Parse | Postgres | TypeScript | Neo4J | ML/ AI"
 					}
                 }
             ]

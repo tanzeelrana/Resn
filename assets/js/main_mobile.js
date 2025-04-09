@@ -24770,7 +24770,7 @@ module.exports = function (props) {
     }
 
     if (!props.clientheader) {
-        props.clientheader = 'AGENCY + CLIENT';
+        props.clientheader = 'Individual + Business';
     }
 
     var launchDom = props.url ? h(
@@ -24997,7 +24997,7 @@ var h = require(2);
 module.exports = function (props) {
 
     if (!props.clientheader) {
-        props.clientheader = 'AGENCY + CLIENT';
+        props.clientheader = 'Individual + Business';
     }
 
     var launchDom = props.url ? h(
@@ -25630,7 +25630,7 @@ var h = require(2);
 module.exports = function (props) {
 
     if (!props.clientheader) {
-        props.clientheader = 'AGENCY + CLIENT';
+        props.clientheader = 'Individual + Business';
     }
 
     var globalTitleDom = props.globaltitle ? h(

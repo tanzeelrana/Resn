@@ -33,6 +33,436 @@
     ],
     "projects": [
         {
+            "route": "the-self-destructing-book",
+            "enabled": true,
+            "featured": false,
+            "menutitle": "",
+            "globaltitle": "",
+            "title": "persona ai",
+            "description": "James Patterson is the world’s #1 bestselling author. His latest book, 'Private Vegas', is about to self-destruct.",
+            "client": "Business",
+            "date": "Jan 2015",
+            "role": "Design, Animation, Development",
+            "url": "",
+            "poster": "img/projects/the-self-destructing-book/persona_title.png",
+            "poster_m": "img/projects/the-self-destructing-book/the-self-destructing-book-poster-m.jpg",
+            "categories": ["creative", "design", "development", "games"],
+            "awards": [
+                {
+                    "type": "d-and-ad",
+                    "name": "Wood Pencil"
+                },
+                {
+                    "type": "cannes-lion",
+                    "name": "Cannes Silver Lion"
+                },
+                {
+                    "type": "fwa-sotd",
+                    "name": "TCEA"
+                },
+                {
+                    "type": "fwa-sotd",
+                    "name": "Site of the Day"
+                },
+                {
+                    "type": "fwa-motd",
+                    "name": "Mobile Site of the Day"
+                },
+                {
+                    "type": "awwwards-sotd",
+                    "name": "Site of the Day"
+                },
+                {
+                    "type": "one-show",
+                    "name": "Silver Pencil"
+                },
+                {
+                    "type": "one-show",
+                    "name": "Bronze Pencil"
+                },
+                {
+                    "type": "webbys",
+                    "name": "Webby Award Winner"
+                }
+            ],
+            "items": [
+                {
+                    "type": "video",
+                    "data": {
+                        "vimeo_id": "123375958",
+                        "vimeo_video_url": "https://player.vimeo.com/external/123375958.hd.mp4?s=146618835fd1d9ee3c2d95bd64e4e75d155a23d6&profile_id=113",
+                        "video_name": "the self destructing book",
+                        "video_poster": "img/projects/the-self-destructing-book/persona_video.png",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 0
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "The Most Thrilling Read Ever",
+                        "body": "For the launch of James Patterson's 'Private Vegas', Devflovv and Mother New York wanted to make sure the experience was as exhilarating as possible. To do this, we created the Self-Destructing Book, an electrifying, digitally augmented thrill-ride, befitting the Master of Suspense.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "carousel",
+                    "data": {
+                        "images": [
+                            {
+                                "src": "img/projects/the-self-destructing-book/persona_curs2.png"
+                            },
+                            {
+                                "src": "img/projects/the-self-destructing-book/persona_1.png"
+                            }
+                        ],
+                        "src_width": 1551,
+                        "src_height": 915,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Design & Experience",
+                        "body": "We developed an iPad-exclusive version of the book, complete with animated thrills at key moments in the action. Through our website, we gave away 1,000 copies to lucky winners, who had 24 hours to read the book before it self-destructed. To ensure only the winners could access it, we created a unique code for every copy and released them in batches over five days.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/the-self-destructing-book/persona_tab1.png",
+                        "src_width": 800,
+                        "src_height": 1072,
+                        "width_columns": 3.5,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/the-self-destructing-book/persona_tab2.png",
+                        "src_width": 800,
+                        "src_height": 1072,
+                        "width_columns": 3.5,
+                        "left_columns": 4.5,
+                        "top_offset": -400,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/the-self-destructing-book/persona_curs1.png",
+                        "src_width": 1400,
+                        "src_height": 825,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Dramatic Tension",
+                        "body": "We designed every aspect of our app to heighten the tension of the reading experience. As the story unfolds, blood splatters across the screen. Smoke obscures the text. Hidden messages appear. Police sirens wail. Explosions envelop the page. In every possible way, we put readers directly into the action.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/the-self-destructing-book/persona_tab3.png",
+                        "src_width": 800,
+                        "src_height": 1072,
+                        "width_columns": 3.5,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/the-self-destructing-book/persona_tab4.png",
+                        "src_width": 800,
+                        "src_height": 1072,
+                        "width_columns": 3.5,
+                        "left_columns": 4.5,
+                        "top_offset": -400,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "It's a Sabotage!",
+                        "body": "After entering the access code, the countdown begins. As a constant reminder, a timer counts down every second, until the very last. To connect site visitors to the reading experience, we let them steal time from our winners. Users were connected in real-time to our readers via the hub. By clicking the 'Sabotage Timer' button, they could steal fifteen minutes of reading time, heightening the tension and forcing winners to read faster.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/the-self-destructing-book/persona_2.png",
+                        "src_width": 1527,
+                        "src_height": 963,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                }           
+            ]
+        },
+        {
+            "route": "26000-vodka",
+            "enabled": true,
+            "featured": false,
+            "menutitle": "",
+            "globaltitle": "",
+            "title": "KEYFREE",
+            "description": "Explore the purity of New Zealand vodka made from 26000 year old water. An expansive 3D experience that will immerse you in one of the world's finest vodkas.",
+            "client": "Business",
+            "date": "Feb 2009",
+            "role": "Creative and Production Partner",
+            "url": "",
+            "poster": "img/projects/26000-vodka/kez_title.png",
+            "poster_m": "img/projects/26000-vodka/mobile/26000-poster-m.jpg",
+            "categories": ["animation", "creative", "design", "development"],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/26000-vodka/kez_desc.png",
+                        "src_width": 1800,
+                        "src_height": 1125,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Problem",
+                        "body": "Keyfree sought to target automotive challenges with anti-theft solutions, secure trunk deliveries, insurance integration, and fleet management. They wanted to offer effortless integration for businesses.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/26000-vodka/kez_screens.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Challenges",
+                        "body": " Engineers tackling Keyfree's connected car solutions faced obstacles ranging from hardware development to data security, UX/UI design, and regulatory compliance. Ensuring scalability and user adoption were areas that required explicit focus.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/26000-vodka/kez_desc.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 5,
+                        "left_columns": 0,
+                        "top_offset": 120,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/26000-vodka/kez_logo.svg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 4.2,
+                        "left_columns": 3.8,
+                        "top_offset": -120,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Solution",
+                        "body": "Devflovv played a decisive role in executing KeyFree’s concept. They developed a robust online web platform, created and designed the anti-theft device, addressing critical technology gaps and ensuring smooth integration into Keyfree's connected car solutions.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/26000-vodka/kez_m4.png",
+                        "src_width": 750,
+                        "src_height": 1410,
+                        "width_columns": 3,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/26000-vodka/kez_m5.png",
+                        "src_width": 750,
+                        "src_height": 1410,
+                        "width_columns": 3,
+                        "left_columns": 5,
+                        "top_offset": -550,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "C++ | Node JS | AWS | Docker | Vue JS",
+                        "top_offset": 120
+                    }
+                }
+            ]
+        },
+        {
+            "route": "fafswag",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "THDC (Total Health Dental Care) ",
+            "description": "An Interactive Documentary taking you into the LGBTQ+ vogue ball scene in the world’s biggest Pacific city.",
+            "clientheader": "CREATIVE PARTNERS",
+            "client": "Business",
+            "date": "Feb 2018",
+            "role": "Creative and Production Partner",
+            "url": "",
+            "poster": "img/projects/fafswag/thdc-title.png",
+            "poster_m": "img/projects/fafswag/mobile/thdc-title.png",
+            "categories": ["creative", "design", "development"],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/fafswag/thdc1.png",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 140
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Problem",
+                        "body": "Total Health Dental Care aimed to enhance dental care accessibility and convenience by offering a range of services, an uninsured patient membership, and leveraging technology for seamless scheduling and teledentistry, catering to a diverse patient base.",
+                        "top_offset": 140
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/fafswag/thdc2.png",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/fafswag/thdc3.png",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 7,
+                        "left_columns": 1,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Challenges",
+                        "body": "Devs at Devflovv overcame hurdles like data security, system integration, user-friendliness, and scalability to enhance dental healthcare accessibility and convenience.",
+                        "top_offset": 140
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/fafswag/thdc-title.png",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 7,
+                        "left_columns": 0,
+                        "top_offset": 140
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/fafswag/thdc3.png",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 5,
+                        "left_columns": 3,
+                        "top_offset": 140
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/fafswag/thdc4.png",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 6,
+                        "left_columns": 0,
+                        "top_offset": -120,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Solution",
+                        "body": " Devflovv played a crucial role in revitalizing Total Health Dental Care's online platform, and addressing their software challenges. They developed a solution that enabled continuous online scheduling, and teledentistry, and improved accessibility for patients, ultimately amplifying the dental care experience.",
+                        "top_offset": 140
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/fafswag/thdc-logo.svg",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 6,
+                        "left_columns": 0,
+                        "top_offset": 140
+                    }
+                }
+            ]
+        },
+        {
             "route":"living-ai",
             "menutitle": "",
             "enabled": true,
@@ -237,325 +667,6 @@
             ]
         },
         {
-            "route": "cade-insights",
-            "menutitle": "",
-            "enabled": true,
-            "featured": true,
-            "globaltitle": "",
-            "title": "CADE INSIGHTS",
-            "description": "Project Description",
-            "client": "Business",
-            "date": "September, 2019",
-            "role": "Design, Development, Animation, UI, UX",
-            "platforms": "",
-            "url": "https://go.pioneer.com/cornrevolution",
-            "poster": "img/projects/baseball-app/baseball.png",
-            "poster_m": "img/projects/baseball-app/baseball.png",
-            "categories": ["design", "development", "Jelly Project", "Website"],
-            "awards": [],
-            "items": [
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/1-pioneer-intro-image.png",
-                        "src_width": 1536,
-                        "src_height": 864,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "z_index": 100,
-                        "top_offset": 138
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Problem",
-                        "body": "Devflovv tackled the creation of Cade Insights, a Business Network Intelligence platform aimed at offering in-depth data analysis and interactive reporting. The objective was to design a tool adept at managing complex data while providing a smooth user experience.",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/1-pioneer-intro-image.png",
-                        "src_width": 1536,
-                        "src_height": 864,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "z_index": 100,
-                        "top_offset": 138
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Challenges",
-                        "body": "Key challenges included developing an engaging, responsive dashboard, implementing an advanced language-model analysis tool, and crafting a user-friendly AI chatbot. These tasks demanded a blend of skills in both frontend and backend development to ensure ease of use and effective data handling.",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "carousel",
-                    "data": {
-                        "images": [
-                            {
-                                "src": "img/projects/pioneer/3-pioneer-desktop.jpg"
-                            },
-                            {
-                                "src": "img/projects/pioneer/4-pioneer-desktop.jpg"
-                            },
-                            {
-                                "src": "img/projects/pioneer/5-pioneer-desktop.jpg"
-                            }
-                        ],
-                        "src_width": 1539,
-                        "src_height": 867,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/6-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 0,
-                        "top_offset": 112
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/7-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 2.875,
-                        "top_offset": -580
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/8-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 5.75,
-                        "top_offset": -580
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/9-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 0,
-                        "top_offset": 112
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/10-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 2.875,
-                        "top_offset": -580
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/11-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 5.75,
-                        "top_offset": -580
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/12-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 0,
-                        "top_offset": 112
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/13-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 2.875,
-                        "top_offset": -580
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/14-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 5.75,
-                        "top_offset": -580
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Different Conditions",
-                        "body": "To further highlight the strengths of the Pioneer corn, we showed the plant withstanding different weather conditions corn is forced to endure throughout the growing season. ",
-                        "top_offset": 260
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "348555180",
-                        "video_name": "weather-conditions",
-                        "vimeo_video_url": "https://player.vimeo.com/external/348555180.hd.mp4?s=f91e3b1d358414a8a89d5769994f87e3d85aac1c&profile_id=169",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 190
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Solution:",
-                        "body": "Devflovv used Next JS and TypeScript for a dynamic front end and Python with Parse, Postgres, and Neo4J for backend data management and analysis. The outcome was Cade Insights, a platform featuring an advanced analysis tool and AI chatbot, boosting user business intelligence capabilities.",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/16-pioneer-scene.png",
-                        "src_width": 440,
-                        "src_height": 845,
-                        "width_columns": 2.25,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/17-pioneer-scene.png",
-                        "src_width": 440,
-                        "src_height": 845,
-                        "width_columns": 2.25,
-                        "left_columns": 2,
-                        "z_index": 1,
-                        "top_offset": -445
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/18-pioneer-scene.png",
-                        "src_width": 440,
-                        "src_height": 845,
-                        "width_columns": 2.25,
-                        "left_columns": 4,
-                        "z_index": 100,
-                        "top_offset": -445
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/19-pioneer-scene.png",
-                        "src_width": 440,
-                        "src_height": 845,
-                        "width_columns": 2.25,
-                        "left_columns": 6,
-                        "z_index": 200,
-                        "top_offset": -445
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/20-pioneer-scene.png",
-                        "src_width": 1546,
-                        "src_height": 948,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "z_index": 300,
-                        "top_offset": 120
-                    }
-                },
-
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "3D Projection mapping",
-                        "body": "By projecting high-level textures onto simplified 3D meshes we could give the sense of fully immersive 3D while still keeping it light on the CPU.",
-                        "top_offset": 195
-                    }
-                },
-                {
-                    "type": "mask",
-                    "data": {
-                        "media": [
-                            {
-                                "src": "img/projects/pioneer/21-pioneer-slider.png",
-                                "description": ""
-                            },
-                            {
-                                "src": "img/projects/pioneer/22-pioneer-slider.png",
-                                "description": ""
-                            }
-                        ],
-                        "type": "image",
-                        "direction": "vertical",
-                        "src_width": 1536,
-                        "src_height": 978,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/22-pioneer-kernel.png",
-                        "src_width": 590,
-                        "src_height": 509,
-                        "width_columns": 3,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-             
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": "Next JS | Python | Parse | Postgres | TypeScript | Neo4J | ML/ AI",
-                        "top_offset": 120
-                    }
-                }
-            ]
-        },
-        {
             "route": "multi-language-research-app",
             "menutitle": "",
             "enabled": true,
@@ -753,232 +864,6 @@
                     "data": {
                         "title": "TECH STACK",
                         "body": "JavaScript frameworks | React | styled-components | Emotion | Next.js | Stripe | Node.js | Apple Sign-in | NextAuth.js | OpenAI ChatGPT",
-                        "top_offset": 120
-                    }
-                }
-            ]
-        },
-        {
-            "route": "fench-&-deck",
-            "menutitle": "",
-            "enabled": true,
-            "featured": true,
-            "globaltitle": "",
-            "title": "FENCE & DECK",
-            "description": "Add Descrription",
-            "client": "Client Name",
-            "date": "April, 2019",
-            "role": "Art Direction, Design, Animation, Editing, Sound Design",
-            "platforms": "",
-            "url": "",
-            "poster": "img/projects/morgtage-crm/morgtage-crm.png",
-            "poster_m": "img/projects/morgtage-crm/morgtage-crm.png",
-            "categories": [],
-            "awards": [],
-            "items": [
-                {
-                    "type": "video",
-                    "data": {
-                        "vimeo_id": "365178771",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365178771.hd.mp4?s=14337853856f2faa9f80eeee7763e16e561fc755&profile_id=175",
-                        "video_name": "Resn_Les_Mills_Case_Study",
-                        "video_poster": "img/projects/les-mills-grit/1.0_Hero_Poster_Video.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 72
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Problem",
-                        "body": "Devflovv initiated a project for Fence & Deck Connection, Gallagher Vinyl, and Capital Fence and Rail, aiming to create not only secure online payment gateways but also an interactive design tool for customers to visualize and estimate fencing and decking projects.",
-                        "top_offset": 90
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/01_GRIDS.gif",
-                        "src_width": 920,
-                        "src_height": 528,
-                        "width_columns": 6,
-                        "left_columns": 2,
-                        "top_offset": 110,
-                        "z_index": 5
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "365182252",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182252.hd.mp4?s=e4188a4af64312d7bc13f1dc7cf6715217a30241&profile_id=175",
-                        "video_name": "02_SWEAT",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 6,
-                        "left_columns": 0,
-                        "top_offset": -60,
-                        "z_index": 1
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Challenges",
-                        "body": "Key challenges included integrating Stripe for secure payments, crafting user-friendly interfaces, and developing an innovative tool for customers to design, view, and calculate the cost of their projects—all while efficiently managing backend processes.",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "365182264",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182264.hd.mp4?s=ee6483e550f6ed9411e8fc52062aa98f0bfb314c&profile_id=175",
-                        "video_name": "03_Boxomtic One",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 6,
-                        "left_columns": 0,
-                        "top_offset": 120,
-                        "z_index": 2
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "365182199",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182199.hd.mp4?s=6a015cb596b8c9fe09e1e9ac4ac468990db00ecf&profile_id=175",
-                        "video_name": "04_HEART",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 6,
-                        "left_columns": 2,
-                        "top_offset": -60,
-                        "z_index": 1
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Solution",
-                        "body": "Using Angular, Devflovv built intuitive interfaces and integrated Stripe for payments, ensuring security and ease of use. Additionally, they created a custom design tool within the platform, enabling customers to engage in interactive planning and cost estimation for their fencing and decking needs.",
-                        "top_offset": 140
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/1.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 6,
-                        "left_columns": 2,
-                        "top_offset": 130,
-                        "z_index": 2
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/2.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 5,
-                        "left_columns": 0,
-                        "top_offset": -60,
-                        "z_index": 3
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/3.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 5,
-                        "left_columns": 3,
-                        "top_offset": -70,
-                        "z_index": 1
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "365182222",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182222.hd.mp4?s=b0038d25a96a48e57a953366ad08cd739d210ddb&profile_id=175",
-                        "video_name": "05_GRIT MINDSET",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 180
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/4.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 6,
-                        "left_columns": 0,
-                        "top_offset": 150,
-                        "z_index": 1
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/10.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 5,
-                        "left_columns": 3,
-                        "top_offset": -40,
-                        "z_index": 2
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/5.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 6.5,
-                        "left_columns": 0,
-                        "top_offset": -60,
-                        "z_index": 3
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Client Review's",
-                        "body": "Using Angular, Devflovv built intuitive interfaces and integrated Stripe for payments, ensuring security and ease of use. Additionally, they created a custom design tool within the platform, enabling customers to engage in interactive planning and cost estimation for their fencing and decking needs.",
-                        "top_offset": 140
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "365182243",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182243.hd.mp4?s=8ad0bb793a2ef0cd1a1ad91aede398539bfd6124&profile_id=175",
-                        "video_name": "6_Outro 2",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 13
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": " Angular | Firebase | Firebase Cloud Functions | Google Cloud Platform | Stripe | Fabric JS",
                         "top_offset": 120
                     }
                 }
@@ -1222,165 +1107,6 @@
                         "top_offset": 155
                     }
                 }
-            ]
-        },
-        {
-            "route": "ifit",
-            "menutitle": "",
-            "enabled": true,
-            "featured": true,
-            "globaltitle": "",
-            "title": "ifit",
-            "description": "Add Description",
-            "client": "Client Name",
-            "date": "April, 2019",
-            "role": "Event Conceptualisation, Creative, Content Production",
-            "platforms": "",
-            "url": "",
-            "poster": "img/projects/ifit/ifit-2.png",
-            "poster_m": "img/projects/ifit/ifit-2.png",
-            "categories": [],
-            "awards": [],
-            "items": [
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/ifit/ifit-2.png",
-                        "src_width": 1600,
-                        "src_height": 1000,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Problem",
-                        "body": "iFit encountered issues with its platform's consistency and accessibility, such as restricted features for free users, inconsistent designs on different devices, and missing interface components, affecting the user experience for its extensive user base.",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/iFit/ifit-screen1.png",
-                        "src_width": 1600,
-                        "src_height": 1000,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Challenges",
-                        "body": "Devflovv’s team focused on making premium workout features available to all users, ensuring uniform design on all devices, and restoring missing interface elements after platform updates.",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/iFit/ifit-screen2.png",
-                        "src_width": 1600,
-                        "src_height": 1000,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "",
-                        "body": "",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/iFit/ifit-3.png",
-                        "src_width": 1920,
-                        "src_height": 1280,
-                        "width_columns": 5,
-                        "left_columns": 3,
-                        "top_offset": 0,
-                        "z_index": 2
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/iFit/ifit-4.png",
-                        "src_width": 1680,
-                        "src_height": 1080,
-                        "width_columns": 5,
-                        "left_columns": 0,
-                        "top_offset": -60
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Solution",
-                        "body": "Using their expertise in JavaScript and TypeScript, Devflovv updated the front end with React and Next.js for a more cohesive and user-friendly interface. On the backend, they used Node.js and MongoDB for reliable performance and effective data handling, significantly enhancing the overall user experience on iFit.",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/iFit/ifit2.jpg",
-                        "src_width": 1600,
-                        "src_height": 1000,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Enhancing iFit: Smoother, Smarter, Stronger",
-                        "body": "",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "341762617",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341762617.hd.mp4?s=c0a6af9172146c565c72c3308e82aae0a101d655&profile_id=175",
-                        "video_name": "adias-loop-pre-speech",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/iFit/ifit-logo.png",
-                        "src_width": 1600,
-                        "src_height": 444,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": "React | Next.js | Node.js | TypeScript | MongoDB",
-                        "top_offset": 120
-                    }
-                }   
             ]
         },
         {
@@ -2294,200 +2020,219 @@
             ]
         },
         {
-            "route": "fafswag",
+            "route": "ifit",
             "menutitle": "",
             "enabled": true,
             "featured": true,
             "globaltitle": "",
-            "title": "THDC (Total Health Dental Care) ",
-            "description": "An Interactive Documentary taking you into the LGBTQ+ vogue ball scene in the world’s biggest Pacific city.",
-            "clientheader": "CREATIVE PARTNERS",
-            "client": "Business",
-            "date": "Feb 2018",
-            "role": "Creative and Production Partner",
+            "title": "ifit",
+            "description": "Add Description",
+            "client": "Client Name",
+            "date": "April, 2019",
+            "role": "Event Conceptualisation, Creative, Content Production",
+            "platforms": "",
             "url": "",
-            "poster": "img/projects/fafswag/thdc-title.png",
-            "poster_m": "img/projects/fafswag/mobile/thdc-title.png",
-            "categories": ["creative", "design", "development"],
+            "poster": "img/projects/ifit/ifit-2.png",
+            "poster_m": "img/projects/ifit/ifit-2.png",
+            "categories": [],
             "awards": [],
             "items": [
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/fafswag/thdc1.png",
-                        "src_width": 1280,
-                        "src_height": 720,
+                        "src": "img/projects/ifit/ifit-2.png",
+                        "src_width": 1600,
+                        "src_height": 1000,
                         "width_columns": 8,
                         "left_columns": 0,
-                        "top_offset": 140
+                        "top_offset": 120
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
                         "title": "Problem",
-                        "body": "Total Health Dental Care aimed to enhance dental care accessibility and convenience by offering a range of services, an uninsured patient membership, and leveraging technology for seamless scheduling and teledentistry, catering to a diverse patient base.",
-                        "top_offset": 140
+                        "body": "iFit encountered issues with its platform's consistency and accessibility, such as restricted features for free users, inconsistent designs on different devices, and missing interface components, affecting the user experience for its extensive user base.",
+                        "top_offset": 120
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/fafswag/thdc2.png",
-                        "src_width": 1280,
-                        "src_height": 720,
+                        "src": "img/projects/iFit/ifit-screen1.png",
+                        "src_width": 1600,
+                        "src_height": 1000,
                         "width_columns": 8,
                         "left_columns": 0,
                         "top_offset": 120
                     }
                 },
                 {
+                    "type": "headline",
+                    "data": {
+                        "title": "Challenges",
+                        "body": "Devflovv’s team focused on making premium workout features available to all users, ensuring uniform design on all devices, and restoring missing interface elements after platform updates.",
+                        "top_offset": 120
+                    }
+                },
+                {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/fafswag/thdc3.png",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 7,
-                        "left_columns": 1,
+                        "src": "img/projects/iFit/ifit-screen2.png",
+                        "src_width": 1600,
+                        "src_height": 1000,
+                        "width_columns": 8,
+                        "left_columns": 0,
                         "top_offset": 120
                     }
                 },
                 {
                     "type": "text",
                     "data": {
-                        "title": "Challenges",
-                        "body": "Devs at Devflovv overcame hurdles like data security, system integration, user-friendliness, and scalability to enhance dental healthcare accessibility and convenience.",
-                        "top_offset": 140
+                        "title": "",
+                        "body": "",
+                        "top_offset": 120
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/fafswag/thdc-title.png",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 7,
-                        "left_columns": 0,
-                        "top_offset": 140
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/fafswag/thdc3.png",
-                        "src_width": 1280,
-                        "src_height": 720,
+                        "src": "img/projects/iFit/ifit-3.png",
+                        "src_width": 1920,
+                        "src_height": 1280,
                         "width_columns": 5,
                         "left_columns": 3,
-                        "top_offset": 140
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/fafswag/thdc4.png",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 6,
-                        "left_columns": 0,
-                        "top_offset": -120,
+                        "top_offset": 0,
                         "z_index": 2
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/iFit/ifit-4.png",
+                        "src_width": 1680,
+                        "src_height": 1080,
+                        "width_columns": 5,
+                        "left_columns": 0,
+                        "top_offset": -60
+                    }
+                },
+                {
+                    "type": "headline",
                     "data": {
                         "title": "Solution",
-                        "body": " Devflovv played a crucial role in revitalizing Total Health Dental Care's online platform, and addressing their software challenges. They developed a solution that enabled continuous online scheduling, and teledentistry, and improved accessibility for patients, ultimately amplifying the dental care experience.",
-                        "top_offset": 140
+                        "body": "Using their expertise in JavaScript and TypeScript, Devflovv updated the front end with React and Next.js for a more cohesive and user-friendly interface. On the backend, they used Node.js and MongoDB for reliable performance and effective data handling, significantly enhancing the overall user experience on iFit.",
+                        "top_offset": 120
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/fafswag/thdc-logo.svg",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 6,
+                        "src": "img/projects/iFit/ifit2.jpg",
+                        "src_width": 1600,
+                        "src_height": 1000,
+                        "width_columns": 8,
                         "left_columns": 0,
-                        "top_offset": 140
+                        "top_offset": 120
                     }
-                }
-            ]
-        },
-        {
-            "route": "the-self-destructing-book",
-            "enabled": true,
-            "featured": false,
-            "menutitle": "",
-            "globaltitle": "",
-            "title": "The Self-Destructing Book",
-            "description": "James Patterson is the world’s #1 bestselling author. His latest book, 'Private Vegas', is about to self-destruct.",
-            "client": "Business",
-            "date": "Jan 2015",
-            "role": "Design, Animation, Development",
-            "url": "",
-            "poster": "img/projects/the-self-destructing-book/the-self-destructing-book-poster-archive.jpg",
-            "poster_m": "img/projects/the-self-destructing-book/the-self-destructing-book-poster-m.jpg",
-            "categories": ["creative", "design", "development", "games"],
-            "awards": [
-                {
-                    "type": "d-and-ad",
-                    "name": "Wood Pencil"
                 },
                 {
-                    "type": "cannes-lion",
-                    "name": "Cannes Silver Lion"
-                },
-                {
-                    "type": "fwa-sotd",
-                    "name": "TCEA"
-                },
-                {
-                    "type": "fwa-sotd",
-                    "name": "Site of the Day"
-                },
-                {
-                    "type": "fwa-motd",
-                    "name": "Mobile Site of the Day"
-                },
-                {
-                    "type": "awwwards-sotd",
-                    "name": "Site of the Day"
-                },
-                {
-                    "type": "one-show",
-                    "name": "Silver Pencil"
-                },
-                {
-                    "type": "one-show",
-                    "name": "Bronze Pencil"
-                },
-                {
-                    "type": "webbys",
-                    "name": "Webby Award Winner"
-                }
-            ],
-            "items": [
-                {
-                    "type": "video",
+                    "type": "headline",
                     "data": {
-                        "vimeo_id": "123375958",
-                        "vimeo_video_url": "https://player.vimeo.com/external/123375958.hd.mp4?s=146618835fd1d9ee3c2d95bd64e4e75d155a23d6&profile_id=113",
-                        "video_name": "the self destructing book",
-                        "video_poster": "img/projects/the-self-destructing-book/the-self-destructing-book-video.jpg",
+                        "title": "Enhancing iFit: Smoother, Smarter, Stronger",
+                        "body": "",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "videoloop",
+                    "data": {
+                        "vimeo_id": "341762617",
+                        "vimeo_video_url": "https://player.vimeo.com/external/341762617.hd.mp4?s=c0a6af9172146c565c72c3308e82aae0a101d655&profile_id=175",
+                        "video_name": "adias-loop-pre-speech",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 8,
                         "left_columns": 0,
-                        "top_offset": 0
+                        "top_offset": 120
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "image",
                     "data": {
-                        "title": "The Most Thrilling Read Ever",
-                        "body": "For the launch of James Patterson's 'Private Vegas', Devflovv and Mother New York wanted to make sure the experience was as exhilarating as possible. To do this, we created the Self-Destructing Book, an electrifying, digitally augmented thrill-ride, befitting the Master of Suspense.",
+                        "src": "img/projects/iFit/ifit-logo.png",
+                        "src_width": 1600,
+                        "src_height": 444,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "React | Next.js | Node.js | TypeScript | MongoDB",
+                        "top_offset": 120
+                    }
+                }   
+            ]
+        },
+        {
+            "route": "cade-insights",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "CADE INSIGHTS",
+            "description": "Project Description",
+            "client": "Business",
+            "date": "September, 2019",
+            "role": "Design, Development, Animation, UI, UX",
+            "platforms": "",
+            "url": "https://go.pioneer.com/cornrevolution",
+            "poster": "img/projects/baseball-app/baseball.png",
+            "poster_m": "img/projects/baseball-app/baseball.png",
+            "categories": ["design", "development", "Jelly Project", "Website"],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/1-pioneer-intro-image.png",
+                        "src_width": 1536,
+                        "src_height": 864,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "z_index": 100,
+                        "top_offset": 138
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Problem",
+                        "body": "Devflovv tackled the creation of Cade Insights, a Business Network Intelligence platform aimed at offering in-depth data analysis and interactive reporting. The objective was to design a tool adept at managing complex data while providing a smooth user experience.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/1-pioneer-intro-image.png",
+                        "src_width": 1536,
+                        "src_height": 864,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "z_index": 100,
+                        "top_offset": 138
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Challenges",
+                        "body": "Key challenges included developing an engaging, responsive dashboard, implementing an advanced language-model analysis tool, and crafting a user-friendly AI chatbot. These tasks demanded a blend of skills in both frontend and backend development to ensure ease of use and effective data handling.",
                         "top_offset": 120
                     }
                 },
@@ -2496,34 +2241,157 @@
                     "data": {
                         "images": [
                             {
-                                "src": "img/projects/the-self-destructing-book/the-self-destructing-book-01a.jpg"
+                                "src": "img/projects/pioneer/3-pioneer-desktop.jpg"
                             },
                             {
-                                "src": "img/projects/the-self-destructing-book/the-self-destructing-book-01b.jpg"
+                                "src": "img/projects/pioneer/4-pioneer-desktop.jpg"
+                            },
+                            {
+                                "src": "img/projects/pioneer/5-pioneer-desktop.jpg"
                             }
                         ],
-                        "src_width": 1551,
-                        "src_height": 915,
+                        "src_width": 1539,
+                        "src_height": 867,
                         "width_columns": 8,
                         "left_columns": 0,
                         "top_offset": 120
                     }
                 },
                 {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/6-pioneer-mobile.png",
+                        "src_width": 473,
+                        "src_height": 952,
+                        "width_columns": 2.25,
+                        "left_columns": 0,
+                        "top_offset": 112
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/7-pioneer-mobile.png",
+                        "src_width": 473,
+                        "src_height": 952,
+                        "width_columns": 2.25,
+                        "left_columns": 2.875,
+                        "top_offset": -580
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/8-pioneer-mobile.png",
+                        "src_width": 473,
+                        "src_height": 952,
+                        "width_columns": 2.25,
+                        "left_columns": 5.75,
+                        "top_offset": -580
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/9-pioneer-mobile.png",
+                        "src_width": 473,
+                        "src_height": 952,
+                        "width_columns": 2.25,
+                        "left_columns": 0,
+                        "top_offset": 112
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/10-pioneer-mobile.png",
+                        "src_width": 473,
+                        "src_height": 952,
+                        "width_columns": 2.25,
+                        "left_columns": 2.875,
+                        "top_offset": -580
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/11-pioneer-mobile.png",
+                        "src_width": 473,
+                        "src_height": 952,
+                        "width_columns": 2.25,
+                        "left_columns": 5.75,
+                        "top_offset": -580
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/12-pioneer-mobile.png",
+                        "src_width": 473,
+                        "src_height": 952,
+                        "width_columns": 2.25,
+                        "left_columns": 0,
+                        "top_offset": 112
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/13-pioneer-mobile.png",
+                        "src_width": 473,
+                        "src_height": 952,
+                        "width_columns": 2.25,
+                        "left_columns": 2.875,
+                        "top_offset": -580
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/14-pioneer-mobile.png",
+                        "src_width": 473,
+                        "src_height": 952,
+                        "width_columns": 2.25,
+                        "left_columns": 5.75,
+                        "top_offset": -580
+                    }
+                },
+                {
                     "type": "text",
                     "data": {
-                        "title": "Design & Experience",
-                        "body": "We developed an iPad-exclusive version of the book, complete with animated thrills at key moments in the action. Through our website, we gave away 1,000 copies to lucky winners, who had 24 hours to read the book before it self-destructed. To ensure only the winners could access it, we created a unique code for every copy and released them in batches over five days.",
+                        "title": "Different Conditions",
+                        "body": "To further highlight the strengths of the Pioneer corn, we showed the plant withstanding different weather conditions corn is forced to endure throughout the growing season. ",
+                        "top_offset": 260
+                    }
+                },
+                {
+                    "type": "videoloop",
+                    "data": {
+                        "vimeo_id": "348555180",
+                        "video_name": "weather-conditions",
+                        "vimeo_video_url": "https://player.vimeo.com/external/348555180.hd.mp4?s=f91e3b1d358414a8a89d5769994f87e3d85aac1c&profile_id=169",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 190
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Solution",
+                        "body": "Devflovv used Next JS and TypeScript for a dynamic front end and Python with Parse, Postgres, and Neo4J for backend data management and analysis. The outcome was Cade Insights, a platform featuring an advanced analysis tool and AI chatbot, boosting user business intelligence capabilities.",
                         "top_offset": 120
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/the-self-destructing-book-03.png",
-                        "src_width": 800,
-                        "src_height": 1072,
-                        "width_columns": 3.5,
+                        "src": "img/projects/pioneer/16-pioneer-scene.png",
+                        "src_width": 440,
+                        "src_height": 845,
+                        "width_columns": 2.25,
                         "left_columns": 0,
                         "top_offset": 120
                     }
@@ -2531,73 +2399,325 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/the-self-destructing-book-04.png",
-                        "src_width": 800,
-                        "src_height": 1072,
-                        "width_columns": 3.5,
-                        "left_columns": 4.5,
-                        "top_offset": -400,
+                        "src": "img/projects/pioneer/17-pioneer-scene.png",
+                        "src_width": 440,
+                        "src_height": 845,
+                        "width_columns": 2.25,
+                        "left_columns": 2,
+                        "z_index": 1,
+                        "top_offset": -445
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/18-pioneer-scene.png",
+                        "src_width": 440,
+                        "src_height": 845,
+                        "width_columns": 2.25,
+                        "left_columns": 4,
+                        "z_index": 100,
+                        "top_offset": -445
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/19-pioneer-scene.png",
+                        "src_width": 440,
+                        "src_height": 845,
+                        "width_columns": 2.25,
+                        "left_columns": 6,
+                        "z_index": 200,
+                        "top_offset": -445
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/20-pioneer-scene.png",
+                        "src_width": 1546,
+                        "src_height": 948,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "z_index": 300,
+                        "top_offset": 120
+                    }
+                },
+
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "3D Projection mapping",
+                        "body": "By projecting high-level textures onto simplified 3D meshes we could give the sense of fully immersive 3D while still keeping it light on the CPU.",
+                        "top_offset": 195
+                    }
+                },
+                {
+                    "type": "mask",
+                    "data": {
+                        "media": [
+                            {
+                                "src": "img/projects/pioneer/21-pioneer-slider.png",
+                                "description": ""
+                            },
+                            {
+                                "src": "img/projects/pioneer/22-pioneer-slider.png",
+                                "description": ""
+                            }
+                        ],
+                        "type": "image",
+                        "direction": "vertical",
+                        "src_width": 1536,
+                        "src_height": 978,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/22-pioneer-kernel.png",
+                        "src_width": 590,
+                        "src_height": 509,
+                        "width_columns": 3,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+             
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "Next JS | Python | Parse | Postgres | TypeScript | Neo4J | ML/ AI",
+                        "top_offset": 120
+                    }
+                }
+            ]
+        },
+        {
+            "route": "fench-&-deck",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "FENCE & DECK",
+            "description": "Add Descrription",
+            "client": "Client Name",
+            "date": "April, 2019",
+            "role": "Art Direction, Design, Animation, Editing, Sound Design",
+            "platforms": "",
+            "url": "",
+            "poster": "img/projects/morgtage-crm/morgtage-crm.png",
+            "poster_m": "img/projects/morgtage-crm/morgtage-crm.png",
+            "categories": [],
+            "awards": [],
+            "items": [
+                {
+                    "type": "video",
+                    "data": {
+                        "vimeo_id": "365178771",
+                        "vimeo_video_url": "https://player.vimeo.com/external/365178771.hd.mp4?s=14337853856f2faa9f80eeee7763e16e561fc755&profile_id=175",
+                        "video_name": "Resn_Les_Mills_Case_Study",
+                        "video_poster": "img/projects/les-mills-grit/1.0_Hero_Poster_Video.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 72
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Problem",
+                        "body": "Devflovv initiated a project for Fence & Deck Connection, Gallagher Vinyl, and Capital Fence and Rail, aiming to create not only secure online payment gateways but also an interactive design tool for customers to visualize and estimate fencing and decking projects.",
+                        "top_offset": 90
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/01_GRIDS.gif",
+                        "src_width": 920,
+                        "src_height": 528,
+                        "width_columns": 6,
+                        "left_columns": 2,
+                        "top_offset": 110,
+                        "z_index": 5
+                    }
+                },
+                {
+                    "type": "videoloop",
+                    "data": {
+                        "vimeo_id": "365182252",
+                        "vimeo_video_url": "https://player.vimeo.com/external/365182252.hd.mp4?s=e4188a4af64312d7bc13f1dc7cf6715217a30241&profile_id=175",
+                        "video_name": "02_SWEAT",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6,
+                        "left_columns": 0,
+                        "top_offset": -60,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Challenges",
+                        "body": "Key challenges included integrating Stripe for secure payments, crafting user-friendly interfaces, and developing an innovative tool for customers to design, view, and calculate the cost of their projects—all while efficiently managing backend processes.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "videoloop",
+                    "data": {
+                        "vimeo_id": "365182264",
+                        "vimeo_video_url": "https://player.vimeo.com/external/365182264.hd.mp4?s=ee6483e550f6ed9411e8fc52062aa98f0bfb314c&profile_id=175",
+                        "video_name": "03_Boxomtic One",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6,
+                        "left_columns": 0,
+                        "top_offset": 120,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "videoloop",
+                    "data": {
+                        "vimeo_id": "365182199",
+                        "vimeo_video_url": "https://player.vimeo.com/external/365182199.hd.mp4?s=6a015cb596b8c9fe09e1e9ac4ac468990db00ecf&profile_id=175",
+                        "video_name": "04_HEART",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6,
+                        "left_columns": 2,
+                        "top_offset": -60,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Solution",
+                        "body": "Using Angular, Devflovv built intuitive interfaces and integrated Stripe for payments, ensuring security and ease of use. Additionally, they created a custom design tool within the platform, enabling customers to engage in interactive planning and cost estimation for their fencing and decking needs.",
+                        "top_offset": 140
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/1.0_Grit_Still.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6,
+                        "left_columns": 2,
+                        "top_offset": 130,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/2.0_Grit_Still.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 5,
+                        "left_columns": 0,
+                        "top_offset": -60,
+                        "z_index": 3
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/3.0_Grit_Still.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 5,
+                        "left_columns": 3,
+                        "top_offset": -70,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "videoloop",
+                    "data": {
+                        "vimeo_id": "365182222",
+                        "vimeo_video_url": "https://player.vimeo.com/external/365182222.hd.mp4?s=b0038d25a96a48e57a953366ad08cd739d210ddb&profile_id=175",
+                        "video_name": "05_GRIT MINDSET",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 180
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/4.0_Grit_Still.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6,
+                        "left_columns": 0,
+                        "top_offset": 150,
                         "z_index": 1
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/the-self-destructing-book-02.jpg",
-                        "src_width": 1400,
-                        "src_height": 825,
-                        "width_columns": 8,
+                        "src": "img/projects/les-mills-grit/10.0_Grit_Still.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 5,
+                        "left_columns": 3,
+                        "top_offset": -40,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/5.0_Grit_Still.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6.5,
                         "left_columns": 0,
-                        "top_offset": 120
+                        "top_offset": -60,
+                        "z_index": 3
                     }
                 },
                 {
                     "type": "text",
                     "data": {
-                        "title": "Dramatic Tension",
-                        "body": "We designed every aspect of our app to heighten the tension of the reading experience. As the story unfolds, blood splatters across the screen. Smoke obscures the text. Hidden messages appear. Police sirens wail. Explosions envelop the page. In every possible way, we put readers directly into the action.",
-                        "top_offset": 120
+                        "title": "Client Review's",
+                        "body": "Using Angular, Devflovv built intuitive interfaces and integrated Stripe for payments, ensuring security and ease of use. Additionally, they created a custom design tool within the platform, enabling customers to engage in interactive planning and cost estimation for their fencing and decking needs.",
+                        "top_offset": 140
                     }
                 },
                 {
-                    "type": "image",
+                    "type": "videoloop",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/the-self-destructing-book-05.png",
-                        "src_width": 800,
-                        "src_height": 1072,
-                        "width_columns": 3.5,
+                        "vimeo_id": "365182243",
+                        "vimeo_video_url": "https://player.vimeo.com/external/365182243.hd.mp4?s=8ad0bb793a2ef0cd1a1ad91aede398539bfd6124&profile_id=175",
+                        "video_name": "6_Outro 2",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
                         "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/the-self-destructing-book/the-self-destructing-book-05-2.png",
-                        "src_width": 800,
-                        "src_height": 1072,
-                        "width_columns": 3.5,
-                        "left_columns": 4.5,
-                        "top_offset": -400,
-                        "z_index": 1
+                        "top_offset": 13
                     }
                 },
                 {
                     "type": "text",
                     "data": {
-                        "title": "It's a Sabotage!",
-                        "body": "After entering the access code, the countdown begins. As a constant reminder, a timer counts down every second, until the very last. To connect site visitors to the reading experience, we let them steal time from our winners. Users were connected in real-time to our readers via the hub. By clicking the 'Sabotage Timer' button, they could steal fifteen minutes of reading time, heightening the tension and forcing winners to read faster.",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/the-self-destructing-book/the-self-destructing-book-06.png",
-                        "src_width": 1527,
-                        "src_height": 963,
-                        "width_columns": 8,
-                        "left_columns": 0,
+                        "title": "TECH STACK",
+                        "body": " Angular | Firebase | Firebase Cloud Functions | Google Cloud Platform | Stripe | Fabric JS",
                         "top_offset": 120
                     }
                 }

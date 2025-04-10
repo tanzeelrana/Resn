@@ -1,6 +1,251 @@
 {
     "projects": [
         {
+            "route": "the-self-destructing-book",
+            "title": "PERSONA AI ",
+            "enabled": true,
+            "featured": false,
+            "description": "AI tool for researchers' meeting recording and analysis.",
+            "client": "Business",
+            "date": "Jan 2015",
+            "role": "Design, Animation, Development",
+            "url": "",
+            "poster": "img/projects/the-self-destructing-book/the-self-destructing-book-poster-archive.jpg",
+            "poster_m": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-poster-m.jpg",
+            "categories": ["creative", "design", "development", "games"],
+            "awards": [
+                {
+                    "type": "fwa-sotd",
+                    "name": "TCEA"
+                },
+                {
+                    "type": "fwa-sotd",
+                    "name": "Site of the Day"
+                },
+                {
+                    "type": "fwa-motd",
+                    "name": "Mobile Site of the Day"
+                },
+                {
+                    "type": "awwwards-sotd",
+                    "name": "Site of the Day"
+                },
+                {
+                    "type": "cannes-lion",
+                    "name": "Cannes Silver Lion"
+                },
+                {
+                    "type": "one-show",
+                    "name": "Silver Pencil"
+                },
+                {
+                    "type": "one-show",
+                    "name": "Bronze Pencil"
+                },
+                {
+                    "type": "webbys",
+                    "name": "Webby Award Winner"
+                }
+            ],
+            "items": [
+                {
+                    "type": "mobilevideo",
+                    "data": {
+                        "vimeo_id": "123375958",
+                        "vimeo_video_url": "https://player.vimeo.com/external/123375958.hd.mp4?s=146618835fd1d9ee3c2d95bd64e4e75d155a23d6&profile_id=113",
+                        "video_name": "the self destructing book",
+                        "video_poster": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-video.jpg",
+                        "src_width": 1280,
+                        "src_height": 720
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "The Most Thrilling Read Ever",
+                        "body": "For the launch of James Patterson's 'Private Vegas', Devflovv and Mother New York wanted to make sure the experience was as exhilarating as possible. To do this, we created the Self-Destructing Book, an electrifying, digitally augmented thrill-ride, befitting the Master of Suspense."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-01a.jpg",
+                        "src_width": 1400,
+                        "src_height": 826
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-01b.jpg",
+                        "src_width": 1400,
+                        "src_height": 826
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Design & Experience",
+                        "body": "We developed an iPad-exclusive version of the book, complete with animated thrills at key moments in the action. Through our website, we gave away 1,000 copies to lucky winners, who had 24 hours to read the book before it self-destructed. To ensure only the winners could access it, we created a unique code for every copy and released them in batches over five days."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-04.png",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-02.jpg",
+                        "src_width": 1400,
+                        "src_height": 825
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Dramatic Tension",
+                        "body": "We designed every aspect of our app to heighten the tension of the reading experience. As the story unfolds, blood splatters across the screen. Smoke obscures the text. Hidden messages appear. Police sirens wail. Explosions envelop the page. In every possible way, we put readers directly into the action."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-05.png",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-05-2.png",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "It's a Sabotage!",
+                        "body": "After entering the access code, the countdown begins. As a constant reminder, a timer counts down every second, until the very last. To connect site visitors to the reading experience, we let them steal time from our winners. Users were connected in real-time to our readers via the hub. By clicking the 'Sabotage Timer' button, they could steal fifteen minutes of reading time, heightening the tension and forcing winners to read fastr. "
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-06.jpg",
+                        "src_width": 1400,
+                        "src_height": 808
+                    }
+                }
+            ]
+        },
+        {
+            "route": "26000-vodka",
+            "title": "KEYFREE",
+            "enabled": true,
+            "featured": false,
+            "description": "Smart automotive platform with IoT, security, scalability, and integration.",
+            "client": "Business",
+            "date": "Feb 2009",
+            "role": "Creative and Production Partner",
+            "url": "",
+            "poster": "img/projects/26000-vodka/26000-poster.jpg",
+            "poster_m": "img/projects/26000-vodka/mobile/26000-poster-m.jpg",
+            "categories": ["animation", "creative", "design", "development"],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/26000-vodka/mobile/26000-landing.jpg",
+                        "src_width": 1400,
+                        "src_height": 875
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Keyfree sought to target automotive challenges with anti-theft solutions, secure trunk deliveries, insurance integration, and fleet management. They wanted to offer effortless integration for businesses."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/26000-vodka/mobile/26000-02.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Engineers tackling Keyfree's connected car solutions faced obstacles ranging from hardware development to data security, UX/UI design, and regulatory compliance. Ensuring scalability and user adoption were areas that required explicit focus."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/26000-vodka/mobile/26000-04.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/26000-vodka/mobile/26000-03.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv played a decisive role in executing KeyFree’s concept. They developed a robust online web platform, created and designed the anti-theft device, addressing critical technology gaps and ensuring smooth integration into Keyfree's connected car solutions."
+					}
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/26000-vodka/kez_m4.png",
+                        "src_width": 413,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/26000-vodka/kez_m5.png",
+                        "src_width": 413,
+                        "src_height": 736,
+                        "mobile_pair": true
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "C++ | Node JS | AWS | Docker | Vue JS"
+					}
+                }
+            ]
+        },
+        {
             "route": "living_ai",
             "menutitle": "",
             "enabled": true,

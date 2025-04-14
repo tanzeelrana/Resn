@@ -123300,8 +123300,8 @@ define('view/modules/background/gem/gem2_view',[
 
                 TweenMax.killTweensOf(this.dragTweenObj);
 
-                this.createTimeout();
-                TweenMax.to(this.dragTweenObj, 1.8, {'progress':1, ease:'Sine.easeIn'});
+                // this.createTimeout();
+                // TweenMax.to(this.dragTweenObj, 1.8, {'progress':1, ease:'Sine.easeIn'});
 
                 this.trigger('GEM:MOUSE:DOWN', e);
             }
@@ -123320,10 +123320,10 @@ define('view/modules/background/gem/gem2_view',[
 
                 TweenMax.killTweensOf(this.dragTweenObj);
 
-                this.createTimeout();
-                TweenMax.to(this.dragTweenObj, 1.8, {'progress':1, ease:'Sine.easeIn'});
+                // this.createTimeout();
+                // TweenMax.to(this.dragTweenObj, 1.8, {'progress':1, ease:'Sine.easeIn'});
 
-                this.trigger('GEM:MOUSE:DOWN', e);
+                 this.trigger('GEM:MOUSE:DOWN', e);
             }
         },
 
@@ -123735,7 +123735,7 @@ define('view/modules/background/background_drop_view',[
             this.gemView.on('GEM:MOUSE:DOWN', this.onDown, this);
             this.gemView.on('GEM:MOUSE:UP', this.onUp, this);
             this.gemView.on('GEM:MOUSE:MOVE', this.onMove, this);
-            this.gemView.on('SHOW:INTERACTIVE', this.onShowInt, this);
+            // this.gemView.on('SHOW:INTERACTIVE', this.onShowInt, this);
             this.gemView.on('START:TRANSITION:INTERACTIVE', this.onShowTransInt, this);
             this.gemView.on('HIDE:INTERACTIVE', this.onHideInt, this);
 
@@ -123757,7 +123757,7 @@ define('view/modules/background/background_drop_view',[
             this.gemView.off('GEM:MOUSE:DOWN', this.onDown, this);
             this.gemView.off('GEM:MOUSE:UP', this.onUp, this);
             this.gemView.off('GEM:MOUSE:MOVE', this.onMove, this);
-            this.gemView.off('SHOW:INTERACTIVE', this.onShowInt, this);
+            // this.gemView.off('SHOW:INTERACTIVE', this.onShowInt, this);
             this.gemView.off('START:TRANSITION:INTERACTIVE', this.onShowTransInt, this);
             this.gemView.off('HIDE:INTERACTIVE', this.onHideInt, this);
 
@@ -123943,7 +123943,7 @@ define('view/modules/background/background_drop_view',[
             if (!this.loading) {
                 this.bar.activate();
                 //this.activationTimer = setTimeout(this.activateInteractive, 2);
-                this.activateInteractive();
+                // this.activateInteractive();
 
 
             } else {
@@ -123957,16 +123957,16 @@ define('view/modules/background/background_drop_view',[
             // console.log('*************activate interactive');
 
             // start interactive with mousepos
-            this.interactiveView.setMousePos(this.showIntMousePos);
+            // this.interactiveView.setMousePos(this.showIntMousePos);
 
-            this.$interactiveHolder.css({'z-index':'1001', 'display': 'block'});
+            // this.$interactiveHolder.css({'z-index':'1001', 'display': 'block'});
 
-            this.interactiveView.activate();
-            this.interactiveView.show();
+            // this.interactiveView.deactivate();
+            // this.interactiveView.hide();
 
-            Backbone.trigger(AppEvents.Interactives.Show, {
-                interactive : this.interactiveView.model
-            });
+            // Backbone.trigger(AppEvents.Interactives.Show, {
+            //     interactive : this.interactiveView.model
+            // });
 
 
         },
@@ -123990,23 +123990,25 @@ define('view/modules/background/background_drop_view',[
         },
 
         createInteractive:function() {
+			
+			
 
-            if (this.interactiveView) {
-                this.interactiveView.deactivate();
-                this.interactiveView.destroy();
-            }
+            // if (this.interactiveView) {
+            //     this.interactiveView.deactivate();
+            //     this.interactiveView.destroy();
+            // }
 
-            this.loading = true;
-            this.currentInteractive = AppModel.getNextInteractive(!this.firstInteractive);
+            // this.loading = true;
+            // this.currentInteractive = AppModel.getNextInteractive(!this.firstInteractive);
 
-            this.bar.setCounter(this.currentInteractive.get('number'), AppModel.get("numInteractives"));
+            // this.bar.setCounter(this.currentInteractive.get('number'), AppModel.get("numInteractives"));
 
-            if (this.currentInteractive.get('loaded')) {
-                this.setupInteractive();
-            } else {
+            // if (this.currentInteractive.get('loaded')) {
+            //     this.setupInteractive();
+            // } else {
 
-                this.currentInteractive.on('change:loaded', this.onInteractiveLoaded);
-            }
+            //     this.currentInteractive.on('change:loaded', this.onInteractiveLoaded);
+            // }
         },
 
         onInteractiveLoaded: function(e) {

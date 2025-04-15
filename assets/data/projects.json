@@ -2,7 +2,7 @@
    
     "projects": [
         {
-            "route": "the-self-destructing-book",
+            "route": "persona-ai",
             "enabled": true,
             "featured": false,
             "menutitle": "",
@@ -13,47 +13,9 @@
             "date": "Jan 2015",
             "role": "Design, Animation, Development",
             "url": "",
-            "poster": "img/projects/the-self-destructing-book/persona_title.png",
-            "poster_m": "img/projects/the-self-destructing-book/the-self-destructing-book-poster-m.jpg",
+            "poster": "img/projects/persona_ai/persona_title.png",
+            "poster_m": "img/projects/persona_ai/persona_title.png",
             "categories": ["creative", "design", "development", "games"],
-            "awards": [
-                {
-                    "type": "d-and-ad",
-                    "name": "Wood Pencil"
-                },
-                {
-                    "type": "cannes-lion",
-                    "name": "Cannes Silver Lion"
-                },
-                {
-                    "type": "fwa-sotd",
-                    "name": "TCEA"
-                },
-                {
-                    "type": "fwa-sotd",
-                    "name": "Site of the Day"
-                },
-                {
-                    "type": "fwa-motd",
-                    "name": "Mobile Site of the Day"
-                },
-                {
-                    "type": "awwwards-sotd",
-                    "name": "Site of the Day"
-                },
-                {
-                    "type": "one-show",
-                    "name": "Silver Pencil"
-                },
-                {
-                    "type": "one-show",
-                    "name": "Bronze Pencil"
-                },
-                {
-                    "type": "webbys",
-                    "name": "Webby Award Winner"
-                }
-            ],
             "items": [
                 {
                     "type": "video",
@@ -61,7 +23,7 @@
                         "vimeo_id": "123375958",
                         "vimeo_video_url": "https://player.vimeo.com/external/123375958.hd.mp4?s=146618835fd1d9ee3c2d95bd64e4e75d155a23d6&profile_id=113",
                         "video_name": "the self destructing book",
-                        "video_poster": "img/projects/the-self-destructing-book/persona_video.png",
+                        "video_poster": "img/projects/persona_ai/persona_video.png",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 8,
@@ -72,8 +34,8 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "The Most Thrilling Read Ever",
-                        "body": "For the launch of James Patterson's 'Private Vegas', Devflovv and Mother New York wanted to make sure the experience was as exhilarating as possible. To do this, we created the Self-Destructing Book, an electrifying, digitally augmented thrill-ride, befitting the Master of Suspense.",
+                        "title": "The Problem",
+                        "body": "Persona AI needed a smart, automated solution to help researchers efficiently analyze interview recordings by extracting relevant content based on targeted keywords—eliminating the need for time-consuming manual reviews.",
                         "top_offset": 120
                     }
                 },
@@ -82,10 +44,10 @@
                     "data": {
                         "images": [
                             {
-                                "src": "img/projects/the-self-destructing-book/persona_curs2.png"
+                                "src": "img/projects/persona_ai/persona_curs2.png"
                             },
                             {
-                                "src": "img/projects/the-self-destructing-book/persona_1.png"
+                                "src": "img/projects/persona_ai/persona_1.png"
                             }
                         ],
                         "src_width": 1551,
@@ -98,15 +60,15 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "Design & Experience",
-                        "body": "We developed an iPad-exclusive version of the book, complete with animated thrills at key moments in the action. Through our website, we gave away 1,000 copies to lucky winners, who had 24 hours to read the book before it self-destructed. To ensure only the winners could access it, we created a unique code for every copy and released them in batches over five days.",
+                        "title": "Challenge",
+                        "body": "Devflovv faced the challenge of building a scalable, serverless backend capable of handling real-time data processing, video analysis, and clip generation, while also preparing the system for secure and future-proof user authentication.",
                         "top_offset": 120
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/persona_tab1.png",
+                        "src": "img/projects/persona_ai/persona_tab1.png",
                         "src_width": 800,
                         "src_height": 1072,
                         "width_columns": 3.5,
@@ -117,7 +79,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/persona_tab2.png",
+                        "src": "img/projects/persona_ai/persona_tab2.png",
                         "src_width": 800,
                         "src_height": 1072,
                         "width_columns": 3.5,
@@ -129,7 +91,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/persona_curs1.png",
+                        "src": "img/projects/persona_ai/persona_curs1.png",
                         "src_width": 1400,
                         "src_height": 825,
                         "width_columns": 8,
@@ -140,15 +102,15 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "Dramatic Tension",
-                        "body": "We designed every aspect of our app to heighten the tension of the reading experience. As the story unfolds, blood splatters across the screen. Smoke obscures the text. Hidden messages appear. Police sirens wail. Explosions envelop the page. In every possible way, we put readers directly into the action.",
+                        "title": "Solution",
+                        "body": "Devflovv designed a fully serverless system using AWS Lambda, enabling high performance with low operational overhead. An RDS database was integrated to manage and structure data efficiently. Through VAPI APIs, the tool conducts AI-moderated voice conversations, analyzes recorded sessions, and generates video clips mapped to key topics or keywords. Additionally, AWS Cognito was planned for robust, secure user authentication. The result is a powerful web-based AI tool that empowers researchers to extract actionable insights faster and more effectively.",
                         "top_offset": 120
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/persona_tab3.png",
+                        "src": "img/projects/persona_ai/persona_tab3.png",
                         "src_width": 800,
                         "src_height": 1072,
                         "width_columns": 3.5,
@@ -159,7 +121,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/persona_tab4.png",
+                        "src": "img/projects/persona_ai/persona_tab4.png",
                         "src_width": 800,
                         "src_height": 1072,
                         "width_columns": 3.5,
@@ -169,28 +131,28 @@
                     }
                 },
                 {
-                    "type": "text",
-                    "data": {
-                        "title": "It's a Sabotage!",
-                        "body": "After entering the access code, the countdown begins. As a constant reminder, a timer counts down every second, until the very last. To connect site visitors to the reading experience, we let them steal time from our winners. Users were connected in real-time to our readers via the hub. By clicking the 'Sabotage Timer' button, they could steal fifteen minutes of reading time, heightening the tension and forcing winners to read faster.",
-                        "top_offset": 120
-                    }
-                },
-                {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/persona_2.png",
+                        "src": "img/projects/persona_ai/persona_2.png",
                         "src_width": 1527,
                         "src_height": 963,
                         "width_columns": 8,
                         "left_columns": 0,
                         "top_offset": 120
                     }
-                }           
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "AWS Lambda, RDS Database, Serverless Architecture",
+                        "top_offset": 120
+                    }
+                }         
             ]
         },
         {
-            "route": "26000-vodka",
+            "route": "keyfree",
             "enabled": true,
             "featured": false,
             "menutitle": "",
@@ -201,15 +163,15 @@
             "date": "Feb 2009",
             "role": "Creative and Production Partner",
             "url": "",
-            "poster": "img/projects/26000-vodka/kez_title.png",
-            "poster_m": "img/projects/26000-vodka/mobile/26000-poster-m.jpg",
+            "poster": "img/projects/keyfree/kez_title.png",
+            "poster_m": "img/projects/keyfree/kez_title.png",
             "categories": ["animation", "creative", "design", "development"],
             "awards": [],
             "items": [
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/26000-vodka/kez_desc.png",
+                        "src": "img/projects/keyfree/kez_desc.png",
                         "src_width": 1800,
                         "src_height": 1125,
                         "width_columns": 8,
@@ -228,7 +190,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/26000-vodka/kez_screens.png",
+                        "src": "img/projects/keyfree/kez_screens.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 8,
@@ -247,7 +209,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/26000-vodka/kez_desc.png",
+                        "src": "img/projects/keyfree/kez_desc.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 5,
@@ -259,7 +221,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/26000-vodka/kez_logo.svg",
+                        "src": "img/projects/keyfree/kez_logo.svg",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 4.2,
@@ -279,7 +241,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/26000-vodka/kez_m4.png",
+                        "src": "img/projects/keyfree/kez_m4.png",
                         "src_width": 750,
                         "src_height": 1410,
                         "width_columns": 3,
@@ -290,7 +252,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/26000-vodka/kez_m5.png",
+                        "src": "img/projects/keyfree/kez_m5.png",
                         "src_width": 750,
                         "src_height": 1410,
                         "width_columns": 3,
@@ -310,7 +272,7 @@
             ]
         },
         {
-            "route": "fafswag",
+            "route": "thdc",
             "menutitle": "",
             "enabled": true,
             "featured": true,
@@ -322,15 +284,15 @@
             "date": "Feb 2018",
             "role": "Creative and Production Partner",
             "url": "",
-            "poster": "img/projects/fafswag/thdc-title.png",
-            "poster_m": "img/projects/fafswag/mobile/thdc-title.png",
+            "poster": "img/projects/thdc-health-care/thdc-title.png",
+            "poster_m": "img/projects/thdc-health-care/mobile/thdc-title.png",
             "categories": ["creative", "design", "development"],
             "awards": [],
             "items": [
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/fafswag/thdc1.png",
+                        "src": "img/projects/thdc-health-care/thdc1.png",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 8,
@@ -349,7 +311,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/fafswag/thdc2.png",
+                        "src": "img/projects/thdc-health-care/thdc2.png",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 8,
@@ -360,7 +322,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/fafswag/thdc3.png",
+                        "src": "img/projects/thdc-health-care/thdc3.png",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 7,
@@ -379,7 +341,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/fafswag/thdc-title.png",
+                        "src": "img/projects/thdc-health-care/thdc-title.png",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 7,
@@ -390,7 +352,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/fafswag/thdc3.png",
+                        "src": "img/projects/thdc-health-care/thdc3.png",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 5,
@@ -401,7 +363,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/fafswag/thdc4.png",
+                        "src": "img/projects/thdc-health-care/thdc4.png",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 6,
@@ -421,7 +383,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/fafswag/thdc-logo.svg",
+                        "src": "img/projects/thdc-health-care/thdc-logo.svg",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 6,
@@ -1220,7 +1182,7 @@
             "globaltitle": "",
             "title": "strava ios app",
             "description": "Add Description",
-            "client": "Individual",
+            "client": "Business",
             "date": "Apr, 2019",
             "role": "Developed and optimized Strava’s iOS app with intuitive UI/UX, a robust backend, and enhanced security for a seamless fitness experience.",
             "platforms": "",
@@ -1671,7 +1633,7 @@
             "globaltitle": "",
             "title": "Aivida AI",
             "description": "A globally touring activation showcasing adidas' high-tech, data-driven footwear and its manufacturing process.",
-            "client": "adidas",
+            "client": "Business",
             "date": "Oct, 2017",
             "role": "Creative & Production Partner",
             "url": "",
@@ -1996,7 +1958,7 @@
             "globaltitle": "",
             "title": "ifit",
             "description": "Add Description",
-            "client": "Client Name",
+            "client": "Business",
             "date": "April, 2019",
             "role": "Event Conceptualisation, Creative, Content Production",
             "platforms": "",
@@ -2474,7 +2436,7 @@
             "globaltitle": "",
             "title": "FENCE & DECK",
             "description": "Add Descrription",
-            "client": "Client Name",
+            "client": "Business",
             "date": "April, 2019",
             "role": "Art Direction, Design, Animation, Editing, Sound Design",
             "platforms": "",

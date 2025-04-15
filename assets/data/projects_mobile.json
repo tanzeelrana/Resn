@@ -1,7 +1,7 @@
 {
     "projects": [
         {
-            "route": "the-self-destructing-book",
+            "route": "persona-ai",
             "title": "PERSONA AI ",
             "enabled": true,
             "featured": false,
@@ -10,43 +10,9 @@
             "date": "Jan 2015",
             "role": "Design, Animation, Development",
             "url": "",
-            "poster": "img/projects/the-self-destructing-book/the-self-destructing-book-poster-archive.jpg",
-            "poster_m": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-poster-m.jpg",
+            "poster": "img/projects/persona_ai/persona_video.png",
+            "poster_m": "img/projects/persona_ai/persona_video.png",
             "categories": ["creative", "design", "development", "games"],
-            "awards": [
-                {
-                    "type": "fwa-sotd",
-                    "name": "TCEA"
-                },
-                {
-                    "type": "fwa-sotd",
-                    "name": "Site of the Day"
-                },
-                {
-                    "type": "fwa-motd",
-                    "name": "Mobile Site of the Day"
-                },
-                {
-                    "type": "awwwards-sotd",
-                    "name": "Site of the Day"
-                },
-                {
-                    "type": "cannes-lion",
-                    "name": "Cannes Silver Lion"
-                },
-                {
-                    "type": "one-show",
-                    "name": "Silver Pencil"
-                },
-                {
-                    "type": "one-show",
-                    "name": "Bronze Pencil"
-                },
-                {
-                    "type": "webbys",
-                    "name": "Webby Award Winner"
-                }
-            ],
             "items": [
                 {
                     "type": "mobilevideo",
@@ -54,7 +20,7 @@
                         "vimeo_id": "123375958",
                         "vimeo_video_url": "https://player.vimeo.com/external/123375958.hd.mp4?s=146618835fd1d9ee3c2d95bd64e4e75d155a23d6&profile_id=113",
                         "video_name": "the self destructing book",
-                        "video_poster": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-video.jpg",
+                        "video_poster": "img/projects/persona_ai/persona_video.png",
                         "src_width": 1280,
                         "src_height": 720
                     }
@@ -62,14 +28,14 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "The Most Thrilling Read Ever",
-                        "body": "For the launch of James Patterson's 'Private Vegas', Devflovv and Mother New York wanted to make sure the experience was as exhilarating as possible. To do this, we created the Self-Destructing Book, an electrifying, digitally augmented thrill-ride, befitting the Master of Suspense."
+                        "title": "The Problem",
+                        "body": "Persona AI needed a smart, automated solution to help researchers efficiently analyze interview recordings by extracting relevant content based on targeted keywords—eliminating the need for time-consuming manual reviews."
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-01a.jpg",
+                        "src": "img/projects/persona_ai/persona_curs2.png",
                         "src_width": 1400,
                         "src_height": 826
                     }
@@ -77,7 +43,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-01b.jpg",
+                        "src": "img/projects/persona_ai/persona_1.png",
                         "src_width": 1400,
                         "src_height": 826
                     }
@@ -85,14 +51,14 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "Design & Experience",
-                        "body": "We developed an iPad-exclusive version of the book, complete with animated thrills at key moments in the action. Through our website, we gave away 1,000 copies to lucky winners, who had 24 hours to read the book before it self-destructed. To ensure only the winners could access it, we created a unique code for every copy and released them in batches over five days."
+                        "title": "The Challenge",
+                        "body": " Devflovv faced the challenge of building a scalable, serverless backend capable of handling real-time data processing, video analysis, and clip generation, while also preparing the system for secure and future-proof user authentication."
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-04.png",
+                        "src": "img/projects/persona_ai/persona_tab1.png",
                         "src_width": 800,
                         "src_height": 1072
                     }
@@ -100,7 +66,15 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-02.jpg",
+                        "src": "img/projects/persona_ai/persona_tab2.png",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/persona_ai/persona_curs1.png",
                         "src_width": 1400,
                         "src_height": 825
                     }
@@ -108,14 +82,14 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "Dramatic Tension",
-                        "body": "We designed every aspect of our app to heighten the tension of the reading experience. As the story unfolds, blood splatters across the screen. Smoke obscures the text. Hidden messages appear. Police sirens wail. Explosions envelop the page. In every possible way, we put readers directly into the action."
+                        "title": "The Solution",
+                        "body": "Devflovv designed a fully serverless system using AWS Lambda, enabling high performance with low operational overhead. An RDS database was integrated to manage and structure data efficiently. Through VAPI APIs, the tool conducts AI-moderated voice conversations, analyzes recorded sessions, and generates video clips mapped to key topics or keywords. Additionally, AWS Cognito was planned for robust, secure user authentication. The result is a powerful web-based AI tool that empowers researchers to extract actionable insights faster and more effectively."
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-05.png",
+                        "src": "img/projects/persona_ai/persona_tab3.png",
                         "src_width": 800,
                         "src_height": 1072
                     }
@@ -123,30 +97,30 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-05-2.png",
+                        "src": "img/projects/persona_ai/persona_tab4.png",
                         "src_width": 800,
                         "src_height": 1072
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/persona_ai/persona_2.png",
+                        "src_width": 1400,
+                        "src_height": 808
                     }
                 },
                 {
                     "type": "text",
                     "data": {
-                        "title": "It's a Sabotage!",
-                        "body": "After entering the access code, the countdown begins. As a constant reminder, a timer counts down every second, until the very last. To connect site visitors to the reading experience, we let them steal time from our winners. Users were connected in real-time to our readers via the hub. By clicking the 'Sabotage Timer' button, they could steal fifteen minutes of reading time, heightening the tension and forcing winners to read fastr. "
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-06.jpg",
-                        "src_width": 1400,
-                        "src_height": 808
+                        "title": "TECH STACK",
+                        "body": "AWS Lambda, RDS Database, Serverless Architecture"
                     }
                 }
             ]
         },
         {
-            "route": "26000-vodka",
+            "route": "keyfree",
             "title": "KEYFREE",
             "enabled": true,
             "featured": false,
@@ -155,15 +129,15 @@
             "date": "Feb 2009",
             "role": "Creative and Production Partner",
             "url": "",
-            "poster": "img/projects/26000-vodka/26000-poster.jpg",
-            "poster_m": "img/projects/26000-vodka/mobile/26000-poster-m.jpg",
+            "poster": "img/projects/keyfree/kez_title_m.png",
+            "poster_m": "img/projects/keyfree/kez_title_m.png",
             "categories": ["animation", "creative", "design", "development"],
             "awards": [],
             "items": [
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/26000-vodka/mobile/26000-landing.jpg",
+                        "src": "img/projects/keyfree/kez_desc.png",
                         "src_width": 1400,
                         "src_height": 875
                     }
@@ -178,7 +152,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/26000-vodka/mobile/26000-02.jpg",
+                        "src": "img/projects/keyfree/kez_screens.png",
                         "src_width": 1400,
                         "src_height": 788
                     }
@@ -193,15 +167,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/26000-vodka/mobile/26000-04.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/26000-vodka/mobile/26000-03.jpg",
+                        "src": "img/projects/keyfree/kez_desc.png",
                         "src_width": 1400,
                         "src_height": 788
                     }
@@ -218,7 +184,7 @@
                     "data": {
                         "portrait": true,
                         "scrollable": false,
-                        "src": "img/projects/26000-vodka/kez_m4.png",
+                        "src": "img/projects/keyfree/kez_m4.png",
                         "src_width": 413,
                         "src_height": 736,
                         "mobile_pair": true,
@@ -230,7 +196,7 @@
                     "data": {
                         "portrait": true,
                         "scrollable": false,
-                        "src": "img/projects/26000-vodka/kez_m5.png",
+                        "src": "img/projects/keyfree/kez_m5.png",
                         "src_width": 413,
                         "src_height": 736,
                         "mobile_pair": true
@@ -242,6 +208,93 @@
                         "title": "TECH STACK",
                         "body": "C++ | Node JS | AWS | Docker | Vue JS"
 					}
+                }
+            ]
+        },
+        {
+            "route": "thdc",
+            "title": "THDC (Total Health Dental Care)",
+            "enabled": true,
+            "featured": true,
+            "description": "Revolutionizing dental care with tech-driven patient solutions.",
+            "clientheader": "Bussiness + Individual",
+            "client": "Business",
+            "date": "Feb 2018",
+            "role": "Creative and Production Partner",
+            "url": "https://fafswagvogue.com/",
+            "poster": "img/projects/thdc-health-care/thdc1.png",
+            "poster_m": "img/projects/thdc-health-care/thdc1.png",
+            "categories": ["creative", "design", "development"],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/thdc-health-care/thdc1.png",
+                        "src_width": 1200,
+                        "src_height": 675
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Total Health Dental Care aimed to enhance dental care accessibility and convenience by offering a range of services, an uninsured patient membership, and leveraging technology for seamless scheduling and teledentistry, catering to a diverse patient base."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/thdc-health-care/thdc2.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/thdc-health-care/thdc3.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Devs at Devflovv overcame hurdles like data security, system integration, user-friendliness, and scalability to enhance dental healthcare accessibility and convenience."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/thdc-health-care/thdc3.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/thdc-health-care/thdc4.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv played a crucial role in revitalizing Total Health Dental Care's online platform, and addressing their software challenges. They developed a solution that enabled continuous online scheduling, and teledentistry, and improved accessibility for patients, ultimately amplifying the dental care experience."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/thdc-health-care/thdc-title.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
                 }
             ]
         },
@@ -3241,101 +3294,6 @@
                         "src": "img/projects/nordyportrait/mobile/nordyportrait_13.png",
                         "src_width": 1920,
                         "src_height": 898
-                    }
-                }
-            ]
-        },
-        {
-            "route": "fafswag",
-            "title": "FAFSWAGVOGUE",
-            "enabled": true,
-            "featured": true,
-            "description": "An Interactive Documentary taking you into the LGBTQ+ vogue ball scene in the world’s biggest Pacific city.",
-            "clientheader": "CREATIVE PARTNERS",
-            "client": "Piki Films & FAF SWAG",
-            "date": "Feb 2018",
-            "role": "Creative and Production Partner",
-            "url": "https://fafswagvogue.com/",
-            "poster": "img/projects/fafswag/fafswag-poster-archive.jpg",
-            "poster_m": "img/projects/fafswag/mobile/fafswag-poster-m.jpg",
-            "categories": ["creative", "design", "development"],
-            "awards": [],
-            "items": [
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/fafswag/mobile/fafswag-1-m.jpg",
-                        "src_width": 1200,
-                        "src_height": 675
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Gaming Methodology",
-                        "body": "FAFSWAGVOGUE is an online documentary that uses a gaming methodology, drawing the audience into the story through intuitive interactions while they learn about vogue culture. Users can choose striking characters and locations to judge a unique dance battle. Selecting a winner will unlock short-form documentaries, revealing the personal lives of five performers."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/fafswag/mobile/fafswag-2-m.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/fafswag/mobile/fafswag-3-m.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Involving the Audience",
-                        "body": "After a short introduction, users enter a custom 360° environment, where they can select a performer and location for a dance battle. During the battle, users can tap-and-hold to enable slow motion, allowing them to explore each moment in greater detail. These interactive elements allow users to control aspects of the experience, involving them in the story and allowing them to play an active role throughout."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/fafswag/mobile/fafswag-4-m.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/fafswag/mobile/fafswag-5-m.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Tap & Hold",
-                        "body": "On mobile, the gyroscope enabled menu navigation and tap-and-hold interactions. For desktop, the experience takes full advantage of the larger screen size with higher-res images, while navigation is accomplished through intuitive interactions like click-and-drag."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/fafswag/mobile/fafswag-6-m.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/fafswag/mobile/fafswag-7-m.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
                     }
                 }
             ]
@@ -7430,93 +7388,6 @@
             ]
         },
         {
-            "route": "26000-vodka",
-            "title": "26000 Vodka",
-            "enabled": true,
-            "featured": false,
-            "description": "Explore the purity of New Zealand vodka made from 26000-year-old water. An expansive 3D experience that will immerse you in one of the world's finest vodkas.",
-            "client": "26000 Vodka",
-            "date": "Feb 2009",
-            "role": "Creative and Production Partner",
-            "url": "",
-            "poster": "img/projects/26000-vodka/26000-poster.jpg",
-            "poster_m": "img/projects/26000-vodka/mobile/26000-poster-m.jpg",
-            "categories": ["animation", "creative", "design", "development"],
-            "awards": [],
-            "items": [
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/26000-vodka/mobile/26000-landing.jpg",
-                        "src_width": 1400,
-                        "src_height": 875
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Pure",
-                        "body": "Users entered a custom-built, 3D environment, where they floated through an icy cavern, surrounded by drops of crystalline water. The sparse, soothing audio reflected and the site's seductive imagery of glacial ice and pure ingredients that go into every handmade batch distillation."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/26000-vodka/mobile/26000-01.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/26000-vodka/mobile/26000-02.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "",
-                        "body": "Batch distilled 26000 Vodka is the only premium vodka brand made in the antipodes."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/26000-vodka/mobile/26000-04.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/26000-vodka/mobile/26000-03.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/26000-vodka/mobile/26000-05.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/26000-vodka/mobile/26000-06.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                }
-            ]
-        },
-        {
             "route": "panera",
             "title": "Panera Land of Clean",
             "enabled": true,
@@ -8347,151 +8218,6 @@
                         "src_width": 640,
                         "src_height": 2918,
                         "mobile_pair": true
-                    }
-                }
-            ]
-        },
-        {
-            "route": "the-self-destructing-book",
-            "title": "The Self-Destructing Book",
-            "enabled": true,
-            "featured": false,
-            "description": "James Patterson is the worldâ€™s #1 bestselling author. His latest book, 'Private Vegas', is about to self-destruct. ",
-            "client": "Mother New York & James Patterson",
-            "date": "Jan 2015",
-            "role": "Design, Animation, Development",
-            "url": "",
-            "poster": "img/projects/the-self-destructing-book/the-self-destructing-book-poster-archive.jpg",
-            "poster_m": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-poster-m.jpg",
-            "categories": ["creative", "design", "development", "games"],
-            "awards": [
-                {
-                    "type": "fwa-sotd",
-                    "name": "TCEA"
-                },
-                {
-                    "type": "fwa-sotd",
-                    "name": "Site of the Day"
-                },
-                {
-                    "type": "fwa-motd",
-                    "name": "Mobile Site of the Day"
-                },
-                {
-                    "type": "awwwards-sotd",
-                    "name": "Site of the Day"
-                },
-                {
-                    "type": "cannes-lion",
-                    "name": "Cannes Silver Lion"
-                },
-                {
-                    "type": "one-show",
-                    "name": "Silver Pencil"
-                },
-                {
-                    "type": "one-show",
-                    "name": "Bronze Pencil"
-                },
-                {
-                    "type": "webbys",
-                    "name": "Webby Award Winner"
-                }
-            ],
-            "items": [
-                {
-                    "type": "mobilevideo",
-                    "data": {
-                        "vimeo_id": "123375958",
-                        "vimeo_video_url": "https://player.vimeo.com/external/123375958.hd.mp4?s=146618835fd1d9ee3c2d95bd64e4e75d155a23d6&profile_id=113",
-                        "video_name": "the self destructing book",
-                        "video_poster": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-video.jpg",
-                        "src_width": 1280,
-                        "src_height": 720
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "The Most Thrilling Read Ever",
-                        "body": "For the launch of James Patterson's 'Private Vegas', Devflovv and Mother New York wanted to make sure the experience was as exhilarating as possible. To do this, we created the Self-Destructing Book, an electrifying, digitally augmented thrill-ride, befitting the Master of Suspense."
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-01a.jpg",
-                        "src_width": 1400,
-                        "src_height": 826
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-01b.jpg",
-                        "src_width": 1400,
-                        "src_height": 826
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Design & Experience",
-                        "body": "We developed an iPad-exclusive version of the book, complete with animated thrills at key moments in the action. Through our website, we gave away 1,000 copies to lucky winners, who had 24 hours to read the book before it self-destructed. To ensure only the winners could access it, we created a unique code for every copy and released them in batches over five days."
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-04.png",
-                        "src_width": 800,
-                        "src_height": 1072
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-02.jpg",
-                        "src_width": 1400,
-                        "src_height": 825
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Dramatic Tension",
-                        "body": "We designed every aspect of our app to heighten the tension of the reading experience. As the story unfolds, blood splatters across the screen. Smoke obscures the text. Hidden messages appear. Police sirens wail. Explosions envelop the page. In every possible way, we put readers directly into the action."
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-05.png",
-                        "src_width": 800,
-                        "src_height": 1072
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-05-2.png",
-                        "src_width": 800,
-                        "src_height": 1072
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "It's a Sabotage!",
-                        "body": "After entering the access code, the countdown begins. As a constant reminder, a timer counts down every second, until the very last. To connect site visitors to the reading experience, we let them steal time from our winners. Users were connected in real-time to our readers via the hub. By clicking the 'Sabotage Timer' button, they could steal fifteen minutes of reading time, heightening the tension and forcing winners to read fastr. "
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/the-self-destructing-book/mobile/the-self-destructing-book-06.jpg",
-                        "src_width": 1400,
-                        "src_height": 808
                     }
                 }
             ]

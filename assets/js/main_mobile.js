@@ -24705,18 +24705,18 @@ module.exports = function (props) {
         h(
             "div",
             { "class": "js-project__awards project__awards" },
-            props.awards ? props.awards.map(function (award) {
-                return h(
-                    "div",
-                    { "class": "awards__item awards__item-" + award.type },
-                    h("div", { "class": "awards__item-icon" }),
-                    h(
-                        "div",
-                        { "class": "awards__item-name" },
-                        award.name
-                    )
-                );
-            }) : null
+            // props.awards ? props.awards.map(function (award) {
+            //     return h(
+            //         "div",
+            //         { "class": "awards__item awards__item-" + award.type },
+            //         h("div", { "class": "awards__item-icon" }),
+            //         h(
+            //             "div",
+            //             { "class": "awards__item-name" },
+            //             award.name
+            //         )
+            //     );
+            // }) : null
         ),
         h(
             "div",
@@ -25606,18 +25606,18 @@ module.exports = function (props) {
         h(
             "div",
             { "class": "js-project__awards project__awards" },
-            props.awards.map(function (award) {
-                return h(
-                    "div",
-                    { "class": "awards__item awards__item-" + award.type },
-                    h("div", { "class": "awards__item-icon" }),
-                    h(
-                        "div",
-                        { "class": "awards__item-name" },
-                        award.name
-                    )
-                );
-            })
+            // props.awards.map(function (award) {
+            //     return h(
+            //         "div",
+            //         { "class": "awards__item awards__item-" + award.type },
+            //         h("div", { "class": "awards__item-icon" }),
+            //         h(
+            //             "div",
+            //             { "class": "awards__item-name" },
+            //             award.name
+            //         )
+            //     );
+            // })
         )
     );
 };

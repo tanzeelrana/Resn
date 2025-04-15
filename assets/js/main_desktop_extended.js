@@ -29252,22 +29252,22 @@ module.exports = function (props) {
     return h(
         "div",
         { "class": "js-project__footer project__footer" },
-        h(
-            "div",
-            { "class": "js-project__awards project__awards" },
-            props.awards ? props.awards.map(function (award) {
-                return h(
-                    "div",
-                    { "class": "awards__item awards__item-" + award.type },
-                    h("div", { "class": "awards__item-icon" }),
-                    h(
-                        "div",
-                        { "class": "awards__item-name" },
-                        award.name
-                    )
-                );
-            }) : null
-        ),
+        // h(
+        //     "div",
+        //     { "class": "js-project__awards project__awards" },
+        //     props.awards ? props.awards.map(function (award) {
+        //         return h(
+        //             "div",
+        //             { "class": "awards__item awards__item-" + award.type },
+        //             h("div", { "class": "awards__item-icon" }),
+        //             h(
+        //                 "div",
+        //                 { "class": "awards__item-name" },
+        //                 award.name
+        //             )
+        //         );
+        //     }) : null
+        // ),
         h(
             "div",
             { "class": "js-project__launch project__launch" },
@@ -30150,26 +30150,26 @@ arguments[4][9][0].apply(exports,arguments)
 var h = require(2);
 
 module.exports = function (props) {
-    return h(
-        "div",
-        { "class": "js-project__footer project__footer" },
-        h(
-            "div",
-            { "class": "js-project__awards project__awards" },
-            props.awards.map(function (award) {
-                return h(
-                    "div",
-                    { "class": "awards__item awards__item-" + award.type },
-                    h("div", { "class": "awards__item-icon" }),
-                    h(
-                        "div",
-                        { "class": "awards__item-name" },
-                        award.name
-                    )
-                );
-            })
-        )
-    );
+    // return h(
+    //     "div",
+    //     { "class": "js-project__footer project__footer" },
+    //     h(
+    //         "div",
+    //         { "class": "js-project__awards project__awards" },
+    //         props.awards.map(function (award) {
+    //             return h(
+    //                 "div",
+    //                 { "class": "awards__item awards__item-" + award.type },
+    //                 h("div", { "class": "awards__item-icon" }),
+    //                 h(
+    //                     "div",
+    //                     { "class": "awards__item-name" },
+    //                     award.name
+    //                 )
+    //             );
+    //         })
+    //     )
+    // );
 };
 
 },{"2":2}],35:[function(require,module,exports){

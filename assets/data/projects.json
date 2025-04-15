@@ -1,36 +1,5 @@
 {
-    "awards": [
-        {
-            "source": "FWAS",
-            "count": 121,
-            "class": "fwa"
-        },
-        {
-            "source": "AWWWARDS",
-            "count": 54,
-            "class": "awwwards"
-        },
-        {
-            "source": "WEBBYS",
-            "count": 9,
-            "class": "webbys"
-        },
-        {
-            "source": "CANNES LIONS",
-            "count": 28,
-            "class": "cannes"
-        },
-        {
-            "source": "ONE SHOW",
-            "count": 19,
-            "class": "oneshow"
-        },
-        {
-            "source": "D&AD",
-            "count": 12,
-            "class": "dandad"
-        }
-    ],
+   
     "projects": [
         {
             "route": "the-self-destructing-book",

@@ -26454,7 +26454,7 @@ define('view/mobile/modules/work/menu/work_menu_item_view',[
 
             this.setElement(Templates.r('workMenuItemMobile', this.model.toJSON()));
 
-            this.POSTER_OFFSET = 60;
+            this.POSTER_OFFSET = 25;
 
             this.$posterHolder = this.$('.js-bg-holder');
             

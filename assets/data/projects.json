@@ -1974,13 +1974,13 @@
             ]
         },
         {
-            "route": "speedfactory-activation",
+            "route": "avaida_ai",
             "enabled": true,
             "featured": false,
-            "menutitle": "adidas Speedfactory Activation",
+            "menutitle": "Avaida AI",
             "globaltitle": "",
             "title": "Aivida AI",
-            "description": "A globally touring activation showcasing adidas' high-tech, data-driven footwear and its manufacturing process.",
+            "description": "AI & ML Solutions for Healthcare and Business intelligence.",
             "client": "Business",
             "date": "Oct, 2017",
             "role": "Creative & Production Partner",
@@ -2002,7 +2002,7 @@
                         "vimeo_id": "266452443",
                         "vimeo_video_url": "https://player.vimeo.com/external/266452443.hd.mp4?s=5bbc21b7a9ee9158ce8dc9401e410f5788b1aef7&profile_id=175",
                         "video_name": "FINAL-adidas-Speedfactory-Case-Study",
-                        "video_poster": "img/projects/speedfactory-activation/speedfactory_activation-video.jpg",
+                        "video_poster": "",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 8,
@@ -2114,7 +2114,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/speedfactory-activation/sf-kinect-dots.png",
+                        "src": "img/projects/aivida/sf-kinect-dots.png",
                         "src_width": 1376,
                         "src_height": 849,
                         "width_columns": 6,
@@ -2178,7 +2178,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/speedfactory-activation/sf-photobooth-plex.png",
+                        "src": "img/projects/aivida/sf-photobooth-plex.png",
                         "src_width": 352,
                         "src_height": 470,
                         "width_columns": 1.7,
@@ -2190,7 +2190,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/speedfactory-activation/sf-photobooth-dots.jpg",
+                        "src": "img/projects/aivida/sf-photobooth-dots.jpg",
                         "src_width": 806,
                         "src_height": 1295,
                         "width_columns": 3.5,
@@ -2248,7 +2248,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/speedfactory-activation/sf-treadmill-runner.png",
+                        "src": "img/projects/aivida/sf-treadmill-runner.png",
                         "src_width": 1173,
                         "src_height": 1312,
                         "width_columns": 6,

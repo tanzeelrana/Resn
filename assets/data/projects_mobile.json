@@ -372,7 +372,7 @@
             ]
         },
         {
-            "route": "speedfactory-activation",
+            "route": "avaida_ai",
             "title": "AVAIDA AI",
             "enabled": true,
             "featured": false,
@@ -382,7 +382,7 @@
             "role": "Creative & Production Partner",
             "url": "",
             "poster": "img/projects/aivida/aivida-solutions1.png",
-            "poster_m": "img/projects/speedfactory-activation/mobile/speedfactory_activation-poster-m.jpg",
+            "poster_m": "",
             "categories": [
                 "activation",
                 "design",
@@ -398,7 +398,7 @@
                         "vimeo_id": "266452443",
                         "vimeo_video_url": "https://player.vimeo.com/external/266452443.hd.mp4?s=5bbc21b7a9ee9158ce8dc9401e410f5788b1aef7&profile_id=175",
                         "video_name": "speedfactory_activation",
-                        "video_poster": "img/projects/speedfactory-activation/speedfactory_activation-video.jpg",
+                        "video_poster": "",
                         "src_width": 1280,
                         "src_height": 720
                     }

@@ -103,7 +103,7 @@
                     "type": "text",
                     "data": {
                         "title": "Solution",
-                        "body": "Devflovv designed a fully serverless system using AWS Lambda, enabling high performance with low operational overhead. An RDS database was integrated to manage and structure data efficiently. Through VAPI APIs, the tool conducts AI-moderated voice conversations, analyzes recorded sessions, and generates video clips mapped to key topics or keywords. Additionally, AWS Cognito was planned for robust, secure user authentication. The result is a powerful web-based AI tool that empowers researchers to extract actionable insights faster and more effectively.",
+                        "body": "Devflovv developed PersonaAI on serverless architecture, enabling high performance and availability with low operational overhead. RDS Aurora was used as a database layer and AWS ElastiCache(Redis) for server-side caching. Through VAPI APIs, the platform conducts AI-moderated interviews for the researchers created by the research creator. Additionally, Implemented AWS Cognito for the authentication layer. The platform is a powerful web-based AI tool that empowers researchers to extract actionable insights faster and more effectively.",
                         "top_offset": 120
                     }
                 },
@@ -266,6 +266,382 @@
                     "data": {
                         "title": "TECH STACK",
                         "body": "C++ | Node JS | AWS | Docker | Vue JS",
+                        "top_offset": 120
+                    }
+                }
+            ]
+        },
+        {
+            "route": "edu-os",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "edu.OS",
+            "description": "Add Descrription",
+            "client": "Business",
+            "date": "April, 2019",
+            "role": "Art Direction, Design, Animation, Editing, Sound Design",
+            "platforms": "",
+            "url": "",
+            "poster": "img/projects/morgtage-crm/morgtage-crm.png",
+            "poster_m": "img/projects/morgtage-crm/morgtage-crm.png",
+            "categories": [],
+            "awards": [],
+            "items": [
+                {
+                    "type": "video",
+                    "data": {
+                        "vimeo_id": "365178771",
+                        "vimeo_video_url": "https://player.vimeo.com/external/365178771.hd.mp4?s=14337853856f2faa9f80eeee7763e16e561fc755&profile_id=175",
+                        "video_name": "Resn_Les_Mills_Case_Study",
+                        "video_poster": "img/projects/les-mills-grit/1.0_Hero_Poster_Video.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 72
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Problem",
+                        "body": " Schools were struggling with fragmented tools for lesson planning, task management, communication, and performance tracking. They needed a unified, intelligent platform to streamline operations and refocus efforts on teaching and learning.",
+                        "top_offset": 90
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/01_GRIDS.gif",
+                        "src_width": 920,
+                        "src_height": 528,
+                        "width_columns": 6,
+                        "left_columns": 2,
+                        "top_offset": 110,
+                        "z_index": 5
+                    }
+                },
+                {
+                    "type": "videoloop",
+                    "data": {
+                        "vimeo_id": "365182252",
+                        "vimeo_video_url": "https://player.vimeo.com/external/365182252.hd.mp4?s=e4188a4af64312d7bc13f1dc7cf6715217a30241&profile_id=175",
+                        "video_name": "02_SWEAT",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6,
+                        "left_columns": 0,
+                        "top_offset": -60,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Challenges",
+                        "body": " Devflovv tackled multiple challenges—integrating seamlessly with third-party platforms like SIS, Google Calendar, and Gmail; building curriculum-aligned AI for personalized lesson planning and insights; designing a clean, intuitive interface for various user roles; and implementing real-time collaboration features while ensuring high performance and scalability.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "videoloop",
+                    "data": {
+                        "vimeo_id": "365182264",
+                        "vimeo_video_url": "https://player.vimeo.com/external/365182264.hd.mp4?s=ee6483e550f6ed9411e8fc52062aa98f0bfb314c&profile_id=175",
+                        "video_name": "03_Boxomtic One",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6,
+                        "left_columns": 0,
+                        "top_offset": 120,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "videoloop",
+                    "data": {
+                        "vimeo_id": "365182199",
+                        "vimeo_video_url": "https://player.vimeo.com/external/365182199.hd.mp4?s=6a015cb596b8c9fe09e1e9ac4ac468990db00ecf&profile_id=175",
+                        "video_name": "04_HEART",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6,
+                        "left_columns": 2,
+                        "top_offset": -60,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Solution",
+                        "body": " Devflovv delivered an all-in-one EdTech platform that simplifies daily educator workflows. AI-driven features enhance planning and productivity, while real-time collaboration tools support team-based learning environments. Seamless integrations ensure that users can continue using familiar tools within a centralized experience—saving time, improving engagement, and boosting institutional efficiency.",
+                        "top_offset": 140
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/1.0_Grit_Still.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6,
+                        "left_columns": 2,
+                        "top_offset": 130,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/2.0_Grit_Still.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 5,
+                        "left_columns": 0,
+                        "top_offset": -60,
+                        "z_index": 3
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/3.0_Grit_Still.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 5,
+                        "left_columns": 3,
+                        "top_offset": -70,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "videoloop",
+                    "data": {
+                        "vimeo_id": "365182222",
+                        "vimeo_video_url": "https://player.vimeo.com/external/365182222.hd.mp4?s=b0038d25a96a48e57a953366ad08cd739d210ddb&profile_id=175",
+                        "video_name": "05_GRIT MINDSET",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 180
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/4.0_Grit_Still.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6,
+                        "left_columns": 0,
+                        "top_offset": 150,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/10.0_Grit_Still.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 5,
+                        "left_columns": 3,
+                        "top_offset": -40,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/5.0_Grit_Still.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6.5,
+                        "left_columns": 0,
+                        "top_offset": -60,
+                        "z_index": 3
+                    }
+                },
+                {
+                    "type": "videoloop",
+                    "data": {
+                        "vimeo_id": "365182243",
+                        "vimeo_video_url": "https://player.vimeo.com/external/365182243.hd.mp4?s=8ad0bb793a2ef0cd1a1ad91aede398539bfd6124&profile_id=175",
+                        "video_name": "6_Outro 2",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 13
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "  React | Typescript | Python (Django)",
+                        "top_offset": 120
+                    }
+                }
+            ]
+        },
+        {
+            "route": "dove",
+            "enabled": true,
+            "featured": false,
+            "menutitle": "",
+            "globaltitle": "",
+            "title": "learnEZ AI",
+            "description": "Challenge how the media portrays women in sports.",
+            "client": "Business",
+            "role": "Design, Development, UX, UI",
+            "date": "Aug 2016",
+            "url": "",
+            "poster": "img/projects/dove/learnEZ-title.png",
+            "poster_m": "img/projects/dove/mobile/doveHaveYourSay-poster-m.jpg",
+            "categories": [
+                "creative",
+                "design",
+                "development",
+                "social-content"
+            ],
+            "items": [
+                {
+                    "type": "video",
+                    "data": {
+                        "vimeo_id": "188252553",
+                        "vimeo_video_url": "https://player.vimeo.com/external/188252553.hd.mp4?s=61ce9e3182d79d37868c184a841fcfecd4f286e2&profile_id=174",
+                        "video_name": "dove-haveyoursay",
+                        "video_poster": "img/projects/dove/learn-desc.png",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 8,
+                        "left_columns": 0
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Problem ",
+                        "body": "Students often juggle multiple tools for writing, editing, referencing, and detecting AI-generated or plagiarized content—causing friction, wasted time, and inconsistent results. LearnEZ aimed to centralize these academic tasks in one intuitive, AI-powered platform.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/dove/doveHaveYourSay-01.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6,
+                        "left_columns": 2,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/dove/doveHaveYourSay-02.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 5.2,
+                        "left_columns": 0,
+                        "top_offset": -50
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Challenges",
+                        "body": "A major hurdle emerged with social media in-app browsers (like TikTok and Instagram), which blocked Google SSO, disrupting the user login experience. Additionally, designing eight feature-rich tools under one clean UI while managing seamless user access through subscriptions required careful planning and execution.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/dove/learn-1.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/dove/doveHaveYourSay-04.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6,
+                        "left_columns": 1,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Solution",
+                        "body": "Devflovv delivered an all-in-one academic productivity suite with a smooth, subscription-based model and free trial access. A smart browser detection and redirect system ensured reliable authentication, even from restricted environments. Each tool—ranging from grammar and plagiarism checks to AI content analysis—was crafted for maximum value and ease of use, enabling students to boost productivity in one place.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/dove/learn-m1.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "left_columns": 0.5,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/dove/learn-m2.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "left_columns": 5,
+                        "top_offset": -500
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/dove/learn-2.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/dove/learn-3.png",
+                        "src_width": 1920,
+                        "src_height": 900,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": " React (Vite) | Tailwind CSS | Django | PostgreSQL | Clerk | Google Sign-in | Apple Sign-in | Stripe | AWS EC2",
                         "top_offset": 120
                     }
                 }
@@ -760,7 +1136,7 @@
                 {
                     "type": "text",
                     "data": {
-                        "title": "Client Review's",
+                        "title": "Review's",
                         "body": "Devflovv transformed Coursology by seamlessly integrating ChatGPT, making it a smarter and more intuitive study aid for students. Their expertise in React, secure authentication, and payment integration ensured a smooth user experience. We highly recommend Devflovv for their innovation and technical excellence!.",
                         "top_offset": 120
                     }
@@ -1187,24 +1563,14 @@
             "role": "Developed and optimized Strava’s iOS app with intuitive UI/UX, a robust backend, and enhanced security for a seamless fitness experience.",
             "platforms": "",
             "url": "",
-            "poster": "img/projects/file-sharing-software/strava-title.png",
-            "poster_m": "img/projects/file-sharing-software/strava-title.png",
+            "poster": "img/projects/strava-ios-app/strava-title.png",
+            "poster_m": "img/projects/strava-ios-app/strava-title.png",
             "categories": ["creative", "design", "development"],
-            "awards": [
-                {
-                    "type": "fwa-sotd",
-                    "name": "FWA of the Day"
-                },
-                {
-                    "type": "awwwards-sotd",
-                    "name": "Site of the Day"
-                }
-            ],
             "items": [
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/file-sharing-software/strava-start.jpg",
+                        "src": "img/projects/strava-ios-app/strava-start.jpg",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 8,
@@ -1225,7 +1591,7 @@
                     "data": {
                         "portrait": true,
                         "scrollable": false,
-                        "src": "img/projects/file-sharing-software/strava-loading-ss.png",
+                        "src": "img/projects/strava-ios-app/strava-loading-ss.png",
                         "src_width": 750,
                         "src_height": 1334,
                         "left_columns": 0.83,
@@ -1237,7 +1603,7 @@
                     "data": {
                         "portrait": true,
                         "scrollable": false,
-                        "src": "img/projects/file-sharing-software/strava-home.png",
+                        "src": "img/projects/strava-ios-app/strava-home.png",
                         "src_width": 750,
                         "src_height": 1334,
                         "left_columns": 4.83,
@@ -1323,7 +1689,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/file-sharing-software/strava-profile.png",
+                        "src": "img/projects/strava-ios-app/strava-profile.png",
                         "src_width": 750,
                         "src_height": 1334,
                         "width_columns": 2.25,
@@ -1334,7 +1700,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/file-sharing-software/strava-admin.png",
+                        "src": "img/projects/strava-ios-app/strava-admin.png",
                         "src_width": 750,
                         "src_height": 1334,
                         "width_columns": 2.25,
@@ -1345,7 +1711,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/file-sharing-software/strava-map.png",
+                        "src": "img/projects/strava-ios-app/strava-map.png",
                         "src_width": 750,
                         "src_height": 1334,
                         "width_columns": 2.25,
@@ -1356,7 +1722,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/file-sharing-software/strava-logo.png",
+                        "src": "img/projects/strava-ios-app/strava-logo.png",
                         "src_width": 1600,
                         "src_height": 444,
                         "width_columns": 8,
@@ -1367,7 +1733,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/file-sharing-software/strava-cover.jpg",
+                        "src": "img/projects/strava-ios-app/strava-cover.jpg",
                         "src_width": 1600,
                         "src_height": 900,
                         "width_columns": 8,
@@ -1401,24 +1767,6 @@
             "poster": "img/projects/appiell.ai/appiell_title2.png",
             "poster_m": "img/projects/appiell.ai/appiell_title2.png",
             "categories": ["strategy", "creative", "design", "development"],
-            "awards": [
-                {
-                    "type": "fwa-sotd",
-                    "name": "FWA of the Day"
-                },
-                {
-                    "type": "awwwards-sotd",
-                    "name": "Site of the Day"
-                },
-                {
-                    "type": "awwwards-sotd",
-                    "name": "User's Choice Site of the Year"
-                },
-                {
-                    "type": "webbys",
-                    "name": "Webby Award Winner - Car Sites & Car Culture"
-                }
-            ],
             "items": [
                 {
                     "type": "image",
@@ -1730,14 +2078,6 @@
                         "left_columns": 4,
                         "top_offset": -50,
                         "z_index": 2
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Speed",
-                        "body": "These products are produced at least 20x faster than conventional production and getting faster! All of our interactive content would be either visualised immediately or downloaded to their device within seconds.",
-                        "top_offset": 120
                     }
                 },
                 {
@@ -2423,232 +2763,6 @@
                     "data": {
                         "title": "TECH STACK",
                         "body": "Next JS | Python | Parse | Postgres | TypeScript | Neo4J | ML/ AI",
-                        "top_offset": 120
-                    }
-                }
-            ]
-        },
-        {
-            "route": "fench-&-deck",
-            "menutitle": "",
-            "enabled": true,
-            "featured": true,
-            "globaltitle": "",
-            "title": "FENCE & DECK",
-            "description": "Add Descrription",
-            "client": "Business",
-            "date": "April, 2019",
-            "role": "Art Direction, Design, Animation, Editing, Sound Design",
-            "platforms": "",
-            "url": "",
-            "poster": "img/projects/morgtage-crm/morgtage-crm.png",
-            "poster_m": "img/projects/morgtage-crm/morgtage-crm.png",
-            "categories": [],
-            "awards": [],
-            "items": [
-                {
-                    "type": "video",
-                    "data": {
-                        "vimeo_id": "365178771",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365178771.hd.mp4?s=14337853856f2faa9f80eeee7763e16e561fc755&profile_id=175",
-                        "video_name": "Resn_Les_Mills_Case_Study",
-                        "video_poster": "img/projects/les-mills-grit/1.0_Hero_Poster_Video.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 72
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Problem",
-                        "body": "Devflovv initiated a project for Fence & Deck Connection, Gallagher Vinyl, and Capital Fence and Rail, aiming to create not only secure online payment gateways but also an interactive design tool for customers to visualize and estimate fencing and decking projects.",
-                        "top_offset": 90
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/01_GRIDS.gif",
-                        "src_width": 920,
-                        "src_height": 528,
-                        "width_columns": 6,
-                        "left_columns": 2,
-                        "top_offset": 110,
-                        "z_index": 5
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "365182252",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182252.hd.mp4?s=e4188a4af64312d7bc13f1dc7cf6715217a30241&profile_id=175",
-                        "video_name": "02_SWEAT",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 6,
-                        "left_columns": 0,
-                        "top_offset": -60,
-                        "z_index": 1
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Challenges",
-                        "body": "Key challenges included integrating Stripe for secure payments, crafting user-friendly interfaces, and developing an innovative tool for customers to design, view, and calculate the cost of their projects—all while efficiently managing backend processes.",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "365182264",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182264.hd.mp4?s=ee6483e550f6ed9411e8fc52062aa98f0bfb314c&profile_id=175",
-                        "video_name": "03_Boxomtic One",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 6,
-                        "left_columns": 0,
-                        "top_offset": 120,
-                        "z_index": 2
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "365182199",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182199.hd.mp4?s=6a015cb596b8c9fe09e1e9ac4ac468990db00ecf&profile_id=175",
-                        "video_name": "04_HEART",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 6,
-                        "left_columns": 2,
-                        "top_offset": -60,
-                        "z_index": 1
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Solution",
-                        "body": "Using Angular, Devflovv built intuitive interfaces and integrated Stripe for payments, ensuring security and ease of use. Additionally, they created a custom design tool within the platform, enabling customers to engage in interactive planning and cost estimation for their fencing and decking needs.",
-                        "top_offset": 140
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/1.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 6,
-                        "left_columns": 2,
-                        "top_offset": 130,
-                        "z_index": 2
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/2.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 5,
-                        "left_columns": 0,
-                        "top_offset": -60,
-                        "z_index": 3
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/3.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 5,
-                        "left_columns": 3,
-                        "top_offset": -70,
-                        "z_index": 1
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "365182222",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182222.hd.mp4?s=b0038d25a96a48e57a953366ad08cd739d210ddb&profile_id=175",
-                        "video_name": "05_GRIT MINDSET",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 180
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/4.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 6,
-                        "left_columns": 0,
-                        "top_offset": 150,
-                        "z_index": 1
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/10.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 5,
-                        "left_columns": 3,
-                        "top_offset": -40,
-                        "z_index": 2
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/5.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 6.5,
-                        "left_columns": 0,
-                        "top_offset": -60,
-                        "z_index": 3
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Client Review's",
-                        "body": "Using Angular, Devflovv built intuitive interfaces and integrated Stripe for payments, ensuring security and ease of use. Additionally, they created a custom design tool within the platform, enabling customers to engage in interactive planning and cost estimation for their fencing and decking needs.",
-                        "top_offset": 140
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "365182243",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182243.hd.mp4?s=8ad0bb793a2ef0cd1a1ad91aede398539bfd6124&profile_id=175",
-                        "video_name": "6_Outro 2",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 13
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": " Angular | Firebase | Firebase Cloud Functions | Google Cloud Platform | Stripe | Fabric JS",
                         "top_offset": 120
                     }
                 }

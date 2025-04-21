@@ -36156,7 +36156,7 @@ define('view/mobile/modules/work/project/mobile_project_image_view',[
             //     this.setupAsGif();
             // }
 
-            this.offsetDistance = Math.random() * 60 + 30;
+             this.offsetDistance = Math.random() * 60 + 30;
 
             this.createSpinner();
             this.addEvents();

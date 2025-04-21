@@ -83,7 +83,7 @@
                     "type": "text",
                     "data": {
                         "title": "The Solution",
-                        "body": "Devflovv designed a fully serverless system using AWS Lambda, enabling high performance with low operational overhead. An RDS database was integrated to manage and structure data efficiently. Through VAPI APIs, the tool conducts AI-moderated voice conversations, analyzes recorded sessions, and generates video clips mapped to key topics or keywords. Additionally, AWS Cognito was planned for robust, secure user authentication. The result is a powerful web-based AI tool that empowers researchers to extract actionable insights faster and more effectively."
+                        "body": "Devflovv developed PersonaAI on serverless architecture, enabling high performance and availability with low operational overhead. RDS Aurora was used as a database layer and AWS ElastiCache(Redis) for server-side caching. Through VAPI APIs, the platform conducts AI-moderated interviews for the researchers created by the research creator. Additionally, Implemented AWS Cognito for the authentication layer. The platform is a powerful web-based AI tool that empowers researchers to extract actionable insights faster and more effectively."
                     }
                 },
                 {
@@ -212,6 +212,298 @@
             ]
         },
         {
+            "route": "cousology",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "COURSOLOGY",
+            "description": "AI-powered study aid with seamless access & payments.",
+            "client": "Business",
+            "date": "Dec, 2019",
+            "role": "Devflovv built Coursology’s frontend and backend, integrating ChatGPT, secure payments, and authentication for a seamless AI-powered learning experience.",
+            "platforms": "",
+            "url": "",
+            "poster": "img/projects/language-research-initiative/coursology-c-1.png",
+            "poster_m": "img/projects/language-research-initiative/Display_Coursology.png",
+            "categories": [],
+            "awards": [],
+            "items": [
+                {
+                    "type": "mobilevideo",
+                    "data": {
+                        "vimeo_id": "374855493",
+                        "vimeo_video_url": "https://player.vimeo.com/external/376927275.hd.mp4?s=27c679e3db657ff8b49c346dc77cbcb13e572d9f&profile_id=175",
+                        "video_name": "Pioneer Corn Revolution",
+                        "video_poster": "img/projects/jelly-3d/Jelly_Hero_Poster.jpg",
+                        "src_width": 2048,
+                        "src_height": 1008,
+                        "width_columns": 8,
+                        "left_columns": 0
+					}
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Devflovv took on the project of making Coursology, a smart study aid, even better for students. The goal was to make sure students could get smart, instant help right where they needed it."
+					}
+                },
+                {
+                    "type": "carousel",
+                    "data": {
+                        "images": [
+                            {
+                                "src": "img/projects/language-research-initiative/coursology-c-1.png"
+                            },
+                            {
+                                "src": "img/projects/language-research-initiative/coursology-c-2.png"
+                            },
+                            {
+                                "src": "img/projects/language-research-initiative/coursology-c-3.png"
+                            },
+                            {
+                                "src": "img/projects/language-research-initiative/coursology-c-4.png"
+                            },
+                            {
+                                "src": "img/projects/language-research-initiative/coursology-c-5.png"
+                            },
+                            {
+                                "src": "img/projects/language-research-initiative/coursology-c-6.png"
+                            }
+                        ],
+                        "src_width": 3450,
+                        "src_height": 2160,
+                        "width_columns": 8,
+                        "left_columns": 0
+					}
+                },
+                {
+                    "type": "videoloop",
+                    "data": {
+                        "vimeo_id": "341749708",
+                        "vimeo_video_url": "https://player.vimeo.com/external/341749708.hd.mp4?s=7952d012161216059236feffdbbcd65faebad182&profile_id=174",
+                        "video_name": "adidas-loop-particleshoe",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 5,
+                        "left_columns": 3,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "videoloop",
+                    "data": {
+                        "vimeo_id": "341749737",
+                        "vimeo_video_url": "https://player.vimeo.com/external/341749737.hd.mp4?s=1ad9db4aa24f9e572ae6a9468254335adccd4145&profile_id=174",
+                        "video_name": "adidas-loop-process",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 5,
+                        "left_columns": 0,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "The team faced the challenge of adding a smart assistant, ChatGPT, into Coursology and making it simple for students to use."
+					}
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv's solution was to use React for building the platform, ensuring it was easy and friendly for students to ask questions and get answers. They also set up a way for students to pay for services easily and securely sign into their accounts."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/language-research-initiative/coursology-m.png",
+                        "src_width": 372,
+                        "src_height": 666,
+                        "width_columns": 2.5,
+                        "left_columns": 0,
+                        "top_offset": 120,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/language-research-initiative/coursology-m1.png",
+                        "src_width": 372,
+                        "src_height": 666,
+                        "width_columns": 2.5,
+                        "left_columns": 5.5,
+                       
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Review's",
+                        "body": "Devflovv transformed Coursology by seamlessly integrating ChatGPT, making it a smarter and more intuitive study aid for students. Their expertise in React, secure authentication, and payment integration ensured a smooth user experience. We highly recommend Devflovv for their innovation and technical excellence!."
+                    }
+                },
+                {
+                    "type": "videoloop",
+                    "data": {
+                        "vimeo_id": "274711257",
+                        "vimeo_video_url": "https://player.vimeo.com/external/274711257.hd.mp4?s=8b982d429c51607a9ed5ee46afe7266e695549c9&profile_id=175",
+                        "video_name": "interactive-shoe",
+                        "video_poster": "img/projects/interactive-shoe/interactive-shoe-video.jpg",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 8,
+                        "left_columns": 0
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "JavaScript frameworks | React | styled-components | Emotion | Next.js | Stripe | Node.js | Apple Sign-in | NextAuth.js | OpenAI ChatGPT"
+                    }
+                }
+            ]
+        },
+        {
+            "route": "speedfactory-activation",
+            "title": "AVAIDA AI",
+            "enabled": true,
+            "featured": false,
+            "description": "AI & ML Solutions for Healthcare and Business intelligence.",
+            "client": "Business",
+            "date": "Oct 2017",
+            "role": "Creative & Production Partner",
+            "url": "",
+            "poster": "img/projects/aivida/aivida-solutions1.png",
+            "poster_m": "img/projects/speedfactory-activation/mobile/speedfactory_activation-poster-m.jpg",
+            "categories": [
+                "activation",
+                "design",
+                "development",
+                "installation",
+                "social-content"
+            ],
+            "awards": [],
+            "items": [
+                {
+                    "type": "mobilevideo",
+                    "data": {
+                        "vimeo_id": "266452443",
+                        "vimeo_video_url": "https://player.vimeo.com/external/266452443.hd.mp4?s=5bbc21b7a9ee9158ce8dc9401e410f5788b1aef7&profile_id=175",
+                        "video_name": "speedfactory_activation",
+                        "video_poster": "img/projects/speedfactory-activation/speedfactory_activation-video.jpg",
+                        "src_width": 1280,
+                        "src_height": 720
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Devflovv tackled an ambitious project with Aivida, blending healthcare technology with artificial intelligence. Their goal was to enhance an Electronic Health Record (EHR) system with smart AI features, making healthcare processes smoother and improving patient care."
+					}
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "Smart EHR with AI",
+                        "body": "Devflovv integrated AI into EPIC EHR, enhancing efficiency and patient care with Python, React, and AWS tools."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/aivida/aivida-home.png",
+                        "src_width": 1400,
+                        "src_height": 820
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "The team faced several challenges, including integrating the EPIC EHR system with AI tools like AssemblyAI and OpenAI and efficiently developing both the server and client sides. High security and effective version management were also key priorities."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/aivida/aivida-s-1.png",
+                        "src_width": 1397,
+                        "src_height": 820
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/aivida/aivida-s-2.png",
+                        "src_width": 1400,
+                        "src_height": 820
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv used Python for backend development and React for a user-friendly frontend. They successfully integrated AI with the EHR system and utilized AWS tools like Secrets Manager and CodeCommit for security and version control. The final product was deployed using AWS EC2 and ECR, resulting in a reliable and advanced healthcare application."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/aivida/aivida-solutions.png",
+                        "src_width": 1400,
+                        "src_height": 820
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/aivida/aivida-solutions1.png",
+                        "src_width": 1400,
+                        "src_height": 820
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Unifying Data| Unlocking Insights| Powering AI.",
+                        "body": "At Aivida, we transform disparate data into a unified, high‑quality asset—laying the foundation for effective analytics, predictive modeling, and AI‑driven decision‑making."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/aivida/aivida-solutions3.png",
+                        "src_width": 1400,
+                        "src_height": 820
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/aivida/aivida-footer.png",
+                        "src_width": 1400,
+                        "src_height": 820
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "Python | AssemblyAI | OpenAI | AWS Secrets Manager | AWS CodeCommit | NATS | React | AWS EC2 | AWS ECR"
+					}
+                }  
+            ]
+        },
+        {
             "route": "thdc",
             "title": "THDC (Total Health Dental Care)",
             "enabled": true,
@@ -222,7 +514,7 @@
             "date": "Feb 2018",
             "role": "Creative and Production Partner",
             "url": "https://fafswagvogue.com/",
-            "poster": "img/projects/thdc-health-care/Display_THDC.png",
+            "poster": "img/projects/thdc-health-care/thdc1.png",
             "poster_m": "img/projects/thdc-health-care/Display_THDC.png",
             "categories": ["creative", "design", "development"],
             "awards": [],
@@ -299,6 +591,452 @@
             ]
         },
         {
+            "route": "holmetrics",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "HOLMETRICS",
+            "description": "Holmetrics comeback with modern cloud technologies.",
+            "client": "Business",
+            "date": "July, 2018",
+            "role": "Creative, Strategic and Production Partner",
+            "platforms": "",
+            "url": "https://discoverlexus.com/",
+            "poster": "img/projects/holmetrics/holmetrics-home.jpg",
+            "poster_m": "img/projects/holmetrics/Display_Holmetrics.png",
+            "categories": ["strategy", "creative", "design", "development"],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/holmetrics-home.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Devflovv was approached to bring Holmetrics, a cutting-edge platform combining machine learning with DevOps practices, back online after a prolonged period of inactivity."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/Holmetrics.jpg",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/750.png",
+                        "src_width": 750,
+                        "src_height": 756
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/holmetrics-pricing.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/753.png",
+                        "src_width": 750,
+                        "src_height": 631
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Devflovv’s DevOps team surpassed several hurdles, including reactivating key services like AWS and GoodData, resolving authentication issues, and updating the system architecture to improve scalability and reduce maintenance costs."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/751.png",
+                        "src_width": 750,
+                        "src_height": 752
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv successfully re-launched the platform, integrated new workspaces, and fixed critical bugs. They streamlined the code by transitioning to TypeScript and incorporating a serverless architecture, achieving significant cost reductions. Their deployment of AWS SageMaker, Docker, and other modern technologies significantly enhanced the platform’s functionality and user experience."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/holmetrics-contactus.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/752.png",
+                        "src_width": 750,
+                        "src_height": 816
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "MERN Stack | Next.js | AWS | Amazon RD | Amazon Redshift | Amazon S3 bucket | AWS Glue ETL Jobs | EC2 | AWS Lambda Function | AWS SageMaker | Docker | Crontab Jobs | Postman | JavaScript | Shell Scripting | GoodData Analytics | Okta"
+                    }
+                }
+            ]
+        },
+        {
+            "route": "appiell_ai",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "APPIELL AI",
+            "description": "Smart skincare woth real-time insights.",
+            "client": "Business",
+            "date": "July, 2018",
+            "role": "Creative, Strategic and Production Partner",
+            "platforms": "",
+            "url": "https://discoverlexus.com/",
+            "poster": "img/projects/appiell.ai/appiell_title.png",
+            "poster_m": "img/projects/appiell.ai/Display_Appiell.png",
+            "categories": ["strategy", "creative", "design", "development"],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/appiell_title.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Appiell AI needed to offer users a detailed, real-time skin health assessment tool for personalized skincare advice and specialist connections."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/appiell_home.jpg",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/Appieal_m1.png",
+                        "src_width": 750,
+                        "src_height": 756
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/appiell_footer.jpg",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/Appieal_m4.png",
+                        "src_width": 750,
+                        "src_height": 631
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Devflovv faced the dual challenge of building a powerful backend for complex data processing and designing a user-friendly frontend for easy interaction and clear information presentation."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/Appieal_m2.png",
+                        "src_width": 750,
+                        "src_height": 752
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv employed Python and Django for a robust backend and used React and TypeScript for a smooth frontend experience. They ensured a stylish and responsive interface using Emotion and styled-components, supported by a solid server and database setup with Nginx, PHP, and MySQL."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/appiell_title2.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/Appieal_m3.png",
+                        "src_width": 750,
+                        "src_height": 816
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "Python | Django | React | TypeScript | Emotion | styled-components | Nginx | PHP | MySQL"
+                    }
+                }
+            ]
+        },
+        {
+            "route": "augment",
+            "title": "AUGMENTT",
+            "enabled": true,
+            "featured": false,
+            "description": "AI-powered security solution for MSPs and cloud apps.",
+            "client": "Business",
+            "date": "Jan 2013",
+            "role": "Creative and Production Partner",
+            "url": "",
+            "poster": "img/projects/rei/augment.jpg",
+            "poster_m": "img/projects/rei/mobile/REI1440-poster-m.jpg",
+            "categories": [
+                "creative",
+                "design",
+                "development",
+                "games",
+                "illustration",
+                "social-content"
+            ],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/rei/augment.jpg",
+                        "src_width": 1280,
+                        "src_height": 720
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Devflovv encountered a challenge where MSPs struggled to manage security for Microsoft and cloud applications. The key issue was finding a solution that effectively addressed both security risks and scalability concerns."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/rei/augment3.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Devflovv’s Team had to ensure scalable, effective protection and threat detection while navigating complex Microsoft and cloud environments."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/rei/augment2.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/rei/augment-graph.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv's Augmentt platform revolutionized the landscape, providing comprehensive visibility, auditing, protection, and advanced threat detection, empowering MSPs to reshape cybersecurity paradigms."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/rei/augment-title.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/rei/mobile/REI1440-06.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "React | styled-components | Emotion | Google AnalyticsGA4 | PHP | CDN | Unpkg | Cloudflare | MySQL | core-js | jQuery | Node JS"
+					}
+                }
+            ]
+        },
+        {
+            "route": "strava-ios-app",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "STRAVA iOS APP",
+            "description": "Seamless fitness tracking meets cutting-edge security in Strava's iOS  evolution.",
+            "client": "Business",
+            "date": "Apr, 2019",
+            "role": "Developed and optimized Strava’s iOS app with intuitive UI/UX, a robust backend, and enhanced security for a seamless fitness experience.",
+            "platforms": "",
+            "url": "",
+            "poster": "img/projects/strava-ios-app/strava-start.jpg",
+            "poster_m": "img/projects/strava-ios-app/Display_Strava.png",
+            "categories": ["creative", "design", "development"],
+            "awards": [
+                {
+                    "type": "fwa-sotd",
+                    "name": "FWA of the Day"
+                },
+                {
+                    "type": "awwwards-sotd",
+                    "name": "Site of the Day"
+                }
+            ],
+            "items": [
+                {
+                    "type": "mobilevideo",
+                    "data": {
+                        "vimeo_id": "341679778",
+                        "vimeo_video_url": "https://player.vimeo.com/external/341679778.hd.mp4?s=fa37bd0339faf6952213630772d9d1ec600c4c35&profile_id=175",
+                        "video_name": "Hellboy_Case_Study_Final",
+                        "video_poster": "",
+                        "src_width": 1280,
+                        "src_height": 720
+					}
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Devflovv set out to develop Strava's iOS app, aiming to provide a seamless experience for fitness enthusiasts to track activities and engage with a community on their Apple devices."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava-loading-ss.png",
+                        "src_width": 750,
+                        "src_height": 1334
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava-home.png",
+                        "src_width": 374,
+                        "src_height": 667
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Deflovv's team overcame the hurdles of designing an intuitive yet feature-rich interface with Swift and UIKit, managing extensive user data with Node.js and MongoDB, and ensuring user privacy with robust security measures."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava-profile.png",
+                        "src_width": 374,
+                        "src_height": 800
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava-admin.png",
+                        "src_width": 374,
+                        "src_height": 800
+                    }
+                },
+                {
+                    "type": "text",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "The result was a user-friendly Strava app with a reliable backend and strong security features, offering users a straightforward and safe way to connect and share their fitness journeys."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava_mobile1.png",
+                        "src_width": 374,
+                        "src_height": 840
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava_mobile2.png",
+                        "src_width": 374,
+                        "src_height": 840
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava-map.png",
+                        "src_width": 374,
+                        "src_height": 840
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "Swift, UIKit, Node.js, MongoDB, Express.js, RESTful API, SSL/TLS, Apple App Store Services, Google Analytics, Git or Bitbucket, Testing Frameworks"
+					}
+                }   
+            ]
+        },
+        {
             "route": "living_ai",
             "menutitle": "",
             "enabled": true,
@@ -311,8 +1049,8 @@
             "role": "integrated AI into e-commerce platform, enabling smart shopping, avatar videos, and seamless ChatGPT-powered interactions with scalable infrastructure.",
             "platforms": "",
             "url": "https://belowthesurface.resn.co.nz/",
-            "poster": "img/projects/seashepherd/seashepherd-poster-m.jpg",
-            "poster_m": "img/projects/seashepherd/seashepherd-poster-m.jpg",
+            "poster": "img/projects/living-ai/living-ai-description-1.jpg",
+            "poster_m": "img/projects/living-ai/living-ai-description-1.jpg",
             "categories": ["mobile", "Web AR"],
             "awards": [],
             "items": [
@@ -322,7 +1060,7 @@
                         "vimeo_id": "347507060",
                         "video_name": "dektop_flow",
                         "vimeo_video_url": "https://player.vimeo.com/external/391444974.hd.mp4?s=0b1322870ca813f96e2599743e6bd2c3452bbe93&profile_id=175",
-                        "video_poster": "img/projects/seashepherd/ss-img-07.png",
+                        "video_poster": "img/projects/language-research-initiative/Display_Coursology.png",
                         "src_width": 1535,
                         "src_height": 864,
                         "width_columns": 8,
@@ -339,7 +1077,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/seashepherd/ss-img-01.png",
+                        "src": "img/projects/living-ai/living-ai-description.png",
                         "src_width": 1535,
                         "src_height": 864,
                         "width_columns": 8,
@@ -357,7 +1095,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/seashepherd/ss-img-06.png",
+                        "src": "img/projects/living-ai/Living-ai-problem.png",
                         "src_width": 1536,
                         "src_height": 864,
                         "width_columns": 3,
@@ -368,7 +1106,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/seashepherd/ss-img-02.png",
+                        "src": "img/projects/living-ai/living-m-1.png",
                         "src_width": 519,
                         "src_height": 921,
                         "width_columns": 3,
@@ -420,7 +1158,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/seashepherd/ss-img-03.png",
+                        "src": "img/projects/living-ai/living-m-home.png",
                         "src_width": 519,
                         "src_height": 921,
                         "width_columns": 3,
@@ -431,7 +1169,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/seashepherd/ss-img-04.png",
+                        "src": "img/projects/living-ai/living-m-3.png",
                         "src_width": 519,
                         "src_height": 921,
                         "width_columns": 3,
@@ -449,7 +1187,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/seashepherd/ss-img-03.png",
+                        "src": "img/projects/living-ai/living-m-2.png",
                         "src_width": 519,
                         "src_height": 921,
                         "width_columns": 3,
@@ -460,13 +1198,24 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/seashepherd/ss-img-04.png",
+                        "src": "img/projects/living-ai/living-m-4.png",
                         "src_width": 519,
                         "src_height": 921,
                         "width_columns": 3,
                         "left_columns": 4,
                         "z_index": 100
 					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/network.svg",
+                        "src_width": 1535,
+                        "src_height": 864,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "z_index": 100
+                    }
                 },
                 {
                     "type": "headline",
@@ -729,359 +1478,6 @@
             ]
         },
         {
-            "route": "jelly-3d",
-            "menutitle": "",
-            "enabled": true,
-            "featured": true,
-            "globaltitle": "",
-            "title": "Jelly - Realtime 3D Pipeline",
-            "description": "Jelly is Devflovv’s Web3D pipeline: our in-house production and development methodology that allows us to deliver premium real-time 3D that fits your budget.",
-            "client": "Various",
-            "date": "Dec, 2019",
-            "role": "Developer",
-            "platforms": "",
-            "url": "",
-            "poster": "img/projects/jelly-3d/Jelly_Hero_Poster1.jpg",
-            "poster_m": "img/projects/jelly-3d/Jelly_Hero_Poster_Mobile.jpg",
-            "categories": [],
-            "awards": [],
-            "items": [
-                {
-                    "type": "mobilevideo",
-                    "data": {
-                        "vimeo_id": "374855493",
-                        "vimeo_video_url": "https://player.vimeo.com/external/376927275.hd.mp4?s=27c679e3db657ff8b49c346dc77cbcb13e572d9f&profile_id=175",
-                        "video_name": "Pioneer Corn Revolution",
-                        "video_poster": "img/projects/jelly-3d/Jelly_Hero_Poster.jpg",
-                        "src_width": 2048,
-                        "src_height": 1008,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Blazing Trails",
-                        "body": "Jelly propels real-time 3D into the future. Over the last 10 years, we’ve built the framework and capabilities that allow us to achieve a level of quality and performance that wasn’t thought possible—until now."
-					}
-                },
-                {
-                    "type": "carousel",
-                    "data": {
-                        "images": [
-                            {
-                                "src": "img/projects/jelly-3d/Corn_Revolution_1.jpg"
-                            },
-                            {
-                                "src": "img/projects/jelly-3d/Sea_Shepherd_2.jpg"
-                            },
-                            {
-                                "src": "img/projects/jelly-3d/Pioneer_3D_background.jpg"
-                            },
-                            {
-                                "src": "img/projects/jelly-3d/Sea_Shepherd_2_Copy.jpg"
-                            },
-                            {
-                                "src": "img/projects/jelly-3d/Corn_Revolution_2.jpg"
-                            },
-                            {
-                                "src": "img/projects/jelly-3d/Corn_Revolution_3.jpg"
-                            }
-                        ],
-                        "src_width": 3450,
-                        "src_height": 2160,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "341749708",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341749708.hd.mp4?s=7952d012161216059236feffdbbcd65faebad182&profile_id=174",
-                        "video_name": "adidas-loop-particleshoe",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 5,
-                        "left_columns": 3,
-                        "z_index": 2
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "341749737",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341749737.hd.mp4?s=1ad9db4aa24f9e572ae6a9468254335adccd4145&profile_id=174",
-                        "video_name": "adidas-loop-process",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 5,
-                        "left_columns": 0,
-                        "z_index": 1
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Superior Quality",
-                        "body": "Jelly can achieve unparalleled photorealism with convincing depth of field, dynamic lighting and thousands of animated particles. And we do it while maintaining consistent stroke widths and smooth edges regardless of screen size or pixel\u00A0density."
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "In short, Jelly delivers the highest-quality Web3D out\u00A0there.",
-                        "body": ""
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "333052349",
-                        "vimeo_video_url": "https://player.vimeo.com/external/333052349.sd.mp4?s=56f7e3a3c95e82e97d6857bdb436d6c2e7c16b6f&profile_id=165",
-                        "video_name": "kekubian-scene-shop",
-                        "src_width": 372,
-                        "src_height": 666,
-                        "width_columns": 2.5,
-                        "left_columns": 5.5,
-                        "z_index": 2
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Lower Overhead",
-                        "body": "Jelly’s pipeline is robust and efficient, enabling Devflovv’s experienced developers to navigate complex workflows with ease. Compared to similar offerings, Jelly means lower overheads and shortened production schedules."
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "With Jelly, you get more for less.",
-                        "body": ""
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "333052313",
-                        "vimeo_video_url": "https://player.vimeo.com/external/333052313.sd.mp4?s=e29f93bc118acb6c6647f22defd2abcf66937ed8&profile_id=165",
-                        "video_name": "kekubian-scene-park",
-                        "src_width": 372,
-                        "src_height": 666,
-                        "width_columns": 2.5,
-                        "left_columns": 2.75,
-                        "z_index": 3
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Unparalleled Performance",
-                        "body": "Jelly delivers a premium-quality result without sacrificing performance. We minimize render passes and draw calls with optimized techniques, such as combining high-res 3D assets with baked-in visual effects, to produce superior results with minimal load times."
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "With Jelly, you won’t lose their attention.",
-                        "body": ""
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "AR Ready",
-                        "body": "The field of WebAR is in its infancy, but the possibilities are incredibly exciting. We’ve developed our own AR workflow, JellyJAR, and we’ve already achieved some amazing results."
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "274711257",
-                        "vimeo_video_url": "https://player.vimeo.com/external/274711257.hd.mp4?s=8b982d429c51607a9ed5ee46afe7266e695549c9&profile_id=175",
-                        "video_name": "interactive-shoe",
-                        "video_poster": "img/projects/interactive-shoe/interactive-shoe-video.jpg",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 8,
-                        "left_columns": 0
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Turntable - Product Explorer",
-                        "body": ""
-                    }
-                },
-                {
-                    "type": "list",
-                    "data": {
-                        "items": [
-                            {
-                                "text": "Customers explore unique product features."
-                            },
-                            {
-                                "text": "Turn, examine, play and familiarize."
-                            },
-                            {
-                                "text": "Interactions enhance customer experience for deeper understanding and connection."
-                            }
-                        ],
-                        "top_offset": 0
-                    }
-                },
-                {
-                    "type": "mobilevideo",
-                    "data": {
-                        "vimeo_id": "165951750",
-                        "vimeo_video_url": "https://player.vimeo.com/external/165951750.hd.mp4?s=5c52481d2a79c48383cdd4314b0ddc284248152c&profile_id=174",
-                        "video_name": "evinrude etec g2",
-                        "video_poster": "img/projects/evinrude-etec-g2/evinrude-etec-g2-video.jpg",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Jelly Mould - Customize and Configure",
-                        "body": ""
-					}
-                },
-                {
-                    "type": "list",
-                    "data": {
-                        "items": [
-                            {
-                                "text": "Customers build personalized products online, with instant visualization."
-                            },
-                            {
-                                "text": "Change colors, materials, and specifications."
-                            },
-                            {
-                                "text": "eCommerce integration."
-                            },
-                            {
-                                "text": "Provide instantaneous and accurate quotes."
-                            }
-                        ],
-                        "top_offset": 0
-                    }
-                },
-                {
-                    "type": "carousel",
-                    "data": {
-                        "images": [
-                            {
-                                "src": "img/projects/jelly-3d/1_FutureCraft4D.jpg"
-                            },
-                            { "src": "img/projects/jelly-3d/2_ZoomAR_01.jpg" },
-                            { "src": "img/projects/jelly-3d/3_ZoomAR_06.jpg" },
-                            { "src": "img/projects/jelly-3d/4_ZoomAR_07.jpg" }
-                        ],
-                        "src_width": 3840,
-                        "src_height": 2160,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Zoom - Z-Depth Explorer",
-                        "body": ""
-					}
-                },
-                {
-                    "type": "list",
-                    "data": {
-                        "items": [
-                            {
-                                "text": "JellyJAR experience reveals product features using Z-Depth movement."
-                            },
-                            {
-                                "text": "Explore complex or technical products by layering information intuitively."
-                            },
-                            {
-                                "text": "Customers connect with the product through engaging AR interactions."
-                            }
-                        ],
-                        "top_offset": 0
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "307535710",
-                        "vimeo_video_url": "https://player.vimeo.com/external/307535710.hd.mp4?s=e031950001ecd8bba678591457a1f252e9554e5d&profile_id=174",
-                        "video_name": "bandito-intro",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 5,
-                        "left_columns": 3,
-                        "z_index": 4
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "307659814",
-                        "vimeo_video_url": "https://player.vimeo.com/external/307659814.hd.mp4?s=e073015566ddf949a05ac8969bc086eec150feab&profile_id=169",
-                        "video_name": "dema-transition",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 5,
-                        "left_columns": 0,
-                        "z_index": 1
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Additional Jelly Services",
-                        "body": ""
-					}
-                },
-                {
-                    "type": "list",
-                    "data": {
-                        "items": [
-                            {
-                                "text": "3D modelling"
-                            },
-                            {
-                                "text": "Animation"
-                            },
-                            {
-                                "text": "Shaders"
-                            },
-                            {
-                                "text": "Lighting and textures"
-                            },
-                            {
-                                "text": "Colour grading"
-                            },
-                            {
-                                "text": "Post effects"
-                            },
-                            {
-                                "text": "Dynamic and reactive VFX"
-                            },
-                            {
-                                "text": "Character and scene creation"
-                            }
-                        ],
-                        "top_offset": 0
-                    }
-                }
-            ]
-        },
-        {
             "route": "les-mills-grit",
             "menutitle": "",
             "enabled": true,
@@ -1283,156 +1679,6 @@
                         "video_name": "6_Outro 2",
                         "src_width": 1920,
                         "src_height": 1080
-                    }
-                }
-            ]
-        },
-        {
-            "route": "discover-lexus",
-            "menutitle": "",
-            "enabled": true,
-            "featured": true,
-            "globaltitle": "",
-            "title": "Discover Lexus",
-            "description": "Discover Lexus is a home for Lexus to communicate its many amazing stories that go well beyond the automotive.",
-            "client": "Saatchi & Saatchi Tokyo + Lexus International",
-            "date": "July, 2018",
-            "role": "Creative, Strategic and Production Partner",
-            "platforms": "",
-            "url": "https://discoverlexus.com/",
-            "poster": "img/projects/discover-lexus/00_Lexus_Thumbnail.jpg",
-            "poster_m": "img/projects/discover-lexus/mobile/00_Lexus_Thumbnail_Mobile.jpg",
-            "categories": ["strategy", "creative", "design", "development"],
-            "awards": [
-                {
-                    "type": "fwa-sotd",
-                    "name": "FWA of the Day"
-                },
-                {
-                    "type": "awwwards-sotd",
-                    "name": "Site of the Day"
-                },
-                {
-                    "type": "awwwards-sotd",
-                    "name": "User's Choice Site of the Year"
-                },
-                {
-                    "type": "webbys",
-                    "name": "Webby Award Winner - Car Sites & Car Culture"
-                }
-            ],
-            "items": [
-                {
-                    "type": "mobilevideo",
-                    "data": {
-                        "vimeo_id": "341491204",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341491204.hd.mp4?s=15081447b618ac894e5605c504cd97690f4a346c&profile_id=175",
-                        "video_name": "Lexus_Case_Study_Final4",
-                        "video_poster": "img/projects/discover-lexus/mobile/01_Lexus_Video_Thumbnail_Mobile.jpg",
-                        "src_width": 1280,
-                        "src_height": 720
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "The Challenge",
-                        "body": "Devflovv and Saatchi & Saatchi Tokyo teamed up to reimagine how Lexus engaged with users online. Our challenge was to streamline their digital comms and give users a broader appreciation for all things Lexus."
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "341254555",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341254555.hd.mp4?s=c1ce6f0fd1752ac31e2549088638be548f780a51&profile_id=174",
-                        "video_name": "02_lexus_home",
-                        "src_width": 1600,
-                        "src_height": 900
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Experience Amazing",
-                        "body": "We began the project with a deep dive into digital strategy. Our aim was to create a cohesive experience from multiple Lexus brand activities for a clearer vision with more valuable content."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/discover-lexus/mobile/03_Lexus_Discover_Select.jpg",
-                        "src_width": 1600,
-                        "src_height": 900
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/discover-lexus/mobile/04_Lexus_Scamp_Mobile_Side.jpg",
-                        "src_width": 750,
-                        "src_height": 756
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/discover-lexus/mobile/06_Lexus_Board_Mobile.jpg",
-                        "src_width": 1600,
-                        "src_height": 900
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/discover-lexus/mobile/07_Lexus_Scamp_Mobile_Side.jpg",
-                        "src_width": 750,
-                        "src_height": 631
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Flexible Approach",
-                        "body": "Our flexible CMS makes it easy to create engaging stories with a bespoke level of polish. The system uses different modules to add new content and structure it appropriately. This quick content-creation and management system allows Lexus to stay current with less effort."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/discover-lexus/mobile/09_Lexus_Scamp_Mobile.jpg",
-                        "src_width": 1605,
-                        "src_height": 1600
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/discover-lexus/mobile/10_Lexus_Scamp_Mobile_Side.jpg",
-                        "src_width": 750,
-                        "src_height": 752
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "The Result",
-                        "body": "The result was a site that was welcoming, yet bold; simple, yet sophisticated; easy to navigate, yet rich in content. We wrapped it all in an elegant design with fluid motion that lets the content shine and users Experience Amazing."
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/discover-lexus/mobile/12_Lexus_Scamp_Mobile.jpg",
-                        "src_width": 1600,
-                        "src_height": 900
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/discover-lexus/mobile/13_Lexus_Scamp_Mobile_Side.jpg",
-                        "src_width": 750,
-                        "src_height": 816
                     }
                 }
             ]
@@ -2002,145 +2248,6 @@
                         "src": "img/projects/bandito/mobile/bandito-15-m.png",
                         "src_width": 1025,
                         "src_height": 181
-                    }
-                }
-            ]
-        },
-        {
-            "route": "hellboy",
-            "menutitle": "",
-            "enabled": true,
-            "featured": true,
-            "globaltitle": "",
-            "title": "Hellboy – Join the B.P.R.D.",
-            "description": "Join Hellboy at the B.P.R.D. Browse the agency’s secret archives and have an A.I.-powered conversation with the real Hellboy.",
-            "client": "Lionsgate",
-            "date": "Apr, 2019",
-            "role": "Creative and Production",
-            "platforms": "",
-            "url": "",
-            "poster": "img/projects/hellboy/00_hellboy_desktop_thumbnail.jpg",
-            "poster_m": "img/projects/hellboy/mobile/00_Hellboy_Thumbnail.jpg",
-            "categories": ["creative", "design", "development"],
-            "awards": [
-                {
-                    "type": "fwa-sotd",
-                    "name": "FWA of the Day"
-                },
-                {
-                    "type": "awwwards-sotd",
-                    "name": "Site of the Day"
-                }
-            ],
-            "items": [
-                {
-                    "type": "mobilevideo",
-                    "data": {
-                        "vimeo_id": "341679778",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341679778.hd.mp4?s=fa37bd0339faf6952213630772d9d1ec600c4c35&profile_id=175",
-                        "video_name": "Hellboy_Case_Study_Final",
-                        "video_poster": "img/projects/hellboy/01_hellboy_video_thumbnail.jpg",
-                        "src_width": 1280,
-                        "src_height": 720
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Hellboy Wants You!",
-                        "body": "Devflovv partnered with Lionsgate to create a unique mobile promotion for the Hellboy film, by recruiting you into Hellboy’s secret agency."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/hellboy/mobile/02_Hellboy_Scamp_Mobile.jpg",
-                        "src_width": 750,
-                        "src_height": 1334
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/hellboy/mobile/03_Hellboy_Scamp_Mobile.jpg",
-                        "src_width": 374,
-                        "src_height": 667
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Got What It Takes?",
-                        "body": "When you apply for a job, Hellboy calls to interview you. The conversation is powered by an A.l. engine with voice-acting by Hellboy actor David Harbour."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/hellboy/mobile/04_Hellboy_Scamp_Mobile.jpg",
-                        "src_width": 374,
-                        "src_height": 667
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/hellboy/mobile/05_Hellboy_Scamp_Mobile.jpg",
-                        "src_width": 374,
-                        "src_height": 667
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "B.P.R.D. Archive",
-                        "body": "Browse selected dossiers from the B.P.R.D. archive, including personnel files of characters from the film."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/hellboy/mobile/06_Hellboy_Scamp_Mobile.jpg",
-                        "src_width": 374,
-                        "src_height": 667
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/hellboy/mobile/07_Hellboy_Scamp_Mobile.jpg",
-                        "src_width": 374,
-                        "src_height": 667
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Operating System",
-                        "body": "Inspired by intelligence documents from the 1950s, the archive looks like a clandestine operating system lost in time. Sensitive material has been carefully redacted—until you land the job."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/hellboy/mobile/08_Hellboy_Scamp_Mobile_Side.png",
-                        "src_width": 750,
-                        "src_height": 643
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Give ‘Em Hell",
-                        "body": "The site launched on ‘Hellboy Day, celebrating the 25th Anniversary of the first Hellboy comic. The experience received the coveted seal of approval from the hardcore Hellboy fan base and introduced brand new fans to the Hellboy universe."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/hellboy/mobile/10_Hellboy_Scamp_Mobile.jpg",
-                        "src_width": 900,
-                        "src_height": 900
                     }
                 }
             ]
@@ -2736,303 +2843,6 @@
                     "data": {
                         "title": "Results:",
                         "body": "The campaign reached 79% of all Kiwis. During October Awareness Month, more women booked a mammogram than ever before, making it New Zealand’s most successful mammogram awareness drive."
-					}
-                }
-            ]
-        },
-        {
-            "route": "speedfactory-activation",
-            "title": "adidas Speedfactory Activation",
-            "enabled": true,
-            "featured": false,
-            "description": "A globally touring activation showcasing adidas' high-tech, data-driven footwear and its manufacturing process.",
-            "client": "adidas",
-            "date": "Oct 2017",
-            "role": "Creative & Production Partner",
-            "url": "",
-            "poster": "img/projects/speedfactory-activation/speedfactory_activation-poster.jpg",
-            "poster_m": "img/projects/speedfactory-activation/mobile/speedfactory_activation-poster-m.jpg",
-            "categories": [
-                "activation",
-                "design",
-                "development",
-                "installation",
-                "social-content"
-            ],
-            "awards": [],
-            "items": [
-                {
-                    "type": "mobilevideo",
-                    "data": {
-                        "vimeo_id": "266452443",
-                        "vimeo_video_url": "https://player.vimeo.com/external/266452443.hd.mp4?s=5bbc21b7a9ee9158ce8dc9401e410f5788b1aef7&profile_id=175",
-                        "video_name": "speedfactory_activation",
-                        "video_poster": "img/projects/speedfactory-activation/speedfactory_activation-video.jpg",
-                        "src_width": 1280,
-                        "src_height": 720
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Speedfactory",
-                        "body": "Speedfactory is an innovative concept from adidas, a manufacturing revolution where high speed customised footwear can be produced in more localised factories in a largely automated robotic driven process."
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "AM4",
-                        "body": "Trialling this process with unique designs made for six key cities, the AM4 shoe is the showpiece of the activation."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/speedfactory-activation/mobile/sf-landing.jpg",
-                        "src_width": 1400,
-                        "src_height": 820
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "The Brief",
-                        "body": "adidas approached Devflovv with the brief to create an event space, housing multiple installations that spoke to the three key messaging aspects of Speedfactory."
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Innovation",
-                        "body": "adidas' cutting-edge manufacturing, data collection/analysis, and production techniques are second to none. Our installs should use similar innovative data collection practices and hardware."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/speedfactory-activation/mobile/sf-brief-1.jpg",
-                        "src_width": 1397,
-                        "src_height": 820
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Co-Creation",
-                        "body": "All Speedfactory products are borne from real athlete captured data. This meant all of our interactives should extrapolate the visitors’ data in some manner and produce something different in combination with adidas collateral."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/speedfactory-activation/mobile/sf-brief-2.jpg",
-                        "src_width": 1400,
-                        "src_height": 820
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Speed",
-                        "body": "These products are produced at least 20x faster than conventional production and getting faster! All of our interactive content would be either visualised immediately or downloaded to their device within seconds."
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Sign Up / Create / Save: The Mobile App",
-                        "body": "The lynchpin to the activation process was the web app we created for all visitors to log in to."
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Personal Barcode",
-                        "body": "Once they did, a unique barcode was created for them - a tool by which they could activate any of the installations inside, enter digital queues, create something and then it would automatically download that content to their wallet within seconds."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/speedfactory-activation/mobile/sf-mobile-1.jpg",
-                        "src_width": 1400,
-                        "src_height": 820
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/speedfactory-activation/mobile/sf-mobile-3.jpg",
-                        "src_width": 1400,
-                        "src_height": 820
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Zone One: The Kinect Entrance",
-                        "body": "A playful digital mirror using Kinects (a Speedfactory-used technology) illustrates how truly painless it is for your physical data to be captured. A wall of screens visualises your physical presence, progressing from simple raw data through to a more human form."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/speedfactory-activation/mobile/sf-kinect-1.jpg",
-                        "src_width": 1400,
-                        "src_height": 820
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Zone Two: Face Scan Booths",
-                        "body": "Three separate booths, each with two DSLRs and a touchscreen. Once scanned in, the creator was invited to take a picture of themselves."
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Face Scan Booths",
-                        "body": "Within seconds, we had tracked their facial features and incorporated their image into three unique pieces of adidas branded content. We also integrated user-submitted personal data as well as data specific to that location."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/speedfactory-activation/mobile/sf-photobooth-1.jpg",
-                        "src_width": 1400,
-                        "src_height": 820
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Zone Three: Foot Scanners",
-                        "body": "Via a custom Devflovv-made iPad controller we could control two scanners at one time."
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "265339973",
-                        "vimeo_video_url": "https://player.vimeo.com/external/265339973.hd.mp4?s=1335006d04661348fcdc9d64da655a07f3f97825&profile_id=175",
-                        "video_name": "sf_footscan_loop",
-                        "src_width": 1280,
-                        "src_height": 720
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Foot Scanners",
-                        "body": "Multiple lasers would register each contour of the creators’ feet and send us the correct data points to make a fully accurate 3D model, while also providing exact dimensions of their foot. A singular size comparison takeaway was created for each visitor."
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Zone Four: The Run Test (Treadmill)",
-                        "body": "The centrepiece of the activation and the accumulation of all messaging pillars, here the creator was captured running on a treadmill (wearing the new product) by a Kinect and several DSLRs."
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "265340154",
-                        "vimeo_video_url": "https://player.vimeo.com/external/265340154.hd.mp4?s=8e286d97490a591816ed02cc7f22ca7afe721df3&profile_id=175",
-                        "video_name": "sf_running_test",
-                        "src_width": 1280,
-                        "src_height": 720
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Run Test Output",
-                        "body": "A couple of minutes later a unique video was sent to their app, with their actual running data, skeletal tracking, and adidas branding baked in. As demand was higher with only one person allowed in the room at a time, Devflovv created a digital queuing system that notified the creator when it was their turn removing the need for a physical line."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/speedfactory-activation/mobile/sf-treadmill-1.jpg",
-                        "src_width": 1400,
-                        "src_height": 820
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Zone Five: The AM4 Showcase (Plinths)",
-                        "body": "The story about the AM4's design for each city was pretty rich. Product benefits were different for each key city - patch placement was dictated by runner data from that particular location - even the colours chosen reflected key attributes of the environment."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/speedfactory-activation/mobile/sf-am4-1.jpg",
-                        "src_width": 1400,
-                        "src_height": 820
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "AM4 Showcase",
-                        "body": "In this section, we explored all those influences, with assets pasted, hung or mounted throughout and showed the products themselves centre stage, alongside their other city counterparts."
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "City to City Evolution",
-                        "body": "adidas wanted the activation to seem like it was in constant flux—Always in Beta."
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Always in Beta",
-                        "body": "On the exterior and interior, our design leveraged a skeletal like scaffold system (one that is used in the Speedfactory plant) which we accented with Plexi and lights in the same palette as the shoe for that city. In the AM4 section itself, we curated some of the previous city content and left that in place - a living document of the past iterations against the new cities hero shoe."
-					}
-                },
-                {
-                    "type": "mask",
-                    "data": {
-                        "media": [
-                            {
-                                "src": "img/projects/speedfactory-activation/sf-city-ldn-2.jpg",
-                                "description": ""
-                            },
-                            {
-                                "src": "img/projects/speedfactory-activation/sf-city-par-2.jpg",
-                                "description": ""
-                            }
-                        ],
-                        "type": "image",
-                        "direction": "vertical",
-                        "src_width": 1700,
-                        "src_height": 1000
-					}
-                },
-                {
-                    "type": "mask",
-                    "data": {
-                        "media": [
-                            {
-                                "src": "img/projects/speedfactory-activation/sf-city-ldn-1.jpg",
-                                "description": ""
-                            },
-                            {
-                                "src": "img/projects/speedfactory-activation/sf-city-par-1.jpg",
-                                "description": ""
-                            }
-                        ],
-                        "type": "image",
-                        "direction": "vertical",
-                        "src_width": 1700,
-                        "src_height": 1000
 					}
                 }
             ]
@@ -6607,92 +6417,6 @@
                     "type": "image",
                     "data": {
                         "src": "img/projects/ps4gm/mobile/PS4GM-06.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                }
-            ]
-        },
-        {
-            "route": "rei",
-            "title": "REI 1440 Project",
-            "enabled": true,
-            "featured": false,
-            "description": "There are 1,440 minutes in a day. Every one is worth celebrating. We let fans of outdoor retailer REI collect and share their outdoor photography to fill every minute of an entire day with images.",
-            "client": "BBDO Atlanta & REI",
-            "date": "Jan 2013",
-            "role": "Creative and Production Partner",
-            "url": "",
-            "poster": "img/projects/rei/mobile/REI1440-poster-archive-m.jpg",
-            "poster_m": "img/projects/rei/mobile/REI1440-poster-m.jpg",
-            "categories": [
-                "creative",
-                "design",
-                "development",
-                "games",
-                "illustration",
-                "social-content"
-            ],
-            "awards": [],
-            "items": [
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/rei/mobile/REI1440-01.jpg",
-                        "src_width": 1280,
-                        "src_height": 720
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Simple to Use",
-                        "body": "We used Facebook Connect for easy authentication and sharing, pulling in user-created content from Instagram. Photos were curated into a 24-hour timeline and clock interface. We developed a simple method for users to add the time, activity, location and descriptions to images, making it easy to get involved and share."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/rei/mobile/REI1440-02.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/rei/mobile/REI1440-03.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/rei/mobile/REI1440-04.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Embraced by Fans",
-                        "body": "The experience struck a chord with the REI user community who quickly filled the entire 1440 minutes. Users continue to add and share their photos, allowing the platform to outlast the initial campaign. To date, there are more than 3.5 million Instagram posts tagged #rei1440project (and counting!)."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/rei/mobile/REI1440-05.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/rei/mobile/REI1440-06.jpg",
                         "src_width": 1400,
                         "src_height": 788
                     }

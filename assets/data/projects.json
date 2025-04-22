@@ -490,7 +490,7 @@
             ]
         },
         {
-            "route": "dove",
+            "route": "learnez-ai",
             "enabled": true,
             "featured": false,
             "menutitle": "",
@@ -500,9 +500,9 @@
             "client": "Business",
             "role": "Design, Development, UX, UI",
             "date": "Aug 2016",
-            "url": "",
-            "poster": "img/projects/dove/learnEZ-title.png",
-            "poster_m": "img/projects/dove/mobile/doveHaveYourSay-poster-m.jpg",
+            "url": "https://learnez.ai",
+            "poster": "img/projects/learnEZ/learnEZ-title.png",
+            "poster_m": "",
             "categories": [
                 "creative",
                 "design",
@@ -516,7 +516,7 @@
                         "vimeo_id": "188252553",
                         "vimeo_video_url": "https://player.vimeo.com/external/188252553.hd.mp4?s=61ce9e3182d79d37868c184a841fcfecd4f286e2&profile_id=174",
                         "video_name": "dove-haveyoursay",
-                        "video_poster": "img/projects/dove/learn-desc.png",
+                        "video_poster": "img/projects/learnEZ/learn-desc.png",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 8,
@@ -534,7 +534,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/dove/doveHaveYourSay-01.jpg",
+                        "src": "img/projects/learnEZ/learn-ss1.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 6,
@@ -545,7 +545,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/dove/doveHaveYourSay-02.jpg",
+                        "src": "img/projects/learnEZ/learn-ss2.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 5.2,
@@ -564,7 +564,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/dove/learn-1.png",
+                        "src": "img/projects/learnEZ/learn-1.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 8,
@@ -575,7 +575,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/dove/doveHaveYourSay-04.jpg",
+                        "src": "img/projects/learnEZ/learn-3.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 6,
@@ -592,33 +592,31 @@
                     }
                 },
                 {
-                    "type": "mobile",
+                    "type": "image",
                     "data": {
-                        "portrait": true,
-                        "scrollable": false,
-                        "src": "img/projects/dove/learn-m1.png",
-                        "src_width": 414,
-                        "src_height": 736,
-                        "left_columns": 0.5,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "mobile",
-                    "data": {
-                        "portrait": true,
-                        "scrollable": false,
-                        "src": "img/projects/dove/learn-m2.png",
-                        "src_width": 414,
-                        "src_height": 736,
-                        "left_columns": 5,
-                        "top_offset": -500
+                        "src": "img/projects/learnEZ/learn-m1.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.25,
+                        "left_columns": 1.2,
+                        "top_offset": 136
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/dove/learn-2.png",
+                        "src": "img/projects/learnEZ/learn-m2.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.60,
+                        "left_columns": 3.75,
+                        "top_offset": -550
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/learnEZ/learn-2.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 8,
@@ -629,7 +627,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/dove/learn-3.png",
+                        "src": "img/projects/learnEZ/learn-pricing.png",
                         "src_width": 1920,
                         "src_height": 900,
                         "width_columns": 8,
@@ -659,7 +657,7 @@
             "client": "Business",
             "date": "Feb 2018",
             "role": "Creative and Production Partner",
-            "url": "",
+            "url": "https://totalhealthdentalcare.com/",
             "poster": "img/projects/thdc-health-care/thdc-title.png",
             "poster_m": "img/projects/thdc-health-care/mobile/thdc-title.png",
             "categories": ["creative", "design", "development"],
@@ -759,10 +757,21 @@
                 {
                     "type": "image",
                     "data": {
+                        "src": "img/projects/thdc-health-care/thdc5.png",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 7,
+                        "left_columns": 0,
+                        "top_offset": 140
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
                         "src": "img/projects/thdc-health-care/thdc-logo.svg",
                         "src_width": 1280,
                         "src_height": 720,
-                        "width_columns": 6,
+                        "width_columns": 8,
                         "left_columns": 0,
                         "top_offset": 140
                     }
@@ -985,7 +994,7 @@
             "date": "Dec, 2019",
             "role": "Devflovv built Coursology’s frontend and backend, integrating ChatGPT, secure payments, and authentication for a seamless AI-powered learning experience.",
             "platforms": "",
-            "url": "",
+            "url": "https://coursology.com/",
             "poster": "img/projects/language-research-initiative/coursology-title.png",
             "poster_m": "img/projects/language-research-initiative/coursology-title.png",
             "categories": [],
@@ -1188,7 +1197,7 @@
             "date": "July, 2018",
             "role": "Creative, Strategic and Production Partner",
             "platforms": "",
-            "url": "https://discoverlexus.com/",
+            "url": "https://holmetrics.com/",
             "poster": "img/projects/holmetrics/holmetrics-title.png",
             "poster_m": "img/projects/holmetrics/holmetrics-title.png",
             "categories": ["strategy", "creative", "design", "development"],
@@ -1427,7 +1436,7 @@
             "client": "Business",
             "date": "Jan 2013",
             "role": "Creative and Production Partner",
-            "url": "",
+            "url": "https://augmentt.com/",
             "poster": "img/projects/rei/augment-title.png",
             "poster_m": "img/projects/rei/augment-title.png",
             "categories": [
@@ -1763,7 +1772,7 @@
             "date": "July, 2018",
             "role": "Creative, Strategic and Production Partner",
             "platforms": "",
-            "url": "https://discoverlexus.com/",
+            "url": "https://appiell.ai/",
             "poster": "img/projects/appiell.ai/appiell_title2.png",
             "poster_m": "img/projects/appiell.ai/appiell_title2.png",
             "categories": ["strategy", "creative", "design", "development"],
@@ -1886,25 +1895,23 @@
                     }
                 },
                 {
-                    "type": "mobile",
+                    "type": "image",
                     "data": {
-                        "portrait": true,
-                        "scrollable": false,
                         "src": "img/projects/appiell.ai/appiell_7.png",
                         "src_width": 750,
                         "src_height": 1334,
+                        "width_columns": 2.60,
                         "left_columns": 0.83,
                         "top_offset": 150
                     }
                 },
                 {
-                    "type": "mobile",
+                    "type": "image",
                     "data": {
-                        "portrait": true,
-                        "scrollable": false,
                         "src": "img/projects/appiell.ai/appiell_8.png",
                         "src_width": 750,
                         "src_height": 1334,
+                        "width_columns": 2.25,
                         "left_columns": 4.65,
                         "top_offset": -370
                     }
@@ -1929,27 +1936,25 @@
                     }
                 },
                 {
-                    "type": "mobile",
+                    "type": "image",
                     "data": {
-                        "portrait": true,
-                        "scrollable": false,
                         "src": "img/projects/appiell.ai/appiell_9.png",
                         "src_width": 750,
-                        "src_height": 7040,
-                        "left_columns": 0,
+                        "src_height": 1334,
+                        "width_columns": 2.60,
+                        "left_columns": 0.83,
                         "top_offset": 150
                     }
                 },
                 {
-                    "type": "mobile",
+                    "type": "image",
                     "data": {
-                        "portrait": true,
-                        "scrollable": false,
                         "src": "img/projects/appiell.ai/appiell_10.png",
                         "src_width": 750,
                         "src_height": 1334,
-                        "left_columns": 5.5,
-                        "top_offset": -380
+                        "width_columns": 2.25,
+                        "left_columns": 4.65,
+                        "top_offset": -370
                     }
                 },
                 {
@@ -1984,7 +1989,7 @@
             "client": "Business",
             "date": "Oct, 2017",
             "role": "Creative & Production Partner",
-            "url": "",
+            "url": "https://www.aivida.com/",
             "poster": "img/projects/aivida/aivida-title.png",
             "poster_m": "img/projects/aivida/aivida-title.png",
             "categories": [
@@ -2302,7 +2307,7 @@
             "date": "April, 2019",
             "role": "Event Conceptualisation, Creative, Content Production",
             "platforms": "",
-            "url": "",
+            "url": "https://www.ifit.com/",
             "poster": "img/projects/ifit/ifit-2.png",
             "poster_m": "img/projects/ifit/ifit-2.png",
             "categories": [],

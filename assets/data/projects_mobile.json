@@ -212,6 +212,138 @@
             ]
         },
         {
+            "route": "learnez",
+            "title": "LearnEZ AI",
+            "enabled": true,
+            "featured": false,
+            "description": "Boosting productivity with intelligent academic support in one platform.",
+            "client": "Business",
+            "date": "Aug 2016",
+            "role": "Design, Development, UX, UI",
+            "url": "https://learnez.ai",
+            "poster": "img/projects/learnEZ/learn-desc.png",
+            "poster_m": "img/projects/learnEZ/learn-desc.png",
+            "categories": ["design", "development", "social-content"],
+            "awards": [
+                {
+                    "type": "fwa-sotd",
+                    "name": "Site of the Day"
+                }
+            ],
+            "items": [
+                {
+                    "type": "mobilevideo",
+                    "data": {
+                        "vimeo_id": "188252553",
+                        "vimeo_video_url": "https://player.vimeo.com/external/188252553.hd.mp4?s=61ce9e3182d79d37868c184a841fcfecd4f286e2&profile_id=174",
+                        "video_name": "dove-haveyoursay",
+                        "video_poster": "img/projects/learnEZ/learn-desc.png",
+                        "src_width": 1400,
+                        "src_height": 831
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/learnEZ/learn-desc.png",
+                        "src_width": 1400,
+                        "src_height": 882
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Students often juggle multiple tools for writing, editing, referencing, and detecting AI-generated or plagiarized content—causing friction, wasted time, and inconsistent results. LearnEZ aimed to centralize these academic tasks in one intuitive, AI-powered platform."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/learnEZ/learn-3.png",
+                        "src_width": 1400,
+                        "src_height": 821
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/learnEZ/learn-ss1.png",
+                        "src_width": 1700,
+                        "src_height": 882
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "A major hurdle emerged with social media in-app browsers (like TikTok and Instagram), which blocked Google SSO, disrupting the user login experience. Additionally, designing eight feature-rich tools under one clean UI while managing seamless user access through subscriptions required careful planning and execution."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/learnEZ/learn-1.png",
+                        "src_width": 1400,
+                        "src_height": 882
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv delivered an all-in-one academic productivity suite with a smooth, subscription-based model and free trial access. A smart browser detection and redirect system ensured reliable authentication, even from restricted environments. Each tool—ranging from grammar and plagiarism checks to AI content analysis—was crafted for maximum value and ease of use, enabling students to boost productivity in one place."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/learnEZ/learn-2.png",
+                        "src_width": 1400,
+                        "src_height": 849
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/learnEZ/learn-m1.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/learnEZ/learn-m2.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/learnEZ/learn-pricing.png",
+                        "src_width": 1400,
+                        "src_height": 849
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "React (Vite) | Tailwind CSS | Django | PostgreSQL | Clerk | Google Sign-in | Apple Sign-in | Stripe | AWS EC2."
+					}
+                }
+            ]
+        },
+        {
             "route": "cousology",
             "menutitle": "",
             "enabled": true,
@@ -223,7 +355,7 @@
             "date": "Dec, 2019",
             "role": "Devflovv built Coursology’s frontend and backend, integrating ChatGPT, secure payments, and authentication for a seamless AI-powered learning experience.",
             "platforms": "",
-            "url": "",
+            "url": "https://coursology.com/",
             "poster": "img/projects/language-research-initiative/coursology-c-1.png",
             "poster_m": "img/projects/language-research-initiative/Display_Coursology.png",
             "categories": [],
@@ -372,15 +504,15 @@
             ]
         },
         {
-            "route": "avaida_ai",
-            "title": "AVAIDA AI",
+            "route": "aivida_ai",
+            "title": "AIVIDA AI",
             "enabled": true,
             "featured": false,
             "description": "AI & ML Solutions for Healthcare and Business intelligence.",
             "client": "Business",
             "date": "Oct 2017",
             "role": "Creative & Production Partner",
-            "url": "",
+            "url": "https://www.aivida.com/",
             "poster": "img/projects/aivida/aivida-solutions1.png",
             "poster_m": "",
             "categories": [
@@ -513,7 +645,7 @@
             "client": "Business",
             "date": "Feb 2018",
             "role": "Creative and Production Partner",
-            "url": "https://fafswagvogue.com/",
+            "url": "https://totalhealthdentalcare.com/",
             "poster": "img/projects/thdc-health-care/thdc1.png",
             "poster_m": "img/projects/thdc-health-care/Display_THDC.png",
             "categories": ["creative", "design", "development"],
@@ -587,6 +719,14 @@
                         "src_width": 1400,
                         "src_height": 788
                     }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/thdc-health-care/thdc5.png",
+                        "src_width": 1600,
+                        "src_height": 788
+                    }
                 }
             ]
         },
@@ -602,7 +742,7 @@
             "date": "July, 2018",
             "role": "Creative, Strategic and Production Partner",
             "platforms": "",
-            "url": "https://discoverlexus.com/",
+            "url": "https://holmetrics.com/",
             "poster": "img/projects/holmetrics/holmetrics-home.jpg",
             "poster_m": "img/projects/holmetrics/Display_Holmetrics.png",
             "categories": ["strategy", "creative", "design", "development"],
@@ -713,7 +853,7 @@
             "date": "July, 2018",
             "role": "Creative, Strategic and Production Partner",
             "platforms": "",
-            "url": "https://discoverlexus.com/",
+            "url": "https://appiell.ai/",
             "poster": "img/projects/appiell.ai/appiell_title.png",
             "poster_m": "img/projects/appiell.ai/Display_Appiell.png",
             "categories": ["strategy", "creative", "design", "development"],
@@ -821,7 +961,7 @@
             "client": "Business",
             "date": "Jan 2013",
             "role": "Creative and Production Partner",
-            "url": "",
+            "url": "https://augmentt.com/",
             "poster": "img/projects/rei/augment.jpg",
             "poster_m": "img/projects/rei/mobile/REI1440-poster-m.jpg",
             "categories": [
@@ -5715,146 +5855,6 @@
                         "video_name": "dimSum-6",
                         "src_width": 1280,
                         "src_height": 720
-                    }
-                }
-            ]
-        },
-        {
-            "route": "dove-haveyoursay",
-            "title": "Dove | Have Your Say",
-            "enabled": true,
-            "featured": false,
-            "description": "Challenge how the media portrays women in sports.",
-            "client": "Razorfish, NY & Dove",
-            "date": "Aug 2016",
-            "role": "Design, Development, UX, UI",
-            "url": "",
-            "poster": "img/projects/dove-haveyoursay/dovehaveyoursay-poster.jpg",
-            "poster_m": "img/projects/dove-haveyoursay/mobile/dovehaveyoursay-poster-m.jpg",
-            "categories": ["design", "development", "social-content"],
-            "awards": [
-                {
-                    "type": "fwa-sotd",
-                    "name": "Site of the Day"
-                }
-            ],
-            "items": [
-                {
-                    "type": "mobilevideo",
-                    "data": {
-                        "vimeo_id": "188252553",
-                        "vimeo_video_url": "https://player.vimeo.com/external/188252553.hd.mp4?s=61ce9e3182d79d37868c184a841fcfecd4f286e2&profile_id=174",
-                        "video_name": "dove-haveyoursay",
-                        "video_poster": "img/projects/dove-haveyoursay/mobile/dovehaveyoursay-poster-m.jpg",
-                        "src_width": 1400,
-                        "src_height": 831
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/dove-haveyoursay/mobile/01_desktop_A.jpg",
-                        "src_width": 1400,
-                        "src_height": 882
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "When they only see an athlete's looks...",
-                        "body": "...they don't see her at all. Every day, the media judges female athletes on their appearance. The more we focus on an athleteâ€™s appearance, the less we see her achievements and performance. To convey this, Devflovv used a visual metaphor: an athlete hidden behind a barrage of sexist media quotes."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/dove-haveyoursay/mobile/03_Example_Tweet_A.jpg",
-                        "src_width": 1400,
-                        "src_height": 853
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/dove-haveyoursay/03_Example_Tweet_B.jpg",
-                        "src_width": 1400,
-                        "src_height": 821
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/dove-haveyoursay/mobile/05_tweet_Grid.jpg",
-                        "src_width": 1400,
-                        "src_height": 882
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/dove-haveyoursay/mobile/06_Stats_A.jpg",
-                        "src_width": 1400,
-                        "src_height": 882
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Change the Story.",
-                        "body": "We're exposed to comments about female athetes' appearance hundreds of millions of times every year. It's enough to leave you speechless. Dove | Have Your Say encourages you to break your silence and to respond directly to sexist quotes on social media. It's time to let them know it's not okay."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/dove-haveyoursay/mobile/06_Stats_B.jpg",
-                        "src_width": 1400,
-                        "src_height": 882
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Real Time Judgement Tracking.",
-                        "body": "The site tracks real-time media judgments of female athletesâ€™ appearance from digital publications, live broadcasts and radio commentary. This gives users the chance to respond to sexist comments immediately."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/dove-haveyoursay/mobile/07_Stats_All.jpg",
-                        "src_width": 1400,
-                        "src_height": 849
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Live in New York.",
-                        "body": "Select video content and quotes from the website were displayed live in Times Square as well as in popular spots in LA and Toronto."
-					}
-                },
-                {
-                    "type": "mobile",
-                    "data": {
-                        "portrait": true,
-                        "scrollable": false,
-                        "src": "img/projects/dove-haveyoursay/mobile_03_Info.jpg",
-                        "src_width": 414,
-                        "src_height": 736,
-                        "mobile_pair": true,
-                        "mobile_collapse": true
-                    }
-                },
-                {
-                    "type": "mobile",
-                    "data": {
-                        "portrait": true,
-                        "scrollable": false,
-                        "src": "img/projects/dove-haveyoursay/mobile/mobile_05_stats_B.jpg",
-                        "src_width": 414,
-                        "src_height": 736,
-                        "mobile_pair": true
                     }
                 }
             ]

@@ -7027,8 +7027,8 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             onResize: function() {
                 var t = this.pixelRatio = window.devicePixelRatio;
                 this.w = window.innerWidth, this.h = window.innerHeight, this.cnv.width = t * this.w, this.cnv.height = t * this.h, this.cnv.style.width = this.w + "px", this.cnv.style.height = this.h + "px", this.ctx.scale(t, t), this.innerW = Math.min(.6 * this.w, 500), this.innerH = .1 * this.h, this.inner.style.left = Math.round(.5 * (this.w - this.innerW)) + "px", this.inner.style.top = Math.round(.5 * (this.h - this.innerH)) + "px", this.inner.style.width = this.innerW + "px", this.inner.style.height = this.innerH + "px";
-                var e = n.MOBILE ? .46 : .6;
-                this.dropW = 36 * e, this.dropH = 50 * e, this.cnvDrop.width = Math.ceil(t * this.dropW), this.cnvDrop.height = Math.ceil(t * this.dropH), this.ctxDrop.scale(t, t)
+                var e = n.MOBILE ? .56 : .8;
+                this.dropW = 50 * e, this.dropH = 48 * e, this.cnvDrop.width = Math.ceil(t * this.dropW), this.cnvDrop.height = Math.ceil(t * this.dropH), this.ctxDrop.scale(t, t)
             }
         })
     }), require.config({

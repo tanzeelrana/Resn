@@ -2296,6 +2296,129 @@
             ]
         },
         {
+            "route": "buildclub",
+            "enabled": true,
+            "featured": false,
+            "menutitle": "",
+            "globaltitle": "",
+            "title": "THE BUILDCLUB",
+            "description": "A Chrome extension for price comparison across multiple home improvement retailers",
+            "client": "Business",
+            "role": "Lead Developer",
+            "date": "",
+            "url": "https://deals.buildclub.com/",
+            "poster": "img/projects/buildclub/buildclub-title.png",
+            "poster_m": "img/projects/buildclub/buildclub-title.png",
+            "categories": [
+                "creative",
+                "design",
+                "development"
+            ],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub1.jpg",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 0
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Problem ",
+                        "body": "BuildClub required a Chrome extension that could compare real-time product prices across Home Depot, Lowe’s, Amazon, and Ace Hardware. It needed to display best deals, integrate affiliate links, and remain user-friendly for shoppers.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub2.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub2.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Challenges",
+                        "body": "Amazon’s API restrictions made it difficult to perform multiple product searches efficiently. Price accuracy was complicated by varying location-based rates. Integrating affiliate links without cluttering the interface demanded careful UI/UX planning and performance tuning.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub6.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 5.2,
+                        "left_columns": 0,
+                        "top_offset": 120,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub7.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 5,
+                        "left_columns": 3,
+                        "top_offset": -100,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Solution",
+                        "body": "Devflovv developed a React-based Chrome extension using AWS Amplify and Stripe. It dynamically fetches prices, flags the best deals, and supports a Stripe-powered subscription model. The extension is scalable for future updates like barcode scanning and retailer expansion.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub4.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": " React, AWS Amplify, Stripe, JavaScript",
+                        "top_offset": 120
+                    }
+                }
+            ]
+        },
+        {
             "route": "ifit",
             "menutitle": "",
             "enabled": true,

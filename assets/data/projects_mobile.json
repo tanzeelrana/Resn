@@ -1367,6 +1367,103 @@
             ]
         },
         {
+            "route": "buildclub",
+            "title": "THE BUILDCLUB",
+            "enabled": true,
+            "featured": false,
+            "description": "A Chrome extension for price comparison across multiple home improvement retailers.",
+            "client": "Business",
+            "date": "Oct 2013",
+            "role": "Lead Developer",
+            "url": "https://deals.buildclub.com/",
+            "poster": "img/projects/buildclub/buildclub-title.png",
+            "poster_m": "img/projects/buildclub/buildclub-title.png",
+            "categories": [
+                "dreative",
+                "design",
+                "development"
+            ],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub1.jpg",
+                        "src_width": 1340,
+                        "src_height": 760
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "BuildClub required a Chrome extension that could compare real-time product prices across Home Depot, Lowe’s, Amazon, and Ace Hardware. It needed to display best deals, integrate affiliate links, and remain user-friendly for shoppers."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub2.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub2.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Amazon’s API restrictions made it difficult to perform multiple product searches efficiently. Price accuracy was complicated by varying location-based rates. Integrating affiliate links without cluttering the interface demanded careful UI/UX planning and performance tuning."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub6.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub7.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv developed a React-based Chrome extension using AWS Amplify and Stripe. It dynamically fetches prices, flags the best deals, and supports a Stripe-powered subscription model. The extension is scalable for future updates like barcode scanning and retailer expansion."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub4.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "React JS | Algolia UI | Firestore | CSS"
+					}
+                }
+            ]
+        },
+        {
             "route": "pioneer",
             "menutitle": "",
             "enabled": true,
@@ -6096,84 +6193,6 @@
                     "type": "image",
                     "data": {
                         "src": "img/projects/hennessey/mobile/hennessey-06.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                }
-            ]
-        },
-        {
-            "route": "kia-techathlete",
-            "title": "KIA Techathlete Games",
-            "enabled": true,
-            "featured": false,
-            "description": "How do you engage users enough to explain all the unique tech features of the 2014 Kia Forte? We developed five games, controlled in five different ways, to show off the technology packed car.",
-            "client": "David & Goliath & Kia Motors",
-            "date": "Oct 2013",
-            "role": "Creative and Production Partner",
-            "url": "",
-            "poster": "img/projects/kia/mobile/kiaTechathleteGames-poster-archive-m.jpg",
-            "poster_m": "img/projects/kia/mobile/kiaTechathleteGames-poster-m.jpg",
-            "categories": [
-                "dreative",
-                "design",
-                "development",
-                "games",
-                "social-content"
-            ],
-            "awards": [],
-            "items": [
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/kia/mobile/kiaTechathleteGames-poster-archive-m.jpg",
-                        "src_width": 1340,
-                        "src_height": 760
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/kia/mobile/kia-01.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/kia/mobile/kia-02.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Play Five Ways",
-                        "body": "We took the top-five tech features of the Kia Forte and created a game around each one. Users played each of the five games using different input method: keyboard, mouse, smartphone, webcam, and microphone. To maximize the sharing potential, the entire Techathlete experience was played within Facebook."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/kia/mobile/kia-03.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/kia/mobile/kia-04.jpg",
-                        "src_width": 1400,
-                        "src_height": 788
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/kia/mobile/kia-05.jpg",
                         "src_width": 1400,
                         "src_height": 788
                     }

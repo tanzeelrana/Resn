@@ -1618,7 +1618,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
 .shell .shell__button .button__hitarea {
     position: absolute;
     width: 200px;
-    height: 200px;
+    height: 160px;
     border-radius: 50%;
 }
 
@@ -1626,7 +1626,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
     position: absolute;
     left: 0;
     top: 0;
-    width: 120%;
+    width: 170%;
     height: 120%;
 }
 
@@ -1669,7 +1669,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
 }
 
 .shell .shell__button--drop .button__text {
-    left: 30px;
+    left: 35px;
     top: 6px;
 }
 

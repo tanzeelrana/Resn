@@ -547,7 +547,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 110%;
     height: 100%;
 }
 

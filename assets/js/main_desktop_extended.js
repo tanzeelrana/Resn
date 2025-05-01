@@ -38233,7 +38233,9 @@ define('view/modules/work/project/project_image_view',[
             this.imageRatio = this.model.src_width / this.model.src_height;
 
             this.$imageEl = this.$('.js-project__image-el');
-            this.$imageEl.css({ 'backgroundImage' : this.generateBgImageString(this.imagePath) });
+            this.$imageEl.css({ 'backgroundImage' : this.generateBgImageString(this.imagePath),
+				'borderRadious': '12px'
+			 });
 
             var filetype = this.imagePath.split('.').pop().toLowerCase();
             if ( filetype === 'gif' && !Config.IS_EDGE ) {
@@ -122547,7 +122549,7 @@ define('view/modules/background/gem/gem2_view',[
         ANTIALIAS: false,
 
         modelScale: 14,
-        modelYOffset: -8,
+        modelYOffset: -12,
 
         useRefraction: true,
 
@@ -122836,15 +122838,22 @@ define('view/modules/background/gem/gem2_view',[
 
 
             //mesh
-            var loader = new THREE.OBJLoader();
-            var object = loader.parse(LoaderCollection.getResult('GEM_MODEL'));
-
-            this.mesh            = object.children[0];
-            this.mesh.material   = this.material;
-            this.mesh.scale.x    = this.mesh.scale.y = this.mesh.scale.z = this.modelScale;//10;
-            this.mesh.position.y = this.modelYOffset;
-
-            this.meshContainer.add(this.mesh);
+			var loader = new THREE.OBJLoader();
+			var object = loader.parse(LoaderCollection.getResult('GEM_MODEL'));
+			
+			this.mesh = object.children[0];
+			this.mesh.material = this.material;
+			
+			this.mesh.scale.set(
+				-this.modelScale,  // Negative X for flipping
+				this.modelScale,
+				this.modelScale
+			);
+			
+			this.mesh.position.y = this.modelYOffset;
+			
+			this.meshContainer.add(this.mesh);
+			
             //this.animateIntro();
 
             //render
@@ -122896,7 +122905,7 @@ define('view/modules/background/gem/gem2_view',[
             this.lightenShader = new THREE.ShaderPass( THREE.BrightnessContrastShader );
             this.lightenShader.uniforms[ 'brightness' ].value = this.postOffsetDarkenBrightness;//0.15;
             this.lightenShader.uniforms[ 'contrast' ].value = this.postOffsetDarkenContrast;//0;
-            //this.lightenShader.renderToScreen = true;
+            this.lightenShader.renderToScreen = true;
             this.composer.addPass(this.lightenShader);
 
             this.colorShader = new THREE.ShaderPass( THREE.ColorCorrectionShader );
@@ -124994,7 +125003,8 @@ define('view/modules/background/background_view',[
             this.$('.js-background__drop__gem').css(
             {
                 'position':'fixed',
-                'overflow':'hidden'
+                'overflow':'hidden',
+				'opacity': '0.8',
             });
         },
 
@@ -125009,7 +125019,8 @@ define('view/modules/background/background_view',[
             this.$shards.css(
             {
                 position: 'fixed',
-                overflow: 'hidden'
+                overflow: 'hidden',
+				background: '#000000',
             });
         },
 

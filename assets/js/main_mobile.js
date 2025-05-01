@@ -94713,8 +94713,8 @@ define('view/modules/background/gem/gem2_view',[
 
         ANTIALIAS: false,
 
-        modelScale: 14,
-        modelYOffset: -8,
+        modelScale: 0,
+        modelYOffset: -10,
 
         useRefraction: true,
 
@@ -95004,14 +95004,20 @@ define('view/modules/background/gem/gem2_view',[
 
             //mesh
             var loader = new THREE.OBJLoader();
-            var object = loader.parse(LoaderCollection.getResult('GEM_MODEL'));
-
-            this.mesh            = object.children[0];
-            this.mesh.material   = this.material;
-            this.mesh.scale.x    = this.mesh.scale.y = this.mesh.scale.z = this.modelScale;//10;
-            this.mesh.position.y = this.modelYOffset;
-
-            this.meshContainer.add(this.mesh);
+			var object = loader.parse(LoaderCollection.getResult('GEM_MODEL'));
+			
+			this.mesh = object.children[0];
+			this.mesh.material = this.material;
+			
+			this.mesh.scale.set(
+				-this.modelScale,  // Negative X for flipping
+				this.modelScale,
+				this.modelScale
+			);
+			
+			this.mesh.position.y = this.modelYOffset;
+			
+			this.meshContainer.add(this.mesh);
             //this.animateIntro();
 
             //render
@@ -95063,7 +95069,7 @@ define('view/modules/background/gem/gem2_view',[
             this.lightenShader = new THREE.ShaderPass( THREE.BrightnessContrastShader );
             this.lightenShader.uniforms[ 'brightness' ].value = this.postOffsetDarkenBrightness;//0.15;
             this.lightenShader.uniforms[ 'contrast' ].value = this.postOffsetDarkenContrast;//0;
-            //this.lightenShader.renderToScreen = true;
+            this.lightenShader.renderToScreen = true;
             this.composer.addPass(this.lightenShader);
 
             this.colorShader = new THREE.ShaderPass( THREE.ColorCorrectionShader );
@@ -95771,7 +95777,7 @@ define('view/mobile/modules/background/gem/gem_mobile_view',[
 
     return GemView.extend({
 
-        modelScale: 15,
+        modelScale: 8,
 
         devicePixelRatio:2,
 

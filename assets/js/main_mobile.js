@@ -95003,7 +95003,7 @@ define('view/modules/background/gem/gem2_view',[
 
 
             //mesh
-            var loader = new THREE.OBJLoader();
+			var loader = new THREE.OBJLoader();
 			var object = loader.parse(LoaderCollection.getResult('GEM_MODEL'));
 			
 			this.mesh = object.children[0];
@@ -95016,6 +95016,9 @@ define('view/modules/background/gem/gem2_view',[
 			);
 			
 			this.mesh.position.y = this.modelYOffset;
+			
+			// ✅ Fix: Rotate the mesh to the right (clockwise) around the Y-axis
+			this.mesh.rotation.y = Math.PI/ 4; // Rotate 180 degrees (you can tweak this angle)
 			
 			this.meshContainer.add(this.mesh);
             //this.animateIntro();
@@ -95777,7 +95780,7 @@ define('view/mobile/modules/background/gem/gem_mobile_view',[
 
     return GemView.extend({
 
-        modelScale: 8,
+        modelScale: 9,
 
         devicePixelRatio:2,
 

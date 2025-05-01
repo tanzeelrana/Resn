@@ -122851,8 +122851,10 @@ define('view/modules/background/gem/gem2_view',[
 			
 			this.mesh.position.y = this.modelYOffset;
 			
-			this.meshContainer.add(this.mesh);
+			// ✅ Fix: Rotate the mesh to the right (clockwise) around the Y-axis
+			this.mesh.rotation.y = Math.PI/ 4; // Rotate 180 degrees (you can tweak this angle)
 			
+			this.meshContainer.add(this.mesh);
             //this.animateIntro();
 
             //render

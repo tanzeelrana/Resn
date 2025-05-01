@@ -38233,8 +38233,7 @@ define('view/modules/work/project/project_image_view',[
             this.imageRatio = this.model.src_width / this.model.src_height;
 
             this.$imageEl = this.$('.js-project__image-el');
-            this.$imageEl.css({ 'backgroundImage' : this.generateBgImageString(this.imagePath),
-				'borderRadious': '12px'
+            this.$imageEl.css({ 'backgroundImage' : this.generateBgImageString(this.imagePath)
 			 });
 
             var filetype = this.imagePath.split('.').pop().toLowerCase();

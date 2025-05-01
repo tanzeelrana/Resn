@@ -1458,7 +1458,7 @@
                     "type": "headline",
                     "data": {
                         "title": "TECH STACK",
-                        "body": "React JS | Algolia UI | Firestore | CSS"
+                        "body": "React | Next.js | Node.js | TypeScript | MongoDB"
 					}
                 }
             ]

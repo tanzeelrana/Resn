@@ -26,10 +26,10 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "The Problem",
-                        "body": "Persona AI needed a smart, automated solution to help researchers efficiently analyze interview recordings by extracting relevant content based on targeted keywords—eliminating the need for time-consuming manual reviews."
+                         "title": "TECH STACK",
+                        "body": "AWS Lambda, RDS Database, Serverless Architecture"
                     }
                 },
                 {
@@ -49,10 +49,10 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "The Challenge",
-                        "body": " Devflovv faced the challenge of building a scalable, serverless backend capable of handling real-time data processing, video analysis, and clip generation, while also preparing the system for secure and future-proof user authentication."
+                         "title": "The Problem",
+                        "body": "Persona AI needed a smart, automated solution to help researchers efficiently analyze interview recordings by extracting relevant content based on targeted keywords—eliminating the need for time-consuming manual reviews."
                     }
                 },
                 {
@@ -80,10 +80,10 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "The Solution",
-                        "body": "Devflovv developed PersonaAI on serverless architecture, enabling high performance and availability with low operational overhead. RDS Aurora was used as a database layer and AWS ElastiCache(Redis) for server-side caching. Through VAPI APIs, the platform conducts AI-moderated interviews for the researchers created by the research creator. Additionally, Implemented AWS Cognito for the authentication layer. The platform is a powerful web-based AI tool that empowers researchers to extract actionable insights faster and more effectively."
+                        "title": "The Challenge",
+                        "body": " Devflovv faced the challenge of building a scalable, serverless backend capable of handling real-time data processing, video analysis, and clip generation, while also preparing the system for secure and future-proof user authentication."
                     }
                 },
                 {
@@ -103,18 +103,18 @@
                     }
                 },
                 {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv developed PersonaAI on serverless architecture, enabling high performance and availability with low operational overhead. RDS Aurora was used as a database layer and AWS ElastiCache(Redis) for server-side caching. Through VAPI APIs, the platform conducts AI-moderated interviews for the researchers created by the research creator. Additionally, Implemented AWS Cognito for the authentication layer. The platform is a powerful web-based AI tool that empowers researchers to extract actionable insights faster and more effectively."
+                    }
+                },
+                {
                     "type": "image",
                     "data": {
                         "src": "img/projects/persona_ai/persona_2.png",
                         "src_width": 1400,
                         "src_height": 808
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": "AWS Lambda, RDS Database, Serverless Architecture"
                     }
                 }
             ]
@@ -143,10 +143,10 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "The Problem",
-                        "body": "Keyfree sought to target automotive challenges with anti-theft solutions, secure trunk deliveries, insurance integration, and fleet management. They wanted to offer effortless integration for businesses."
+                         "title": "TECH STACK",
+                        "body": "C++ | Node JS | AWS | Docker | Vue JS"
 					}
                 },
                 {
@@ -158,10 +158,10 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "The Challenge",
-                        "body": "Engineers tackling Keyfree's connected car solutions faced obstacles ranging from hardware development to data security, UX/UI design, and regulatory compliance. Ensuring scalability and user adoption were areas that required explicit focus."
+                         "title": "The Problem",
+                        "body": "Keyfree sought to target automotive challenges with anti-theft solutions, secure trunk deliveries, insurance integration, and fleet management. They wanted to offer effortless integration for businesses."
 					}
                 },
                 {
@@ -173,10 +173,10 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "The Solution",
-                        "body": "Devflovv played a decisive role in executing KeyFree’s concept. They developed a robust online web platform, created and designed the anti-theft device, addressing critical technology gaps and ensuring smooth integration into Keyfree's connected car solutions."
+                        "title": "The Challenge",
+                        "body": "Engineers tackling Keyfree's connected car solutions faced obstacles ranging from hardware development to data security, UX/UI design, and regulatory compliance. Ensuring scalability and user adoption were areas that required explicit focus."
 					}
                 },
                 {
@@ -203,10 +203,10 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "TECH STACK",
-                        "body": "C++ | Node JS | AWS | Docker | Vue JS"
+                        "title": "The Solution",
+                        "body": "Devflovv played a decisive role in executing KeyFree’s concept. They developed a robust online web platform, created and designed the anti-theft device, addressing critical technology gaps and ensuring smooth integration into Keyfree's connected car solutions."
 					}
                 }
             ]
@@ -253,8 +253,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Problem",
-                        "body": "Students often juggle multiple tools for writing, editing, referencing, and detecting AI-generated or plagiarized content—causing friction, wasted time, and inconsistent results. LearnEZ aimed to centralize these academic tasks in one intuitive, AI-powered platform."
+                        "title": "TECH STACK",
+                        "body": "React (Vite) | Tailwind CSS | Django | PostgreSQL | Clerk | Google Sign-in | Apple Sign-in | Stripe | AWS EC2."
 					}
                 },
                 {
@@ -276,8 +276,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Challenge",
-                        "body": "A major hurdle emerged with social media in-app browsers (like TikTok and Instagram), which blocked Google SSO, disrupting the user login experience. Additionally, designing eight feature-rich tools under one clean UI while managing seamless user access through subscriptions required careful planning and execution."
+                        "title": "The Problem",
+                        "body": "Students often juggle multiple tools for writing, editing, referencing, and detecting AI-generated or plagiarized content—causing friction, wasted time, and inconsistent results. LearnEZ aimed to centralize these academic tasks in one intuitive, AI-powered platform."
 					}
                 },
                 {
@@ -291,8 +291,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Solution",
-                        "body": "Devflovv delivered an all-in-one academic productivity suite with a smooth, subscription-based model and free trial access. A smart browser detection and redirect system ensured reliable authentication, even from restricted environments. Each tool—ranging from grammar and plagiarism checks to AI content analysis—was crafted for maximum value and ease of use, enabling students to boost productivity in one place."
+                        "title": "The Challenge",
+                        "body": "A major hurdle emerged with social media in-app browsers (like TikTok and Instagram), which blocked Google SSO, disrupting the user login experience. Additionally, designing eight feature-rich tools under one clean UI while managing seamless user access through subscriptions required careful planning and execution."
 					}
                 },
                 {
@@ -327,19 +327,19 @@
                     }
                 },
                 {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv delivered an all-in-one academic productivity suite with a smooth, subscription-based model and free trial access. A smart browser detection and redirect system ensured reliable authentication, even from restricted environments. Each tool—ranging from grammar and plagiarism checks to AI content analysis—was crafted for maximum value and ease of use, enabling students to boost productivity in one place."
+					}
+                },
+                {
                     "type": "image",
                     "data": {
                         "src": "img/projects/learnEZ/learn-pricing.png",
                         "src_width": 1400,
                         "src_height": 849
                     }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": "React (Vite) | Tailwind CSS | Django | PostgreSQL | Clerk | Google Sign-in | Apple Sign-in | Stripe | AWS EC2."
-					}
                 }
             ]
         },
@@ -375,10 +375,10 @@
 					}
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "The Problem",
-                        "body": "Devflovv took on the project of making Coursology, a smart study aid, even better for students. The goal was to make sure students could get smart, instant help right where they needed it."
+                        "title": "TECH STACK",
+                        "body": "JavaScript frameworks | React | styled-components | Emotion | Next.js | Stripe | Node.js | Apple Sign-in | NextAuth.js | OpenAI ChatGPT"
 					}
                 },
                 {
@@ -411,6 +411,13 @@
 					}
                 },
                 {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Devflovv took on the project of making Coursology, a smart study aid, even better for students. The goal was to make sure students could get smart, instant help right where they needed it."
+					}
+                },
+                {
                     "type": "videoloop",
                     "data": {
                         "vimeo_id": "341749708",
@@ -437,17 +444,10 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
                         "title": "The Challenge",
                         "body": "The team faced the challenge of adding a smart assistant, ChatGPT, into Coursology and making it simple for students to use."
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "The Solution",
-                        "body": "Devflovv's solution was to use React for building the platform, ensuring it was easy and friendly for students to ask questions and get answers. They also set up a way for students to pay for services easily and securely sign into their accounts."
 					}
                 },
                 {
@@ -475,10 +475,10 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "Review's",
-                        "body": "Devflovv transformed Coursology by seamlessly integrating ChatGPT, making it a smarter and more intuitive study aid for students. Their expertise in React, secure authentication, and payment integration ensured a smooth user experience. We highly recommend Devflovv for their innovation and technical excellence!."
+                         "title": "The Solution",
+                        "body": "Devflovv's solution was to use React for building the platform, ensuring it was easy and friendly for students to ask questions and get answers. They also set up a way for students to pay for services easily and securely sign into their accounts."
                     }
                 },
                 {
@@ -492,13 +492,6 @@
                         "src_height": 720,
                         "width_columns": 8,
                         "left_columns": 0
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": "JavaScript frameworks | React | styled-components | Emotion | Next.js | Stripe | Node.js | Apple Sign-in | NextAuth.js | OpenAI ChatGPT"
                     }
                 }
             ]
@@ -538,15 +531,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Problem",
-                        "body": "Devflovv tackled an ambitious project with Aivida, blending healthcare technology with artificial intelligence. Their goal was to enhance an Electronic Health Record (EHR) system with smart AI features, making healthcare processes smoother and improving patient care."
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Smart EHR with AI",
-                        "body": "Devflovv integrated AI into EPIC EHR, enhancing efficiency and patient care with Python, React, and AWS tools."
+                        "title": "TECH STACK",
+                        "body": "Python | AssemblyAI | OpenAI | AWS Secrets Manager | AWS CodeCommit | NATS | React | AWS EC2 | AWS ECR"
 					}
                 },
                 {
@@ -560,8 +546,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Challenge",
-                        "body": "The team faced several challenges, including integrating the EPIC EHR system with AI tools like AssemblyAI and OpenAI and efficiently developing both the server and client sides. High security and effective version management were also key priorities."
+                        "title": "The Problem",
+                        "body": "Devflovv tackled an ambitious project with Aivida, blending healthcare technology with artificial intelligence. Their goal was to enhance an Electronic Health Record (EHR) system with smart AI features, making healthcare processes smoother and improving patient care."
 					}
                 },
                 {
@@ -583,8 +569,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Solution",
-                        "body": "Devflovv used Python for backend development and React for a user-friendly frontend. They successfully integrated AI with the EHR system and utilized AWS tools like Secrets Manager and CodeCommit for security and version control. The final product was deployed using AWS EC2 and ECR, resulting in a reliable and advanced healthcare application."
+                        "title": "The Challenge",
+                        "body": "The team faced several challenges, including integrating the EPIC EHR system with AI tools like AssemblyAI and OpenAI and efficiently developing both the server and client sides. High security and effective version management were also key priorities."
 					}
                 },
                 {
@@ -604,13 +590,6 @@
                     }
                 },
                 {
-                    "type": "headline",
-                    "data": {
-                        "title": "Unifying Data| Unlocking Insights| Powering AI.",
-                        "body": "At Aivida, we transform disparate data into a unified, high‑quality asset—laying the foundation for effective analytics, predictive modeling, and AI‑driven decision‑making."
-					}
-                },
-                {
                     "type": "image",
                     "data": {
                         "src": "img/projects/aivida/aivida-solutions3.png",
@@ -619,20 +598,20 @@
                     }
                 },
                 {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv used Python for backend development and React for a user-friendly frontend. They successfully integrated AI with the EHR system and utilized AWS tools like Secrets Manager and CodeCommit for security and version control. The final product was deployed using AWS EC2 and ECR, resulting in a reliable and advanced healthcare application."
+					}
+                },
+                {
                     "type": "image",
                     "data": {
                         "src": "img/projects/aivida/aivida-footer.png",
                         "src_width": 1400,
                         "src_height": 820
                     }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": "Python | AssemblyAI | OpenAI | AWS Secrets Manager | AWS CodeCommit | NATS | React | AWS EC2 | AWS ECR"
-					}
-                }  
+                }
             ]
         },
         {
@@ -660,7 +639,7 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
                         "title": "The Problem",
                         "body": "Total Health Dental Care aimed to enhance dental care accessibility and convenience by offering a range of services, an uninsured patient membership, and leveraging technology for seamless scheduling and teledentistry, catering to a diverse patient base."
@@ -683,7 +662,7 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
                         "title": "The Challenge",
                         "body": "Devs at Devflovv overcame hurdles like data security, system integration, user-friendliness, and scalability to enhance dental healthcare accessibility and convenience."
@@ -706,7 +685,7 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
                         "title": "The Solution",
                         "body": "Devflovv played a crucial role in revitalizing Total Health Dental Care's online platform, and addressing their software challenges. They developed a solution that enabled continuous online scheduling, and teledentistry, and improved accessibility for patients, ultimately amplifying the dental care experience."
@@ -758,8 +737,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Problem",
-                        "body": "Devflovv was approached to bring Holmetrics, a cutting-edge platform combining machine learning with DevOps practices, back online after a prolonged period of inactivity."
+                        "title": "TECH STACK",
+                        "body": "MERN Stack | Next.js | AWS | Amazon RD | Amazon Redshift | Amazon S3 bucket | AWS Glue ETL Jobs | EC2 | AWS Lambda Function | AWS SageMaker | Docker | Crontab Jobs | Postman | JavaScript | Shell Scripting | GoodData Analytics | Okta"
 					}
                 },
                 {
@@ -797,8 +776,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Challenge",
-                        "body": "Devflovv’s DevOps team surpassed several hurdles, including reactivating key services like AWS and GoodData, resolving authentication issues, and updating the system architecture to improve scalability and reduce maintenance costs."
+                        "title": "The Problem",
+                        "body": "Devflovv was approached to bring Holmetrics, a cutting-edge platform combining machine learning with DevOps practices, back online after a prolonged period of inactivity."
 					}
                 },
                 {
@@ -812,8 +791,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Solution",
-                        "body": "Devflovv successfully re-launched the platform, integrated new workspaces, and fixed critical bugs. They streamlined the code by transitioning to TypeScript and incorporating a serverless architecture, achieving significant cost reductions. Their deployment of AWS SageMaker, Docker, and other modern technologies significantly enhanced the platform’s functionality and user experience."
+                        "title": "The Challenge",
+                        "body": "Devflovv’s DevOps team surpassed several hurdles, including reactivating key services like AWS and GoodData, resolving authentication issues, and updating the system architecture to improve scalability and reduce maintenance costs."
                     }
                 },
                 {
@@ -825,18 +804,18 @@
                     }
                 },
                 {
+                    "type": "headline",
+                    "data": {
+                       "title": "The Solution",
+                       "body": "Devflovv successfully re-launched the platform, integrated new workspaces, and fixed critical bugs. They streamlined the code by transitioning to TypeScript and incorporating a serverless architecture, achieving significant cost reductions. Their deployment of AWS SageMaker, Docker, and other modern technologies significantly enhanced the platform’s functionality and user experience."
+                    }
+                },
+                {
                     "type": "image",
                     "data": {
                         "src": "img/projects/holmetrics/752.png",
                         "src_width": 750,
                         "src_height": 816
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": "MERN Stack | Next.js | AWS | Amazon RD | Amazon Redshift | Amazon S3 bucket | AWS Glue ETL Jobs | EC2 | AWS Lambda Function | AWS SageMaker | Docker | Crontab Jobs | Postman | JavaScript | Shell Scripting | GoodData Analytics | Okta"
                     }
                 }
             ]
@@ -869,8 +848,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Problem",
-                        "body": "Appiell AI needed to offer users a detailed, real-time skin health assessment tool for personalized skincare advice and specialist connections."
+                        "title": "TECH STACK",
+                        "body": "Python | Django | React | TypeScript | Emotion | styled-components | Nginx | PHP | MySQL"
 					}
                 },
                 {
@@ -908,8 +887,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Challenge",
-                        "body": "Devflovv faced the dual challenge of building a powerful backend for complex data processing and designing a user-friendly frontend for easy interaction and clear information presentation."
+                        "title": "The Problem",
+                        "body": "Appiell AI needed to offer users a detailed, real-time skin health assessment tool for personalized skincare advice and specialist connections."
 					}
                 },
                 {
@@ -923,8 +902,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Solution",
-                        "body": "Devflovv employed Python and Django for a robust backend and used React and TypeScript for a smooth frontend experience. They ensured a stylish and responsive interface using Emotion and styled-components, supported by a solid server and database setup with Nginx, PHP, and MySQL."
+                        "title": "The Challenge",
+                        "body": "Devflovv faced the dual challenge of building a powerful backend for complex data processing and designing a user-friendly frontend for easy interaction and clear information presentation."
                     }
                 },
                 {
@@ -936,18 +915,18 @@
                     }
                 },
                 {
+                    "type": "headline",
+                    "data": {
+                         "title": "The Solution",
+                        "body": "Devflovv employed Python and Django for a robust backend and used React and TypeScript for a smooth frontend experience. They ensured a stylish and responsive interface using Emotion and styled-components, supported by a solid server and database setup with Nginx, PHP, and MySQL."
+                    }
+                },
+                {
                     "type": "image",
                     "data": {
                         "src": "img/projects/appiell.ai/Appieal_m3.png",
                         "src_width": 750,
                         "src_height": 816
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": "Python | Django | React | TypeScript | Emotion | styled-components | Nginx | PHP | MySQL"
                     }
                 }
             ]
@@ -985,8 +964,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Problem",
-                        "body": "Devflovv encountered a challenge where MSPs struggled to manage security for Microsoft and cloud applications. The key issue was finding a solution that effectively addressed both security risks and scalability concerns."
+                        "title": "TECH STACK",
+                        "body": "React | styled-components | Emotion | Google AnalyticsGA4 | PHP | CDN | Unpkg | Cloudflare | MySQL | core-js | jQuery | Node JS"
 					}
                 },
                 {
@@ -1000,8 +979,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Challenge",
-                        "body": "Devflovv’s Team had to ensure scalable, effective protection and threat detection while navigating complex Microsoft and cloud environments."
+                        "title": "The Problem",
+                        "body": "Devflovv encountered a challenge where MSPs struggled to manage security for Microsoft and cloud applications. The key issue was finding a solution that effectively addressed both security risks and scalability concerns."
 					}
                 },
                 {
@@ -1023,8 +1002,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Solution",
-                        "body": "Devflovv's Augmentt platform revolutionized the landscape, providing comprehensive visibility, auditing, protection, and advanced threat detection, empowering MSPs to reshape cybersecurity paradigms."
+                        "title": "The Challenge",
+                        "body": "Devflovv’s Team had to ensure scalable, effective protection and threat detection while navigating complex Microsoft and cloud environments."
 					}
                 },
                 {
@@ -1036,19 +1015,19 @@
                     }
                 },
                 {
+                    "type": "headline",
+                    "data": {
+                       "title": "The Solution",
+                        "body": "Devflovv's Augmentt platform revolutionized the landscape, providing comprehensive visibility, auditing, protection, and advanced threat detection, empowering MSPs to reshape cybersecurity paradigms."
+					}
+                },
+                {
                     "type": "image",
                     "data": {
                         "src": "img/projects/rei/mobile/REI1440-06.jpg",
                         "src_width": 1400,
                         "src_height": 788
                     }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": "React | styled-components | Emotion | Google AnalyticsGA4 | PHP | CDN | Unpkg | Cloudflare | MySQL | core-js | jQuery | Node JS"
-					}
                 }
             ]
         },
@@ -1093,8 +1072,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Problem",
-                        "body": "Devflovv set out to develop Strava's iOS app, aiming to provide a seamless experience for fitness enthusiasts to track activities and engage with a community on their Apple devices."
+                        "title": "TECH STACK",
+                        "body": "Swift, UIKit, Node.js, MongoDB, Express.js, RESTful API, SSL/TLS, Apple App Store Services, Google Analytics, Git or Bitbucket, Testing Frameworks"
 					}
                 },
                 {
@@ -1114,10 +1093,10 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "The Challenge",
-                        "body": "Deflovv's team overcame the hurdles of designing an intuitive yet feature-rich interface with Swift and UIKit, managing extensive user data with Node.js and MongoDB, and ensuring user privacy with robust security measures."
+                        "title": "The Problem",
+                        "body": "Devflovv set out to develop Strava's iOS app, aiming to provide a seamless experience for fitness enthusiasts to track activities and engage with a community on their Apple devices."
 					}
                 },
                 {
@@ -1137,10 +1116,10 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "The Solution",
-                        "body": "The result was a user-friendly Strava app with a reliable backend and strong security features, offering users a straightforward and safe way to connect and share their fitness journeys."
+                        "title": "The Challenge",
+                        "body": "Deflovv's team overcame the hurdles of designing an intuitive yet feature-rich interface with Swift and UIKit, managing extensive user data with Node.js and MongoDB, and ensuring user privacy with robust security measures."
 					}
                 },
                 {
@@ -1160,20 +1139,20 @@
                     }
                 },
                 {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "The result was a user-friendly Strava app with a reliable backend and strong security features, offering users a straightforward and safe way to connect and share their fitness journeys."
+					}
+                },
+                {
                     "type": "image",
                     "data": {
                         "src": "img/projects/strava-ios-app/strava-map.png",
                         "src_width": 374,
                         "src_height": 840
                     }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": "Swift, UIKit, Node.js, MongoDB, Express.js, RESTful API, SSL/TLS, Apple App Store Services, Google Analytics, Git or Bitbucket, Testing Frameworks"
-					}
-                }   
+                } 
             ]
         },
         {
@@ -1200,7 +1179,7 @@
                         "vimeo_id": "347507060",
                         "video_name": "dektop_flow",
                         "vimeo_video_url": "https://player.vimeo.com/external/391444974.hd.mp4?s=0b1322870ca813f96e2599743e6bd2c3452bbe93&profile_id=175",
-                        "video_poster": "img/projects/language-research-initiative/Display_Coursology.png",
+                        "video_poster": "img/projects/living-ai/living-m-4.png",
                         "src_width": 1535,
                         "src_height": 864,
                         "width_columns": 8,
@@ -1210,8 +1189,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Problem",
-                        "body": "Devflovv led the charge in integrating groundbreaking AI into the e-commerce space with Living AI, becoming one of the first to feature an app on the ChatGPT store. They aimed to enhance the shopping experience with smart voice commands and a unique AI that could create content on its own."
+                        "title": "TECH STACK",
+                        "body": "Python | Django | OpenAI Chat GPT Integration | Core-js | jQuery | JavaScript | AWS Lamda | CodeCommit | API Gateway | CDK | S3 | DynamoDB | Node-JS | Google Slides | Drive API"
 					}
                 },
                 {
@@ -1228,8 +1207,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Challenge",
-                        "body": "Their task was to weave this AI seamlessly into the existing platform without losing the simple and engaging feel users love. Plus, we developed the LivingAI plugin, allowing shoppers to make and customize their own avatar videos – a fresh twist for online shopping."
+                        "title": "The Problem",
+                        "body": "Devflovv led the charge in integrating groundbreaking AI into the e-commerce space with Living AI, becoming one of the first to feature an app on the ChatGPT store. They aimed to enhance the shopping experience with smart voice commands and a unique AI that could create content on its own."
 					}
                 },
                 {
@@ -1255,44 +1234,10 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "The Solution",
-                        "body": "Using Python and Django, Devflovv’s team built a robust system that brought Chat GPT into the mix without a hitch. On the front end, core-js and jQuery made sure everything ran smoothly for users. The LivingAI plugin, now live on the ChatGPT store, is proof of Devflovv's trailblazing spirit and knack for making AI user-friendly."
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "390928180",
-                        "video_name": "ssvid1",
-                        "vimeo_video_url": "https://player.vimeo.com/external/390928180.sd.mp4?s=cfd8585449ffea247a1d43fb50cf052a1c362469&profile_id=165",
-                        "src_width": 550,
-                        "src_height": 957,
-                        "width_columns": 3,
-                        "left_columns": 0,
-                        "z_index": 99
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "390928794",
-                        "video_name": "ssvid2",
-                        "vimeo_video_url": "https://player.vimeo.com/external/390928794.sd.mp4?s=d7791e9960e810d034d66462ea24df133cc31661&profile_id=165",
-                        "src_width": 550,
-                        "src_height": 957,
-                        "width_columns": 3,
-                        "left_columns": 4,
-                        "z_index": 99
-					}
-                },
-
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "Seamless Scheduling",
-                        "body": "As your appointment is confirmed, a calming animation sweeps across the screen. A gentle notification reassures you—everything is set. With one final glance, you leave with confidence, knowing your schedule is seamlessly managed, bringing peace to your busy day."
+                        "title": "The Challenge",
+                        "body": "Their task was to weave this AI seamlessly into the existing platform without losing the simple and engaging feel users love. Plus, we developed the LivingAI plugin, allowing shoppers to make and customize their own avatar videos – a fresh twist for online shopping."
 					}
                 },
                 {
@@ -1318,13 +1263,6 @@
 					}
                 },
                 {
-                    "type": "text",
-                    "data": {
-                        "title": "Client Review's",
-                        "body": "Devflovv seamlessly integrated AI into our e-commerce platform, making Living AI a pioneer on the ChatGPT store. Their expertise in Python, Django, and OpenAI ensured a smooth, user-friendly experience. The innovative LivingAI plugin transformed online shopping with personalized avatar videos. Their dedication and technical excellence exceeded our expectations!"
-					}
-                },
-                {
                     "type": "image",
                     "data": {
                         "src": "img/projects/living-ai/living-m-2.png",
@@ -1347,6 +1285,13 @@
 					}
                 },
                 {
+                    "type": "headline",
+                    "data": {
+                           "title": "The Solution",
+                        "body": "Using Python and Django, Devflovv’s team built a robust system that brought Chat GPT into the mix without a hitch. On the front end, core-js and jQuery made sure everything ran smoothly for users. The LivingAI plugin, now live on the ChatGPT store, is proof of Devflovv's trailblazing spirit and knack for making AI user-friendly."
+					}
+                },
+                {
                     "type": "image",
                     "data": {
                         "src": "img/projects/living-ai/network.svg",
@@ -1356,13 +1301,6 @@
                         "left_columns": 0,
                         "z_index": 100
                     }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "TECHNOLOGIES",
-                        "body": "Python | Django | OpenAI Chat GPT Integration | Core-js | jQuery | JavaScript | AWS Lamda | CodeCommit | API Gateway | CDK | S3 | DynamoDB | Node-JS | Google Slides | Drive API"
-					}
                 }
             ]
         },
@@ -1376,8 +1314,8 @@
             "date": "Oct 2013",
             "role": "Lead Developer",
             "url": "https://deals.buildclub.com/",
-            "poster": "img/projects/buildclub/buildclub-title.png",
-            "poster_m": "img/projects/buildclub/buildclub-title.png",
+            "poster": "img/projects/buildclub/buildclub1.jpg",
+            "poster_m": "img/projects/buildclub/buildclub1.jpg",
             "categories": [
                 "dreative",
                 "design",
@@ -1396,8 +1334,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Problem",
-                        "body": "BuildClub required a Chrome extension that could compare real-time product prices across Home Depot, Lowe’s, Amazon, and Ace Hardware. It needed to display best deals, integrate affiliate links, and remain user-friendly for shoppers."
+                        "title": "TECH STACK",
+                        "body": "React | Next.js | Node.js | TypeScript | MongoDB"
 					}
                 },
                 {
@@ -1419,8 +1357,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Challenge",
-                        "body": "Amazon’s API restrictions made it difficult to perform multiple product searches efficiently. Price accuracy was complicated by varying location-based rates. Integrating affiliate links without cluttering the interface demanded careful UI/UX planning and performance tuning."
+                        "title": "The Problem",
+                        "body": "BuildClub required a Chrome extension that could compare real-time product prices across Home Depot, Lowe’s, Amazon, and Ace Hardware. It needed to display best deals, integrate affiliate links, and remain user-friendly for shoppers."
 					}
                 },
                 {
@@ -1430,6 +1368,13 @@
                         "src_width": 1400,
                         "src_height": 788
                     }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Amazon’s API restrictions made it difficult to perform multiple product searches efficiently. Price accuracy was complicated by varying location-based rates. Integrating affiliate links without cluttering the interface demanded careful UI/UX planning and performance tuning."
+					}
                 },
                 {
                     "type": "image",
@@ -1453,13 +1398,6 @@
                         "src_width": 1400,
                         "src_height": 788
                     }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": "React | Next.js | Node.js | TypeScript | MongoDB"
-					}
                 }
             ]
         },
@@ -1495,8 +1433,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Problem",
-                        "body": "Devflovv tackled the creation of Cade Insights, a Business Network Intelligence platform aimed at offering in-depth data analysis and interactive reporting. The objective was to design a tool adept at managing complex data while providing a smooth user experience."
+                        "title": "TECH STACK",
+                        "body": "Next JS | Python | Parse | Postgres | TypeScript | Neo4J | ML/ AI"
 					}
                 },
                 {
@@ -1508,10 +1446,10 @@
 					}
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "The Challenges",
-                        "body": "Key challenges included developing an engaging, responsive dashboard, implementing an advanced language-model analysis tool, and crafting a user-friendly AI chatbot. These tasks demanded a blend of skills in both frontend and backend development to ensure ease of use and effective data handling."
+                        "title": "The Problem",
+                        "body": "Devflovv tackled the creation of Cade Insights, a Business Network Intelligence platform aimed at offering in-depth data analysis and interactive reporting. The objective was to design a tool adept at managing complex data while providing a smooth user experience."
 					}
                 },
                 {
@@ -1520,13 +1458,6 @@
                         "src": "img/projects/pioneer/mobile/2-pioneer-flow-m.png",
                         "src_width": 658,
                         "src_height": 1246
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "The Experience",
-                        "body": "Using our 3D pipeline Jelly, we combine high-end visuals with a slick UI and engaging interactions to create an experience that highlights the unique properties of a Pioneer seed."
 					}
                 },
                 {
@@ -1580,13 +1511,6 @@
 					}
                 },
                 {
-                    "type": "text",
-                    "data": {
-                        "title": "Different Conditions",
-                        "body": "To further highlight the strengths of the Pioneer corn, we showed the plant withstanding different weather conditions corn is forced to endure throughout the growing season."
-                    }
-                },
-                {
                     "type": "videoloop",
                     "data": {
                         "vimeo_id": "348555180",
@@ -1599,8 +1523,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "Solution",
-                        "body": "Devflovv used Next JS and TypeScript for a dynamic front end and Python with Parse, Postgres, and Neo4J for backend data management and analysis. The outcome was Cade Insights, a platform featuring an advanced analysis tool and AI chatbot, boosting user business intelligence capabilities."
+                        "title": "The Challenge",
+                        "body": "Key challenges included developing an engaging, responsive dashboard, implementing an advanced language-model analysis tool, and crafting a user-friendly AI chatbot. These tasks demanded a blend of skills in both frontend and backend development to ensure ease of use and effective data handling."
 					}
                 },
                 {
@@ -1620,13 +1544,6 @@
 					}
                 },
                 {
-                    "type": "text",
-                    "data": {
-                        "title": "3D Projection mapping",
-                        "body": "By projecting high-level textures onto simplified 3D meshes we could give the sense of fully immersive 3D while still keeping it light on the CPU."
-					}
-                },
-                {
                     "type": "image",
                     "data": {
                         "src": "img/projects/pioneer/mobile/21-pioneer-slider-m.png",
@@ -1635,48 +1552,10 @@
 					}
                 },
                 {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/mobile/23-pioneer-kernel-m.png",
-                        "src_width": 641,
-                        "src_height": 748
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "348579113",
-                        "video_name": "matcap",
-                        "vimeo_video_url": "https://player.vimeo.com/external/348579113.sd.mp4?s=b558a14376bca9ee5ac6ca5d07162978fad660de&profile_id=165",
-                        "src_width": 800,
-                        "src_height": 800
-					}
-                },
-                {
                     "type": "headline",
                     "data": {
-                        "title": "User Interface",
-                        "body": "The user interface was designed to be slick and elegant while highlighting Pioneer’s technological prowess. We kept it simple but sophisticated with some unique interactions."
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "348588793",
-                        "video_name": "ui",
-                        "vimeo_video_url": "https://player.vimeo.com/external/348588793.hd.mp4?s=cae9ca6b3266d9ff6c7be04a5d1a79018ab01fa6&profile_id=174",
-                        "src_width": 1920,
-                        "src_height": 1080
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "348584109",
-                        "video_name": "ui-icons",
-                        "vimeo_video_url": "https://player.vimeo.com/external/348584109.hd.mp4?s=ff0fdcc2e497babe8e5e01474071a03202fef418&profile_id=169",
-                        "src_width": 1920,
-                        "src_height": 1080
+                        "title": "Solution",
+                        "body": "Devflovv used Next JS and TypeScript for a dynamic front end and Python with Parse, Postgres, and Neo4J for backend data management and analysis. The outcome was Cade Insights, a platform featuring an advanced analysis tool and AI chatbot, boosting user business intelligence capabilities."
 					}
                 },
                 {
@@ -1686,32 +1565,7 @@
                         "src_width": 473,
                         "src_height": 952
 					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/29-pioneer-ui.png",
-                        "src_width": 869,
-                        "src_height": 1083
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "348586326",
-                        "video_name": "ui-kernel",
-                        "vimeo_video_url": "https://player.vimeo.com/external/348586326.hd.mp4?s=c1d76d519907c37e60ea9223c3f3df25ed8d25a0&profile_id=174",
-                        "src_width": 827,
-                        "src_height": 1628
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": "Next JS | Python | Parse | Postgres | TypeScript | Neo4J | ML/ AI"
-					}
-                }
+                } 
             ]
         },
         {
@@ -1720,9 +1574,9 @@
             "enabled": true,
             "featured": true,
             "globaltitle": "",
-            "title": "LES MILLS GRIT",
-            "description": "LES MILLS GRIT, high impact cross platform advertising spots for the intense HIIT workout program.",
-            "client": "Colenso BBDO",
+            "title": "edu.OS",
+            "description": "Empowering educators with smart tools for everyday academic success.",
+            "client": "Business",
             "date": "April, 2019",
             "role": "Art Direction, Design, Animation, Editing, Sound Design",
             "platforms": "",
@@ -1746,8 +1600,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "The Challenge",
-                        "body": "Our challenge was to produce a high volume of advertising spots and infuse them with the same spirit as a real GRIT workout to inspire people to take on the GRIT challenge."
+                        "title": "TECH STACK",
+                        "body": "React | Typescript | Python (Django)"
 					}
                 },
                 {
@@ -1770,10 +1624,10 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "Grid Layout",
-                        "body": "A consistent set of proportional grids across the entire campaign formed the backbone of the design. This purposeful layout meant the eye could track the active type, even at its most energetic."
+                        "title": "The Problem",
+                        "body": "Schools were struggling with fragmented tools for lesson planning, task management, communication, and performance tracking. They needed a unified, intelligent platform to streamline operations and refocus efforts on teaching and learning."
 					}
                 },
                 {
@@ -1799,10 +1653,10 @@
                     }
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "Dynamic Visual Style",
-                        "body": "An array of dynamic images, deformations, pixel glitches and textures produced a vibrant visual style. From a beating 3D heart to flickering pixel glitches, our visual tookit added layers of technical detail to our compositions."
+                        "title": "The Challenge",
+                        "body": "Devflovv tackled multiple challenges—integrating seamlessly with third-party platforms like SIS, Google Calendar, and Gmail; building curriculum-aligned AI for personalized lesson planning and insights; designing a clean, intuitive interface for various user roles; and implementing real-time collaboration features while ensuring high performance and scalability."
 					}
                 },
                 {
@@ -1843,10 +1697,10 @@
 					}
                 },
                 {
-                    "type": "text",
+                    "type": "headline",
                     "data": {
-                        "title": "Gritty Sound Design",
-                        "body": "We built the strong, textural sound design around recordings of a real GRIT class. The variety of rhythms worked together as a full piece or broken into smaller sections. This modular approach games us flexibility while preserving the distinctive GRIT sound."
+                        "title": "The Solution",
+                        "body": "Devflovv delivered an all-in-one EdTech platform that simplifies daily educator workflows. AI-driven features enhance planning and productivity, while real-time collaboration tools support team-based learning environments. Seamless integrations ensure that users can continue using familiar tools within a centralized experience—saving time, improving engagement, and boosting institutional efficiency."
 					}
                 },
                 {

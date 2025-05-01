@@ -512,7 +512,7 @@ body > img {
 }
 
 .about-page .about__inner {
-    width: 130.4rem;
+    width: 135.4rem;
     margin: 12rem auto 30rem;
     padding: 3rem 8rem 5rem;
     position: relative;
@@ -549,7 +549,7 @@ body > img {
     order: 1;
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
-    width: 25%;
+    width: 60%;
     -ms-flex: 1;
     flex: 1;
 }
@@ -733,7 +733,7 @@ body > img {
 }
 
 .about-page .about__inner .col2 .inner .inner_col {
-    width: 50%;
+    width: 100%;
     display: inline-block;
     box-sizing: border-box;
 }
@@ -749,6 +749,7 @@ body > img {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-transform: uppercase;
+    margin-left: 0px;
 }
 
 .about-page .about__inner .col2 .inner .inner_col ul {
@@ -758,7 +759,7 @@ body > img {
 
 .about-page .about__inner .col2 .inner .inner_col ul li span {
     font-size: 17px;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     line-height: 35px;
     line-height: 3.5rem;
 }
@@ -1323,6 +1324,7 @@ body > img {
 
 .video--project {
     position: relative;
+    border-radius: 12px;
 }
 
 .video--project .video__timeline {
@@ -3199,6 +3201,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
     background-position: center center;
     background-size: cover;
     z-index: 200;
+    border-radius: 12px;
 }
 
 .project__video .video__play-button {
@@ -3427,6 +3430,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
     width: 100%;
     height: auto;
     opacity: 0;
+    border-radius: 12px;
 }
 
 .carousel__prev,.carousel__next {
@@ -3874,3 +3878,14 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
     bottom: 1.9rem;
     left: 2rem;
 }
+
+.fade-in-title{
+    text-transform: none;
+    font-size: 4.1rem;
+    line-height: 4.0rem;
+    letter-spacing: 0.02rem;
+  }
+  
+  .about-page-span{
+    margin-left: 1rem;
+  }

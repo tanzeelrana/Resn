@@ -2777,7 +2777,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.5;
 }
 
@@ -2788,8 +2788,15 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
 .about-page h2 {
     margin: 0;
     text-transform: none;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     line-height: 1.1;
+}
+.about-page h1 {
+    margin-bottom: 1rem;
+    text-transform: none;
+    font-size: 2.4rem;
+    line-height: 1;
+    font-weight: bolder;
 }
 
 .about-page h3 {
@@ -2820,7 +2827,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
 }
 
 .about-page .about__inner .about__expertise .about__expertise-list {
-    margin-top: 3.5rem;
+    margin-top: 2.0rem;
 }
 
 .about-page .about__inner .about__expertise .about__expertise-list h4,.about-page .about__inner .about__expertise .about__expertise-list ul {
@@ -2832,21 +2839,20 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
 .about-page .about__inner .about__expertise .about__expertise-list h4 {
     padding: 0;
     margin: 0;
-    width: 32%;
+    width: 100%;
     font-size: 10px;
     line-height: 1.8;
     font-family: "Fort-Medium","Arial",sans-serif;
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 .about-page .about__inner .about__expertise .about__expertise-list ul {
-    list-style: none;
     padding: 0;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     width: 68%;
 }
 
@@ -3387,3 +3393,13 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
 .project {
     position: absolute;
 }
+.fade-in-title{
+    text-transform: none;
+    font-size: 2.4rem;
+    line-height: 2.0rem;
+    letter-spacing: 0.01rem;
+    font-weight: bolder !important;
+  }
+  .headings{
+    font-weight: bold important;
+  }

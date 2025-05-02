@@ -2799,7 +2799,7 @@
             isImmediatePropagationStopped: h,
             preventDefault: function() {
                 var t = this.originalEvent;
-                this.isDefaultPrevented = u, t && t.preventDefault && t.preventDefault()
+                // this.isDefaultPrevented = u, t && t.preventDefault && t.preventDefault()
             },
             stopPropagation: function() {
                 var t = this.originalEvent;

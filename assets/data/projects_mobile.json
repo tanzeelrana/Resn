@@ -12,7 +12,7 @@
             "url": "",
             "poster": "img/projects/persona_ai/persona_video.png",
             "poster_m": "img/projects/persona_ai/persona_video.png",
-            "categories": ["creative", "design", "development", "games"],
+            "categories": ["web-applications", "DevOps"],
             "items": [
                 {
                     "type": "mobilevideo",
@@ -128,10 +128,10 @@
             "client": "Business",
             "date": "Feb 2009",
             "role": "Full-stack Development",
-            "url": "",
+            "url": "https://play.google.com/store/apps/details?id=com.getkeyfree.rental&hl=en_US",
             "poster": "img/projects/keyfree/kez_title_m.png",
             "poster_m": "img/projects/keyfree/kez_title_m.png",
-            "categories": ["animation", "creative", "design", "development"],
+            "categories": ["mobile-applications", "DevOps"],
             "awards": [],
             "items": [
                 {
@@ -223,7 +223,7 @@
             "url": "https://learnez.ai",
             "poster": "img/projects/learnEZ/learn-desc.png",
             "poster_m": "img/projects/learnEZ/learn-desc.png",
-            "categories": ["design", "development", "social-content"],
+            "categories": [ "web-applications", "mobile-applications", "design"],
             "awards": [
                 {
                     "type": "fwa-sotd",
@@ -358,7 +358,7 @@
             "url": "https://coursology.com/",
             "poster": "img/projects/language-research-initiative/coursology-c-1.png",
             "poster_m": "img/projects/language-research-initiative/Display_Coursology.png",
-            "categories": [],
+            "categories": ["web-applications", "DevOps"],
             "awards": [],
             "items": [
                 {
@@ -509,11 +509,8 @@
             "poster": "img/projects/aivida/aivida-solutions1.png",
             "poster_m": "",
             "categories": [
-                "activation",
-                "design",
-                "development",
-                "installation",
-                "social-content"
+                 "web-applications",  
+                "design"
             ],
             "awards": [],
             "items": [
@@ -627,7 +624,7 @@
             "url": "https://totalhealthdentalcare.com/",
             "poster": "img/projects/thdc-health-care/thdc1.png",
             "poster_m": "img/projects/thdc-health-care/Display_THDC.png",
-            "categories": ["creative", "design", "development"],
+            "categories": ["customer-suport"],
             "awards": [],
             "items": [
                 {
@@ -724,7 +721,7 @@
             "url": "https://holmetrics.com/",
             "poster": "img/projects/holmetrics/holmetrics-home.jpg",
             "poster_m": "img/projects/holmetrics/Display_Holmetrics.png",
-            "categories": ["strategy", "creative", "design", "development"],
+            "categories": ["DevOps"],
             "items": [
                 {
                     "type": "image",
@@ -835,7 +832,7 @@
             "url": "https://appiell.ai/",
             "poster": "img/projects/appiell.ai/appiell_title.png",
             "poster_m": "img/projects/appiell.ai/Display_Appiell.png",
-            "categories": ["strategy", "creative", "design", "development"],
+            "categories": ["mobile-applications","DevOps"],
             "items": [
                 {
                     "type": "image",
@@ -944,12 +941,7 @@
             "poster": "img/projects/rei/augment.jpg",
             "poster_m": "img/projects/rei/mobile/REI1440-poster-m.jpg",
             "categories": [
-                "creative",
-                "design",
-                "development",
-                "games",
-                "illustration",
-                "social-content"
+              "web-applications"
             ],
             "awards": [],
             "items": [
@@ -1046,7 +1038,7 @@
             "url": "",
             "poster": "img/projects/strava-ios-app/strava-start.jpg",
             "poster_m": "img/projects/strava-ios-app/Display_Strava.png",
-            "categories": ["creative", "design", "development"],
+            "categories": ["mobile-applications"],
             "awards": [
                 {
                     "type": "fwa-sotd",
@@ -1170,7 +1162,7 @@
             "url": "https://belowthesurface.resn.co.nz/",
             "poster": "img/projects/living-ai/living-ai-description-1.jpg",
             "poster_m": "img/projects/living-ai/living-ai-description-1.jpg",
-            "categories": ["mobile", "Web AR"],
+            "categories": ["mobile-applications"],
             "awards": [],
             "items": [
                 {
@@ -1317,9 +1309,8 @@
             "poster": "img/projects/buildclub/buildclub1.jpg",
             "poster_m": "img/projects/buildclub/buildclub1.jpg",
             "categories": [
-                "dreative",
-                "design",
-                "development"
+                 "e-commerce",
+                "web-applications"
             ],
             "awards": [],
             "items": [
@@ -1416,7 +1407,7 @@
             "url": "https://go.pioneer.com/cornrevolution",
             "poster": "img/projects/pioneer/pioneer-poster.png",
             "poster_m": "img/projects/pioneer/mobile/pioneer-poster-m.jpg",
-            "categories": ["design", "development", "Jelly Project", "Website"],
+            "categories": ["web-applications"],
             "awards": [],
             "items": [
                 {
@@ -1583,7 +1574,7 @@
             "url": "",
             "poster": "img/projects/les-mills-grit/10_Gallery_Card.jpg",
             "poster_m": "img/projects/les-mills-grit/10_Mobile_Hero_Poster.jpg",
-            "categories": [],
+            "categories": ["web-applications", "design", "DevOps"],
             "awards": [],
             "items": [
                 {
@@ -1627,7 +1618,7 @@
                     "type": "headline",
                     "data": {
                         "title": "The Problem",
-                        "body": "Schools were struggling with fragmented tools for lesson planning, task management, communication, and performance tracking. They needed a unified, intelligent platform to streamline operations and refocus efforts on teaching and learning."
+                        "body": "Educators were struggling with fragmented tools for lesson planning, task management, communication, and performance tracking. They needed a unified, intelligent platform to streamline operations and refocus efforts on teaching and learning."
 					}
                 },
                 {
@@ -1789,7 +1780,7 @@
             "url": "https://www.adidas.co.uk/futurecraft",
             "poster": "img/projects/loop/adidas-loop-poster-desktop.jpg",
             "poster_m": "img/projects/loop/mobile/adidas-loop-poster-mobile.jpg",
-            "categories": [],
+            "categories": ["mobile-applications"],
             "awards": [],
             "items": [
                 {

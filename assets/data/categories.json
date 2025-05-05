@@ -1,18 +1,13 @@
 [
     {
         "id": "act",
-        "route": "activation",
-        "name": "Activation"
-    },
-    {
-        "id": "ani",
-        "route": "animation",
-        "name": "Animation"
+        "route": "web-applications",
+        "name": "Web Application"
     },
     {
         "id": "cre",
-        "route": "creative",
-        "name": "Creative"
+        "route": "mobile-applications",
+        "name": "Mobile Application"
     },
     {
         "id": "des",
@@ -21,27 +16,17 @@
     },
     {
         "id": "dev",
-        "route": "development",
-        "name": "Development"
-    },
-    {
-        "id": "gam",
-        "route": "games",
-        "name": "Games"
-    },
-    {
-        "id": "ill",
-        "route": "illustration",
-        "name": "Illustration"
+        "route": "DevOps",
+        "name": "DevOps"
     },
     {
         "id": "ins",
-        "route": "installation",
-        "name": "Installation"
+        "route": "customer-suport",
+        "name": "Customer Support"
     },
     {
         "id": "soc",
-        "route": "social-content",
-        "name": "Social Content"
+        "route": "e-commerce",
+        "name": "E-Commerce"
     }
 ]

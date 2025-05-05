@@ -15,7 +15,7 @@
             "url": "",
             "poster": "img/projects/persona_ai/persona_title.png",
             "poster_m": "img/projects/persona_ai/persona_title.png",
-            "categories": ["creative", "design", "development", "games"],
+            "categories": ["web-applications", "DevOps"],
             "items": [
                 {
                     "type": "video",
@@ -162,10 +162,10 @@
             "client": "Business",
             "date": "Feb 2009",
             "role": "Full-stack Development",
-            "url": "",
+            "url": "https://play.google.com/store/apps/details?id=com.getkeyfree.rental&hl=en_US",
             "poster": "img/projects/keyfree/kez_title.png",
             "poster_m": "img/projects/keyfree/kez_title.png",
-            "categories": ["animation", "creative", "design", "development"],
+            "categories": ["mobile-applications", "DevOps"],
             "awards": [],
             "items": [
                 {
@@ -286,7 +286,7 @@
             "url": "",
             "poster": "img/projects/morgtage-crm/morgtage-crm.png",
             "poster_m": "img/projects/morgtage-crm/morgtage-crm.png",
-            "categories": [],
+            "categories": ["web-applications","design", "DevOps"],
             "awards": [],
             "items": [
                 {
@@ -341,7 +341,7 @@
                     "type": "headline",
                     "data": {
                         "title": "Problem",
-                        "body": "Schools were struggling with fragmented tools for lesson planning, task management, communication, and performance tracking. They needed a unified, intelligent platform to streamline operations and refocus efforts on teaching and learning.",
+                        "body": "Educators were struggling with fragmented tools for lesson planning, task management, communication, and performance tracking. They needed a unified, intelligent platform to streamline operations and refocus efforts on teaching and learning.",
                         "top_offset": 120
                     }
                 },
@@ -504,10 +504,9 @@
             "poster": "img/projects/learnEZ/learnEZ-title.png",
             "poster_m": "",
             "categories": [
-                "creative",
-                "design",
-                "development",
-                "social-content"
+                "web-applications",
+                "mobile-applications",
+                "design"
             ],
             "items": [
                 {
@@ -660,7 +659,7 @@
             "url": "https://totalhealthdentalcare.com/",
             "poster": "img/projects/thdc-health-care/thdc-title.png",
             "poster_m": "img/projects/thdc-health-care/mobile/thdc-title.png",
-            "categories": ["creative", "design", "development"],
+            "categories": ["customer-suport"],
             "awards": [],
             "items": [
                 {
@@ -790,10 +789,10 @@
             "date": "February, 2020",
             "role": "Full-stack Development",
             "platforms": "",
-            "url": "https://belowthesurface.resn.co.nz",
+            "url": "https://www.livingai.com/",
             "poster": "img/projects/living-ai/Living-ai-title-2.png",
             "poster_m": "img/projects/living-ai/Living-ai-title-2.png",
-            "categories": ["mobile", "Web AR"],
+            "categories": ["mobile-applications"],
             "awards": [],
             "items": [
                 {
@@ -812,7 +811,7 @@
                     "type": "headline",
                     "data": {
                         "title": "TECH STACK",
-                        "body": "Python | Django | OpenAI Chat GPT Integration | Core-js | jQuery | JavaScript | AWS Lamda | CodeCommit | API Gateway | CDK | S3 | DynamoDB | Node-JS | Google Slides | Drive API",
+                        "body": "Python | Django | OpenAI Chat GPT Integration | Core-js | jQuery | JavaScript | AWS Lamda | CodeCommit | API Gateway | CDK | S3 | DynamoDB | Drive API",
                         "top_offset": 120
                     }
                 },
@@ -952,7 +951,7 @@
             "url": "https://coursology.com/",
             "poster": "img/projects/language-research-initiative/coursology-title.png",
             "poster_m": "img/projects/language-research-initiative/coursology-title.png",
-            "categories": [],
+            "categories": ["web-applications", "DevOps"],
             "awards": [],
             "items": [
                 {
@@ -1139,7 +1138,7 @@
             "url": "https://holmetrics.com/",
             "poster": "img/projects/holmetrics/holmetrics-title.png",
             "poster_m": "img/projects/holmetrics/holmetrics-title.png",
-            "categories": ["strategy", "creative", "design", "development"],
+            "categories": ["DevOps"],
             "awards": [
                 {
                     "type": "fwa-sotd",
@@ -1379,30 +1378,28 @@
             "poster": "img/projects/rei/augment-title.png",
             "poster_m": "img/projects/rei/augment-title.png",
             "categories": [
-                "creative",
-                "design",
-                "development",
-                "illustration",
-                "social content"
+                "web-applications"
             ],
             "awards": [],
             "items": [
                 {
-                    "type": "image",
+                    "type": "video",
                     "data": {
-                        "src": "img/projects/rei/augment-title.png",
+                        "vimeo_id": "266452443",
+                        "vimeo_video_url": "https://augmentt.com/wp-content/uploads/2023/10/platform.mp4",
+                        "video_name": "FINAL-adidas-Speedfactory-Case-Study",
+                        "video_poster": "img/projects/rei/augment.jpg",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 0
+                        "left_columns": 0
                     }
                 },
                 {
                     "type": "headline",
                     "data": {
                         "title": "TECH STACK",
-                        "body": " React | styled-components | Emotion | Google AnalyticsGA4 | PHP | CDN | Unpkg | Cloudflare | MySQL | core-js | jQuery | Node JS",
+                        "body": " React | styled-components | Emotion | PHP | MySQL | Storybook | Node JS",
                         "top_offset": 120
                     }
                 },
@@ -1488,7 +1485,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/rei/REI1440-06.jpg",
+                        "src": "img/projects/rei/augment-title.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 8,
@@ -1513,7 +1510,7 @@
             "url": "",
             "poster": "img/projects/strava-ios-app/strava-title.png",
             "poster_m": "img/projects/strava-ios-app/strava-title.png",
-            "categories": ["creative", "design", "development"],
+            "categories": ["mobile-applications"],
             "items": [
                 {
                     "type": "image",
@@ -1706,7 +1703,7 @@
             "url": "https://appiell.ai/",
             "poster": "img/projects/appiell.ai/appiell_title2.png",
             "poster_m": "img/projects/appiell.ai/appiell_title2.png",
-            "categories": ["strategy", "creative", "design", "development"],
+            "categories": ["mobile-applications","DevOps"],
             "items": [
                 {
                     "type": "image",
@@ -1924,11 +1921,8 @@
             "poster": "img/projects/aivida/aivida-title.png",
             "poster_m": "img/projects/aivida/aivida-title.png",
             "categories": [
-                "activation",
-                "design",
-                "development",
-                "installation",
-                "social-content"
+                "web-applications",  
+                "design"
             ],
             "awards": [],
             "items": [
@@ -2209,9 +2203,8 @@
             "poster": "img/projects/buildclub/buildclub-title.png",
             "poster_m": "img/projects/buildclub/buildclub-title.png",
             "categories": [
-                "creative",
-                "design",
-                "development"
+                "e-commerce",
+                "web-applications"
             ],
             "awards": [],
             "items": [
@@ -2332,7 +2325,7 @@
             "url": "https://www.ifit.com/",
             "poster": "img/projects/ifit/ifit-2.png",
             "poster_m": "img/projects/ifit/ifit-2.png",
-            "categories": [],
+            "categories": ["mobile-applications"],
             "awards": [],
             "items": [
                 {
@@ -2349,8 +2342,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "Problem",
-                        "body": "iFit encountered issues with its platform's consistency and accessibility, such as restricted features for free users, inconsistent designs on different devices, and missing interface components, affecting the user experience for its extensive user base.",
+                        "title": "TECH STACK",
+                        "body": "React | Next.js | Node.js | TypeScript | MongoDB",
                         "top_offset": 120
                     }
                 },
@@ -2368,8 +2361,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "Challenges",
-                        "body": "Devflovv’s team focused on making premium workout features available to all users, ensuring uniform design on all devices, and restoring missing interface elements after platform updates.",
+                        "title": "Problem",
+                        "body": "iFit encountered issues with its platform's consistency and accessibility, such as restricted features for free users, inconsistent designs on different devices, and missing interface components, affecting the user experience for its extensive user base.",
                         "top_offset": 120
                     }
                 },
@@ -2418,8 +2411,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "Solution",
-                        "body": "Using their expertise in JavaScript and TypeScript, Devflovv updated the front end with React and Next.js for a more cohesive and user-friendly interface. On the backend, they used Node.js and MongoDB for reliable performance and effective data handling, significantly enhancing the overall user experience on iFit.",
+                        "title": "Challenges",
+                        "body": "Devflovv’s team focused on making premium workout features available to all users, ensuring uniform design on all devices, and restoring missing interface elements after platform updates.",
                         "top_offset": 120
                     }
                 },
@@ -2469,8 +2462,8 @@
                 {
                     "type": "headline",
                     "data": {
-                        "title": "TECH STACK",
-                        "body": "React | Next.js | Node.js | TypeScript | MongoDB",
+                        "title": "Solution",
+                        "body": "Using their expertise in JavaScript and TypeScript, Devflovv updated the front end with React and Next.js for a more cohesive and user-friendly interface. On the backend, they used Node.js and MongoDB for reliable performance and effective data handling, significantly enhancing the overall user experience on iFit.",
                         "top_offset": 120
                     }
                 }   
@@ -2491,7 +2484,7 @@
             "url": "https://go.pioneer.com/cornrevolution",
             "poster": "img/projects/baseball-app/baseball.png",
             "poster_m": "img/projects/baseball-app/baseball.png",
-            "categories": ["design", "development", "Jelly Project", "Website"],
+            "categories": ["web-applications"],
             "awards": [],
             "items": [
                 {

@@ -1245,7 +1245,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
     font-family: "Fort-Extralight","Arial",sans-serif;
     font-weight: normal;
     font-style: normal;
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 5.5rem;
     letter-spacing: -2px;
     transition: .3s opacity ease;

@@ -492,7 +492,7 @@
         {
             "route": "learnez-ai",
             "enabled": true,
-            "featured": false,
+            "featured": true,
             "menutitle": "",
             "globaltitle": "",
             "title": "learnEZ AI",

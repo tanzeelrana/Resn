@@ -8,7 +8,7 @@
             "menutitle": "",
             "globaltitle": "",
             "title": "persona ai",
-            "description": "James Patterson is the world’s #1 bestselling author. His latest book, 'Private Vegas', is about to self-destruct.",
+            "description": "AI tool for researchers' meeting recording and analysis.",
             "client": "Business",
             "date": "Jan 2015",
             "role": "Lead Developer",
@@ -18,12 +18,9 @@
             "categories": ["web-applications", "DevOps"],
             "items": [
                 {
-                    "type": "video",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "123375958",
-                        "vimeo_video_url": "https://player.vimeo.com/external/123375958.hd.mp4?s=146618835fd1d9ee3c2d95bd64e4e75d155a23d6&profile_id=113",
-                        "video_name": "the self destructing book",
-                        "video_poster": "img/projects/persona_ai/persona_video.png",
+                        "src": "img/projects/persona_ai/persona_video.png",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 8,
@@ -142,6 +139,153 @@
                     "type": "image",
                     "data": {
                         "src": "img/projects/persona_ai/persona_2.png",
+                        "src_width": 1527,
+                        "src_height": 963,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                }        
+            ]
+        },
+        {
+            "route": "eventium",
+            "enabled": true,
+            "featured": true,
+            "menutitle": "",
+            "globaltitle": "",
+            "title": "Eventium365",
+            "description": "James Patterson is the world’s #1 bestselling author. His latest book, 'Private Vegas', is about to self-destruct.",
+            "client": "Business",
+            "date": "Jan 2015",
+            "role": "Lead Developer",
+            "url": "https://eventium.ca/",
+            "poster": "img/projects/mustang/eventium-display.png",
+            "poster_m": "img/projects/mustang/eventium-display.png",
+            "categories": ["web-applications", "DevOps"],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium2.png",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 0
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "Laravel | React | MySQL | WebRTC",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "carousel",
+                    "data": {
+                        "images": [
+                            {
+                                "src": "img/projects/mustang/eventium3.png"
+                            },
+                            {
+                                "src": "img/projects/mustang/eventium2.png"
+                            }
+                        ],
+                        "src_width": 1551,
+                        "src_height": 915,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Problem",
+                        "body": "Developing a feature-rich virtual event platform to streamline attendee engagement, scheduling, and communication in real-time.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium-tab1.png",
+                        "src_width": 800,
+                        "src_height": 1072,
+                        "width_columns": 3.5,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium-tab2.png",
+                        "src_width": 800,
+                        "src_height": 1072,
+                        "width_columns": 3.5,
+                        "left_columns": 4.5,
+                        "top_offset": -400,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium4.png",
+                        "src_width": 1400,
+                        "src_height": 825,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Challenges",
+                        "body": "Building scalable and secure systems for attendee registration and job listing functionalities.Implementing real-time communication features, including text chat and video calls, to enhance interactivity.Ensuring seamless integration between front-end and back-end systems for a user-friendly experience.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium-tab3.png",
+                        "src_width": 800,
+                        "src_height": 1072,
+                        "width_columns": 3.5,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium-tab4.png",
+                        "src_width": 800,
+                        "src_height": 1072,
+                        "width_columns": 3.5,
+                        "left_columns": 4.5,
+                        "top_offset": -400,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Solution",
+                        "body": "Leveraged a Laravel and React tech stack with a MySQL database to develop the Eventium platform, implementing key features like one-on-one session booking, attendee registration, and real-time communication. These solutions provided a robust and intuitive experience for users.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium5.png",
                         "src_width": 1527,
                         "src_height": 963,
                         "width_columns": 8,
@@ -284,18 +428,15 @@
             "role": "Art Direction, Design, Animation, Editing, Sound Design",
             "platforms": "",
             "url": "",
-            "poster": "img/projects/morgtage-crm/morgtage-crm.png",
-            "poster_m": "img/projects/morgtage-crm/morgtage-crm.png",
+            "poster": "img/projects/les-mills-grit/edu-display.png",
+            "poster_m": "img/projects/les-mills-grit/edu-display.png",
             "categories": ["web-applications","design", "DevOps"],
             "awards": [],
             "items": [
                 {
-                    "type": "video",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "365178771",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365178771.hd.mp4?s=14337853856f2faa9f80eeee7763e16e561fc755&profile_id=175",
-                        "video_name": "Resn_Les_Mills_Case_Study",
-                        "video_poster": "img/projects/les-mills-grit/1.0_Hero_Poster_Video.jpg",
+                        "src": "img/projects/les-mills-grit/edu-thumnail.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 8,
@@ -314,7 +455,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/les-mills-grit/01_GRIDS.gif",
+                        "src": "img/projects/les-mills-grit/edu.png",
                         "src_width": 920,
                         "src_height": 528,
                         "width_columns": 6,
@@ -324,11 +465,9 @@
                     }
                 },
                 {
-                    "type": "videoloop",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "365182252",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182252.hd.mp4?s=e4188a4af64312d7bc13f1dc7cf6715217a30241&profile_id=175",
-                        "video_name": "02_SWEAT",
+                        "src": "img/projects/les-mills-grit/edu-task1.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 6,
@@ -346,11 +485,9 @@
                     }
                 },
                 {
-                    "type": "videoloop",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "365182264",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182264.hd.mp4?s=ee6483e550f6ed9411e8fc52062aa98f0bfb314c&profile_id=175",
-                        "video_name": "03_Boxomtic One",
+                        "src": "img/projects/les-mills-grit/edu-task2.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 6,
@@ -360,11 +497,9 @@
                     }
                 },
                 {
-                    "type": "videoloop",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "365182199",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182199.hd.mp4?s=6a015cb596b8c9fe09e1e9ac4ac468990db00ecf&profile_id=175",
-                        "video_name": "04_HEART",
+                        "src": "img/projects/les-mills-grit/edu-task3.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 6,
@@ -384,7 +519,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/les-mills-grit/1.0_Grit_Still.jpg",
+                        "src": "img/projects/les-mills-grit/edu-login2.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 6,
@@ -396,7 +531,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/les-mills-grit/2.0_Grit_Still.jpg",
+                        "src": "img/projects/les-mills-grit/edu-login1.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 5,
@@ -408,7 +543,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/les-mills-grit/3.0_Grit_Still.jpg",
+                        "src": "img/projects/les-mills-grit/edu-login3.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 5,
@@ -418,11 +553,9 @@
                     }
                 },
                 {
-                    "type": "videoloop",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "365182222",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182222.hd.mp4?s=b0038d25a96a48e57a953366ad08cd739d210ddb&profile_id=175",
-                        "video_name": "05_GRIT MINDSET",
+                        "src": "img/projects/les-mills-grit/edu-meeting1.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 8,
@@ -433,7 +566,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/les-mills-grit/4.0_Grit_Still.jpg",
+                        "src": "img/projects/les-mills-grit/edu-meeting2.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 6,
@@ -445,25 +578,13 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/les-mills-grit/10.0_Grit_Still.jpg",
+                        "src": "img/projects/les-mills-grit/edu-meeting3.png",
                         "src_width": 1920,
                         "src_height": 1080,
-                        "width_columns": 5,
-                        "left_columns": 3,
-                        "top_offset": -40,
-                        "z_index": 2
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/5.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 6.5,
-                        "left_columns": 0,
+                        "width_columns": 6,
+                        "left_columns": 2,
                         "top_offset": -60,
-                        "z_index": 3
+                        "z_index": 1
                     }
                 },
                 {
@@ -475,11 +596,9 @@
                     }
                 },
                 {
-                    "type": "videoloop",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "365182243",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182243.hd.mp4?s=8ad0bb793a2ef0cd1a1ad91aede398539bfd6124&profile_id=175",
-                        "video_name": "6_Outro 2",
+                        "src": "img/projects/les-mills-grit/edu-display.png",
                         "src_width": 1920,
                         "src_height": 1080,
                         "width_columns": 8,
@@ -501,7 +620,7 @@
             "role": "Design, Development, UX, UI",
             "date": "Aug 2016",
             "url": "https://learnez.ai",
-            "poster": "img/projects/learnEZ/learnEZ-title.png",
+            "poster": "img/projects/learnEZ/learnEZ-title3.png",
             "poster_m": "",
             "categories": [
                 "web-applications",
@@ -645,6 +764,128 @@
             ]
         },
         {
+            "route": "buildclub",
+            "enabled": true,
+            "featured": false,
+            "menutitle": "",
+            "globaltitle": "",
+            "title": "THE BUILDCLUB",
+            "description": "A Chrome extension for price comparison across multiple home improvement retailers",
+            "client": "Business",
+            "role": "Lead Developer",
+            "date": "",
+            "url": "https://deals.buildclub.com/",
+            "poster": "img/projects/buildclub/buildclub-title.png",
+            "poster_m": "img/projects/buildclub/buildclub-title.png",
+            "categories": [
+                "e-commerce",
+                "web-applications"
+            ],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub1.jpg",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 0
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": " React, AWS Amplify, Stripe, JavaScript",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub2.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub2.jpg",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Problem ",
+                        "body": "BuildClub required a Chrome extension that could compare real-time product prices across Home Depot, Lowe’s, Amazon, and Ace Hardware. It needed to display best deals, integrate affiliate links, and remain user-friendly for shoppers.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub6.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 5.2,
+                        "left_columns": 0,
+                        "top_offset": 120,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub7.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 5,
+                        "left_columns": 3,
+                        "top_offset": -100,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Challenges",
+                        "body": "Amazon’s API restrictions made it difficult to perform multiple product searches efficiently. Price accuracy was complicated by varying location-based rates. Integrating affiliate links without cluttering the interface demanded careful UI/UX planning and performance tuning.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub4.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Solution",
+                        "body": "Devflovv developed a React-based Chrome extension using AWS Amplify and Stripe. It dynamically fetches prices, flags the best deals, and supports a Stripe-powered subscription model. The extension is scalable for future updates like barcode scanning and retailer expansion.",
+                        "top_offset": 120
+                    }
+                }
+            ]
+        },
+        {
             "route": "thdc",
             "menutitle": "",
             "enabled": true,
@@ -778,166 +1019,7 @@
             ]
         },
         {
-            "route":"living-ai",
-            "menutitle": "",
-            "enabled": true,
-            "featured": true,
-            "globaltitle": "",
-            "title": "Living AI",
-            "description": "Project Description",
-            "client": "Business",
-            "date": "February, 2020",
-            "role": "Full-stack Development",
-            "platforms": "",
-            "url": "https://www.livingai.com/",
-            "poster": "img/projects/living-ai/Living-ai-title-2.png",
-            "poster_m": "img/projects/living-ai/Living-ai-title-2.png",
-            "categories": ["mobile-applications"],
-            "awards": [],
-            "items": [
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/living-ai/living-ai-description.png",
-                        "src_width": 1535,
-                        "src_height": 864,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "z_index": 100,
-                        "top_offset": 138
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": "Python | Django | OpenAI Chat GPT Integration | Core-js | jQuery | JavaScript | AWS Lamda | CodeCommit | API Gateway | CDK | S3 | DynamoDB | Drive API",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/living-ai/Living-ai-problem.png",
-                        "src_width": 1535,
-                        "src_height": 864,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "z_index": 100,
-                        "top_offset": 138
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Problem",
-                        "body": "Devflovv led the charge in integrating groundbreaking AI into the e-commerce space with Living AI, becoming one of the first to feature an app on the ChatGPT store. They aimed to enhance the shopping experience with smart voice commands and a unique AI that could create content on its own.",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/living-ai/living-ai-description-1.jpg",
-                        "src_width": 1536,
-                        "src_height": 864,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "z_index": 100,
-                        "top_offset": 138
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/living-ai/living-m-4.png",
-                        "src_width": 519,
-                        "src_height": 921,
-                        "width_columns": 3,
-                        "left_columns": 6,
-                        "z_index": 100,
-                        "top_offset": -138
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Challenges",
-                        "body":"Their task was to weave this AI seamlessly into the existing platform without losing the simple and engaging feel users love. Plus, we developed the LivingAI plugin, allowing shoppers to make and customize their own avatar videos – a fresh twist for online shopping.",
-                        "top_offset": 112
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/living-ai/living-m-home.png",
-                        "src_width": 519,
-                        "src_height": 921,
-                        "width_columns": 3,
-                        "left_columns": 0,
-                        "z_index": 100,
-                        "top_offset": 138
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/living-ai/living-m-3.png",
-                        "src_width": 519,
-                        "src_height": 921,
-                        "width_columns": 3,
-                        "left_columns": 4,
-                        "z_index": 100,
-                        "top_offset": -138
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/living-ai/living-m-1.png",
-                        "src_width": 519,
-                        "src_height": 921,
-                        "width_columns": 3,
-                        "left_columns": 0,
-                        "z_index": 100,
-                        "top_offset": 138
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/living-ai/living-m-2.png",
-                        "src_width": 519,
-                        "src_height": 921,
-                        "width_columns": 3,
-                        "left_columns": 4,
-                        "z_index": 100,
-                        "top_offset": -138
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Solution",
-                        "body": "Using Python and Django, Devflovv’s team built a robust system that brought Chat GPT into the mix without a hitch. On the front end, core-js and jQuery made sure everything ran smoothly for users. The LivingAI plugin, now live on the ChatGPT store, is proof of Devflovv's trailblazing spirit and knack for making AI user-friendly.",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/living-ai/network.svg",
-                        "src_width": 1600,
-                        "src_height": 444,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                }
-            ]
-        },
-        {
-            "route": "multi-language-research-app",
+            "route": "coursology",
             "menutitle": "",
             "enabled": true,
             "featured": true,
@@ -949,18 +1031,15 @@
             "role": " Lead Developer ",
             "platforms": "",
             "url": "https://coursology.com/",
-            "poster": "img/projects/language-research-initiative/coursology-title.png",
-            "poster_m": "img/projects/language-research-initiative/coursology-title.png",
-            "categories": ["web-applications", "DevOps"],
+            "poster": "img/projects/coursology/coursology-title.png",
+            "poster_m": "img/projects/coursology/coursology-title.png",
+            "categories": ["mobile-applications", "DevOps"],
             "awards": [],
             "items": [
                 {
-                    "type": "video",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "374855493",
-                        "vimeo_video_url": "https://coursology.com/videos/new_hero.mp4",
-                        "video_name": "Pioneer Corn Revolution",
-                        "video_poster": "img/projects/language-research-initiative/coursology-c-1.png",
+                        "src": "img/projects/coursology/coursology-title.png",
                         "src_width": 2048,
                         "src_height": 1008,
                         "width_columns": 8,
@@ -977,61 +1056,47 @@
                     }
                 },
                 {
-                    "type": "carousel",
+                    "type": "image",
                     "data": {
-                        "images": [
-                            {
-                                "src": "img/projects/language-research-initiative/coursology-c-1.png"
-                            },
-                            {
-                                "src": "img/projects/language-research-initiative/coursology-c-2.png"
-                            },
-                            {
-                                "src": "img/projects/language-research-initiative/coursology-c-3.png"
-                            },
-                            {
-                                "src": "img/projects/language-research-initiative/coursology-c-4.png"
-                            },
-                            {
-                                "src": "img/projects/language-research-initiative/coursology-c-5.png"
-                            },
-                            {
-                                "src": "img/projects/language-research-initiative/coursology-c-6.png"
-                            }
-                        ],
-                        "src_width": 3450,
-                        "src_height": 2160,
+                        "src": "img/projects/coursology/coursology-land1.png",
+                        "src_width": 2048,
+                        "src_height": 1008,
                         "width_columns": 8,
                         "left_columns": 0,
                         "top_offset": 120
                     }
                 },
                 {
-                    "type": "videoloop",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "341749708",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341749708.hd.mp4?s=7952d012161216059236feffdbbcd65faebad182&profile_id=174",
-                        "video_name": "adidas-loop-particleshoe",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 5,
-                        "left_columns": 3,
-                        "top_offset": 120,
-                        "z_index": 2
+                        "src": "img/projects/coursology/coursology-mob1.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.5,
+                        "left_columns": 0,
+                        "top_offset": 136
                     }
                 },
                 {
-                    "type": "videoloop",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "341749737",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341749737.hd.mp4?s=1ad9db4aa24f9e572ae6a9468254335adccd4145&profile_id=174",
-                        "video_name": "adidas-loop-process",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 5,
-                        "left_columns": 0,
-                        "top_offset": -80,
-                        "z_index": 1
+                        "src": "img/projects/coursology/coursology-mob2.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.5,
+                        "left_columns": 2.82,
+                        "top_offset": -512
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/coursology/coursology-mob3.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.5,
+                        "left_columns": 5.75,
+                        "top_offset": -512
                     }
                 },
                 {
@@ -1045,39 +1110,45 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/language-research-initiative/coursology-m.png",
-                        "src_width": 372,
-                        "src_height": 666,
-                        "width_columns": 2.5,
+                        "src": "img/projects/coursology/coursology-land2.png",
+                        "src_width": 2048,
+                        "src_height": 1008,
+                        "width_columns": 8,
                         "left_columns": 0,
-                        "top_offset": 120,
-                        "z_index": 1
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "333052313",
-                        "vimeo_video_url": "https://coursology.com/videos/competitor_right_landing_page_video.mp4",
-                        "video_name": "kekubian-scene-park",
-                        "src_width": 372,
-                        "src_height": 666,
-                        "width_columns": 2.5,
-                        "left_columns": 2.75,
-                        "top_offset": -572,
-                        "z_index": 3
+                        "top_offset": 120
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/language-research-initiative/coursology-m1.png",
-                        "src_width": 372,
-                        "src_height": 666,
+                        "src": "img/projects/coursology/coursology-mob4.png",
+                        "src_width": 750,
+                        "src_height": 1334,
                         "width_columns": 2.5,
-                        "left_columns": 5.5,
-                        "top_offset": -572,
-                        "z_index": 2
+                        "left_columns": 0,
+                        "top_offset": 136
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/coursology/coursology-mob5.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.5,
+                        "left_columns": 2.82,
+                        "top_offset": -512
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/coursology/coursology-mob6.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.5,
+                        "left_columns": 5.75,
+                        "top_offset": -512
                     }
                 },
                 {
@@ -1089,14 +1160,11 @@
                     }
                 },
                 {
-                    "type": "videoloop",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "274711257",
-                        "vimeo_video_url": "https://player.vimeo.com/external/274711257.hd.mp4?s=8b982d429c51607a9ed5ee46afe7266e695549c9&profile_id=175",
-                        "video_name": "interactive-shoe",
-                        "video_poster": "img/projects/interactive-shoe/interactive-shoe-video.jpg",
-                        "src_width": 1280,
-                        "src_height": 720,
+                        "src": "img/projects/coursology/coursology-land3.png",
+                        "src_width": 2048,
+                        "src_height": 1008,
                         "width_columns": 8,
                         "left_columns": 0,
                         "top_offset": 120
@@ -1113,7 +1181,40 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/language-research-initiative/coursology-logo.svg",
+                        "src": "img/projects/coursology/coursology-mob7.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.5,
+                        "left_columns": 0,
+                        "top_offset": 136
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/coursology/coursology-mob8.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.5,
+                        "left_columns": 2.82,
+                        "top_offset": -512
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/coursology/coursology-mob9.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.5,
+                        "left_columns": 5.75,
+                        "top_offset": -512
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/coursology/coursology-logo.svg",
                         "src_width": 1600,
                         "src_height": 444,
                         "width_columns": 8,
@@ -1375,8 +1476,8 @@
             "date": "Jan 2013",
             "role": "Lead Developer",
             "url": "https://augmentt.com/",
-            "poster": "img/projects/rei/augment-title.png",
-            "poster_m": "img/projects/rei/augment-title.png",
+            "poster": "img/projects/rei/augment-title1.png",
+            "poster_m": "img/projects/rei/augment-title1.png",
             "categories": [
                 "web-applications"
             ],
@@ -1532,98 +1633,6 @@
                     }
                 },
                 {
-                    "type": "mobile",
-                    "data": {
-                        "portrait": true,
-                        "scrollable": false,
-                        "src": "img/projects/strava-ios-app/strava-loading-ss.png",
-                        "src_width": 750,
-                        "src_height": 1334,
-                        "left_columns": 0.83,
-                        "top_offset": 135
-                    }
-                },
-                {
-                    "type": "mobile",
-                    "data": {
-                        "portrait": true,
-                        "scrollable": false,
-                        "src": "img/projects/strava-ios-app/strava-home.png",
-                        "src_width": 750,
-                        "src_height": 1334,
-                        "left_columns": 4.83,
-                        "top_offset": -300
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Problem",
-                        "body": "Devflovv set out to develop Strava's iOS app, aiming to provide a seamless experience for fitness enthusiasts to track activities and engage with a community on their Apple devices.",
-                        "top_offset": 160
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "341726417",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341726417.hd.mp4?s=461fe2be27626968d663507e8d2b6be6ae66172d&profile_id=174",
-                        "video_name": "05_hellboy_interview",
-                        "src_width": 720,
-                        "src_height": 1280,
-                        "width_columns": 3.25,
-                        "left_columns": 0,
-                        "top_offset": 170
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "344693590",
-                        "vimeo_video_url": "https://player.vimeo.com/external/344693590.sd.mp4?s=3f7fa3102359df5e8c891d9be25a4426ca3db834&profile_id=165",
-                        "video_name": "05_hellboy_card_reveal",
-                        "src_width": 720,
-                        "src_height": 1280,
-                        "width_columns": 3.25,
-                        "left_columns": 4.75,
-                        "top_offset": -425
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Challenges",
-                        "body": "Deflovv's team overcame the hurdles of designing an intuitive yet feature-rich interface with Swift and UIKit, managing extensive user data with Node.js and MongoDB, and ensuring user privacy with robust security measures.",
-                        "top_offset": 115
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "344693607",
-                        "vimeo_video_url": "https://player.vimeo.com/external/344693607.sd.mp4?s=aef6bac9932a6d34d4300df6d1f7ac1013c70961&profile_id=165",
-                        "video_name": "06_hellboy_archives",
-                        "src_width": 720,
-                        "src_height": 1280,
-                        "width_columns": 3.25,
-                        "left_columns": 0,
-                        "top_offset": 170
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "344693621",
-                        "vimeo_video_url": "https://player.vimeo.com/external/344693621.sd.mp4?s=7a39986f7913d14183d158c1678654a7c91ed011&profile_id=165",
-                        "video_name": "07_hellboy_goblins",
-                        "src_width": 720,
-                        "src_height": 1280,
-                        "width_columns": 3.25,
-                        "left_columns": 4.75,
-                        "top_offset": -500
-                    }
-                },
-                {
                     "type": "image",
                     "data": {
                         "src": "img/projects/strava-ios-app/strava-profile.png",
@@ -1649,6 +1658,121 @@
                     "type": "image",
                     "data": {
                         "src": "img/projects/strava-ios-app/strava-map.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.25,
+                        "left_columns": 5.75,
+                        "top_offset": -512
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Problem",
+                        "body": "Devflovv set out to develop Strava's iOS app, aiming to provide a seamless experience for fitness enthusiasts to track activities and engage with a community on their Apple devices.",
+                        "top_offset": 160
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava1.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.5,
+                        "left_columns": 0,
+                        "top_offset": 136
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava2.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.5,
+                        "left_columns": 2.82,
+                        "top_offset": -512
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava3.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.5,
+                        "left_columns": 5.75,
+                        "top_offset": -512
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava4.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.5,
+                        "left_columns": 0,
+                        "top_offset": 136
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava5.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.5,
+                        "left_columns": 2.82,
+                        "top_offset": -512
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava6.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.5,
+                        "left_columns": 5.75,
+                        "top_offset": -512
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Challenges",
+                        "body": "Deflovv's team overcame the hurdles of designing an intuitive yet feature-rich interface with Swift and UIKit, managing extensive user data with Node.js and MongoDB, and ensuring user privacy with robust security measures.",
+                        "top_offset": 115
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava7.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.25,
+                        "left_columns": 0,
+                        "top_offset": 136
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava8.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.25,
+                        "left_columns": 2.82,
+                        "top_offset": -512
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/strava-ios-app/strava9.png",
                         "src_width": 750,
                         "src_height": 1334,
                         "width_columns": 2.25,
@@ -1703,14 +1827,14 @@
             "url": "https://appiell.ai/",
             "poster": "img/projects/appiell.ai/appiell_title2.png",
             "poster_m": "img/projects/appiell.ai/appiell_title2.png",
-            "categories": ["mobile-applications","DevOps"],
+            "categories": ["mobile-applications","DevOps", "web-applications"],
             "items": [
                 {
                     "type": "image",
                     "data": {
                         "src": "img/projects/appiell.ai/appiell_title.png",
                         "src_width": 1600,
-                        "src_height": 900,
+                        "src_height": 1200,
                         "width_columns": 8,
                         "left_columns": 0,
                         "top_offset": 138
@@ -1810,38 +1934,47 @@
                     }
                 },
                 {
-                    "type": "videoloop",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "341256255",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341256255.hd.mp4?s=0d0e2184ae1e2c98334e466077eae6bfd8bc7668&profile_id=174",
-                        "video_name": "04_lexus_skate",
-                        "src_width": 1280,
-                        "src_height": 720,
+                        "src": "img/projects/appiell.ai/appiell_9.png",
+                        "src_width": 1600,
+                        "src_height": 900,
                         "width_columns": 8,
                         "left_columns": 0,
-                        "top_offset": 190
+                        "top_offset": 138
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/appiell_11.png",
+                        "src_width": 1600,
+                        "src_height": 900,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 138
                     }
                 },
                 {
                     "type": "image",
                     "data": {
                         "src": "img/projects/appiell.ai/appiell_7.png",
-                        "src_width": 750,
-                        "src_height": 1334,
-                        "width_columns": 2.60,
-                        "left_columns": 0.83,
-                        "top_offset": 150
+                        "src_width": 1600,
+                        "src_height": 900,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 138
                     }
                 },
                 {
                     "type": "image",
                     "data": {
                         "src": "img/projects/appiell.ai/appiell_8.png",
-                        "src_width": 750,
-                        "src_height": 1334,
-                        "width_columns": 2.25,
-                        "left_columns": 4.65,
-                        "top_offset": -370
+                        "src_width": 1600,
+                        "src_height": 900,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 138
                     }
                 },
                 {
@@ -1866,23 +1999,35 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/appiell.ai/appiell_9.png",
-                        "src_width": 750,
-                        "src_height": 1334,
-                        "width_columns": 2.60,
-                        "left_columns": 0.83,
-                        "top_offset": 150
+                        "src": "img/projects/appiell.ai/appiell_10.png",
+                        "src_width": 1600,
+                        "src_height": 900,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 138
                     }
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/appiell.ai/appiell_10.png",
-                        "src_width": 750,
-                        "src_height": 1334,
-                        "width_columns": 2.25,
-                        "left_columns": 4.65,
-                        "top_offset": -370
+                        "src": "img/projects/appiell.ai/appiell_12.png",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 5,
+                        "left_columns": 3,
+                        "top_offset": 140
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/appiell_display.png",
+                        "src_width": 1280,
+                        "src_height": 720,
+                        "width_columns": 6,
+                        "left_columns": 0,
+                        "top_offset": -120,
+                        "z_index": 2
                     }
                 },
                 {
@@ -1891,6 +2036,42 @@
                         "title": "Solution",
                         "body": "Devflovv employed Python and Django for a robust backend and used React and TypeScript for a smooth frontend experience. They ensured a stylish and responsive interface using Emotion and styled-components, supported by a solid server and database setup with Nginx, PHP, and MySQL.",
                         "top_offset": 155
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/appiell_15.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 6,
+                        "left_columns": 2,
+                        "top_offset": 130,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/appiell_17.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 5,
+                        "left_columns": 0,
+                        "top_offset": -60,
+                        "z_index": 3
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/appiell_16.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "width_columns": 5,
+                        "left_columns": 3,
+                        "top_offset": -70,
+                        "z_index": 1
                     }
                 },
                 {
@@ -1927,12 +2108,9 @@
             "awards": [],
             "items": [
                 {
-                    "type": "video",
-                    "data": {
-                        "vimeo_id": "266452443",
-                        "vimeo_video_url": "https://player.vimeo.com/external/266452443.hd.mp4?s=5bbc21b7a9ee9158ce8dc9401e410f5788b1aef7&profile_id=175",
-                        "video_name": "FINAL-adidas-Speedfactory-Case-Study",
-                        "video_poster": "img/projects/aivida/aivida-s-1.png",
+                    "type": "image",
+                    "data": {  
+                        "src": "img/projects/aivida/aivida-s-1.png",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 8,
@@ -2189,128 +2367,6 @@
             ]
         },
         {
-            "route": "buildclub",
-            "enabled": true,
-            "featured": false,
-            "menutitle": "",
-            "globaltitle": "",
-            "title": "THE BUILDCLUB",
-            "description": "A Chrome extension for price comparison across multiple home improvement retailers",
-            "client": "Business",
-            "role": "Lead Developer",
-            "date": "",
-            "url": "https://deals.buildclub.com/",
-            "poster": "img/projects/buildclub/buildclub-title.png",
-            "poster_m": "img/projects/buildclub/buildclub-title.png",
-            "categories": [
-                "e-commerce",
-                "web-applications"
-            ],
-            "awards": [],
-            "items": [
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/buildclub/buildclub1.jpg",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 0
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "TECH STACK",
-                        "body": " React, AWS Amplify, Stripe, JavaScript",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/buildclub/buildclub2.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/buildclub/buildclub2.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Problem ",
-                        "body": "BuildClub required a Chrome extension that could compare real-time product prices across Home Depot, Lowe’s, Amazon, and Ace Hardware. It needed to display best deals, integrate affiliate links, and remain user-friendly for shoppers.",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/buildclub/buildclub6.png",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 5.2,
-                        "left_columns": 0,
-                        "top_offset": 120,
-                        "z_index": 1
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/buildclub/buildclub7.png",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 5,
-                        "left_columns": 3,
-                        "top_offset": -100,
-                        "z_index": 2
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Challenges",
-                        "body": "Amazon’s API restrictions made it difficult to perform multiple product searches efficiently. Price accuracy was complicated by varying location-based rates. Integrating affiliate links without cluttering the interface demanded careful UI/UX planning and performance tuning.",
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/buildclub/buildclub4.png",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 8,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Solution",
-                        "body": "Devflovv developed a React-based Chrome extension using AWS Amplify and Stripe. It dynamically fetches prices, flags the best deals, and supports a Stripe-powered subscription model. The extension is scalable for future updates like barcode scanning and retailer expansion.",
-                        "top_offset": 120
-                    }
-                }
-            ]
-        },
-        {
             "route": "ifit",
             "menutitle": "",
             "enabled": true,
@@ -2323,8 +2379,8 @@
             "role": "Development & Maintenance",
             "platforms": "",
             "url": "https://www.ifit.com/",
-            "poster": "img/projects/ifit/ifit-2.png",
-            "poster_m": "img/projects/ifit/ifit-2.png",
+            "poster": "img/projects/ifit/ifit-title.png",
+            "poster_m": "img/projects/ifit/ifit-title.png",
             "categories": ["mobile-applications"],
             "awards": [],
             "items": [
@@ -2359,6 +2415,39 @@
                     }
                 },
                 {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/iFit/ifit-m0.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.25,
+                        "left_columns": 0,
+                        "top_offset": 136
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/iFit/ifit-m1.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.25,
+                        "left_columns": 2.82,
+                        "top_offset": -512
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/iFit/ifit-m2.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.25,
+                        "left_columns": 5.75,
+                        "top_offset": -512
+                    }
+                },
+                {
                     "type": "headline",
                     "data": {
                         "title": "Problem",
@@ -2378,34 +2467,44 @@
                     }
                 },
                 {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/iFit/ifit-m3.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.25,
+                        "left_columns": 0,
+                        "top_offset": 136
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/iFit/ifit-m4.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.25,
+                        "left_columns": 2.82,
+                        "top_offset": -512
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/iFit/ifit-m5.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.25,
+                        "left_columns": 5.75,
+                        "top_offset": -512
+                    }
+                },
+                {
                     "type": "text",
                     "data": {
                         "title": "",
                         "body": "",
                         "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/iFit/ifit-3.png",
-                        "src_width": 1920,
-                        "src_height": 1280,
-                        "width_columns": 5,
-                        "left_columns": 3,
-                        "top_offset": 0,
-                        "z_index": 2
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/iFit/ifit-4.png",
-                        "src_width": 1680,
-                        "src_height": 1080,
-                        "width_columns": 5,
-                        "left_columns": 0,
-                        "top_offset": -60
                     }
                 },
                 {
@@ -2419,12 +2518,34 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/iFit/ifit2.jpg",
-                        "src_width": 1600,
-                        "src_height": 1000,
-                        "width_columns": 8,
+                        "src": "img/projects/iFit/ifit-m6.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.25,
                         "left_columns": 0,
-                        "top_offset": 120
+                        "top_offset": 136
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/iFit/ifit-m7.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.25,
+                        "left_columns": 2.82,
+                        "top_offset": -512
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/iFit/ifit-m8.png",
+                        "src_width": 750,
+                        "src_height": 1334,
+                        "width_columns": 2.25,
+                        "left_columns": 5.75,
+                        "top_offset": -512
                     }
                 },
                 {
@@ -2449,6 +2570,14 @@
                     }
                 },
                 {
+                    "type": "headline",
+                    "data": {
+                        "title": "Solution",
+                        "body": "Using their expertise in JavaScript and TypeScript, Devflovv updated the front end with React and Next.js for a more cohesive and user-friendly interface. On the backend, they used Node.js and MongoDB for reliable performance and effective data handling, significantly enhancing the overall user experience on iFit.",
+                        "top_offset": 120
+                    }
+                },
+                {
                     "type": "image",
                     "data": {
                         "src": "img/projects/iFit/ifit-logo.png",
@@ -2458,15 +2587,166 @@
                         "left_columns": 0,
                         "top_offset": 120
                     }
+                }
+            ]
+        },
+        {
+            "route":"living-ai",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "Living AI",
+            "description": "Project Description",
+            "client": "Business",
+            "date": "February, 2020",
+            "role": "Full-stack Development",
+            "platforms": "",
+            "url": "https://www.livingai.com/",
+            "poster": "img/projects/living-ai/Living-ai-title-2.png",
+            "poster_m": "img/projects/living-ai/Living-ai-title-2.png",
+            "categories": ["mobile-applications"],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/living-ai-description.png",
+                        "src_width": 1535,
+                        "src_height": 864,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "z_index": 100,
+                        "top_offset": 138
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "Python | Django | OpenAI Chat GPT Integration | Core-js | jQuery | JavaScript | AWS Lamda | CodeCommit | API Gateway | CDK | S3 | DynamoDB | Drive API",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/Living-ai-problem.png",
+                        "src_width": 1535,
+                        "src_height": 864,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "z_index": 100,
+                        "top_offset": 138
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Problem",
+                        "body": "Devflovv led the charge in integrating groundbreaking AI into the e-commerce space with Living AI, becoming one of the first to feature an app on the ChatGPT store. They aimed to enhance the shopping experience with smart voice commands and a unique AI that could create content on its own.",
+                        "top_offset": 120
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/living-ai-description-1.jpg",
+                        "src_width": 1536,
+                        "src_height": 864,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "z_index": 100,
+                        "top_offset": 138
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/living-m-4.png",
+                        "src_width": 519,
+                        "src_height": 921,
+                        "width_columns": 3,
+                        "left_columns": 6,
+                        "z_index": 100,
+                        "top_offset": -138
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Challenges",
+                        "body":"Their task was to weave this AI seamlessly into the existing platform without losing the simple and engaging feel users love. Plus, we developed the LivingAI plugin, allowing shoppers to make and customize their own avatar videos – a fresh twist for online shopping.",
+                        "top_offset": 112
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/living-m-home.png",
+                        "src_width": 519,
+                        "src_height": 921,
+                        "width_columns": 3,
+                        "left_columns": 0,
+                        "z_index": 100,
+                        "top_offset": 138
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/living-m-3.png",
+                        "src_width": 519,
+                        "src_height": 921,
+                        "width_columns": 3,
+                        "left_columns": 4,
+                        "z_index": 100,
+                        "top_offset": -138
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/living-m-1.png",
+                        "src_width": 519,
+                        "src_height": 921,
+                        "width_columns": 3,
+                        "left_columns": 0,
+                        "z_index": 100,
+                        "top_offset": 138
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/living-m-2.png",
+                        "src_width": 519,
+                        "src_height": 921,
+                        "width_columns": 3,
+                        "left_columns": 4,
+                        "z_index": 100,
+                        "top_offset": -138
+                    }
                 },
                 {
                     "type": "headline",
                     "data": {
                         "title": "Solution",
-                        "body": "Using their expertise in JavaScript and TypeScript, Devflovv updated the front end with React and Next.js for a more cohesive and user-friendly interface. On the backend, they used Node.js and MongoDB for reliable performance and effective data handling, significantly enhancing the overall user experience on iFit.",
+                        "body": "Using Python and Django, Devflovv’s team built a robust system that brought Chat GPT into the mix without a hitch. On the front end, core-js and jQuery made sure everything ran smoothly for users. The LivingAI plugin, now live on the ChatGPT store, is proof of Devflovv's trailblazing spirit and knack for making AI user-friendly.",
                         "top_offset": 120
                     }
-                }   
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/network.svg",
+                        "src_width": 1600,
+                        "src_height": 444,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "top_offset": 120
+                    }
+                }
             ]
         },
         {
@@ -2481,16 +2761,16 @@
             "date": "September, 2019",
             "role": "Full-stack Development",
             "platforms": "",
-            "url": "https://go.pioneer.com/cornrevolution",
-            "poster": "img/projects/baseball-app/baseball.png",
-            "poster_m": "img/projects/baseball-app/baseball.png",
+            "url": "https://www.cadeinsights.com/",
+            "poster": "img/projects/pioneer/cade-display.png",
+            "poster_m": "img/projects/pioneer/cade-display.png",
             "categories": ["web-applications"],
             "awards": [],
             "items": [
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/pioneer/1-pioneer-intro-image.png",
+                        "src": "img/projects/pioneer/cade1.png",
                         "src_width": 1536,
                         "src_height": 864,
                         "width_columns": 8,
@@ -2510,7 +2790,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/pioneer/1-pioneer-intro-image.png",
+                        "src": "img/projects/pioneer/cade2.png",
                         "src_width": 1536,
                         "src_height": 864,
                         "width_columns": 8,
@@ -2532,13 +2812,10 @@
                     "data": {
                         "images": [
                             {
-                                "src": "img/projects/pioneer/3-pioneer-desktop.jpg"
+                                "src": "img/projects/pioneer/cade3.png"
                             },
                             {
-                                "src": "img/projects/pioneer/4-pioneer-desktop.jpg"
-                            },
-                            {
-                                "src": "img/projects/pioneer/5-pioneer-desktop.jpg"
+                                "src": "img/projects/pioneer/cade4.png"
                             }
                         ],
                         "src_width": 1539,
@@ -2551,108 +2828,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/pioneer/6-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 0,
-                        "top_offset": 112
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/7-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 2.875,
-                        "top_offset": -580
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/8-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 5.75,
-                        "top_offset": -580
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/9-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 0,
-                        "top_offset": 112
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/10-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 2.875,
-                        "top_offset": -580
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/11-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 5.75,
-                        "top_offset": -580
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/12-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 0,
-                        "top_offset": 112
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/13-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 2.875,
-                        "top_offset": -580
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/14-pioneer-mobile.png",
-                        "src_width": 473,
-                        "src_height": 952,
-                        "width_columns": 2.25,
-                        "left_columns": 5.75,
-                        "top_offset": -580
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "348555180",
-                        "video_name": "weather-conditions",
-                        "vimeo_video_url": "https://player.vimeo.com/external/348555180.hd.mp4?s=f91e3b1d358414a8a89d5769994f87e3d85aac1c&profile_id=169",
+                        "src": "img/projects/pioneer/cade.png",
                         "src_width": 1280,
                         "src_height": 720,
                         "width_columns": 8,
@@ -2671,54 +2847,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/pioneer/16-pioneer-scene.png",
-                        "src_width": 440,
-                        "src_height": 845,
-                        "width_columns": 2.25,
-                        "left_columns": 0,
-                        "top_offset": 120
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/17-pioneer-scene.png",
-                        "src_width": 440,
-                        "src_height": 845,
-                        "width_columns": 2.25,
-                        "left_columns": 2,
-                        "z_index": 1,
-                        "top_offset": -445
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/18-pioneer-scene.png",
-                        "src_width": 440,
-                        "src_height": 845,
-                        "width_columns": 2.25,
-                        "left_columns": 4,
-                        "z_index": 100,
-                        "top_offset": -445
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/19-pioneer-scene.png",
-                        "src_width": 440,
-                        "src_height": 845,
-                        "width_columns": 2.25,
-                        "left_columns": 6,
-                        "z_index": 200,
-                        "top_offset": -445
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/20-pioneer-scene.png",
+                        "src": "img/projects/pioneer/cade6.png",
                         "src_width": 1546,
                         "src_height": 948,
                         "width_columns": 8,
@@ -2740,11 +2869,11 @@
                     "data": {
                         "media": [
                             {
-                                "src": "img/projects/pioneer/21-pioneer-slider.png",
+                                "src": "img/projects/pioneer/cade5.png",
                                 "description": ""
                             },
                             {
-                                "src": "img/projects/pioneer/22-pioneer-slider.png",
+                                "src": "img/projects/pioneer/cade4.png",
                                 "description": ""
                             }
                         ],

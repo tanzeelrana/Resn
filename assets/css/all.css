@@ -2452,7 +2452,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
 .work__menu .work__menu-poster img {
     position: absolute;
     width: 100%;
-    height: auto;
+    height: 110%;
 }
 
 .work__menu .work__menu-drag_icon {

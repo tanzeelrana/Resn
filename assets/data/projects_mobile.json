@@ -15,14 +15,11 @@
             "categories": ["web-applications", "DevOps"],
             "items": [
                 {
-                    "type": "mobilevideo",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "123375958",
-                        "vimeo_video_url": "https://player.vimeo.com/external/123375958.hd.mp4?s=146618835fd1d9ee3c2d95bd64e4e75d155a23d6&profile_id=113",
-                        "video_name": "the self destructing book",
-                        "video_poster": "img/projects/persona_ai/persona_video.png",
-                        "src_width": 1280,
-                        "src_height": 720
+                        "src": "img/projects/persona_ai/persona_video.png",
+                        "src_width": 1400,
+                        "src_height": 826
                     }
                 },
                 {
@@ -115,6 +112,264 @@
                         "src": "img/projects/persona_ai/persona_2.png",
                         "src_width": 1400,
                         "src_height": 808
+                    }
+                }
+            ]
+        },
+        {
+            "route": "eventium",
+            "title": "Eventium365",
+            "enabled": true,
+            "featured": true,
+            "description": "Real-time virtual events with secure chat, calls, and booking.",
+            "client": "Business",
+            "date": "Jan 2024",
+            "role": "Lead Developer",
+            "url": "https://eventium.ca/",
+            "poster": "img/projects/mustang/eventium-m-display.png",
+            "poster_m": "img/projects/mustang/eventium-mobile.png",
+            "categories": ["web-applications", "DevOps"],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium-m-display.png",
+                        "src_width": 1400,
+                        "src_height": 826
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                         "title": "TECH STACK",
+                        "body": "Laravel | React | MySQL | WebRTC"
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium2.png",
+                        "src_width": 1400,
+                        "src_height": 826
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium3.png",
+                        "src_width": 1400,
+                        "src_height": 826
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                         "title": "The Problem",
+                        "body": "Developing a feature-rich virtual event platform to streamline attendee engagement, scheduling, and communication in real-time."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium-tab1.png",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium-tab2.png",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium4.png",
+                        "src_width": 1400,
+                        "src_height": 825
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Building scalable and secure systems for attendee registration and job listing functionalities.Implementing real-time communication features, including text chat and video calls, to enhance interactivity.Ensuring seamless integration between front-end and back-end systems for a user-friendly experience."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium-tab3.png",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium-tab4.png",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Leveraged a Laravel and React tech stack with a MySQL database to develop the Eventium platform, implementing key features like one-on-one session booking, attendee registration, and real-time communication. These solutions provided a robust and intuitive experience for users."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/mustang/eventium5.png",
+                        "src_width": 1400,
+                        "src_height": 808
+                    }
+                }
+            ]
+        },
+        {
+            "route": "les-mills-grit",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "edu.OS",
+            "description": "Empowering educators with smart tools for everyday academic success.",
+            "client": "Business",
+            "date": "April, 2019",
+            "role": "Art Direction, Design, Animation, Editing, Sound Design",
+            "platforms": "",
+            "url": "",
+            "poster": "img/projects/les-mills-grit/edu-m-title.png",
+            "poster_m": "img/projects/les-mills-grit/edu-m-display.png",
+            "categories": ["web-applications", "design", "DevOps"],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/edu-m-title.png",
+                        "src_width": 920,
+                        "src_height": 528
+					}
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "React | Typescript | Python (Django)"
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/edu.png",
+                        "src_width": 920,
+                        "src_height": 528
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/edu-task1.png",
+                        "src_width": 920,
+                        "src_height": 528
+					}
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Educators were struggling with fragmented tools for lesson planning, task management, communication, and performance tracking. They needed a unified, intelligent platform to streamline operations and refocus efforts on teaching and learning."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/edu-task2.png",
+                        "src_width": 920,
+                        "src_height": 528
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/edu-task3.png",
+                        "src_width": 920,
+                        "src_height": 528
+					}
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Devflovv tackled multiple challenges—integrating seamlessly with third-party platforms like SIS, Google Calendar, and Gmail; building curriculum-aligned AI for personalized lesson planning and insights; designing a clean, intuitive interface for various user roles; and implementing real-time collaboration features while ensuring high performance and scalability."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/edu-login2.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/edu-login1.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "z_index": 3
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/edu-login3.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv delivered an all-in-one EdTech platform that simplifies daily educator workflows. AI-driven features enhance planning and productivity, while real-time collaboration tools support team-based learning environments. Seamless integrations ensure that users can continue using familiar tools within a centralized experience—saving time, improving engagement, and boosting institutional efficiency."
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/edu-meeting1.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/edu-meeting2.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/les-mills-grit/edu-meeting3.png",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "z_index": 3
                     }
                 }
             ]
@@ -222,7 +477,7 @@
             "role": "Design, Development, UX, UI",
             "url": "https://learnez.ai",
             "poster": "img/projects/learnEZ/learn-desc.png",
-            "poster_m": "img/projects/learnEZ/learn-desc.png",
+            "poster_m": "img/projects/learnEZ/lernEZ-mobile.png",
             "categories": [ "web-applications", "mobile-applications", "design"],
             "awards": [
                 {
@@ -231,17 +486,6 @@
                 }
             ],
             "items": [
-                {
-                    "type": "mobilevideo",
-                    "data": {
-                        "vimeo_id": "188252553",
-                        "vimeo_video_url": "https://player.vimeo.com/external/188252553.hd.mp4?s=61ce9e3182d79d37868c184a841fcfecd4f286e2&profile_id=174",
-                        "video_name": "dove-haveyoursay",
-                        "video_poster": "img/projects/learnEZ/learn-desc.png",
-                        "src_width": 1400,
-                        "src_height": 831
-                    }
-                },
                 {
                     "type": "image",
                     "data": {
@@ -356,23 +600,18 @@
             "role": "Lead Developer",
             "platforms": "",
             "url": "https://coursology.com/",
-            "poster": "img/projects/language-research-initiative/coursology-c-1.png",
-            "poster_m": "img/projects/language-research-initiative/Display_Coursology.png",
+            "poster": "img/projects/coursology/coursology-c-1.png",
+            "poster_m": "img/projects/coursology/Display_Coursology.png",
             "categories": ["web-applications", "DevOps"],
             "awards": [],
             "items": [
                 {
-                    "type": "mobilevideo",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "374855493",
-                        "vimeo_video_url": "https://player.vimeo.com/external/376927275.hd.mp4?s=27c679e3db657ff8b49c346dc77cbcb13e572d9f&profile_id=175",
-                        "video_name": "Pioneer Corn Revolution",
-                        "video_poster": "img/projects/jelly-3d/Jelly_Hero_Poster.jpg",
-                        "src_width": 2048,
-                        "src_height": 1008,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
+                        "src": "img/projects/coursology/coursology-land1.png",
+                        "src_width": 1340,
+                        "src_height": 760
+                    }
                 },
                 {
                     "type": "headline",
@@ -382,33 +621,35 @@
 					}
                 },
                 {
-                    "type": "carousel",
+                    "type": "mobile",
                     "data": {
-                        "images": [
-                            {
-                                "src": "img/projects/language-research-initiative/coursology-c-1.png"
-                            },
-                            {
-                                "src": "img/projects/language-research-initiative/coursology-c-2.png"
-                            },
-                            {
-                                "src": "img/projects/language-research-initiative/coursology-c-3.png"
-                            },
-                            {
-                                "src": "img/projects/language-research-initiative/coursology-c-4.png"
-                            },
-                            {
-                                "src": "img/projects/language-research-initiative/coursology-c-5.png"
-                            },
-                            {
-                                "src": "img/projects/language-research-initiative/coursology-c-6.png"
-                            }
-                        ],
-                        "src_width": 3450,
-                        "src_height": 2160,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob1.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob2.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/coursology/coursology-land2.png",
+                        "src_width": 1340,
+                        "src_height": 760
+                    }
                 },
                 {
                     "type": "headline",
@@ -418,29 +659,34 @@
 					}
                 },
                 {
-                    "type": "videoloop",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "341749708",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341749708.hd.mp4?s=7952d012161216059236feffdbbcd65faebad182&profile_id=174",
-                        "video_name": "adidas-loop-particleshoe",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 5,
-                        "left_columns": 3,
-                        "z_index": 2
+                        "src": "img/projects/coursology/coursology-land3.png",
+                        "src_width": 1340,
+                        "src_height": 760
                     }
                 },
                 {
-                    "type": "videoloop",
+                    "type": "mobile",
                     "data": {
-                        "vimeo_id": "341749737",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341749737.hd.mp4?s=1ad9db4aa24f9e572ae6a9468254335adccd4145&profile_id=174",
-                        "video_name": "adidas-loop-process",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 5,
-                        "left_columns": 0,
-                        "z_index": 1
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob3.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob4.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
                     }
                 },
                 {
@@ -453,25 +699,32 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/language-research-initiative/coursology-m.png",
-                        "src_width": 372,
-                        "src_height": 666,
-                        "width_columns": 2.5,
-                        "left_columns": 0,
-                        "top_offset": 120,
-                        "z_index": 1
+                        "src": "img/projects/coursology/coursology-land4.png",
+                        "src_width": 1340,
+                        "src_height": 760
                     }
                 },
                 {
-                    "type": "image",
+                    "type": "mobile",
                     "data": {
-                        "src": "img/projects/language-research-initiative/coursology-m1.png",
-                        "src_width": 372,
-                        "src_height": 666,
-                        "width_columns": 2.5,
-                        "left_columns": 5.5,
-                       
-                        "z_index": 2
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob5.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob6.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
                     }
                 },
                 {
@@ -482,16 +735,26 @@
                     }
                 },
                 {
-                    "type": "videoloop",
+                    "type": "mobile",
                     "data": {
-                        "vimeo_id": "274711257",
-                        "vimeo_video_url": "https://player.vimeo.com/external/274711257.hd.mp4?s=8b982d429c51607a9ed5ee46afe7266e695549c9&profile_id=175",
-                        "video_name": "interactive-shoe",
-                        "video_poster": "img/projects/interactive-shoe/interactive-shoe-video.jpg",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 8,
-                        "left_columns": 0
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob9.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob8.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
                     }
                 }
             ]
@@ -514,17 +777,7 @@
             ],
             "awards": [],
             "items": [
-                {
-                    "type": "mobilevideo",
-                    "data": {
-                        "vimeo_id": "266452443",
-                        "vimeo_video_url": "https://player.vimeo.com/external/266452443.hd.mp4?s=5bbc21b7a9ee9158ce8dc9401e410f5788b1aef7&profile_id=175",
-                        "video_name": "speedfactory_activation",
-                        "video_poster": "",
-                        "src_width": 1280,
-                        "src_height": 720
-                    }
-                },
+            
                 {
                     "type": "headline",
                     "data": {
@@ -868,7 +1121,39 @@
                 {
                     "type": "image",
                     "data": {
+                        "src": "img/projects/appiell.ai/appiell_9.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/appiell_11.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
                         "src": "img/projects/appiell.ai/appiell_footer.jpg",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/appiell_7.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/appiell_8.png",
                         "src_width": 1600,
                         "src_height": 900
                     }
@@ -891,9 +1176,25 @@
                 {
                     "type": "image",
                     "data": {
+                        "src": "img/projects/appiell.ai/appiell_15.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
                         "src": "img/projects/appiell.ai/Appieal_m2.png",
                         "src_width": 750,
                         "src_height": 752
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell.ai/appiell_16.png",
+                        "src_width": 1600,
+                        "src_height": 900
                     }
                 },
                 {
@@ -906,7 +1207,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/appiell.ai/appiell_title2.png",
+                        "src": "img/projects/appiell.ai/appiell_17.png",
                         "src_width": 1600,
                         "src_height": 900
                     }
@@ -1039,27 +1340,14 @@
             "poster": "img/projects/strava-ios-app/strava-start.jpg",
             "poster_m": "img/projects/strava-ios-app/Display_Strava.png",
             "categories": ["mobile-applications"],
-            "awards": [
-                {
-                    "type": "fwa-sotd",
-                    "name": "FWA of the Day"
-                },
-                {
-                    "type": "awwwards-sotd",
-                    "name": "Site of the Day"
-                }
-            ],
             "items": [
                 {
-                    "type": "mobilevideo",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "341679778",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341679778.hd.mp4?s=fa37bd0339faf6952213630772d9d1ec600c4c35&profile_id=175",
-                        "video_name": "Hellboy_Case_Study_Final",
-                        "video_poster": "",
-                        "src_width": 1280,
-                        "src_height": 720
-					}
+                        "src": "img/projects/strava-ios-app/strava-start.jpg",
+                        "src_width": 1340,
+                        "src_height": 760
+                    }
                 },
                 {
                     "type": "headline",
@@ -1077,11 +1365,26 @@
                     }
                 },
                 {
-                    "type": "image",
+                    "type": "mobile",
                     "data": {
-                        "src": "img/projects/strava-ios-app/strava-home.png",
-                        "src_width": 374,
-                        "src_height": 667
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/strava-ios-app/strava-profile.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/strava-ios-app/strava-admin.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
                     }
                 },
                 {
@@ -1092,19 +1395,49 @@
 					}
                 },
                 {
-                    "type": "image",
+                    "type": "mobile",
                     "data": {
-                        "src": "img/projects/strava-ios-app/strava-profile.png",
-                        "src_width": 374,
-                        "src_height": 800
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/strava-ios-app/strava1.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
                     }
                 },
                 {
-                    "type": "image",
+                    "type": "mobile",
                     "data": {
-                        "src": "img/projects/strava-ios-app/strava-admin.png",
-                        "src_width": 374,
-                        "src_height": 800
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/strava-ios-app/strava2.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
+                    }
+                }, 
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/strava-ios-app/strava3.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/strava-ios-app/strava4.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
                     }
                 },
                 {
@@ -1115,13 +1448,28 @@
 					}
                 },
                 {
-                    "type": "image",
+                    "type": "mobile",
                     "data": {
-                        "src": "img/projects/strava-ios-app/strava_mobile1.png",
-                        "src_width": 374,
-                        "src_height": 840
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/strava-ios-app/strava5.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
                     }
                 },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/strava-ios-app/strava6.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
+                    }
+                }, 
                 {
                     "type": "image",
                     "data": {
@@ -1131,12 +1479,58 @@
                     }
                 },
                 {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/strava-ios-app/strava7.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/strava-ios-app/strava8.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
+                    }
+                }, 
+                {
                     "type": "headline",
                     "data": {
                         "title": "The Solution",
                         "body": "The result was a user-friendly Strava app with a reliable backend and strong security features, offering users a straightforward and safe way to connect and share their fitness journeys."
 					}
                 },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/strava-ios-app/strava9.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/strava-ios-app/strava10.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
+                    }
+                }, 
                 {
                     "type": "image",
                     "data": {
@@ -1161,7 +1555,7 @@
             "platforms": "",
             "url": "https://belowthesurface.resn.co.nz/",
             "poster": "img/projects/living-ai/living-ai-description-1.jpg",
-            "poster_m": "img/projects/living-ai/living-ai-description-1.jpg",
+            "poster_m": "img/projects/living-ai/living-m-display.png",
             "categories": ["mobile-applications"],
             "awards": [],
             "items": [
@@ -1402,25 +1796,14 @@
             "description": "Empowering Businesses with Smart Insights.",
             "client": "Business",
             "date": "September, 2019",
-            "role": "Design, Development, Animation, UI, UX",
+            "role": "Lead Developer",
             "platforms": "",
             "url": "https://go.pioneer.com/cornrevolution",
-            "poster": "img/projects/pioneer/pioneer-poster.png",
-            "poster_m": "img/projects/pioneer/mobile/pioneer-poster-m.jpg",
+            "poster": "img/projects/pioneer/cade1.png",
+            "poster_m": "img/projects/pioneer/cade-m-display.png",
             "categories": ["web-applications"],
             "awards": [],
             "items": [
-                {
-                    "type": "mobilevideo",
-                    "data": {
-                        "vimeo_id": "347507060",
-                        "video_name": "dektop_flow",
-                        "vimeo_video_url": "https://player.vimeo.com/external/376927275.hd.mp4?s=27c679e3db657ff8b49c346dc77cbcb13e572d9f&profile_id=175",
-                        "video_poster": "img/projects/pioneer/pioneer-videoposter.png",
-                        "src_width": 2048,
-                        "src_height": 1008
-					}
-                },
                 {
                     "type": "headline",
                     "data": {
@@ -1431,7 +1814,7 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/pioneer/1-pioneer-intro-image.png",
+                        "src": "img/projects/pioneer/cade1.png",
                         "src_width": 1536,
                         "src_height": 864
 					}
@@ -1442,75 +1825,23 @@
                         "title": "The Problem",
                         "body": "Devflovv tackled the creation of Cade Insights, a Business Network Intelligence platform aimed at offering in-depth data analysis and interactive reporting. The objective was to design a tool adept at managing complex data while providing a smooth user experience."
 					}
-                },
+                },  
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/pioneer/mobile/2-pioneer-flow-m.png",
-                        "src_width": 658,
-                        "src_height": 1246
-					}
-                },
-                {
-                    "type": "carousel",
-                    "data": {
-                        "images": [
-                            {
-                                "src": "img/projects/pioneer/3-pioneer-desktop.jpg"
-                            },
-                            {
-                                "src": "img/projects/pioneer/4-pioneer-desktop.jpg"
-                            },
-                            {
-                                "src": "img/projects/pioneer/5-pioneer-desktop.jpg"
-                            }
-                        ],
-                        "src_width": 1539,
-                        "src_height": 867
+                        "src": "img/projects/pioneer/cade4.png",
+                        "src_width": 1536,
+                        "src_height": 864
 					}
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/pioneer/mobile/6-pioneer-mobile.png",
-                        "src_width": 640,
-                        "src_height": 1291
+                        "src": "img/projects/pioneer/cade3.png",
+                        "src_width": 1536,
+                        "src_height": 864
 					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/mobile/7-pioneer-mobile.png",
-                        "src_width": 640,
-                        "src_height": 1291
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/mobile/pioneer-mobile-all.png",
-                        "src_width": 640,
-                        "src_height": 1906
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/mobile/13-pioneer-mobile.png",
-                        "src_width": 640,
-                        "src_height": 1291
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "348555180",
-                        "video_name": "weather-conditions",
-                        "vimeo_video_url": "https://player.vimeo.com/external/348555180.hd.mp4?s=f91e3b1d358414a8a89d5769994f87e3d85aac1c&profile_id=169",
-                        "src_width": 1280,
-                        "src_height": 720
-					}
-                },
+                }, 
                 {
                     "type": "headline",
                     "data": {
@@ -1521,27 +1852,19 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/pioneer/mobile/19-pioneer-scene-m.png",
-                        "src_width": 668,
-                        "src_height": 1297
+                        "src": "img/projects/pioneer/cade.png",
+                        "src_width": 1536,
+                        "src_height": 864
 					}
-                },
+                }, 
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/pioneer/mobile/20-pioneer-scene-m.png",
-                        "src_width": 637,
-                        "src_height": 980
+                        "src": "img/projects/pioneer/cade5.png",
+                        "src_width": 1536,
+                        "src_height": 864
 					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/pioneer/mobile/21-pioneer-slider-m.png",
-                        "src_width": 640,
-                        "src_height": 978
-					}
-                },
+                }, 
                 {
                     "type": "headline",
                     "data": {
@@ -1552,589 +1875,199 @@
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/pioneer/27-pioneer-ui.png",
-                        "src_width": 473,
-                        "src_height": 952
+                        "src": "img/projects/pioneer/cade7.png",
+                        "src_width": 1536,
+                        "src_height": 864
+					}
+                }, 
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/cade6.png",
+                        "src_width": 1536,
+                        "src_height": 864
+					}
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/pioneer/cade2.png",
+                        "src_width": 1536,
+                        "src_height": 864
 					}
                 } 
             ]
         },
         {
-            "route": "les-mills-grit",
+            "route": "ifit",
             "menutitle": "",
             "enabled": true,
             "featured": true,
             "globaltitle": "",
-            "title": "edu.OS",
-            "description": "Empowering educators with smart tools for everyday academic success.",
+            "title": "ifit",
+            "description": "Revolutionizing ifit with saclable architecture.",
             "client": "Business",
-            "date": "April, 2019",
-            "role": "Art Direction, Design, Animation, Editing, Sound Design",
+            "date": "April, 2025",
+            "role": "Lead Developer",
             "platforms": "",
-            "url": "",
-            "poster": "img/projects/les-mills-grit/10_Gallery_Card.jpg",
-            "poster_m": "img/projects/les-mills-grit/10_Mobile_Hero_Poster.jpg",
-            "categories": ["web-applications", "design", "DevOps"],
+            "url": "https://www.ifit.com/",
+            "poster": "img/projects/ifit/ifit-title.png",
+            "poster_m": "img/projects/ifit/ifit-mobile.png",
+            "categories": ["mobile-applications"],
             "awards": [],
             "items": [
                 {
-                    "type": "mobilevideo",
+                    "type": "image",
                     "data": {
-                        "vimeo_id": "365178771",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365178771.hd.mp4?s=14337853856f2faa9f80eeee7763e16e561fc755&profile_id=175",
-                        "video_name": "Resn_Les_Mills_Case_Study",
-                        "video_poster": "img/projects/les-mills-grit/1.0_Hero_Poster_Video.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080
+                        "src": "img/projects/ifit/ifit-2.png",
+                        "src_width": 1340,
+                        "src_height": 760
                     }
                 },
                 {
                     "type": "headline",
                     "data": {
                         "title": "TECH STACK",
-                        "body": "React | Typescript | Python (Django)"
+                        "body": "React | Next.js | Node.js | TypeScript | MongoDB"
 					}
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/les-mills-grit/01_GRIDS.gif",
-                        "src_width": 920,
-                        "src_height": 528
-					}
+                        "src": "img/projects/iFit/ifit-screen1.png",
+                        "src_width": 1340,
+                        "src_height": 760
+                    }
                 },
                 {
-                    "type": "videoloop",
+                    "type": "mobile",
                     "data": {
-                        "vimeo_id": "365182252",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182252.hd.mp4?s=e4188a4af64312d7bc13f1dc7cf6715217a30241&profile_id=175",
-                        "video_name": "02_SWEAT",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "z_index": 1
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/iFit/ifit-m0.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/iFit/ifit-m1.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
                     }
                 },
                 {
                     "type": "headline",
                     "data": {
                         "title": "The Problem",
-                        "body": "Educators were struggling with fragmented tools for lesson planning, task management, communication, and performance tracking. They needed a unified, intelligent platform to streamline operations and refocus efforts on teaching and learning."
+                        "body": "iFit encountered issues with its platform's consistency and accessibility, such as restricted features for free users, inconsistent designs on different devices, and missing interface components, affecting the user experience for its extensive user base."
 					}
                 },
                 {
-                    "type": "videoloop",
+                    "type": "mobile",
                     "data": {
-                        "vimeo_id": "365182264",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182264.hd.mp4?s=ee6483e550f6ed9411e8fc52062aa98f0bfb314c&profile_id=175",
-                        "video_name": "03_Boxomtic One",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "z_index": 2
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/iFit/ifit-m2.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
                     }
                 },
                 {
-                    "type": "videoloop",
+                    "type": "mobile",
                     "data": {
-                        "vimeo_id": "365182199",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182199.hd.mp4?s=6a015cb596b8c9fe09e1e9ac4ac468990db00ecf&profile_id=175",
-                        "video_name": "04_HEART",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "z_index": 1
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/iFit/ifit-m3.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
                     }
-                },
+                }, 
                 {
                     "type": "headline",
                     "data": {
                         "title": "The Challenge",
-                        "body": "Devflovv tackled multiple challenges—integrating seamlessly with third-party platforms like SIS, Google Calendar, and Gmail; building curriculum-aligned AI for personalized lesson planning and insights; designing a clean, intuitive interface for various user roles; and implementing real-time collaboration features while ensuring high performance and scalability."
+                        "body": "Devflovv’s team focused on making premium workout features available to all users, ensuring uniform design on all devices, and restoring missing interface elements after platform updates."
 					}
                 },
                 {
-                    "type": "image",
+                    "type": "mobile",
                     "data": {
-                        "src": "img/projects/les-mills-grit/1.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "z_index": 2
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/iFit/ifit-m6.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
                     }
                 },
                 {
-                    "type": "image",
+                    "type": "mobile",
                     "data": {
-                        "src": "img/projects/les-mills-grit/2.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "z_index": 3
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/iFit/ifit-m7.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
                     }
-                },
+                }, 
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/les-mills-grit/3.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "z_index": 1
+                        "src": "img/projects/ifit/ifit-2.png",
+                        "src_width": 1340,
+                        "src_height": 760
                     }
                 },
                 {
-                    "type": "videoloop",
+                    "type": "mobile",
                     "data": {
-                        "vimeo_id": "365182222",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182222.hd.mp4?s=b0038d25a96a48e57a953366ad08cd739d210ddb&profile_id=175",
-                        "video_name": "05_GRIT MINDSET",
-                        "src_width": 1920,
-                        "src_height": 1080
-					}
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/ifit/ifit-m8.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
                 },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/ifit/ifit-m4.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
+                    }
+                }, 
                 {
                     "type": "headline",
                     "data": {
                         "title": "The Solution",
-                        "body": "Devflovv delivered an all-in-one EdTech platform that simplifies daily educator workflows. AI-driven features enhance planning and productivity, while real-time collaboration tools support team-based learning environments. Seamless integrations ensure that users can continue using familiar tools within a centralized experience—saving time, improving engagement, and boosting institutional efficiency."
+                        "body": "Using their expertise in JavaScript and TypeScript, Devflovv updated the front end with React and Next.js for a more cohesive and user-friendly interface. On the backend, they used Node.js and MongoDB for reliable performance and effective data handling, significantly enhancing the overall user experience on iFit."
 					}
                 },
                 {
                     "type": "image",
                     "data": {
-                        "src": "img/projects/les-mills-grit/4.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "z_index": 1
+                        "src": "img/projects/ifit/ifit-m5.png",
+                        "src_width": 374,
+                        "src_height": 840
                     }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/10.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "z_index": 2
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/5.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "z_index": 3
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/6.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/7.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/8.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/les-mills-grit/9.0_Grit_Still.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080
-                    }
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "365182243",
-                        "vimeo_video_url": "https://player.vimeo.com/external/365182243.hd.mp4?s=8ad0bb793a2ef0cd1a1ad91aede398539bfd6124&profile_id=175",
-                        "video_name": "6_Outro 2",
-                        "src_width": 1920,
-                        "src_height": 1080
-                    }
-                }
-            ]
-        },
-        {
-            "route": "loop",
-            "menutitle": "",
-            "enabled": true,
-            "featured": true,
-            "globaltitle": "",
-            "title": "adidas Futurecraft.Loop Event",
-            "description": "The adidas Futurecraft.Loop launch event in New York City brought together 200 handpicked influencers from around the world. From here, they started their journey as the first ever generation of adidas’ groundbreaking product movement.",
-            "client": "adidas",
-            "date": "April, 2019",
-            "role": "Event Conceptualisation, Creative, Content Production",
-            "platforms": "",
-            "url": "https://www.adidas.co.uk/futurecraft",
-            "poster": "img/projects/loop/adidas-loop-poster-desktop.jpg",
-            "poster_m": "img/projects/loop/mobile/adidas-loop-poster-mobile.jpg",
-            "categories": ["mobile-applications"],
-            "awards": [],
-            "items": [
-                {
-                    "type": "mobilevideo",
-                    "data": {
-                        "vimeo_id": "341749766",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341749766.hd.mp4?s=561b9af13743576d31b6e70f4eeac2fb8f248cf1&profile_id=175",
-                        "video_name": "SS19_FC_LOOP_LAUNCH_HIGHLIGHT_60s_16-9",
-                        "video_poster": "img/projects/loop/mobile/adidas-loop-video-mobile.jpg",
-                        "src_width": 1920,
-                        "src_height": 1080,
-                        "width_columns": 8,
-                        "left_columns": 0
-                    }
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "THE RECYCLABLE PRODUCT",
-                        "body": "adidas Futurecraft.Loop is a 100% recyclable product where the shoes are made from a single TPU material. They can be worn, ground up and then melted back down into the raw material, eventually being turned into brand new shoes. This global product launch was a one-time, invite-only event in New York for a select group of 200 people."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/loop/mobile/adidas-loop-product-mobile.jpg",
-                        "src_width": 1400,
-                        "src_height": 875,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "The Venue",
-                        "body": "The Duggal Greenhouse was selected as the venue for the Loop Event, situated in the Brooklyn Navy Yard in NYC. Chosen for its sheer impressive size and focus on sustainability, the space provided a perfect canvas to house our large-scale projection mapping set up."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/loop/mobile/adidas-loop-venue-1-mobile.jpg",
-                        "src_width": 1400,
-                        "src_height": 875,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "VISUALS LEAD BY PROJECTION",
-                        "body": "As Futurecraft.Loop is focused on reducing wastefulness, it was of utmost importance to create an event with minimal fabrication, relying instead on projection and suspended projection surfaces to define zones within the venue. Two main areas were created, both tying in conceptually to the product where our linear product economy must lead to a circular one."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/loop/mobile/adidas-loop-venue-2-mobile.jpg",
-                        "src_width": 1400,
-                        "src_height": 875,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Entry Projection Tunnel",
-                        "body": "After arriving and checking in to the venue, guests first enter a linear tunnel surrounded by nine large projection surfaces, on all sides as well as the roof. This entry point sets the scene for the current issues on plastic waste and purpose for the creation of Futurecraft.Loop."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/loop/mobile/adidas-loop-tunnel-1-mobile.jpg",
-                        "src_width": 1400,
-                        "src_height": 875,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "AUDIO-VISUAL EXPERIENCE",
-                        "body": "Custom audio and voice overs, playing alongside large-scale, high intensity animated graphics and typography create an impressive venue entrance. Statistics, copy and 3D assets present the world’s issues on plastic waste in a bold, easy to understand way."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/loop/mobile/adidas-loop-tunnel-2-mobile.jpg",
-                        "src_width": 1400,
-                        "src_height": 875,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "THE TUNNEL DOORWAY",
-                        "body": "Situated at the end of the projection tunnel was a small doorway with smoke effects hiding the main circular projection area beyond. After guests walk through the doorway one by one, they find themselves walking into a circular formation together."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/loop/mobile/adidas-loop-tunnel-3-mobile.jpg",
-                        "src_width": 1400,
-                        "src_height": 875,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "TUNNEL GRAPHICS",
-                        "body": ""
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "341749746",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341749746.hd.mp4?s=b71a40bd3c96f8aeb7f2309ec336e8a717c5d77b&profile_id=175",
-                        "video_name": "adidas-loop-tunnel",
-                        "src_width": 1920,
-                        "src_height": 1280,
-                        "width_columns": 5,
-                        "left_columns": 3,
-                        "z_index": 2
-                    }
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/loop/mobile/adidas-loop-tunnel-4-mobile.jpg",
-                        "src_width": 1680,
-                        "src_height": 1080,
-                        "width_columns": 5,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Guests Enter The Circle",
-                        "body": "The 200 guests now enter a circular space with three layers of 360° suspended projection surfaces creating a layering of visuals. Custom 360° audio was designed and synced to the video that’s playing."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/loop/mobile/adidas-circle-1-mobile.jpg",
-                        "src_width": 1400,
-                        "src_height": 875,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "VIDEO CONTENT",
-                        "body": "While guests waited for the countdown to end before speakers came on-stage, ambient graphics, messaging, branding and video content set the scene for what was to come. Taking advantage of transparency within the middle projection surface allowed physical layering opportunities with how the video interacts together."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/loop/mobile/adidas-circle-2-mobile.jpg",
-                        "src_width": 1400,
-                        "src_height": 620,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "341749721",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341749721.hd.mp4?s=65131452a783edea750ccf6f43a7cfb8136ecadf&profile_id=175",
-                        "video_name": "adidas-loop-materials",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "VIDEO EFFECTS",
-                        "body": "All video footage was treated and edited in ways which portrayed the product concept of a continuous loop. Techniques such as repetition and frame delays are shown below."
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "341762617",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341762617.hd.mp4?s=c0a6af9172146c565c72c3308e82aae0a101d655&profile_id=175",
-                        "video_name": "adias-loop-pre-speech",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Keynote Speeches",
-                        "body": "Willow Smith partnered with adidas and Futurecraft.Loop, speaking first on stage before top adidas spokespeople revealed the product and explained the thinking and work that went into its design."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/loop/mobile/adidas-loop-speeches-1-mobile.jpg",
-                        "src_width": 1400,
-                        "src_height": 875,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "THE SPEAKERS",
-                        "body": "Eric Liedtke, CMO at adidas revealed the physical shoe product on stage before Paul Gaudio, adidas’ Global Creative Director discussed Futurecraft and the work that went into creating a fully recyclable product. Each topic in the speeches contained custom video content displayed on all surfaces that was switched in real-time via Devflovv direction."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/loop/mobile/adidas-loop-speeches-2-mobile.jpg",
-                        "src_width": 1400,
-                        "src_height": 875,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "ANIMATED BACKDROPS",
-                        "body": "Large scale animated backdrops were projected behind the speakers using a mixture of photography and 3D assets. Various techniques such as that shown below were used to create subtle movement on the imagery."
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "341762603",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341762603.hd.mp4?s=dd1f6960c9b29d6781cd1a858dc42d555f22972d&profile_id=169",
-                        "video_name": "adidas-loop-pixelstretch",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Shoe Reveal & Physical Displays",
-                        "body": "After the speeches concluded, 200 pairs of shoes suspended in the ceiling were lowered to the ground in a surprise moment. Guests were then invited to meet and talk with adidas designers who worked on the product and explore physical materials and prototype displays."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/loop/mobile/adidas-loop-displays-1-mobile.jpg",
-                        "src_width": 1400,
-                        "src_height": 875,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "BAGS & DISPLAYS",
-                        "body": "Each bag was pre-filled with the guests specific shoe sizes and were located via a number from 1-200. Multiple stations around the space contained a variety of physical TPU materials to explore that showcased different stages of the production process. Video content was also created as a backdrop for these stations to provide deeper information."
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/loop/mobile/adidas-loop-displays-2-mobile.jpg",
-                        "src_width": 1200,
-                        "src_height": 750,
-                        "width_columns": 6,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "image",
-                    "data": {
-                        "src": "img/projects/loop/mobile/adidas-loop-displays-3-mobile.jpg",
-                        "src_width": 1200,
-                        "src_height": 750,
-                        "width_columns": 4,
-                        "left_columns": 4
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "VISUALISING THE PROCESS",
-                        "body": "3D animations visualised the different steps in the manufacturing process, showing how the TPU material changes form."
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "341749737",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341749737.hd.mp4?s=1ad9db4aa24f9e572ae6a9468254335adccd4145&profile_id=169",
-                        "video_name": "adidas-loop-process",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "headline",
-                    "data": {
-                        "title": "Devflovv Content Creation",
-                        "body": "Devflovv handled the design, animation, editing and asset management for all projected video content in-house. A significant amount of content was created to play for the two hour event duration with the very high resolution video split across multiple projectors."
-					}
-                },
-                {
-                    "type": "videoloop",
-                    "data": {
-                        "vimeo_id": "341749708",
-                        "vimeo_video_url": "https://player.vimeo.com/external/341749708.hd.mp4?s=7952d012161216059236feffdbbcd65faebad182&profile_id=174",
-                        "video_name": "adidas-loop-particleshoe",
-                        "src_width": 1280,
-                        "src_height": 720,
-                        "width_columns": 8,
-                        "left_columns": 0
-					}
-                },
-                {
-                    "type": "text",
-                    "data": {
-                        "title": "A LOOP FROM PHYSICAL TO WEB",
-                        "body": "Each pair of shoes came with a QR code printed on the tongue to allow guests to link out to the web hub. From here they explored deeper information about the technology and product. The site was designed and built by Devflovv — <a>https://www.adidas.co.uk/futurecraft</a>"
-					}
-                }
+                } 
             ]
         }
     ]

@@ -512,7 +512,7 @@ body > img {
 }
 
 .about-page .about__inner {
-    width: 118.4rem;
+    width: 135.4rem;
     margin: 12rem auto 30rem;
     padding: 3rem 8rem 5rem;
     position: relative;
@@ -549,7 +549,7 @@ body > img {
     order: 1;
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
-    width: 25%;
+    width: 60%;
     -ms-flex: 1;
     flex: 1;
 }
@@ -733,7 +733,7 @@ body > img {
 }
 
 .about-page .about__inner .col2 .inner .inner_col {
-    width: 50%;
+    width: 100%;
     display: inline-block;
     box-sizing: border-box;
 }
@@ -749,6 +749,7 @@ body > img {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-transform: uppercase;
+    margin-left: 0px;
 }
 
 .about-page .about__inner .col2 .inner .inner_col ul {
@@ -758,7 +759,7 @@ body > img {
 
 .about-page .about__inner .col2 .inner .inner_col ul li span {
     font-size: 17px;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     line-height: 35px;
     line-height: 3.5rem;
 }
@@ -778,7 +779,7 @@ body > img {
 .work-page .project {
     position: absolute;
     left: 0;
-    width: 102.4rem;
+    width: 120.4rem;
     padding-bottom: 600px;
     padding-bottom: 65vh;
     opacity: 0;
@@ -1618,7 +1619,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
 .shell .shell__button .button__hitarea {
     position: absolute;
     width: 200px;
-    height: 200px;
+    height: 160px;
     border-radius: 50%;
 }
 
@@ -1626,8 +1627,8 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 170%;
+    height: 120%;
 }
 
 .shell .shell__button .button__icon canvas {
@@ -1669,7 +1670,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
 }
 
 .shell .shell__button--drop .button__text {
-    left: 30px;
+    left: 35px;
     top: 6px;
 }
 
@@ -2451,7 +2452,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
 .work__menu .work__menu-poster img {
     position: absolute;
     width: 100%;
-    height: auto;
+    height: 110%;
 }
 
 .work__menu .work__menu-drag_icon {
@@ -2626,7 +2627,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
 .work__overview .overview__projectItem__poster {
     width: 100%;
     height: 100%;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     transform-style: preserve-3d;
@@ -2777,7 +2778,7 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
 }
 
 .project__header .project__description,.project__infos .project__description,.project__archiveproject .project__description {
-    margin-bottom: 7.5rem;
+    margin-bottom: 2.5rem;
     font-size: 34px;
     font-size: 3.4rem;
     line-height: 46px;
@@ -3873,3 +3874,14 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
     bottom: 1.9rem;
     left: 2rem;
 }
+
+.fade-in-title{
+    text-transform: none;
+    font-size: 4.1rem;
+    line-height: 4.0rem;
+    letter-spacing: 0.02rem;
+  }
+  
+  .about-page-span{
+    margin-left: 1rem;
+  }

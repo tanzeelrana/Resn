@@ -2862,7 +2862,8 @@ this.createjs = this.createjs || {};
 	 */
 	s.isAudioTag = function(item) {
 		if (window.HTMLAudioElement) {
-			return item instanceof HTMLAudioElement;
+			// return item instanceof HTMLAudioElement;
+			return false;
 		} else {
 			return false;
 		}
@@ -22471,18 +22472,18 @@ define('controller/tracking_controller',[
 	return controller;
 });
 
-define('events/sound_states',[] , function () {
+// define('events/sound_states',[] , function () {
 
-    var soundStates = {
-        MUTE   : "sound:state:mute",
-        UNMUTE : "sound:state:unmute",
-        PAUSE  : "sound:state:pause",
-        RESUME : "sound:state:resume"
-    };
+//     var soundStates = {
+//         MUTE   : "sound:state:mute",
+//         UNMUTE : "sound:state:unmute",
+//         PAUSE  : "sound:state:pause",
+//         RESUME : "sound:state:resume"
+//     };
 
-    return soundStates;
+//     return soundStates;
 
-});
+// });
 /*!
  *  howler.js v1.1.29
  *  howlerjs.com
@@ -22493,1352 +22494,1352 @@ define('events/sound_states',[] , function () {
  *  MIT License
  */
 
-(function() {
-  // setup
-  var cache = {};
-
-  // setup the audio context
-  var ctx = null,
-    usingWebAudio = true,
-    noAudio = false;
-  try {
-    if (typeof AudioContext !== 'undefined') {
-      ctx = new AudioContext();
-    } else if (typeof webkitAudioContext !== 'undefined') {
-      ctx = new webkitAudioContext();
-    } else {
-      usingWebAudio = false;
-    }
-  } catch(e) {
-    usingWebAudio = false;
-  }
-
-  if (!usingWebAudio) {
-    if (typeof Audio !== 'undefined') {
-      try {
-        new Audio();
-      } catch(e) {
-        noAudio = true;
-      }
-    } else {
-      noAudio = true;
-    }
-  }
-
-  // create a master gain node
-  if (usingWebAudio) {
-    var masterGain = (typeof ctx.createGain === 'undefined') ? ctx.createGainNode() : ctx.createGain();
-    masterGain.gain.value = 1;
-    masterGain.connect(ctx.destination);
-  }
-
-  // create global controller
-  var HowlerGlobal = function(codecs) {
-    this._volume = 1;
-    this._muted = false;
-    this.usingWebAudio = usingWebAudio;
-    this.ctx = ctx;
-    this.noAudio = noAudio;
-    this._howls = [];
-    this._codecs = codecs;
-    this.iOSAutoEnable = true;
-  };
-  HowlerGlobal.prototype = {
-    /**
-     * Get/set the global volume for all sounds.
-     * @param  {Float} vol Volume from 0.0 to 1.0.
-     * @return {Howler/Float}     Returns self or current volume.
-     */
-    volume: function(vol) {
-      var self = this;
-
-      // make sure volume is a number
-      vol = parseFloat(vol);
-
-      if (vol >= 0 && vol <= 1) {
-        self._volume = vol;
-
-        if (usingWebAudio) {
-          masterGain.gain.value = vol;
-        }
-
-        // loop through cache and change volume of all nodes that are using HTML5 Audio
-        for (var key in self._howls) {
-          if (self._howls.hasOwnProperty(key) && self._howls[key]._webAudio === false) {
-            // loop through the audio nodes
-            for (var i=0; i<self._howls[key]._audioNode.length; i++) {
-              self._howls[key]._audioNode[i].volume = self._howls[key]._volume * self._volume;
-            }
-          }
-        }
-
-        return self;
-      }
-
-      // return the current global volume
-      return (usingWebAudio) ? masterGain.gain.value : self._volume;
-    },
-
-    /**
-     * Mute all sounds.
-     * @return {Howler}
-     */
-    mute: function() {
-      this._setMuted(true);
-
-      return this;
-    },
-
-    /**
-     * Unmute all sounds.
-     * @return {Howler}
-     */
-    unmute: function() {
-      this._setMuted(false);
-
-      return this;
-    },
-
-    /**
-     * Handle muting and unmuting globally.
-     * @param  {Boolean} muted Is muted or not.
-     */
-    _setMuted: function(muted) {
-      var self = this;
-
-      self._muted = muted;
-
-      if (usingWebAudio) {
-        masterGain.gain.value = muted ? 0 : self._volume;
-      }
-
-      for (var key in self._howls) {
-        if (self._howls.hasOwnProperty(key) && self._howls[key]._webAudio === false) {
-          // loop through the audio nodes
-          for (var i=0; i<self._howls[key]._audioNode.length; i++) {
-            self._howls[key]._audioNode[i].muted = muted;
-          }
-        }
-      }
-    },
-
-    /**
-     * Check for codec support.
-     * @param  {String} ext Audio file extension.
-     * @return {Boolean}
-     */
-    codecs: function(ext) {
-      return this._codecs[ext];
-    },
-
-    /**
-     * iOS will only allow audio to be played after a user interaction.
-     * Attempt to automatically unlock audio on the first user interaction.
-     * Concept from: http://paulbakaus.com/tutorials/html5/web-audio-on-ios/
-     * @return {Howler}
-     */
-    _enableiOSAudio: function() {
-      var self = this;
-
-      // only run this on iOS if audio isn't already eanbled
-      if (ctx && (self._iOSEnabled || !/iPhone|iPad|iPod/i.test(navigator.userAgent))) {
-        return;
-      }
-
-      self._iOSEnabled = false;
-
-      // call this method on touch start to create and play a buffer,
-      // then check if the audio actually played to determine if
-      // audio has now been unlocked on iOS
-      var unlock = function() {
-        // create an empty buffer
-        var buffer = ctx.createBuffer(1, 1, 22050);
-        var source = ctx.createBufferSource();
-        source.buffer = buffer;
-        source.connect(ctx.destination);
-
-        // play the empty buffer
-        if (typeof source.start === 'undefined') {
-          source.noteOn(0);
-        } else {
-          source.start(0);
-        }
-
-        // setup a timeout to check that we are unlocked on the next event loop
-        setTimeout(function() {
-          if ((source.playbackState === source.PLAYING_STATE || source.playbackState === source.FINISHED_STATE)) {
-            // update the unlocked state and prevent this check from happening again
-            self._iOSEnabled = true;
-            self.iOSAutoEnable = false;
-
-            // remove the touch start listener
-            // @TODO - RESN CW - modified this to make it acually work on iPads
-            // window.removeEventListener('touchend', unlock, false);
-            document.removeEventListener('touchstart', unlock, false);
-          }
-        }, 0);
-      };
-
-      // setup a touch start listener to attempt an unlock in
-      // @TODO - RESN CW - modified this to make it acually work on iPads
-      // window.addEventListener('touchend', unlock, false);
-      document.addEventListener('touchstart', unlock, false) ;
-
-      return self;
-    }
-  };
-
-  // check for browser codec support
-  var audioTest = null;
-  var codecs = {};
-  if (!noAudio) {
-    audioTest = new Audio();
-    codecs = {
-      mp3: !!audioTest.canPlayType('audio/mpeg;').replace(/^no$/, ''),
-      opus: !!audioTest.canPlayType('audio/ogg; codecs="opus"').replace(/^no$/, ''),
-      ogg: !!audioTest.canPlayType('audio/ogg; codecs="vorbis"').replace(/^no$/, ''),
-      wav: !!audioTest.canPlayType('audio/wav; codecs="1"').replace(/^no$/, ''),
-      aac: !!audioTest.canPlayType('audio/aac;').replace(/^no$/, ''),
-      m4a: !!(audioTest.canPlayType('audio/x-m4a;') || audioTest.canPlayType('audio/m4a;') || audioTest.canPlayType('audio/aac;')).replace(/^no$/, ''),
-      mp4: !!(audioTest.canPlayType('audio/x-mp4;') || audioTest.canPlayType('audio/mp4;') || audioTest.canPlayType('audio/aac;')).replace(/^no$/, ''),
-      weba: !!audioTest.canPlayType('audio/webm; codecs="vorbis"').replace(/^no$/, '')
-    };
-  }
-
-  // allow access to the global audio controls
-  var Howler = new HowlerGlobal(codecs);
-
-  // setup the audio object
-  var Howl = function(o) {
-    var self = this;
-
-    // setup the defaults
-    self._autoplay = o.autoplay || false;
-    self._buffer = o.buffer || false;
-    self._duration = o.duration || 0;
-    self._format = o.format || null;
-    self._loop = o.loop || false;
-    self._loaded = false;
-    self._sprite = o.sprite || {};
-    self._src = o.src || '';
-    self._pos3d = o.pos3d || [0, 0, -0.5];
-    self._volume = o.volume !== undefined ? o.volume : 1;
-    self._urls = o.urls || [];
-    self._rate = o.rate || 1;
-
-    // allow forcing of a specific panningModel ('equalpower' or 'HRTF'),
-    // if none is specified, defaults to 'equalpower' and switches to 'HRTF'
-    // if 3d sound is used
-    self._model = o.model || null;
-
-    // setup event functions
-    self._onload = [o.onload || function() {}];
-    self._onloaderror = [o.onloaderror || function() {}];
-    self._onend = [o.onend || function() {}];
-    self._onpause = [o.onpause || function() {}];
-    self._onplay = [o.onplay || function() {}];
-
-    self._onendTimer = [];
-
-    // Web Audio or HTML5 Audio?
-    self._webAudio = usingWebAudio && !self._buffer;
-
-    // check if we need to fall back to HTML5 Audio
-    self._audioNode = [];
-    if (self._webAudio) {
-      self._setupAudioNode();
-    }
-
-    // automatically try to enable audio on iOS
-    if (typeof ctx !== 'undefined' && ctx && Howler.iOSAutoEnable) {
-      Howler._enableiOSAudio();
-    }
-
-    // add this to an array of Howl's to allow global control
-    Howler._howls.push(self);
-
-    // load the track
-    self.load();
-  };
-
-  // setup all of the methods
-  Howl.prototype = {
-    /**
-     * Load an audio file.
-     * @return {Howl}
-     */
-    load: function() {
-      var self = this,
-        url = null;
-
-      // if no audio is available, quit immediately
-      if (noAudio) {
-        self.on('loaderror', new Error('No audio support.'));
-        return;
-      }
-
-      // loop through source URLs and pick the first one that is compatible
-      for (var i=0; i<self._urls.length; i++) {
-        var ext, urlItem;
-
-        if (self._format) {
-          // use specified audio format if available
-          ext = self._format;
-        } else {
-          // figure out the filetype (whether an extension or base64 data)
-          urlItem = self._urls[i];
-          ext = /^data:audio\/([^;,]+);/i.exec(urlItem);
-          if (!ext) {
-            ext = /\.([^.]+)$/.exec(urlItem.split('?', 1)[0]);
-          }
-
-          if (ext) {
-            ext = ext[1].toLowerCase();
-          } else {
-            self.on('loaderror', new Error('Could not extract format from passed URLs, please add format parameter.'));
-            return;
-          }
-        }
-
-        if (codecs[ext]) {
-          url = self._urls[i];
-          break;
-        }
-      }
-
-      if (!url) {
-        self.on('loaderror', new Error('No codec support for selected audio sources.'));
-        return;
-      }
-
-      self._src = url;
-
-      if (self._webAudio) {
-        loadBuffer(self, url);
-      } else {
-        var newNode = new Audio();
-
-        // listen for errors with HTML5 audio (http://dev.w3.org/html5/spec-author-view/spec.html#mediaerror)
-        newNode.addEventListener('error', function () {
-          if (newNode.error && newNode.error.code === 4) {
-            HowlerGlobal.noAudio = true;
-          }
-
-          self.on('loaderror', {type: newNode.error ? newNode.error.code : 0});
-        }, false);
-
-        self._audioNode.push(newNode);
-
-        // setup the new audio node
-        newNode.src = url;
-        newNode._pos = 0;
-        newNode.preload = 'auto';
-        newNode.volume = (Howler._muted) ? 0 : self._volume * Howler.volume();
-
-        // setup the event listener to start playing the sound
-        // as soon as it has buffered enough
-        var listener = function() {
-          // round up the duration when using HTML5 Audio to account for the lower precision
-          self._duration = Math.ceil(newNode.duration * 10) / 10;
-
-          // setup a sprite if none is defined
-          if (Object.getOwnPropertyNames(self._sprite).length === 0) {
-            self._sprite = {_default: [0, self._duration * 1000]};
-          }
-
-          if (!self._loaded) {
-            self._loaded = true;
-            self.on('load');
-          }
-
-          if (self._autoplay) {
-            self.play();
-          }
-
-          // clear the event listener
-          newNode.removeEventListener('canplaythrough', listener, false);
-        };
-        newNode.addEventListener('canplaythrough', listener, false);
-        newNode.load();
-      }
-
-      return self;
-    },
-
-    /**
-     * Get/set the URLs to be pulled from to play in this source.
-     * @param  {Array} urls  Arry of URLs to load from
-     * @return {Howl}        Returns self or the current URLs
-     */
-    urls: function(urls) {
-      var self = this;
-
-      if (urls) {
-        self.stop();
-        self._urls = (typeof urls === 'string') ? [urls] : urls;
-        self._loaded = false;
-        self.load();
-
-        return self;
-      } else {
-        return self._urls;
-      }
-    },
-
-    /**
-     * Play a sound from the current time (0 by default).
-     * @param  {String}   sprite   (optional) Plays from the specified position in the sound sprite definition.
-     * @param  {Function} callback (optional) Returns the unique playback id for this sound instance.
-     * @return {Howl}
-     */
-    play: function(sprite, callback) {
-      var self = this;
-
-      // if no sprite was passed but a callback was, update the variables
-      if (typeof sprite === 'function') {
-        callback = sprite;
-      }
-
-      // use the default sprite if none is passed
-      if (!sprite || typeof sprite === 'function') {
-        sprite = '_default';
-      }
-
-      // if the sound hasn't been loaded, add it to the event queue
-      if (!self._loaded) {
-        self.on('load', function() {
-          self.play(sprite, callback);
-        });
-
-        return self;
-      }
-
-      // if the sprite doesn't exist, play nothing
-      if (!self._sprite[sprite]) {
-        if (typeof callback === 'function') callback();
-        return self;
-      }
-
-      // get the node to playback
-      self._inactiveNode(function(node) {
-        // persist the sprite being played
-        node._sprite = sprite;
-
-        // determine where to start playing from
-        var pos = (node._pos > 0) ? node._pos : self._sprite[sprite][0] / 1000;
-
-        // determine how long to play for
-        var duration = 0;
-        if (self._webAudio) {
-          duration = self._sprite[sprite][1] / 1000 - node._pos;
-          if (node._pos > 0) {
-            pos = self._sprite[sprite][0] / 1000 + pos;
-          }
-        } else {
-          duration = self._sprite[sprite][1] / 1000 - (pos - self._sprite[sprite][0] / 1000);
-        }
-
-        // determine if this sound should be looped
-        var loop = !!(self._loop || self._sprite[sprite][2]);
-
-        // set timer to fire the 'onend' event
-        var soundId = (typeof callback === 'string') ? callback : Math.round(Date.now() * Math.random()) + '',
-          timerId;
-        (function() {
-          var data = {
-            id: soundId,
-            sprite: sprite,
-            loop: loop
-          };
-          timerId = setTimeout(function() {
-            // if looping, restart the track
-            if (!self._webAudio && loop) {
-              self.stop(data.id).play(sprite, data.id);
-            }
-
-            // set web audio node to paused at end
-            if (self._webAudio && !loop) {
-              self._nodeById(data.id).paused = true;
-              self._nodeById(data.id)._pos = 0;
-
-              // clear the end timer
-              self._clearEndTimer(data.id);
-            }
-
-            // end the track if it is HTML audio and a sprite
-            if (!self._webAudio && !loop) {
-              self.stop(data.id);
-            }
-
-            // fire ended event
-            self.on('end', soundId);
-          }, (duration / self._rate) * 1000);
-
-          // store the reference to the timer
-          self._onendTimer.push({timer: timerId, id: data.id});
-        })();
-
-        if (self._webAudio) {
-          var loopStart = self._sprite[sprite][0] / 1000,
-            loopEnd = self._sprite[sprite][1] / 1000;
-
-          // set the play id to this node and load into context
-          node.id = soundId;
-          node.paused = false;
-          refreshBuffer(self, [loop, loopStart, loopEnd], soundId);
-          self._playStart = ctx.currentTime;
-          node.gain.value = self._volume;
-
-          if (typeof node.bufferSource.start === 'undefined') {
-            loop ? node.bufferSource.noteGrainOn(0, pos, 86400) : node.bufferSource.noteGrainOn(0, pos, duration);
-          } else {
-            loop ? node.bufferSource.start(0, pos, 86400) : node.bufferSource.start(0, pos, duration);
-          }
-        } else {
-          if (node.readyState === 4 || !node.readyState && navigator.isCocoonJS) {
-            node.readyState = 4;
-            node.id = soundId;
-            node.currentTime = pos;
-            node.muted = Howler._muted || node.muted;
-            node.volume = self._volume * Howler.volume();
-            setTimeout(function() { node.play(); }, 0);
-          } else {
-            self._clearEndTimer(soundId);
-
-            (function(){
-              var sound = self,
-                playSprite = sprite,
-                fn = callback,
-                newNode = node;
-              var listener = function() {
-                sound.play(playSprite, fn);
-
-                // clear the event listener
-                newNode.removeEventListener('canplaythrough', listener, false);
-              };
-              newNode.addEventListener('canplaythrough', listener, false);
-            })();
-
-            return self;
-          }
-        }
-
-        // fire the play event and send the soundId back in the callback
-        self.on('play');
-        if (typeof callback === 'function') callback(soundId);
-
-        return self;
-      });
-
-      return self;
-    },
-
-    /**
-     * Pause playback and save the current position.
-     * @param {String} id (optional) The play instance ID.
-     * @return {Howl}
-     */
-    pause: function(id) {
-      var self = this;
-
-      // if the sound hasn't been loaded, add it to the event queue
-      if (!self._loaded) {
-        self.on('play', function() {
-          self.pause(id);
-        });
-
-        return self;
-      }
-
-      // clear 'onend' timer
-      self._clearEndTimer(id);
-
-      var activeNode = (id) ? self._nodeById(id) : self._activeNode();
-      if (activeNode) {
-        activeNode._pos = self.pos(null, id);
-
-        if (self._webAudio) {
-          // make sure the sound has been created
-          if (!activeNode.bufferSource || activeNode.paused) {
-            return self;
-          }
-
-          activeNode.paused = true;
-          if (typeof activeNode.bufferSource.stop === 'undefined') {
-            activeNode.bufferSource.noteOff(0);
-          } else {
-            activeNode.bufferSource.stop(0);
-          }
-        } else {
-          activeNode.pause();
-        }
-      }
-
-      self.on('pause');
-
-      return self;
-    },
-
-    /**
-     * Stop playback and reset to start.
-     * @param  {String} id  (optional) The play instance ID.
-     * @return {Howl}
-     */
-    stop: function(id) {
-      var self = this;
-
-      // if the sound hasn't been loaded, add it to the event queue
-      if (!self._loaded) {
-        self.on('play', function() {
-          self.stop(id);
-        });
-
-        return self;
-      }
-
-      // clear 'onend' timer
-      self._clearEndTimer(id);
-
-      var activeNode = (id) ? self._nodeById(id) : self._activeNode();
-      if (activeNode) {
-        activeNode._pos = 0;
-
-        if (self._webAudio) {
-          // make sure the sound has been created
-          if (!activeNode.bufferSource || activeNode.paused) {
-            return self;
-          }
-
-          activeNode.paused = true;
-
-          if (typeof activeNode.bufferSource.stop === 'undefined') {
-            activeNode.bufferSource.noteOff(0);
-          } else {
-            activeNode.bufferSource.stop(0);
-          }
-        } else if (!isNaN(activeNode.duration)) {
-          activeNode.pause();
-          activeNode.currentTime = 0;
-        }
-      }
-
-      return self;
-    },
-
-    /**
-     * Mute this sound.
-     * @param  {String} id (optional) The play instance ID.
-     * @return {Howl}
-     */
-    mute: function(id) {
-      var self = this;
-
-      // if the sound hasn't been loaded, add it to the event queue
-      if (!self._loaded) {
-        self.on('play', function() {
-          self.mute(id);
-        });
-
-        return self;
-      }
-
-      var activeNode = (id) ? self._nodeById(id) : self._activeNode();
-      if (activeNode) {
-        if (self._webAudio) {
-          activeNode.gain.value = 0;
-        } else {
-          activeNode.muted = true;
-        }
-      }
-
-      return self;
-    },
-
-    /**
-     * Unmute this sound.
-     * @param  {String} id (optional) The play instance ID.
-     * @return {Howl}
-     */
-    unmute: function(id) {
-      var self = this;
-
-      // if the sound hasn't been loaded, add it to the event queue
-      if (!self._loaded) {
-        self.on('play', function() {
-          self.unmute(id);
-        });
-
-        return self;
-      }
-
-      var activeNode = (id) ? self._nodeById(id) : self._activeNode();
-      if (activeNode) {
-        if (self._webAudio) {
-          activeNode.gain.value = self._volume;
-        } else {
-          activeNode.muted = false;
-        }
-      }
-
-      return self;
-    },
-
-    /**
-     * Get/set volume of this sound.
-     * @param  {Float}  vol Volume from 0.0 to 1.0.
-     * @param  {String} id  (optional) The play instance ID.
-     * @return {Howl/Float}     Returns self or current volume.
-     */
-    volume: function(vol, id) {
-      var self = this;
-
-      // make sure volume is a number
-      vol = parseFloat(vol);
-
-      if (vol >= 0 && vol <= 1) {
-        self._volume = vol;
-
-        // if the sound hasn't been loaded, add it to the event queue
-        if (!self._loaded) {
-          self.on('play', function() {
-            self.volume(vol, id);
-          });
-
-          return self;
-        }
-
-        var activeNode = (id) ? self._nodeById(id) : self._activeNode();
-        if (activeNode) {
-          if (self._webAudio) {
-            activeNode.gain.value = vol;
-          } else {
-            activeNode.volume = vol * Howler.volume();
-          }
-        }
-
-        return self;
-      } else {
-        return self._volume;
-      }
-    },
-
-    /**
-     * Get/set whether to loop the sound.
-     * @param  {Boolean} loop To loop or not to loop, that is the question.
-     * @return {Howl/Boolean}      Returns self or current looping value.
-     */
-    loop: function(loop) {
-      var self = this;
-
-      if (typeof loop === 'boolean') {
-        self._loop = loop;
-
-        return self;
-      } else {
-        return self._loop;
-      }
-    },
-
-    /**
-     * Get/set sound sprite definition.
-     * @param  {Object} sprite Example: {spriteName: [offset, duration, loop]}
-     *                @param {Integer} offset   Where to begin playback in milliseconds
-     *                @param {Integer} duration How long to play in milliseconds
-     *                @param {Boolean} loop     (optional) Set true to loop this sprite
-     * @return {Howl}        Returns current sprite sheet or self.
-     */
-    sprite: function(sprite) {
-      var self = this;
-
-      if (typeof sprite === 'object') {
-        self._sprite = sprite;
-
-        return self;
-      } else {
-        return self._sprite;
-      }
-    },
-
-    /**
-     * Get/set the position of playback.
-     * @param  {Float}  pos The position to move current playback to.
-     * @param  {String} id  (optional) The play instance ID.
-     * @return {Howl/Float}      Returns self or current playback position.
-     */
-    pos: function(pos, id) {
-      var self = this;
-
-      // if the sound hasn't been loaded, add it to the event queue
-      if (!self._loaded) {
-        self.on('load', function() {
-          self.pos(pos);
-        });
-
-        return typeof pos === 'number' ? self : self._pos || 0;
-      }
-
-      // make sure we are dealing with a number for pos
-      pos = parseFloat(pos);
-
-      var activeNode = (id) ? self._nodeById(id) : self._activeNode();
-      if (activeNode) {
-        if (pos >= 0) {
-          self.pause(id);
-          activeNode._pos = pos;
-          self.play(activeNode._sprite, id);
-
-          return self;
-        } else {
-          return self._webAudio ? activeNode._pos + (ctx.currentTime - self._playStart) : activeNode.currentTime;
-        }
-      } else if (pos >= 0) {
-        return self;
-      } else {
-        // find the first inactive node to return the pos for
-        for (var i=0; i<self._audioNode.length; i++) {
-          if (self._audioNode[i].paused && self._audioNode[i].readyState === 4) {
-            return (self._webAudio) ? self._audioNode[i]._pos : self._audioNode[i].currentTime;
-          }
-        }
-      }
-    },
-
-    /**
-     * Get/set the 3D position of the audio source.
-     * The most common usage is to set the 'x' position
-     * to affect the left/right ear panning. Setting any value higher than
-     * 1.0 will begin to decrease the volume of the sound as it moves further away.
-     * NOTE: This only works with Web Audio API, HTML5 Audio playback
-     * will not be affected.
-     * @param  {Float}  x  The x-position of the playback from -1000.0 to 1000.0
-     * @param  {Float}  y  The y-position of the playback from -1000.0 to 1000.0
-     * @param  {Float}  z  The z-position of the playback from -1000.0 to 1000.0
-     * @param  {String} id (optional) The play instance ID.
-     * @return {Howl/Array}   Returns self or the current 3D position: [x, y, z]
-     */
-    pos3d: function(x, y, z, id) {
-      var self = this;
-
-      // set a default for the optional 'y' & 'z'
-      y = (typeof y === 'undefined' || !y) ? 0 : y;
-      z = (typeof z === 'undefined' || !z) ? -0.5 : z;
-
-      // if the sound hasn't been loaded, add it to the event queue
-      if (!self._loaded) {
-        self.on('play', function() {
-          self.pos3d(x, y, z, id);
-        });
-
-        return self;
-      }
-
-      if (x >= 0 || x < 0) {
-        if (self._webAudio) {
-          var activeNode = (id) ? self._nodeById(id) : self._activeNode();
-          if (activeNode) {
-            self._pos3d = [x, y, z];
-            activeNode.panner.setPosition(x, y, z);
-            activeNode.panner.panningModel = self._model || 'HRTF';
-          }
-        }
-      } else {
-        return self._pos3d;
-      }
-
-      return self;
-    },
-
-    /**
-     * Fade a currently playing sound between two volumes.
-     * @param  {Number}   from     The volume to fade from (0.0 to 1.0).
-     * @param  {Number}   to       The volume to fade to (0.0 to 1.0).
-     * @param  {Number}   len      Time in milliseconds to fade.
-     * @param  {Function} callback (optional) Fired when the fade is complete.
-     * @param  {String}   id       (optional) The play instance ID.
-     * @return {Howl}
-     */
-    fade: function(from, to, len, callback, id) {
-      var self = this,
-        diff = Math.abs(from - to),
-        dir = from > to ? 'down' : 'up',
-        steps = diff / 0.01,
-        stepTime = len / steps;
-
-      // if the sound hasn't been loaded, add it to the event queue
-      if (!self._loaded) {
-        self.on('load', function() {
-          self.fade(from, to, len, callback, id);
-        });
-
-        return self;
-      }
-
-      // set the volume to the start position
-      self.volume(from, id);
-
-      for (var i=1; i<=steps; i++) {
-        (function() {
-          var change = self._volume + (dir === 'up' ? 0.01 : -0.01) * i,
-            vol = Math.round(1000 * change) / 1000,
-            toVol = to;
-
-          setTimeout(function() {
-            self.volume(vol, id);
-
-            if (vol === toVol) {
-              if (callback) callback();
-            }
-          }, stepTime * i);
-        })();
-      }
-    },
-
-    /**
-     * [DEPRECATED] Fade in the current sound.
-     * @param  {Float}    to      Volume to fade to (0.0 to 1.0).
-     * @param  {Number}   len     Time in milliseconds to fade.
-     * @param  {Function} callback
-     * @return {Howl}
-     */
-    fadeIn: function(to, len, callback) {
-      return this.volume(0).play().fade(0, to, len, callback);
-    },
-
-    /**
-     * [DEPRECATED] Fade out the current sound and pause when finished.
-     * @param  {Float}    to       Volume to fade to (0.0 to 1.0).
-     * @param  {Number}   len      Time in milliseconds to fade.
-     * @param  {Function} callback
-     * @param  {String}   id       (optional) The play instance ID.
-     * @return {Howl}
-     */
-    fadeOut: function(to, len, callback, id) {
-      var self = this;
-
-      return self.fade(self._volume, to, len, function() {
-        if (callback) callback();
-        self.pause(id);
-
-        // fire ended event
-        self.on('end');
-      }, id);
-    },
-
-    /**
-     * Get an audio node by ID.
-     * @return {Howl} Audio node.
-     */
-    _nodeById: function(id) {
-      var self = this,
-        node = self._audioNode[0];
-
-      // find the node with this ID
-      for (var i=0; i<self._audioNode.length; i++) {
-        if (self._audioNode[i].id === id) {
-          node = self._audioNode[i];
-          break;
-        }
-      }
-
-      return node;
-    },
-
-    /**
-     * Get the first active audio node.
-     * @return {Howl} Audio node.
-     */
-    _activeNode: function() {
-      var self = this,
-        node = null;
-
-      // find the first playing node
-      for (var i=0; i<self._audioNode.length; i++) {
-        if (!self._audioNode[i].paused) {
-          node = self._audioNode[i];
-          break;
-        }
-      }
-
-      // remove excess inactive nodes
-      self._drainPool();
-
-      return node;
-    },
-
-    /**
-     * Get the first inactive audio node.
-     * If there is none, create a new one and add it to the pool.
-     * @param  {Function} callback Function to call when the audio node is ready.
-     */
-    _inactiveNode: function(callback) {
-      var self = this,
-        node = null;
-
-      // find first inactive node to recycle
-      for (var i=0; i<self._audioNode.length; i++) {
-        if (self._audioNode[i].paused && self._audioNode[i].readyState === 4) {
-          // send the node back for use by the new play instance
-          callback(self._audioNode[i]);
-          node = true;
-          break;
-        }
-      }
-
-      // remove excess inactive nodes
-      self._drainPool();
-
-      if (node) {
-        return;
-      }
-
-      // create new node if there are no inactives
-      var newNode;
-      if (self._webAudio) {
-        newNode = self._setupAudioNode();
-        callback(newNode);
-      } else {
-        self.load();
-        newNode = self._audioNode[self._audioNode.length - 1];
-
-        // listen for the correct load event and fire the callback
-        var listenerEvent = navigator.isCocoonJS ? 'canplaythrough' : 'loadedmetadata';
-        var listener = function() {
-          newNode.removeEventListener(listenerEvent, listener, false);
-          callback(newNode);
-        };
-        newNode.addEventListener(listenerEvent, listener, false);
-      }
-    },
-
-    /**
-     * If there are more than 5 inactive audio nodes in the pool, clear out the rest.
-     */
-    _drainPool: function() {
-      var self = this,
-        inactive = 0,
-        i;
-
-      // count the number of inactive nodes
-      for (i=0; i<self._audioNode.length; i++) {
-        if (self._audioNode[i].paused) {
-          inactive++;
-        }
-      }
-
-      // remove excess inactive nodes
-      for (i=self._audioNode.length-1; i>=0; i--) {
-        if (inactive <= 5) {
-          break;
-        }
-
-        if (self._audioNode[i].paused) {
-          // disconnect the audio source if using Web Audio
-          if (self._webAudio) {
-            self._audioNode[i].disconnect(0);
-          }
-
-          inactive--;
-          self._audioNode.splice(i, 1);
-        }
-      }
-    },
-
-    /**
-     * Clear 'onend' timeout before it ends.
-     * @param  {String} soundId  The play instance ID.
-     */
-    _clearEndTimer: function(soundId) {
-      var self = this,
-        index = -1;
-
-      // loop through the timers to find the one associated with this sound
-      for (var i=0; i<self._onendTimer.length; i++) {
-        if (self._onendTimer[i].id === soundId) {
-          index = i;
-          break;
-        }
-      }
-
-      var timer = self._onendTimer[index];
-      if (timer) {
-        clearTimeout(timer.timer);
-        self._onendTimer.splice(index, 1);
-      }
-    },
-
-    /**
-     * Setup the gain node and panner for a Web Audio instance.
-     * @return {Object} The new audio node.
-     */
-    _setupAudioNode: function() {
-      var self = this,
-        node = self._audioNode,
-        index = self._audioNode.length;
-
-      // create gain node
-      node[index] = (typeof ctx.createGain === 'undefined') ? ctx.createGainNode() : ctx.createGain();
-      node[index].gain.value = self._volume;
-      node[index].paused = true;
-      node[index]._pos = 0;
-      node[index].readyState = 4;
-      node[index].connect(masterGain);
-
-      // create the panner
-      node[index].panner = ctx.createPanner();
-      node[index].panner.panningModel = self._model || 'equalpower';
-      node[index].panner.setPosition(self._pos3d[0], self._pos3d[1], self._pos3d[2]);
-      node[index].panner.connect(node[index]);
-
-      return node[index];
-    },
-
-    /**
-     * Call/set custom events.
-     * @param  {String}   event Event type.
-     * @param  {Function} fn    Function to call.
-     * @return {Howl}
-     */
-    on: function(event, fn) {
-      var self = this,
-        events = self['_on' + event];
-
-      if (typeof fn === 'function') {
-        events.push(fn);
-      } else {
-        for (var i=0; i<events.length; i++) {
-          if (fn) {
-            events[i].call(self, fn);
-          } else {
-            events[i].call(self);
-          }
-        }
-      }
-
-      return self;
-    },
-
-    /**
-     * Remove a custom event.
-     * @param  {String}   event Event type.
-     * @param  {Function} fn    Listener to remove.
-     * @return {Howl}
-     */
-    off: function(event, fn) {
-      var self = this,
-        events = self['_on' + event];
-
-      if (fn) {
-        // loop through functions in the event for comparison
-        for (var i=0; i<events.length; i++) {
-          if (fn === events[i]) {
-            events.splice(i, 1);
-            break;
-          }
-        }
-      } else {
-        self['_on' + event] = [];
-      }
-
-      return self;
-    },
-
-    /**
-     * Unload and destroy the current Howl object.
-     * This will immediately stop all play instances attached to this sound.
-     */
-    unload: function() {
-      var self = this;
-
-      // stop playing any active nodes
-      var nodes = self._audioNode;
-      for (var i=0; i<self._audioNode.length; i++) {
-        // stop the sound if it is currently playing
-        if (!nodes[i].paused) {
-          self.stop(nodes[i].id);
-          self.on('end', nodes[i].id);
-        }
-
-        if (!self._webAudio) {
-          // remove the source if using HTML5 Audio
-          nodes[i].src = '';
-        } else {
-          // disconnect the output from the master gain
-          nodes[i].disconnect(0);
-        }
-      }
-
-      // make sure all timeouts are cleared
-      for (i=0; i<self._onendTimer.length; i++) {
-        clearTimeout(self._onendTimer[i].timer);
-      }
-
-      // remove the reference in the global Howler object
-      var index = Howler._howls.indexOf(self);
-      if (index !== null && index >= 0) {
-        Howler._howls.splice(index, 1);
-      }
-
-      // delete this sound from the cache
-      delete cache[self._src];
-      self = null;
-    }
-
-  };
-
-  // only define these functions when using WebAudio
-  if (usingWebAudio) {
-
-    /**
-     * Buffer a sound from URL (or from cache) and decode to audio source (Web Audio API).
-     * @param  {Object} obj The Howl object for the sound to load.
-     * @param  {String} url The path to the sound file.
-     */
-    var loadBuffer = function(obj, url) {
-      // check if the buffer has already been cached
-      if (url in cache) {
-        // set the duration from the cache
-        obj._duration = cache[url].duration;
-
-        // load the sound into this object
-        loadSound(obj);
-        return;
-      }
-
-      if (/^data:[^;]+;base64,/.test(url)) {
-        // Decode base64 data-URIs because some browsers cannot load data-URIs with XMLHttpRequest.
-        var data = atob(url.split(',')[1]);
-        var dataView = new Uint8Array(data.length);
-        for (var i=0; i<data.length; ++i) {
-          dataView[i] = data.charCodeAt(i);
-        }
-
-        decodeAudioData(dataView.buffer, obj, url);
-      } else {
-        // load the buffer from the URL
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', url, true);
-        xhr.responseType = 'arraybuffer';
-        xhr.onload = function() {
-          decodeAudioData(xhr.response, obj, url);
-        };
-        xhr.onerror = function() {
-          // if there is an error, switch the sound to HTML Audio
-          if (obj._webAudio) {
-            obj._buffer = true;
-            obj._webAudio = false;
-            obj._audioNode = [];
-            delete obj._gainNode;
-            delete cache[url];
-            obj.load();
-          }
-        };
-        try {
-          xhr.send();
-        } catch (e) {
-          xhr.onerror();
-        }
-      }
-    };
-
-    /**
-     * Decode audio data from an array buffer.
-     * @param  {ArrayBuffer} arraybuffer The audio data.
-     * @param  {Object} obj The Howl object for the sound to load.
-     * @param  {String} url The path to the sound file.
-     */
-    var decodeAudioData = function(arraybuffer, obj, url) {
-      // decode the buffer into an audio source
-      ctx.decodeAudioData(
-        arraybuffer,
-        function(buffer) {
-          if (buffer) {
-            cache[url] = buffer;
-            loadSound(obj, buffer);
-          }
-        },
-        function(err) {
-          obj.on('loaderror', err);
-        }
-      );
-    };
-
-    /**
-     * Finishes loading the Web Audio API sound and fires the loaded event
-     * @param  {Object}  obj    The Howl object for the sound to load.
-     * @param  {Objecct} buffer The decoded buffer sound source.
-     */
-    var loadSound = function(obj, buffer) {
-      // set the duration
-      obj._duration = (buffer) ? buffer.duration : obj._duration;
-
-      // setup a sprite if none is defined
-      if (Object.getOwnPropertyNames(obj._sprite).length === 0) {
-        obj._sprite = {_default: [0, obj._duration * 1000]};
-      }
-
-      // fire the loaded event
-      if (!obj._loaded) {
-        obj._loaded = true;
-        obj.on('load');
-      }
-
-      if (obj._autoplay) {
-        obj.play();
-      }
-    };
-
-    /**
-     * Load the sound back into the buffer source.
-     * @param  {Object} obj   The sound to load.
-     * @param  {Array}  loop  Loop boolean, pos, and duration.
-     * @param  {String} id    (optional) The play instance ID.
-     */
-    var refreshBuffer = function(obj, loop, id) {
-      // determine which node to connect to
-      var node = obj._nodeById(id);
-
-      // setup the buffer source for playback
-      node.bufferSource = ctx.createBufferSource();
-      node.bufferSource.buffer = cache[obj._src];
-      node.bufferSource.connect(node.panner);
-      node.bufferSource.loop = loop[0];
-      if (loop[0]) {
-        node.bufferSource.loopStart = loop[1];
-        node.bufferSource.loopEnd = loop[1] + loop[2];
-      }
-      node.bufferSource.playbackRate.value = obj._rate;
-    };
-
-  }
-
-  /**
-   * Add support for AMD (Asynchronous Module Definition) libraries such as require.js.
-   */
-  if (typeof define === 'function' && define.amd) {
-    define('howler',[],function() {
-      return {
-        Howler: Howler,
-        Howl: Howl
-      };
-    });
-  }
-
-  /**
-   * Add support for CommonJS libraries such as browserify.
-   */
-  if (typeof exports !== 'undefined') {
-    exports.Howler = Howler;
-    exports.Howl = Howl;
-  }
-
-  // define globally in case AMD is not available or available but not used
-
-  if (typeof window !== 'undefined') {
-    window.Howler = Howler;
-    window.Howl = Howl;
-  }
-
-})();
+// (function() {
+//   // setup
+//   var cache = {};
+
+//   // setup the audio context
+//   var ctx = null,
+//     usingWebAudio = true,
+//     noAudio = false;
+//   try {
+//     if (typeof AudioContext !== 'undefined') {
+//       ctx = new AudioContext();
+//     } else if (typeof webkitAudioContext !== 'undefined') {
+//       ctx = new webkitAudioContext();
+//     } else {
+//       usingWebAudio = false;
+//     }
+//   } catch(e) {
+//     usingWebAudio = false;
+//   }
+
+//   if (!usingWebAudio) {
+//     if (typeof Audio !== 'undefined') {
+//       try {
+//         new Audio();
+//       } catch(e) {
+//         noAudio = true;
+//       }
+//     } else {
+//       noAudio = true;
+//     }
+//   }
+
+//   // create a master gain node
+//   if (usingWebAudio) {
+//     var masterGain = (typeof ctx.createGain === 'undefined') ? ctx.createGainNode() : ctx.createGain();
+//     masterGain.gain.value = 1;
+//     masterGain.connect(ctx.destination);
+//   }
+
+//   // create global controller
+//   var HowlerGlobal = function(codecs) {
+//     this._volume = 1;
+//     this._muted = false;
+//     this.usingWebAudio = usingWebAudio;
+//     this.ctx = ctx;
+//     this.noAudio = noAudio;
+//     this._howls = [];
+//     this._codecs = codecs;
+//     this.iOSAutoEnable = true;
+//   };
+//   HowlerGlobal.prototype = {
+//     /**
+//      * Get/set the global volume for all sounds.
+//      * @param  {Float} vol Volume from 0.0 to 1.0.
+//      * @return {Howler/Float}     Returns self or current volume.
+//      */
+//     volume: function(vol) {
+//       var self = this;
+
+//       // make sure volume is a number
+//       vol = parseFloat(vol);
+
+//       if (vol >= 0 && vol <= 1) {
+//         self._volume = vol;
+
+//         if (usingWebAudio) {
+//           masterGain.gain.value = vol;
+//         }
+
+//         // loop through cache and change volume of all nodes that are using HTML5 Audio
+//         for (var key in self._howls) {
+//           if (self._howls.hasOwnProperty(key) && self._howls[key]._webAudio === false) {
+//             // loop through the audio nodes
+//             for (var i=0; i<self._howls[key]._audioNode.length; i++) {
+//               self._howls[key]._audioNode[i].volume = self._howls[key]._volume * self._volume;
+//             }
+//           }
+//         }
+
+//         return self;
+//       }
+
+//       // return the current global volume
+//       return (usingWebAudio) ? masterGain.gain.value : self._volume;
+//     },
+
+//     /**
+//      * Mute all sounds.
+//      * @return {Howler}
+//      */
+//     mute: function() {
+//       this._setMuted(true);
+
+//       return this;
+//     },
+
+//     /**
+//      * Unmute all sounds.
+//      * @return {Howler}
+//      */
+//     unmute: function() {
+//       this._setMuted(false);
+
+//       return this;
+//     },
+
+//     /**
+//      * Handle muting and unmuting globally.
+//      * @param  {Boolean} muted Is muted or not.
+//      */
+//     _setMuted: function(muted) {
+//       var self = this;
+
+//       self._muted = muted;
+
+//       if (usingWebAudio) {
+//         masterGain.gain.value = muted ? 0 : self._volume;
+//       }
+
+//       for (var key in self._howls) {
+//         if (self._howls.hasOwnProperty(key) && self._howls[key]._webAudio === false) {
+//           // loop through the audio nodes
+//           for (var i=0; i<self._howls[key]._audioNode.length; i++) {
+//             self._howls[key]._audioNode[i].muted = muted;
+//           }
+//         }
+//       }
+//     },
+
+//     /**
+//      * Check for codec support.
+//      * @param  {String} ext Audio file extension.
+//      * @return {Boolean}
+//      */
+//     codecs: function(ext) {
+//       return this._codecs[ext];
+//     },
+
+//     /**
+//      * iOS will only allow audio to be played after a user interaction.
+//      * Attempt to automatically unlock audio on the first user interaction.
+//      * Concept from: http://paulbakaus.com/tutorials/html5/web-audio-on-ios/
+//      * @return {Howler}
+//      */
+//     _enableiOSAudio: function() {
+//       var self = this;
+
+//       // only run this on iOS if audio isn't already eanbled
+//       if (ctx && (self._iOSEnabled || !/iPhone|iPad|iPod/i.test(navigator.userAgent))) {
+//         return;
+//       }
+
+//       self._iOSEnabled = false;
+
+//       // call this method on touch start to create and play a buffer,
+//       // then check if the audio actually played to determine if
+//       // audio has now been unlocked on iOS
+//       var unlock = function() {
+//         // create an empty buffer
+//         var buffer = ctx.createBuffer(1, 1, 22050);
+//         var source = ctx.createBufferSource();
+//         source.buffer = buffer;
+//         source.connect(ctx.destination);
+
+//         // play the empty buffer
+//         if (typeof source.start === 'undefined') {
+//           source.noteOn(0);
+//         } else {
+//           source.start(0);
+//         }
+
+//         // setup a timeout to check that we are unlocked on the next event loop
+//         setTimeout(function() {
+//           if ((source.playbackState === source.PLAYING_STATE || source.playbackState === source.FINISHED_STATE)) {
+//             // update the unlocked state and prevent this check from happening again
+//             self._iOSEnabled = true;
+//             self.iOSAutoEnable = false;
+
+//             // remove the touch start listener
+//             // @TODO - RESN CW - modified this to make it acually work on iPads
+//             // window.removeEventListener('touchend', unlock, false);
+//             document.removeEventListener('touchstart', unlock, false);
+//           }
+//         }, 0);
+//       };
+
+//       // setup a touch start listener to attempt an unlock in
+//       // @TODO - RESN CW - modified this to make it acually work on iPads
+//       // window.addEventListener('touchend', unlock, false);
+//       document.addEventListener('touchstart', unlock, false) ;
+
+//       return self;
+//     }
+//   };
+
+//   // check for browser codec support
+//   var audioTest = null;
+//   var codecs = {};
+//   if (!noAudio) {
+//     audioTest = new Audio();
+//     codecs = {
+//       mp3: !!audioTest.canPlayType('audio/mpeg;').replace(/^no$/, ''),
+//       opus: !!audioTest.canPlayType('audio/ogg; codecs="opus"').replace(/^no$/, ''),
+//       ogg: !!audioTest.canPlayType('audio/ogg; codecs="vorbis"').replace(/^no$/, ''),
+//       wav: !!audioTest.canPlayType('audio/wav; codecs="1"').replace(/^no$/, ''),
+//       aac: !!audioTest.canPlayType('audio/aac;').replace(/^no$/, ''),
+//       m4a: !!(audioTest.canPlayType('audio/x-m4a;') || audioTest.canPlayType('audio/m4a;') || audioTest.canPlayType('audio/aac;')).replace(/^no$/, ''),
+//       mp4: !!(audioTest.canPlayType('audio/x-mp4;') || audioTest.canPlayType('audio/mp4;') || audioTest.canPlayType('audio/aac;')).replace(/^no$/, ''),
+//       weba: !!audioTest.canPlayType('audio/webm; codecs="vorbis"').replace(/^no$/, '')
+//     };
+//   }
+
+//   // allow access to the global audio controls
+//   var Howler = new HowlerGlobal(codecs);
+
+//   // setup the audio object
+//   var Howl = function(o) {
+//     var self = this;
+
+//     // setup the defaults
+//     self._autoplay = o.autoplay || false;
+//     self._buffer = o.buffer || false;
+//     self._duration = o.duration || 0;
+//     self._format = o.format || null;
+//     self._loop = o.loop || false;
+//     self._loaded = false;
+//     self._sprite = o.sprite || {};
+//     self._src = o.src || '';
+//     self._pos3d = o.pos3d || [0, 0, -0.5];
+//     self._volume = o.volume !== undefined ? o.volume : 1;
+//     self._urls = o.urls || [];
+//     self._rate = o.rate || 1;
+
+//     // allow forcing of a specific panningModel ('equalpower' or 'HRTF'),
+//     // if none is specified, defaults to 'equalpower' and switches to 'HRTF'
+//     // if 3d sound is used
+//     self._model = o.model || null;
+
+//     // setup event functions
+//     self._onload = [o.onload || function() {}];
+//     self._onloaderror = [o.onloaderror || function() {}];
+//     self._onend = [o.onend || function() {}];
+//     self._onpause = [o.onpause || function() {}];
+//     self._onplay = [o.onplay || function() {}];
+
+//     self._onendTimer = [];
+
+//     // Web Audio or HTML5 Audio?
+//     self._webAudio = usingWebAudio && !self._buffer;
+
+//     // check if we need to fall back to HTML5 Audio
+//     self._audioNode = [];
+//     if (self._webAudio) {
+//       self._setupAudioNode();
+//     }
+
+//     // automatically try to enable audio on iOS
+//     if (typeof ctx !== 'undefined' && ctx && Howler.iOSAutoEnable) {
+//       Howler._enableiOSAudio();
+//     }
+
+//     // add this to an array of Howl's to allow global control
+//     Howler._howls.push(self);
+
+//     // load the track
+//     self.load();
+//   };
+
+//   // setup all of the methods
+//   Howl.prototype = {
+//     /**
+//      * Load an audio file.
+//      * @return {Howl}
+//      */
+//     load: function() {
+//       var self = this,
+//         url = null;
+
+//       // if no audio is available, quit immediately
+//       if (noAudio) {
+//         self.on('loaderror', new Error('No audio support.'));
+//         return;
+//       }
+
+//       // loop through source URLs and pick the first one that is compatible
+//       for (var i=0; i<self._urls.length; i++) {
+//         var ext, urlItem;
+
+//         if (self._format) {
+//           // use specified audio format if available
+//           ext = self._format;
+//         } else {
+//           // figure out the filetype (whether an extension or base64 data)
+//           urlItem = self._urls[i];
+//           ext = /^data:audio\/([^;,]+);/i.exec(urlItem);
+//           if (!ext) {
+//             ext = /\.([^.]+)$/.exec(urlItem.split('?', 1)[0]);
+//           }
+
+//           if (ext) {
+//             ext = ext[1].toLowerCase();
+//           } else {
+//             self.on('loaderror', new Error('Could not extract format from passed URLs, please add format parameter.'));
+//             return;
+//           }
+//         }
+
+//         if (codecs[ext]) {
+//           url = self._urls[i];
+//           break;
+//         }
+//       }
+
+//       if (!url) {
+//         self.on('loaderror', new Error('No codec support for selected audio sources.'));
+//         return;
+//       }
+
+//       self._src = url;
+
+//       if (self._webAudio) {
+//         loadBuffer(self, url);
+//       } else {
+//         var newNode = new Audio();
+
+//         // listen for errors with HTML5 audio (http://dev.w3.org/html5/spec-author-view/spec.html#mediaerror)
+//         newNode.addEventListener('error', function () {
+//           if (newNode.error && newNode.error.code === 4) {
+//             HowlerGlobal.noAudio = true;
+//           }
+
+//           self.on('loaderror', {type: newNode.error ? newNode.error.code : 0});
+//         }, false);
+
+//         self._audioNode.push(newNode);
+
+//         // setup the new audio node
+//         newNode.src = url;
+//         newNode._pos = 0;
+//         newNode.preload = 'auto';
+//         newNode.volume = (Howler._muted) ? 0 : self._volume * Howler.volume();
+
+//         // setup the event listener to start playing the sound
+//         // as soon as it has buffered enough
+//         var listener = function() {
+//           // round up the duration when using HTML5 Audio to account for the lower precision
+//           self._duration = Math.ceil(newNode.duration * 10) / 10;
+
+//           // setup a sprite if none is defined
+//           if (Object.getOwnPropertyNames(self._sprite).length === 0) {
+//             self._sprite = {_default: [0, self._duration * 1000]};
+//           }
+
+//           if (!self._loaded) {
+//             self._loaded = true;
+//             self.on('load');
+//           }
+
+//           if (self._autoplay) {
+//             self.play();
+//           }
+
+//           // clear the event listener
+//           newNode.removeEventListener('canplaythrough', listener, false);
+//         };
+//         newNode.addEventListener('canplaythrough', listener, false);
+//         newNode.load();
+//       }
+
+//       return self;
+//     },
+
+//     /**
+//      * Get/set the URLs to be pulled from to play in this source.
+//      * @param  {Array} urls  Arry of URLs to load from
+//      * @return {Howl}        Returns self or the current URLs
+//      */
+//     urls: function(urls) {
+//       var self = this;
+
+//       if (urls) {
+//         self.stop();
+//         self._urls = (typeof urls === 'string') ? [urls] : urls;
+//         self._loaded = false;
+//         self.load();
+
+//         return self;
+//       } else {
+//         return self._urls;
+//       }
+//     },
+
+//     /**
+//      * Play a sound from the current time (0 by default).
+//      * @param  {String}   sprite   (optional) Plays from the specified position in the sound sprite definition.
+//      * @param  {Function} callback (optional) Returns the unique playback id for this sound instance.
+//      * @return {Howl}
+//      */
+//     play: function(sprite, callback) {
+//       var self = this;
+
+//       // if no sprite was passed but a callback was, update the variables
+//       if (typeof sprite === 'function') {
+//         callback = sprite;
+//       }
+
+//       // use the default sprite if none is passed
+//       if (!sprite || typeof sprite === 'function') {
+//         sprite = '_default';
+//       }
+
+//       // if the sound hasn't been loaded, add it to the event queue
+//       if (!self._loaded) {
+//         self.on('load', function() {
+//           self.play(sprite, callback);
+//         });
+
+//         return self;
+//       }
+
+//       // if the sprite doesn't exist, play nothing
+//       if (!self._sprite[sprite]) {
+//         if (typeof callback === 'function') callback();
+//         return self;
+//       }
+
+//       // get the node to playback
+//       self._inactiveNode(function(node) {
+//         // persist the sprite being played
+//         node._sprite = sprite;
+
+//         // determine where to start playing from
+//         var pos = (node._pos > 0) ? node._pos : self._sprite[sprite][0] / 1000;
+
+//         // determine how long to play for
+//         var duration = 0;
+//         if (self._webAudio) {
+//           duration = self._sprite[sprite][1] / 1000 - node._pos;
+//           if (node._pos > 0) {
+//             pos = self._sprite[sprite][0] / 1000 + pos;
+//           }
+//         } else {
+//           duration = self._sprite[sprite][1] / 1000 - (pos - self._sprite[sprite][0] / 1000);
+//         }
+
+//         // determine if this sound should be looped
+//         var loop = !!(self._loop || self._sprite[sprite][2]);
+
+//         // set timer to fire the 'onend' event
+//         var soundId = (typeof callback === 'string') ? callback : Math.round(Date.now() * Math.random()) + '',
+//           timerId;
+//         (function() {
+//           var data = {
+//             id: soundId,
+//             sprite: sprite,
+//             loop: loop
+//           };
+//           timerId = setTimeout(function() {
+//             // if looping, restart the track
+//             if (!self._webAudio && loop) {
+//               self.stop(data.id).play(sprite, data.id);
+//             }
+
+//             // set web audio node to paused at end
+//             if (self._webAudio && !loop) {
+//               self._nodeById(data.id).paused = true;
+//               self._nodeById(data.id)._pos = 0;
+
+//               // clear the end timer
+//               self._clearEndTimer(data.id);
+//             }
+
+//             // end the track if it is HTML audio and a sprite
+//             if (!self._webAudio && !loop) {
+//               self.stop(data.id);
+//             }
+
+//             // fire ended event
+//             self.on('end', soundId);
+//           }, (duration / self._rate) * 1000);
+
+//           // store the reference to the timer
+//           self._onendTimer.push({timer: timerId, id: data.id});
+//         })();
+
+//         if (self._webAudio) {
+//           var loopStart = self._sprite[sprite][0] / 1000,
+//             loopEnd = self._sprite[sprite][1] / 1000;
+
+//           // set the play id to this node and load into context
+//           node.id = soundId;
+//           node.paused = false;
+//           refreshBuffer(self, [loop, loopStart, loopEnd], soundId);
+//           self._playStart = ctx.currentTime;
+//           node.gain.value = self._volume;
+
+//           if (typeof node.bufferSource.start === 'undefined') {
+//             loop ? node.bufferSource.noteGrainOn(0, pos, 86400) : node.bufferSource.noteGrainOn(0, pos, duration);
+//           } else {
+//             loop ? node.bufferSource.start(0, pos, 86400) : node.bufferSource.start(0, pos, duration);
+//           }
+//         } else {
+//           if (node.readyState === 4 || !node.readyState && navigator.isCocoonJS) {
+//             node.readyState = 4;
+//             node.id = soundId;
+//             node.currentTime = pos;
+//             node.muted = Howler._muted || node.muted;
+//             node.volume = self._volume * Howler.volume();
+//             setTimeout(function() { node.play(); }, 0);
+//           } else {
+//             self._clearEndTimer(soundId);
+
+//             (function(){
+//               var sound = self,
+//                 playSprite = sprite,
+//                 fn = callback,
+//                 newNode = node;
+//               var listener = function() {
+//                 sound.play(playSprite, fn);
+
+//                 // clear the event listener
+//                 newNode.removeEventListener('canplaythrough', listener, false);
+//               };
+//               newNode.addEventListener('canplaythrough', listener, false);
+//             })();
+
+//             return self;
+//           }
+//         }
+
+//         // fire the play event and send the soundId back in the callback
+//         self.on('play');
+//         if (typeof callback === 'function') callback(soundId);
+
+//         return self;
+//       });
+
+//       return self;
+//     },
+
+//     /**
+//      * Pause playback and save the current position.
+//      * @param {String} id (optional) The play instance ID.
+//      * @return {Howl}
+//      */
+//     pause: function(id) {
+//       var self = this;
+
+//       // if the sound hasn't been loaded, add it to the event queue
+//       if (!self._loaded) {
+//         self.on('play', function() {
+//           self.pause(id);
+//         });
+
+//         return self;
+//       }
+
+//       // clear 'onend' timer
+//       self._clearEndTimer(id);
+
+//       var activeNode = (id) ? self._nodeById(id) : self._activeNode();
+//       if (activeNode) {
+//         activeNode._pos = self.pos(null, id);
+
+//         if (self._webAudio) {
+//           // make sure the sound has been created
+//           if (!activeNode.bufferSource || activeNode.paused) {
+//             return self;
+//           }
+
+//           activeNode.paused = true;
+//           if (typeof activeNode.bufferSource.stop === 'undefined') {
+//             activeNode.bufferSource.noteOff(0);
+//           } else {
+//             activeNode.bufferSource.stop(0);
+//           }
+//         } else {
+//           activeNode.pause();
+//         }
+//       }
+
+//       self.on('pause');
+
+//       return self;
+//     },
+
+//     /**
+//      * Stop playback and reset to start.
+//      * @param  {String} id  (optional) The play instance ID.
+//      * @return {Howl}
+//      */
+//     stop: function(id) {
+//       var self = this;
+
+//       // if the sound hasn't been loaded, add it to the event queue
+//       if (!self._loaded) {
+//         self.on('play', function() {
+//           self.stop(id);
+//         });
+
+//         return self;
+//       }
+
+//       // clear 'onend' timer
+//       self._clearEndTimer(id);
+
+//       var activeNode = (id) ? self._nodeById(id) : self._activeNode();
+//       if (activeNode) {
+//         activeNode._pos = 0;
+
+//         if (self._webAudio) {
+//           // make sure the sound has been created
+//           if (!activeNode.bufferSource || activeNode.paused) {
+//             return self;
+//           }
+
+//           activeNode.paused = true;
+
+//           if (typeof activeNode.bufferSource.stop === 'undefined') {
+//             activeNode.bufferSource.noteOff(0);
+//           } else {
+//             activeNode.bufferSource.stop(0);
+//           }
+//         } else if (!isNaN(activeNode.duration)) {
+//           activeNode.pause();
+//           activeNode.currentTime = 0;
+//         }
+//       }
+
+//       return self;
+//     },
+
+//     /**
+//      * Mute this sound.
+//      * @param  {String} id (optional) The play instance ID.
+//      * @return {Howl}
+//      */
+//     mute: function(id) {
+//       var self = this;
+
+//       // if the sound hasn't been loaded, add it to the event queue
+//       if (!self._loaded) {
+//         self.on('play', function() {
+//           self.mute(id);
+//         });
+
+//         return self;
+//       }
+
+//       var activeNode = (id) ? self._nodeById(id) : self._activeNode();
+//       if (activeNode) {
+//         if (self._webAudio) {
+//           activeNode.gain.value = 0;
+//         } else {
+//           activeNode.muted = true;
+//         }
+//       }
+
+//       return self;
+//     },
+
+//     /**
+//      * Unmute this sound.
+//      * @param  {String} id (optional) The play instance ID.
+//      * @return {Howl}
+//      */
+//     unmute: function(id) {
+//       var self = this;
+
+//       // if the sound hasn't been loaded, add it to the event queue
+//       if (!self._loaded) {
+//         self.on('play', function() {
+//           self.mute(id);
+//         });
+
+//         return self;
+//       }
+
+//       var activeNode = (id) ? self._nodeById(id) : self._activeNode();
+//       if (activeNode) {
+//         if (self._webAudio) {
+//           activeNode.gain.value = self._volume;
+//         } else {
+//           activeNode.muted = false;
+//         }
+//       }
+
+//       return self;
+//     },
+
+//     /**
+//      * Get/set volume of this sound.
+//      * @param  {Float}  vol Volume from 0.0 to 1.0.
+//      * @param  {String} id  (optional) The play instance ID.
+//      * @return {Howl/Float}     Returns self or current volume.
+//      */
+//     volume: function(vol, id) {
+//       var self = this;
+
+//       // make sure volume is a number
+//       vol = parseFloat(vol);
+
+//       if (vol >= 0 && vol <= 1) {
+//         self._volume = vol;
+
+//         // if the sound hasn't been loaded, add it to the event queue
+//         if (!self._loaded) {
+//           self.on('play', function() {
+//             self.volume(vol, id);
+//           });
+
+//           return self;
+//         }
+
+//         var activeNode = (id) ? self._nodeById(id) : self._activeNode();
+//         if (activeNode) {
+//           if (self._webAudio) {
+//             activeNode.gain.value = vol;
+//           } else {
+//             activeNode.volume = vol * Howler.volume();
+//           }
+//         }
+
+//         return self;
+//       } else {
+//         return self._volume;
+//       }
+//     },
+
+//     /**
+//      * Get/set whether to loop the sound.
+//      * @param  {Boolean} loop To loop or not to loop, that is the question.
+//      * @return {Howl/Boolean}      Returns self or current looping value.
+//      */
+//     loop: function(loop) {
+//       var self = this;
+
+//       if (typeof loop === 'boolean') {
+//         self._loop = loop;
+
+//         return self;
+//       } else {
+//         return self._loop;
+//       }
+//     },
+
+//     /**
+//      * Get/set sound sprite definition.
+//      * @param  {Object} sprite Example: {spriteName: [offset, duration, loop]}
+//      *                @param {Integer} offset   Where to begin playback in milliseconds
+//      *                @param {Integer} duration How long to play in milliseconds
+//      *                @param {Boolean} loop     (optional) Set true to loop this sprite
+//      * @return {Howl}        Returns current sprite sheet or self.
+//      */
+//     sprite: function(sprite) {
+//       var self = this;
+
+//       if (typeof sprite === 'object') {
+//         self._sprite = sprite;
+
+//         return self;
+//       } else {
+//         return self._sprite;
+//       }
+//     },
+
+//     /**
+//      * Get/set the position of playback.
+//      * @param  {Float}  pos The position to move current playback to.
+//      * @param  {String} id  (optional) The play instance ID.
+//      * @return {Howl/Float}      Returns self or current playback position.
+//      */
+//     pos: function(pos, id) {
+//       var self = this;
+
+//       // if the sound hasn't been loaded, add it to the event queue
+//       if (!self._loaded) {
+//         self.on('load', function() {
+//           self.pos(pos);
+//         });
+
+//         return typeof pos === 'number' ? self : self._pos || 0;
+//       }
+
+//       // make sure we are dealing with a number for pos
+//       pos = parseFloat(pos);
+
+//       var activeNode = (id) ? self._nodeById(id) : self._activeNode();
+//       if (activeNode) {
+//         if (pos >= 0) {
+//           self.pause(id);
+//           activeNode._pos = pos;
+//           self.play(activeNode._sprite, id);
+
+//           return self;
+//         } else {
+//           return self._webAudio ? activeNode._pos + (ctx.currentTime - self._playStart) : activeNode.currentTime;
+//         }
+//       } else if (pos >= 0) {
+//         return self;
+//       } else {
+//         // find the first inactive node to return the pos for
+//         for (var i=0; i<self._audioNode.length; i++) {
+//           if (self._audioNode[i].paused && self._audioNode[i].readyState === 4) {
+//             return (self._webAudio) ? self._audioNode[i]._pos : self._audioNode[i].currentTime;
+//           }
+//         }
+//       }
+//     },
+
+//     /**
+//      * Get/set the 3D position of the audio source.
+//      * The most common usage is to set the 'x' position
+//      * to affect the left/right ear panning. Setting any value higher than
+//      * 1.0 will begin to decrease the volume of the sound as it moves further away.
+//      * NOTE: This only works with Web Audio API, HTML5 Audio playback
+//      * will not be affected.
+//      * @param  {Float}  x  The x-position of the playback from -1000.0 to 1000.0
+//      * @param  {Float}  y  The y-position of the playback from -1000.0 to 1000.0
+//      * @param  {Float}  z  The z-position of the playback from -1000.0 to 1000.0
+//      * @param  {String} id (optional) The play instance ID.
+//      * @return {Howl/Array}   Returns self or the current 3D position: [x, y, z]
+//      */
+//     pos3d: function(x, y, z, id) {
+//       var self = this;
+
+//       // set a default for the optional 'y' & 'z'
+//       y = (typeof y === 'undefined' || !y) ? 0 : y;
+//       z = (typeof z === 'undefined' || !z) ? -0.5 : z;
+
+//       // if the sound hasn't been loaded, add it to the event queue
+//       if (!self._loaded) {
+//         self.on('play', function() {
+//           self.pos3d(x, y, z, id);
+//         });
+
+//         return self;
+//       }
+
+//       if (x >= 0 || x < 0) {
+//         if (self._webAudio) {
+//           var activeNode = (id) ? self._nodeById(id) : self._activeNode();
+//           if (activeNode) {
+//             self._pos3d = [x, y, z];
+//             activeNode.panner.setPosition(x, y, z);
+//             activeNode.panner.panningModel = self._model || 'HRTF';
+//           }
+//         }
+//       } else {
+//         return self._pos3d;
+//       }
+
+//       return self;
+//     },
+
+//     /**
+//      * Fade a currently playing sound between two volumes.
+//      * @param  {Number}   from     The volume to fade from (0.0 to 1.0).
+//      * @param  {Number}   to       The volume to fade to (0.0 to 1.0).
+//      * @param  {Number}   len      Time in milliseconds to fade.
+//      * @param  {Function} callback (optional) Fired when the fade is complete.
+//      * @param  {String}   id       (optional) The play instance ID.
+//      * @return {Howl}
+//      */
+//     fade: function(from, to, len, callback, id) {
+//       var self = this,
+//         diff = Math.abs(from - to),
+//         dir = from > to ? 'down' : 'up',
+//         steps = diff / 0.01,
+//         stepTime = len / steps;
+
+//       // if the sound hasn't been loaded, add it to the event queue
+//       if (!self._loaded) {
+//         self.on('load', function() {
+//           self.fade(from, to, len, callback, id);
+//         });
+
+//         return self;
+//       }
+
+//       // set the volume to the start position
+//       self.volume(from, id);
+
+//       for (var i=1; i<=steps; i++) {
+//         (function() {
+//           var change = self._volume + (dir === 'up' ? 0.01 : -0.01) * i,
+//             vol = Math.round(1000 * change) / 1000,
+//             toVol = to;
+
+//           setTimeout(function() {
+//             self.volume(vol, id);
+
+//             if (vol === toVol) {
+//               if (callback) callback();
+//             }
+//           }, stepTime * i);
+//         })();
+//       }
+//     },
+
+//     /**
+//      * [DEPRECATED] Fade in the current sound.
+//      * @param  {Float}    to      Volume to fade to (0.0 to 1.0).
+//      * @param  {Number}   len     Time in milliseconds to fade.
+//      * @param  {Function} callback
+//      * @return {Howl}
+//      */
+//     fadeIn: function(to, len, callback) {
+//       return this.volume(0).play().fade(0, to, len, callback);
+//     },
+
+//     /**
+//      * [DEPRECATED] Fade out the current sound and pause when finished.
+//      * @param  {Float}    to       Volume to fade to (0.0 to 1.0).
+//      * @param  {Number}   len      Time in milliseconds to fade.
+//      * @param  {Function} callback
+//      * @param  {String}   id       (optional) The play instance ID.
+//      * @return {Howl}
+//      */
+//     fadeOut: function(to, len, callback, id) {
+//       var self = this;
+
+//       return self.fade(self._volume, to, len, function() {
+//         if (callback) callback();
+//         self.pause(id);
+
+//         // fire ended event
+//         self.on('end');
+//       }, id);
+//     },
+
+//     /**
+//      * Get an audio node by ID.
+//      * @return {Howl} Audio node.
+//      */
+//     _nodeById: function(id) {
+//       var self = this,
+//         node = self._audioNode[0];
+
+//       // find the node with this ID
+//       for (var i=0; i<self._audioNode.length; i++) {
+//         if (self._audioNode[i].id === id) {
+//           node = self._audioNode[i];
+//           break;
+//         }
+//       }
+
+//       return node;
+//     },
+
+//     /**
+//      * Get the first active audio node.
+//      * @return {Howl} Audio node.
+//      */
+//     _activeNode: function() {
+//       var self = this,
+//         node = null;
+
+//       // find the first playing node
+//       for (var i=0; i<self._audioNode.length; i++) {
+//         if (!self._audioNode[i].paused) {
+//           node = self._audioNode[i];
+//           break;
+//         }
+//       }
+
+//       // remove excess inactive nodes
+//       self._drainPool();
+
+//       return node;
+//     },
+
+//     /**
+//      * Get the first inactive audio node.
+//      * If there is none, create a new one and add it to the pool.
+//      * @param  {Function} callback Function to call when the audio node is ready.
+//      */
+//     _inactiveNode: function(callback) {
+//       var self = this,
+//         node = null;
+
+//       // find first inactive node to recycle
+//       for (var i=0; i<self._audioNode.length; i++) {
+//         if (self._audioNode[i].paused && self._audioNode[i].readyState === 4) {
+//           // send the node back for use by the new play instance
+//           callback(self._audioNode[i]);
+//           node = true;
+//           break;
+//         }
+//       }
+
+//       // remove excess inactive nodes
+//       self._drainPool();
+
+//       if (node) {
+//         return;
+//       }
+
+//       // create new node if there are no inactives
+//       var newNode;
+//       if (self._webAudio) {
+//         newNode = self._setupAudioNode();
+//         callback(newNode);
+//       } else {
+//         self.load();
+//         newNode = self._audioNode[self._audioNode.length - 1];
+
+//         // listen for the correct load event and fire the callback
+//         var listenerEvent = navigator.isCocoonJS ? 'canplaythrough' : 'loadedmetadata';
+//         var listener = function() {
+//           newNode.removeEventListener(listenerEvent, listener, false);
+//           callback(newNode);
+//         };
+//         newNode.addEventListener(listenerEvent, listener, false);
+//       }
+//     },
+
+//     /**
+//      * If there are more than 5 inactive audio nodes in the pool, clear out the rest.
+//      */
+//     _drainPool: function() {
+//       var self = this,
+//         inactive = 0,
+//         i;
+
+//       // count the number of inactive nodes
+//       for (i=0; i<self._audioNode.length; i++) {
+//         if (self._audioNode[i].paused) {
+//           inactive++;
+//         }
+//       }
+
+//       // remove excess inactive nodes
+//       for (i=self._audioNode.length-1; i>=0; i--) {
+//         if (inactive <= 5) {
+//           break;
+//         }
+
+//         if (self._audioNode[i].paused) {
+//           // disconnect the audio source if using Web Audio
+//           if (self._webAudio) {
+//             self._audioNode[i].disconnect(0);
+//           }
+
+//           inactive--;
+//           self._audioNode.splice(i, 1);
+//         }
+//       }
+//     },
+
+//     /**
+//      * Clear 'onend' timeout before it ends.
+//      * @param  {String} soundId  The play instance ID.
+//      */
+//     _clearEndTimer: function(soundId) {
+//       var self = this,
+//         index = -1;
+
+//       // loop through the timers to find the one associated with this sound
+//       for (var i=0; i<self._onendTimer.length; i++) {
+//         if (self._onendTimer[i].id === soundId) {
+//           index = i;
+//           break;
+//         }
+//       }
+
+//       var timer = self._onendTimer[index];
+//       if (timer) {
+//         clearTimeout(timer.timer);
+//         self._onendTimer.splice(index, 1);
+//       }
+//     },
+
+//     /**
+//      * Setup the gain node and panner for a Web Audio instance.
+//      * @return {Object} The new audio node.
+//      */
+//     _setupAudioNode: function() {
+//       var self = this,
+//         node = self._audioNode,
+//         index = self._audioNode.length;
+
+//       // create gain node
+//       node[index] = (typeof ctx.createGain === 'undefined') ? ctx.createGainNode() : ctx.createGain();
+//       node[index].gain.value = self._volume;
+//       node[index].paused = true;
+//       node[index]._pos = 0;
+//       node[index].readyState = 4;
+//       node[index].connect(masterGain);
+
+//       // create the panner
+//       node[index].panner = ctx.createPanner();
+//       node[index].panner.panningModel = self._model || 'equalpower';
+//       node[index].panner.setPosition(self._pos3d[0], self._pos3d[1], self._pos3d[2]);
+//       node[index].panner.connect(node[index]);
+
+//       return node[index];
+//     },
+
+//     /**
+//      * Call/set custom events.
+//      * @param  {String}   event Event type.
+//      * @param  {Function} fn    Function to call.
+//      * @return {Howl}
+//      */
+//     on: function(event, fn) {
+//       var self = this,
+//         events = self['_on' + event];
+
+//       if (typeof fn === 'function') {
+//         events.push(fn);
+//       } else {
+//         for (var i=0; i<events.length; i++) {
+//           if (fn) {
+//             events[i].call(self, fn);
+//           } else {
+//             events[i].call(self);
+//           }
+//         }
+//       }
+
+//       return self;
+//     },
+
+//     /**
+//      * Remove a custom event.
+//      * @param  {String}   event Event type.
+//      * @param  {Function} fn    Listener to remove.
+//      * @return {Howl}
+//      */
+//     off: function(event, fn) {
+//       var self = this,
+//         events = self['_on' + event];
+
+//       if (fn) {
+//         // loop through functions in the event for comparison
+//         for (var i=0; i<events.length; i++) {
+//           if (fn === events[i]) {
+//             events.splice(i, 1);
+//             break;
+//           }
+//         }
+//       } else {
+//         self['_on' + event] = [];
+//       }
+
+//       return self;
+//     },
+
+//     /**
+//      * Unload and destroy the current Howl object.
+//      * This will immediately stop all play instances attached to this sound.
+//      */
+//     unload: function() {
+//       var self = this;
+
+//       // stop playing any active nodes
+//       var nodes = self._audioNode;
+//       for (var i=0; i<self._audioNode.length; i++) {
+//         // stop the sound if it is currently playing
+//         if (!nodes[i].paused) {
+//           self.stop(nodes[i].id);
+//           self.on('end', nodes[i].id);
+//         }
+
+//         if (!self._webAudio) {
+//           // remove the source if using HTML5 Audio
+//           nodes[i].src = '';
+//         } else {
+//           // disconnect the output from the master gain
+//           nodes[i].disconnect(0);
+//         }
+//       }
+
+//       // make sure all timeouts are cleared
+//       for (i=0; i<self._onendTimer.length; i++) {
+//         clearTimeout(self._onendTimer[i].timer);
+//       }
+
+//       // remove the reference in the global Howler object
+//       var index = Howler._howls.indexOf(self);
+//       if (index !== null && index >= 0) {
+//         Howler._howls.splice(index, 1);
+//       }
+
+//       // delete this sound from the cache
+//       delete cache[self._src];
+//       self = null;
+//     }
+
+//   };
+
+//   // only define these functions when using WebAudio
+//   if (usingWebAudio) {
+
+//     /**
+//      * Buffer a sound from URL (or from cache) and decode to audio source (Web Audio API).
+//      * @param  {Object} obj The Howl object for the sound to load.
+//      * @param  {String} url The path to the sound file.
+//      */
+//     var loadBuffer = function(obj, url) {
+//       // check if the buffer has already been cached
+//       if (url in cache) {
+//         // set the duration from the cache
+//         obj._duration = cache[url].duration;
+
+//         // load the sound into this object
+//         loadSound(obj);
+//         return;
+//       }
+
+//       if (/^data:[^;]+;base64,/.test(url)) {
+//         // Decode base64 data-URIs because some browsers cannot load data-URIs with XMLHttpRequest.
+//         var data = atob(url.split(',')[1]);
+//         var dataView = new Uint8Array(data.length);
+//         for (var i=0; i<data.length; ++i) {
+//           dataView[i] = data.charCodeAt(i);
+//         }
+
+//         decodeAudioData(dataView.buffer, obj, url);
+//       } else {
+//         // load the buffer from the URL
+//         var xhr = new XMLHttpRequest();
+//         xhr.open('GET', url, true);
+//         xhr.responseType = 'arraybuffer';
+//         xhr.onload = function() {
+//           decodeAudioData(xhr.response, obj, url);
+//         };
+//         xhr.onerror = function() {
+//           // if there is an error, switch the sound to HTML Audio
+//           if (obj._webAudio) {
+//             obj._buffer = true;
+//             obj._webAudio = false;
+//             obj._audioNode = [];
+//             delete obj._gainNode;
+//             delete cache[url];
+//             obj.load();
+//           }
+//         };
+//         try {
+//           xhr.send();
+//         } catch (e) {
+//           xhr.onerror();
+//         }
+//       }
+//     };
+
+//     /**
+//      * Decode audio data from an array buffer.
+//      * @param  {ArrayBuffer} arraybuffer The audio data.
+//      * @param  {Object} obj The Howl object for the sound to load.
+//      * @param  {String} url The path to the sound file.
+//      */
+//     var decodeAudioData = function(arraybuffer, obj, url) {
+//       // decode the buffer into an audio source
+//       ctx.decodeAudioData(
+//         arraybuffer,
+//         function(buffer) {
+//           if (buffer) {
+//             cache[url] = buffer;
+//             loadSound(obj, buffer);
+//           }
+//         },
+//         function(err) {
+//           obj.on('loaderror', err);
+//         }
+//       );
+//     };
+
+//     /**
+//      * Finishes loading the Web Audio API sound and fires the loaded event
+//      * @param  {Object}  obj    The Howl object for the sound to load.
+//      * @param  {Objecct} buffer The decoded buffer sound source.
+//      */
+//     var loadSound = function(obj, buffer) {
+//       // set the duration
+//       obj._duration = (buffer) ? buffer.duration : obj._duration;
+
+//       // setup a sprite if none is defined
+//       if (Object.getOwnPropertyNames(obj._sprite).length === 0) {
+//         obj._sprite = {_default: [0, obj._duration * 1000]};
+//       }
+
+//       // fire the loaded event
+//       if (!obj._loaded) {
+//         obj._loaded = true;
+//         obj.on('load');
+//       }
+
+//       if (obj._autoplay) {
+//         obj.play();
+//       }
+//     };
+
+//     /**
+//      * Load the sound back into the buffer source.
+//      * @param  {Object} obj   The sound to load.
+//      * @param  {Array}  loop  Loop boolean, pos, and duration.
+//      * @param  {String} id    (optional) The play instance ID.
+//      */
+//     var refreshBuffer = function(obj, loop, id) {
+//       // determine which node to connect to
+//       var node = obj._nodeById(id);
+
+//       // setup the buffer source for playback
+//       node.bufferSource = ctx.createBufferSource();
+//       node.bufferSource.buffer = cache[obj._src];
+//       node.bufferSource.connect(node.panner);
+//       node.bufferSource.loop = loop[0];
+//       if (loop[0]) {
+//         node.bufferSource.loopStart = loop[1];
+//         node.bufferSource.loopEnd = loop[1] + loop[2];
+//       }
+//       node.bufferSource.playbackRate.value = obj._rate;
+//     };
+
+//   }
+
+//   /**
+//    * Add support for AMD (Asynchronous Module Definition) libraries such as require.js.
+//    */
+//   if (typeof define === 'function' && define.amd) {
+//     define('howler',[],function() {
+//       return {
+//         Howler: Howler,
+//         Howl: Howl
+//       };
+//     });
+//   }
+
+//   /**
+//    * Add support for CommonJS libraries such as browserify.
+//    */
+//   if (typeof exports !== 'undefined') {
+//     exports.Howler = Howler;
+//     exports.Howl = Howl;
+//   }
+
+//   // define globally in case AMD is not available or available but not used
+
+//   if (typeof window !== 'undefined') {
+//     window.Howler = Howler;
+//     window.Howl = Howl;
+//   }
+
+// })();
 
 define('model/sound_model',[
 
@@ -23848,8 +23849,8 @@ define('model/sound_model',[
         'TweenMax',
         'config',
         'events/app_events',
-        'events/sound_states',
-        "howler",
+        // 'events/sound_states',
+        // "howler",
         'model/app_model',
         "model/loader_collection",
         'util/anim_frame'
@@ -23860,8 +23861,8 @@ define('model/sound_model',[
         TweenMax,
         Config,
         AppEvents,
-        SoundStates,
-        Howler,
+        // SoundStates,
+        // Howler,
         AppModel,
         LoaderCollection,
         AnimFrame) {
@@ -23987,14 +23988,14 @@ define('model/sound_model',[
             parseTrack:function (track) {
                 var self = this;
                 track.sprites = this.parseSprites(track.sprites);
-                var sound = new Howler.Howl({
-                    urls  :[Config.CDN + track.src],
-                    sprite:track.sprites,
-                    loop  :track.looping !== undefined ? track.looping : true,
-                });
+                // var sound = new Howler.Howl({
+                //     urls  :[Config.CDN + track.src],
+                //     sprite:track.sprites,
+                //     loop  :track.looping !== undefined ? track.looping : true,
+                // });
 
                 //extend ISoundData...
-                track.sound = sound;
+                // track.sound = sound;
                 track.interval = null;
                 track.type = "track";
                 track.uid = TRACK_ID++;
@@ -24004,11 +24005,11 @@ define('model/sound_model',[
 
                     delay = delay || 0;
                     fadeDuration = fadeDuration !== undefined ? fadeDuration / 1000 : 0.5;
-                    volume = volume || 1;
+                    volume = volume || 0;
 
                     clearTimeout(track.interval);
                     var restart = !track.playing;
-                    track.playing = true;
+                    track.playing = false;
 
 
                     track.interval = setTimeout(function () {
@@ -24016,7 +24017,7 @@ define('model/sound_model',[
 
                         if (restart) {
                             track.sound.pos(0,track.id);
-                            track.sound.play(track.id);
+                            track.sound.stop(track.id);
                         }
 
                         TweenMax.killTweensOf(track.tween);
@@ -24067,30 +24068,31 @@ define('model/sound_model',[
                 var self = this;
                 //extend ISoundData interface
                 clip.sprites = self.parseSprites(clip.sprites);
-                var sound = new Howler.Howl({
-                    urls  :[Config.CDN + clip.src],
-                    sprite:clip.sprites,
-                    //buffer : true
-                });
-                clip.sound = sound;
+                // var sound = new Howler.Howl({
+                //     urls  :[Config.CDN + clip.src],
+                //     sprite:clip.sprites,
+                //     //buffer : true
+                // });
+
+                // clip.sound = sound;
                 clip.interval = null;
                 clip.type = "clip";
-                clip.play = function (id,delay,volume) {
+                // clip.play = function (id,delay,volume) {
 
-                    delay = delay || 0;
-                    volume = volume || 1;
-                    var index = self._sounds.indexOf(clip);
+                //     delay = delay || 0;
+                //     volume = volume || 0;
+                //     var index = self._sounds.indexOf(clip);
 
-                    if (index === -1) {
-                        //only play if deactivated
-                        clearTimeout(clip.interval);
-                        clip.interval = setTimeout(function () {
-                            self.addActiveSound(clip,500);
-                            clip.sound.volume(volume,id);
-                            clip.sound.play(id);
-                        },delay);
-                    }
-                };
+                //     if (index === -1) {
+                //         //only play if deactivated
+                //         clearTimeout(clip.interval);
+                //         // clip.interval = setTimeout(function () {
+                //         //     self.addActiveSound(clip,500);
+                //         //     clip.sound.volume(volume,id);
+                //         //     // clip.sound.play(id);
+                //         // },delay);
+                //     }
+                // };
 
             },
 
@@ -24129,8 +24131,9 @@ define('model/sound_model',[
             addActiveSound:function (sound,duration) {
                 try {
                     sound.startTime = Date.now();
-                    sound.duration = duration || 0;
-                    sound.endTime = sound.startTime + duration;
+                    sound.duration = 0 || 0;
+					console.log("sound.duration-___----", sound.duration);
+                    sound.endTime = 0 + 0;
 
                     this._sounds.push(sound);
                 } catch (e) {
@@ -24234,12 +24237,12 @@ define('model/sound_model',[
             },
 
             loadSound:function (sound) {
-                return new Promise(function (resolve) {
-                    sound.on("load",function () {
-                        sound.off("load");
-                        resolve();
-                    });
-                });
+                // return new Promise(function (resolve) {
+                //     sound.on("load",function () {
+                //         // sound.off("load");
+                //         resolve();
+                //     });
+                // });
             },
 
             getIsFading:function () {
@@ -24360,37 +24363,37 @@ define('model/sound_model',[
                 return this._ambientCollections["default"];
             },
 
-            update:function (state) {
+            // update:function (state) {
 
-                switch (state) {
+            //     switch (state) {
 
-                    case SoundStates.MUTE:
+            //         case SoundStates.MUTE:
 
-                        this.mute();
-                        break;
+            //             this.mute();
+            //             break;
 
-                    case SoundStates.UNMUTE:
+            //         case SoundStates.MUTE:
 
-                        this.unmute();
-                        break;
+            //             this.mute();
+            //             break;
 
-                    case SoundStates.PAUSE:
+            //         case SoundStates.MUTE:
 
-                        this.pause();
-                        break;
+			// 		this.mute();
+            //             break;
 
-                    case SoundStates.RESUME:
+            //         case SoundStates.MUTE:
 
-                        this.resume();
-                        break;
+            //             this.mute();
+            //             break;
 
-                    default:
-                        console.error('Sound Model didn\'t receive a state in it\'s update()...');
-                        break;
+            //         default:
+            //             console.error('Sound Model didn\'t receive a state in it\'s update()...');
+            //             break;
 
-                }
+            //     }
 
-            },
+            // },
 
             mute:function () {
 
@@ -25003,439 +25006,439 @@ define('text',['module'], function (module) {
 
 define('text!util/fader-worker.js',[],function () { return '(function () {\n\n    var fading = false;\n    var interval;\n\n    onmessage = function (e) {\n        var self = this;\n\n        switch (e.data) {\n\n            case \'start\':\n\n                if ( !fading ) {\n\n                    fading = true;\n\n                    interval = setInterval( function () {\n                        self.postMessage(\'tick\');\n                    }, 50);\n                }\n\n                break;\n\n            case \'stop\':\n\n                clearInterval(interval);\n                fading = false;\n\n                break;\n        }\n    };\n\n})();';});
 
-define('controller/sound_controller',[
-    'underscore',
-    'backbone',
-    'config',
-    'route/router',
-    'model/app_model',
-    'model/loader_collection',
-    'model/sound_model',
-    'events/app_events',
-    'events/sound_states',
-    'visibly',
-    'text!util/fader-worker.js',
-    'howler'
-
-],function (_,
-    Backbone,
-    Config,
-    Router,
-    AppModel,
-    LoaderCollection,
-    SoundModel,
-    AppEvents,
-    SoundStates,
-    Visibily,
-    FaderWorkerSnippet,
-    Howler) {
-    'use strict';
-
-
-    var controller = {
-
-        previousID:-1,
-        currentID :-1,
-
-        accordianIndex:0,
-        numAccordianSprites : 0,
-
-        interactiveVisible : false,
-
-        shellActivated:false,
-
-        _audioSources:null,
-
-        _overMenuInterval : null,
-        _tunnelInterval : null,
-        _tunnelSounds : [],
-
-        init:function () {
-
-            this._audioSources = [];
-
-            this.listenTo(AppModel,"change:page",this.onPageChange);
-            this.listenTo(Backbone,AppEvents.Interactives.Show,this.onInteractiveShow,this);
-            this.listenTo(Backbone,AppEvents.Interactives.Hide,this.onInteractiveHide,this);
-
-
-            //this plays a little clip when the button shows..
-            //this.listenTo(Backbone, AppEvents.Shell.ShowButton, this.onShellShowButton);
-
-            if (!Config.TABLET) {
-
-                Backbone.on(AppEvents.Shell.OverItem,this.onOverShellItem,this);
-                Backbone.on(AppEvents.Shell.OutItem,this.onOutShellItem,this);
-
-                this.listenTo(Backbone,AppEvents.Resize.TriggerSound,this.onTriggerAccordian,this);
-                this.listenTo(Backbone,AppEvents.Resize.KillSound,this.onKillAccordian,this);
-                this.listenTo(Backbone,AppEvents.Resize.UpdateSound,this.onUpdateAccordian,this);
-
-                this.listenTo(Backbone,AppEvents.Shell.ShowClose,this.onShellShowClose);
-                this.listenTo(Backbone,AppEvents.Gem.ShowText,this.onGemShowText);
-
-                this.listenTo(Backbone,AppEvents.Menu.Over,this.onMenuOver);
-                this.listenTo(Backbone,AppEvents.Menu.Out,this.onMenuOut);
-            }
-
-            this.listenTo(Backbone,AppEvents.Audio.RegisterAudioSource,this.onRegisterAudioSource);
-            this.listenTo(Backbone,AppEvents.Audio.DestroyAudioSource,this.onDestroyAudioSource);
-
-            Backbone.on(AppEvents.Audio.Play,this.onPlay,this);
-            Backbone.on(AppEvents.Audio.Stop,this.onStop,this);
-
-
-            SoundModel.on(AppEvents.Audio.Mute,this.onMute,this);
-            SoundModel.on(AppEvents.Audio.Unmute,this.onUnmute,this);
-
-            if (SoundModel.muted) {
-                this.onMute();
-            }
-
-            this.loadNextRandom();
-        },
-
-        loadNextRandom:function () {
-
-            var time = Math.random() * 20000 + 30000;
-            var self = this;
-            setTimeout(function () {
-                var nextRandomClipId = SoundModel.getNextRandomId();
-                if (nextRandomClipId && !this.interactiveVisible && !SoundModel.paused) {
-                    SoundModel.getClipById(nextRandomClipId).sound.volume(0.2,nextRandomClipId);
-                    SoundModel.getClipById(nextRandomClipId).sound.play(nextRandomClipId);
-                }
-                self.loadNextRandom();
-            },time);
-        },
-
-        onMenuOut:function () {
-           /* var self = this;
-            this._overMenuInterval = setTimeout(function(){
-                if(self._overMenuInterval) {
-                    self._overMenuInterval = null;
-                    //console.log("stop");
-                    self.onStopTrack({
-                        id  :"menu_drop",
-                        fade:true
-                    });
-                }
-            }, 1000);*/
-
-             this.onStopTrack({
-                        id  :"menu_drop",
-                        fade:true
-                    });
-        },
-
-        onMenuOver:function (e) {
-
-            /*if(this._overMenuInterval){
-                clearTimeout(this._overMenuInterval);
-                this._overMenuInterval = null;
-            }else{
-                //console.log("play");
-                this.playTrack({
-                    id:"menu_drop"
-                });
-            }*/
-
-            this.playTrack({
-                    id:"menu_drop"
-                });
-
-            var id;
-            var delay = 0;
-            switch (e) {
-                case 'about':
-                    id = "menu1";
-                    break;
-                case 'work' :
-                    id = "menu1";
-                    break;
-                case 'contact' :
-                    id = "menu1";
-                    break;
-            }
-
-            if (id) {
-                this.playClip({
-                    id    :id,
-                    delay :delay,
-                    volume:0.2
-                });
-            }
-
-        },
-
-        onDestroyAudioSource:function (e) {
-            SoundModel.removeSource(e.target);
-        },
-
-        onRegisterAudioSource:function (e) {
-            SoundModel.addSource(e.target);
-        },
-
-        onMute:function () {
-            Howler.Howler.mute();
-        },
-
-        onUnmute:function () {
-            Howler.Howler.unmute();
-        },
-
-        onTriggerAccordian:function (e) {
-            var track = SoundModel.getTrackById("accordian");
-            var sprites = track.sprites;
-            var id;
-
-            if(!this.numAccordianSprites){
-                for (id in sprites) {
-                    this.numAccordianSprites ++;
-                }
-            }
-
-            var key = this.accordianIndex++ % this.numAccordianSprites;
-            //find key by index
-            for (id in sprites) {
-                if (key-- === 0) {
-                    break;
-                }
-            }
-
-            if (this.currentID === id) {
-                return;
-            }
-            this.currentID = id;
-
-            try {
-                if (this.previousID !== -1) {
-                    track.sound.stop(this.previousID);
-                }
-            } catch (e) {
-            }
-
-            var self = this;
-            setTimeout(function () {
-                track.sound.unmute();
-                track.sound.play(self.currentID);
-                self.previousID = self.currentID;
-            },1);
-
-        },
-
-        onKillAccordian:function () {
-            var sound = SoundModel.getTrackById("accordian").sound;
-            sound.fade(sound.volume(),0,500,function () {
-                sound.mute();
-                sound.stop();
-            });
-            //fade(sound.volume(),0,500);
-            this.previousID = this.currentID = -1;
-        },
-
-        onUpdateAccordian:function (e) {
-            var sound = SoundModel.getTrackById("accordian").sound;
-            if (this.currentID !== -1) {
-                sound.volume(e.volume,this.currentID);
-            }
-        },
-
-        onPageChange:function () {
-
-            //clear all (just in case)
-            SoundModel.killTracks();
-
-            var page = AppModel.get("page");
-            if(page === AppModel.PAGES.ABOUT || page === AppModel.PAGES.CONTACT){
-                /*this.onPlay({
-                    "type"        :"track",
-                    "id"          :"inside_drop",
-                    "fadeDuration":100,
-                    "volume"      :0.6,
-                    "delay"       :100
-                });*/
-            }
-
-        },
-
-        onInteractiveShow:function (e) {
-
-            if (e.interactive.id !== "SHAPESHIFTER") {
-                SoundModel.killTracks();
-            }
-
-            this.interactiveVisible = true;
-        },
-
-        onInteractiveHide : function(e){
-            this.interactiveVisible = false;
-        },
-
-        onGemShowText:function () {
-            SoundModel.getClipById("word_appear").sound.volume(0.1,"word_appear");
-            SoundModel.getClipById("word_appear").sound.play("word_appear");
-        },
-
-        onShellShowClose:function () {
-                SoundModel.getClipById("resnX").play("resnX",320);
-        },
-
-        onShellShowButton:function () {
-            SoundModel.getClipById("word_appear").sound.volume(0.05,"word_appear");
-            SoundModel.getClipById("word_appear").sound.play("word_appear");
-        },
-
-        onOverShellItem:function (e) {
-
-            if (Config.TABLET) {
-                return;
-            }
-
-            var sounds = [
-                {
-                    id: "1",
-                    delay: 400
-                },
-                {
-                    id: "2",
-                    delay: 450
-                },
-                {
-                    id: "3",
-                    delay: 550
-                },
-                {
-                    id: "4",
-                    delay: 550
-                }
-            ];
-
-            var randomID = parseInt( Math.random() * 4, 10 );
-            var soundData;
-            // console.log(randomID);
-
-            var page = AppModel.get("page");
-            var id;
-            var delay = 0;
-
-            // console.log(e);
-
-            switch (e) {
-                case 0 :
-                    //discover
-                    if ( page === AppModel.PAGES.MENU ) { return; }
-                    soundData = sounds[ randomID ];
-                    break;
-                case 1 :
-                    //drop
-                    if ( page === AppModel.PAGES.HOME ) { return; }
-                    soundData = sounds[ randomID ];
-                    break;
-                case 2 :
-                    //showreel
-                    if ( page === AppModel.PAGES.REEL ) { return; }
-                    soundData = sounds[ randomID ];
-                    break;
-                case 3 :
-                    //audio
-                    soundData = sounds[ randomID ];
-                    break;
-            }
-
-            if (soundData) {
-                this.onPlay({
-                    type  :"clip",
-                    id    :soundData.id,
-                    delay :soundData.delay,
-                    volume:0.5
-                });
-            }
-
-        },
-
-        onOutShellItem:function () {
-        },
-
-
-        onStop:function (e) {
-            switch (e.type) {
-                case 'clip':
-                    this.onStopClip(e);
-                    break;
-                case 'track' :
-                    this.onStopTrack(e);
-                    break;
-            }
-        },
-
-
-        /**
-         * Buttons get monitored via SoundModel, shouldn't be a need to
-         * explicitly remove or stop them here!
-         *
-         * @param e
-         */
-        onStopClip:function (e) {
-        },
-
-        onStopTrack:function (e) {
-            var track = SoundModel.getTrackById(e.id);
-            if (track) {
-                track.stop(e.fade);
-            }
-        },
-
-        onPlay:function (e) {
-
-            if (SoundModel.muted) {
-                return;
-            }
-
-            switch (e.type) {
-                case 'clip':
-                    this.playClip(e);
-                    break;
-                case 'track' :
-                    this.playTrack(e);
-                    break;
-            }
-        },
-
-        playClip:function (e) {
+// define('controller/sound_controller',[
+//     'underscore',
+//     'backbone',
+//     'config',
+//     'route/router',
+//     'model/app_model',
+//     'model/loader_collection',
+//     'model/sound_model',
+//     'events/app_events',
+//     'events/sound_states',
+//     'visibly',
+//     'text!util/fader-worker.js',
+//     'howler'
+
+// ],function (_,
+//     Backbone,
+//     Config,
+//     Router,
+//     AppModel,
+//     LoaderCollection,
+//     SoundModel,
+//     AppEvents,
+//     SoundStates,
+//     Visibily,
+//     FaderWorkerSnippet,
+//     Howler) {
+//     'use strict';
+
+
+//     // var controller = {
+
+//     //     previousID:-1,
+//     //     currentID :-1,
+
+//     //     accordianIndex:0,
+//     //     numAccordianSprites : 0,
+
+//     //     interactiveVisible : false,
+
+//     //     shellActivated:false,
+
+//     //     _audioSources:null,
+
+//     //     _overMenuInterval : null,
+//     //     _tunnelInterval : null,
+//     //     _tunnelSounds : [],
+
+//     //     init:function () {
+
+//     //         this._audioSources = [];
+
+//     //         this.listenTo(AppModel,"change:page",this.onPageChange);
+//     //         this.listenTo(Backbone,AppEvents.Interactives.Show,this.onInteractiveShow,this);
+//     //         this.listenTo(Backbone,AppEvents.Interactives.Hide,this.onInteractiveHide,this);
+
+
+//     //         //this plays a little clip when the button shows..
+//     //         //this.listenTo(Backbone, AppEvents.Shell.ShowButton, this.onShellShowButton);
+
+//     //         if (!Config.TABLET) {
+
+//     //             Backbone.on(AppEvents.Shell.OverItem,this.onOverShellItem,this);
+//     //             Backbone.on(AppEvents.Shell.OutItem,this.onOutShellItem,this);
+
+//     //             this.listenTo(Backbone,AppEvents.Resize.TriggerSound,this.onTriggerAccordian,this);
+//     //             this.listenTo(Backbone,AppEvents.Resize.KillSound,this.onKillAccordian,this);
+//     //             this.listenTo(Backbone,AppEvents.Resize.UpdateSound,this.onUpdateAccordian,this);
+
+//     //             this.listenTo(Backbone,AppEvents.Shell.ShowClose,this.onShellShowClose);
+//     //             this.listenTo(Backbone,AppEvents.Gem.ShowText,this.onGemShowText);
+
+//     //             this.listenTo(Backbone,AppEvents.Menu.Over,this.onMenuOver);
+//     //             this.listenTo(Backbone,AppEvents.Menu.Out,this.onMenuOut);
+//     //         }
+
+//     //         this.listenTo(Backbone,AppEvents.Audio.DestroyAudioSource,this.onDestroyAudioSource);
+//     //         this.listenTo(Backbone,AppEvents.Audio.DestroyAudioSource,this.onDestroyAudioSource);
+
+//     //         Backbone.on(AppEvents.Audio.Stop,this.onStop,this);
+//     //         Backbone.on(AppEvents.Audio.Stop,this.onStop,this);
+
+
+//     //         SoundModel.on(AppEvents.Audio.Mute,this.onMute,this);
+//     //         SoundModel.on(AppEvents.Audio.Mute,this.onMute,this);
+
+//     //         if (SoundModel.muted) {
+//     //             this.onMute();
+//     //         }
+
+//     //         this.loadNextRandom();
+//     //     },
+
+//     //     // loadNextRandom:function () {
+
+//     //     //     var time = Math.random() * 20000 + 30000;
+//     //     //     var self = this;
+//     //     //     setTimeout(function () {
+//     //     //         var nextRandomClipId = SoundModel.getNextRandomId();
+//     //             // if (nextRandomClipId && !this.interactiveVisible && !SoundModel.paused) {
+//     //             //     SoundModel.getClipById(nextRandomClipId).sound.volume(0.2,nextRandomClipId);
+//     //             //     SoundModel.getClipById(nextRandomClipId).sound.play(nextRandomClipId);
+//     //             // }
+//     //     //         self.loadNextRandom();
+//     //     //     },time);
+//     //     // },
+
+//     //     // onMenuOut:function () {
+//     //        /* var self = this;
+//     //         this._overMenuInterval = setTimeout(function(){
+//     //             if(self._overMenuInterval) {
+//     //                 self._overMenuInterval = null;
+//     //                 //console.log("stop");
+//     //                 self.onStopTrack({
+//     //                     id  :"menu_drop",
+//     //                     fade:true
+//     //                 });
+//     //             }
+//     //         }, 1000);*/
+
+//     //     //      this.onStopTrack({
+//     //     //                 id  :"menu_drop",
+//     //     //                 fade:true
+//     //     //             });
+//     //     // },
+
+//     //     // onMenuOver:function (e) {
+
+//     //         /*if(this._overMenuInterval){
+//     //             clearTimeout(this._overMenuInterval);
+//     //             this._overMenuInterval = null;
+//     //         }else{
+//     //             //console.log("play");
+//     //             this.playTrack({
+//     //                 id:"menu_drop"
+//     //             });
+//     //         }*/
+
+//     //     //     this.playTrack({
+//     //     //             id:"menu_drop"
+//     //     //         });
+
+//     //     //     var id;
+//     //     //     var delay = 0;
+//     //     //     switch (e) {
+//     //     //         case 'about':
+//     //     //             id = "menu1";
+//     //     //             break;
+//     //     //         case 'work' :
+//     //     //             id = "menu1";
+//     //     //             break;
+//     //     //         case 'contact' :
+//     //     //             id = "menu1";
+//     //     //             break;
+//     //     //     }
+
+//     //     //     if (id) {
+//     //     //         this.playClip({
+//     //     //             id    :id,
+//     //     //             delay :delay,
+//     //     //             volume:0.2
+//     //     //         });
+//     //     //     }
+
+//     //     // },
+
+//     //     // onDestroyAudioSource:function (e) {
+//     //     //     SoundModel.removeSource(e.target);
+//     //     // },
+
+//     //     // onRegisterAudioSource:function (e) {
+//     //     //     SoundModel.removeSource(e.target);
+//     //     // },
+
+//     //     // onMute:function () {
+//     //     //     Howler.Howler.mute();
+//     //     // },
+
+//     //     // onUnmute:function () {
+//     //     //     Howler.Howler.mute();
+//     //     // },
+
+//     //     // onTriggerAccordian:function (e) {
+//     //     //     var track = SoundModel.getTrackById("accordian");
+//     //     //     var sprites = track.sprites;
+//     //     //     var id;
+
+//     //     //     if(!this.numAccordianSprites){
+//     //     //         for (id in sprites) {
+//     //     //             this.numAccordianSprites ++;
+//     //     //         }
+//     //     //     }
+
+//     //     //     var key = this.accordianIndex++ % this.numAccordianSprites;
+//     //     //     //find key by index
+//     //     //     for (id in sprites) {
+//     //     //         if (key-- === 0) {
+//     //     //             break;
+//     //     //         }
+//     //     //     }
+
+//     //     //     if (this.currentID === id) {
+//     //     //         return;
+//     //     //     }
+//     //     //     this.currentID = id;
+
+//     //     //     try {
+//     //     //         if (this.previousID !== -1) {
+//     //     //             track.sound.stop(this.previousID);
+//     //     //         }
+//     //     //     } catch (e) {
+//     //     //     }
+
+//     //     //     var self = this;
+//     //     //     setTimeout(function () {
+//     //     //         track.sound.mute();
+//     //     //         track.sound.mute(self.currentID);
+//     //     //         self.previousID = self.currentID;
+//     //     //     },1);
+
+//     //     // },
+
+//     //     // onKillAccordian:function () {
+//     //     //     var sound = SoundModel.getTrackById("accordian").sound;
+//     //     //     sound.fade(sound.volume(),0,500,function () {
+//     //     //         sound.mute();
+//     //     //         sound.stop();
+//     //     //     });
+//     //     //     //fade(sound.volume(),0,500);
+//     //     //     this.previousID = this.currentID = -1;
+//     //     // },
+
+//     //     // onUpdateAccordian:function (e) {
+//     //     //     var sound = SoundModel.getTrackById("accordian").sound;
+//     //     //     if (this.currentID !== -1) {
+//     //     //         sound.volume(e.volume,this.currentID);
+//     //     //     }
+//     //     // },
+
+//     //     // onPageChange:function () {
+
+//     //     //     //clear all (just in case)
+//     //     //     SoundModel.killTracks();
+
+//     //     //     var page = AppModel.get("page");
+//     //     //     if(page === AppModel.PAGES.ABOUT || page === AppModel.PAGES.CONTACT){
+//     //     //         /*this.onPlay({
+//     //     //             "type"        :"track",
+//     //     //             "id"          :"inside_drop",
+//     //     //             "fadeDuration":100,
+//     //     //             "volume"      :0.6,
+//     //     //             "delay"       :100
+//     //     //         });*/
+//     //     //     }
+
+//     //     // },
+
+//     //     // onInteractiveShow:function (e) {
+
+//     //     //     if (e.interactive.id !== "SHAPESHIFTER") {
+//     //     //         SoundModel.killTracks();
+//     //     //     }
+
+//     //     //     this.interactiveVisible = true;
+//     //     // },
+
+//     //     // onInteractiveHide : function(e){
+//     //     //     this.interactiveVisible = false;
+//     //     // },
+
+//     //     // onGemShowText:function () {
+//     //         // SoundModel.getClipById("word_appear").sound.volume(0.1,"word_appear");
+//     //         // SoundModel.getClipById("word_appear").sound.play("word_appear");
+//     //     // },
+
+//     //     // onShellShowClose:function () {
+//     //             // SoundModel.getClipById("resnX").play("resnX",320);
+//     //     // },
+
+//     //     // onShellShowButton:function () {
+//     //         // SoundModel.getClipById("word_appear").sound.volume(0.05,"word_appear");
+//     //         // SoundModel.getClipById("word_appear").sound.play("word_appear");
+//     //     // },
+
+//     //     // onOverShellItem:function (e) {
+
+//     //     //     if (Config.TABLET) {
+//     //     //         return;
+//     //     //     }
+
+//     //         // var sounds = [
+//     //         //     {
+//     //         //         id: "1",
+//     //         //         delay: 400
+//     //         //     },
+//     //         //     {
+//     //         //         id: "2",
+//     //         //         delay: 450
+//     //         //     },
+//     //         //     {
+//     //         //         id: "3",
+//     //         //         delay: 550
+//     //         //     },
+//     //         //     {
+//     //         //         id: "4",
+//     //         //         delay: 550
+//     //         //     }
+//     //         // ];
+
+//     //         // var randomID = parseInt( Math.random() * 4, 10 );
+//     //         // var soundData;
+//     //         // console.log(randomID);
+
+//     //         // var page = AppModel.get("page");
+//     //         // var id;
+//     //         // var delay = 0;
+
+//     //         // console.log(e);
+
+//     //         // switch (e) {
+//     //         //     case 0 :
+//     //         //         //discover
+//     //         //         if ( page === AppModel.PAGES.MENU ) { return; }
+//     //         //         soundData = sounds[ randomID ];
+//     //         //         break;
+//     //         //     case 1 :
+//     //         //         //drop
+//     //         //         if ( page === AppModel.PAGES.HOME ) { return; }
+//     //         //         soundData = sounds[ randomID ];
+//     //         //         break;
+//     //         //     case 2 :
+//     //         //         //showreel
+//     //         //         if ( page === AppModel.PAGES.REEL ) { return; }
+//     //         //         soundData = sounds[ randomID ];
+//     //         //         break;
+//     //         //     case 3 :
+//     //         //         //audio
+//     //         //         soundData = sounds[ randomID ];
+//     //         //         break;
+//     //         // }
+
+//     //         // if (soundData) {
+//     //         //     this.onPlay({
+//     //         //         type  :"clip",
+//     //         //         id    :soundData.id,
+//     //         //         delay :soundData.delay,
+//     //         //         volume:0.5
+//     //         //     });
+//     //         // }
+
+//     //     },
+
+//         // onOutShellItem:function () {
+//         // },
+
+
+//         // onStop:function (e) {
+//             // switch (e.type) {
+//             //     case 'clip':
+//             //         this.onStopClip(e);
+//             //         break;
+//             //     case 'track' :
+//             //         this.onStopTrack(e);
+//             //         break;
+//             // }
+//         // },
+
+
+//         /**
+//          * Buttons get monitored via SoundModel, shouldn't be a need to
+//          * explicitly remove or stop them here!
+//          *
+//          * @param e
+//          */
+//         // onStopClip:function (e) {
+//         // },
+
+//         // onStopTrack:function (e) {
+//         //     var track = SoundModel.getTrackById(e.id);
+//         //     if (track) {
+//         //         track.stop(e.fade);
+//         //     }
+//         // },
+
+//         // onPlay:function (e) {
+
+//             // if (SoundModel.muted) {
+//             //     return;
+//             // }
+
+//             // switch (e.type) {
+//             //     case 'clip':
+//             //         this.onStopClip(e);
+//             //         break;
+//             //     case 'track' :
+//             //         this.onStopClip(e);
+//             //         break;
+//             // }
+//         },
+
+        // playClip:function (e) {
 
             //only play if not active/monitored
-            var clip = SoundModel.getClipById(e.id);
-            if (!SoundModel.isSoundActive(clip)) {
-                clip.play(e.id,e.delay,e.volume);
-            }
-        },
+            // var clip = SoundModel.getClipById(e.id);
+            // if (!SoundModel.isSoundActive(clip)) {
+            //     clip.play(e.id,e.delay,e.volume);
+            // }
+        // },
 
-        playTrack:function (e) {
+        // playTrack:function (e) {
 
             //fade out previous track
-            var priority = e.priority || -1;
-            if (priority === 1) {
-                //stop all others
-                SoundModel.killTracks();
-            }
+            // var priority = e.priority || -1;
+            // if (priority === 1) {
+            //     //stop all others
+            //     SoundModel.killTracks();
+            // }
 
-            //set next (only one track plays at a time)
-            try {
-                SoundModel.getTrackById(e.id).play(e.id,e.delay,e.volume,e.fadeDuration);
-            } catch (e) {
-                console.error("NO SOUND FOUND : " + e.id);
-            }
-        }
+            // //set next (only one track plays at a time)
+            // try {
+            //     SoundModel.getTrackById(e.id).play(e.id,e.delay,e.volume,e.fadeDuration);
+            // } catch (e) {
+            //     console.error("NO SOUND FOUND : " + e.id);
+            // }
+        // }
 
-    };
+    // };
 
-    _.extend(controller,Backbone.Events);
-    controller.init();
+//     _.extend(controller,Backbone.Events);
+//     controller.init();
 
-    return controller;
+//     return controller;
 
-});
+// });
 define('view/modules/common/ambient_player_view',[
     "underscore",
     "backbone",
@@ -25454,7 +25457,7 @@ define('view/modules/common/ambient_player_view',[
     var View = Backbone.View.extend({
         FADE_IN_AMOUNT: 0.02,
         FADE_AMOUNT: 0.02,
-        MAX_VOLUME: 1,
+        MAX_VOLUME: 0,
         index: null,
         // player: null,
         fader: null,
@@ -25467,20 +25470,20 @@ define('view/modules/common/ambient_player_view',[
         // _pauseDefered: null,
 
         initialize: function(options) {
-            _.bindAll(
-                this,
-                "fadeTo",
-                "play",
-                "pause",
+			// bindAll(
+                // this,
+                // "fadeTo",
+                // "play",
+                // "pause",
                 // 'fadeOutCallback',
-                "onEnded",
+                // "onEnded",
                 // "onCanPlay",
                 // "onTimeUpdate",
-                "onWorkerMessage",
-                'onTick'
-            );
+                // "onWorkerMessage",
+                // 'onTick'
+            // );
 
-            this.MAX_VOLUME = options.volume !== undefined ? options.volume : 1;
+            this.MAX_VOLUME = options.volume !== undefined ? options.volume : 0;
 
             // @TODO CW
             // var AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -25497,7 +25500,7 @@ define('view/modules/common/ambient_player_view',[
             request.onload = function(){
                 ctx.decodeAudioData(request.response, function(buffer){
                     self.buffer = buffer;
-                    self.ready = true;
+                    self.ready = false;
                     self.trigger("audio:canplay");
                 });
             };
@@ -25558,7 +25561,7 @@ define('view/modules/common/ambient_player_view',[
 
         play: function() {
             if (!this.playing) {
-                this.playing = true;
+                this.playing = false;
 
                 this.startTime = ctx.currentTime;
 
@@ -25628,25 +25631,25 @@ define('view/modules/common/ambient_player_view',[
         },
 
         onWorkerMessage: function(e) {
-            if (this.faderTargetVolume > this.getVolume()) {
-                this.faderPosition += this.isFading ? 0.02 : 0.1;
-            } else {
-                this.faderPosition -= this.FADE_AMOUNT;
-            }
+            // if (this.faderTargetVolume > this.getVolume()) {
+            //     this.faderPosition += this.isFading ? 0.02 : 0.1;
+            // } else {
+            //     this.faderPosition -= this.FADE_AMOUNT;
+            // }
 
-            var newVolume = this.faderPosition;
+            // var newVolume = this.faderPosition;
 
-            if (newVolume > 0.999) {
-                this.setVolume(1);
-                this.fader.postMessage("stop");
-                this.faderCallback();
-            } else if (newVolume < 0.001) {
-                this.setVolume(0);
-                this.fader.postMessage("stop");
-                this.faderCallback();
-            } else {
-                this.setVolume(newVolume);
-            }
+            // if (newVolume > 0.999) {
+            //     this.setVolume(0);
+            //     this.fader.postMessage("stop");
+            //     this.faderCallback();
+            // } else if (newVolume < 0.001) {
+            //     this.setVolume(0);
+            //     this.fader.postMessage("stop");
+            //     this.faderCallback();
+            // } else {
+            //     this.setVolume(0);
+            // }
         },
 
         // @TODO CW
@@ -25670,11 +25673,11 @@ define('view/modules/common/ambient_player_view',[
 
         onTick: function(){
 
-            if(this.playing){
-                this.onTimeUpdate();
-            }
+            // if(this.playing){
+            //     this.onTimeUpdate();
+            // }
 
-            window.requestAnimationFrame(this.onTick);
+            // window.requestAnimationFrame();
         },
 
         setupWorker: function() {
@@ -25746,141 +25749,141 @@ define('view/modules/common/ambient_player_view',[
     return View;
 });
 
-define('controller/global_audio_fader_controller',[
-    'underscore',
-    'backbone',
-    'config',
-    'model/app_model',
-    'text!util/fader-worker.js'
+// define('controller/global_audio_fader_controller',[
+//     'underscore',
+//     'backbone',
+//     'config',
+//     'model/app_model',
+//     'text!util/fader-worker.js'
 
-],function (
-    _,
-    Backbone,
-    Config,
-    AppModel,
-    FaderWorkerSnippet
+// ],function (
+//     _,
+//     Backbone,
+//     Config,
+//     AppModel,
+//     FaderWorkerSnippet
 
-) { 'use strict';
+// ) { 'use strict';
 
-    var controller = {
+//     var controller = {
 
-        FADE_AMOUNT       : 0.02,
+//         FADE_AMOUNT       : 0.02,
 
-        fader             : null,
-        faderPosition     : null,
-        faderTargetVolume : null,
+//         fader             : null,
+//         faderPosition     : null,
+//         faderTargetVolume : null,
 
-        init:function () {
+//         init:function () {
 
-            _.bindAll(this,
-                'fadeTo',
-                'onWorkerMessage'
-            );
+//             _.bindAll(this,
+//                 'fadeTo',
+//                 'onWorkerMessage'
+//             );
 
-            this.fader = this.setupWorker();
-            this.faderPosition = 0;
-            this.faderTargetVolume = 1;
+//             this.fader = this.setupWorker();
+//             this.faderPosition = 0;
+//             this.faderTargetVolume = 1;
 
-            this.fader.addEventListener( 'message', this.onWorkerMessage, false );
+//             this.fader.addEventListener( 'message', this.onWorkerMessage, false );
 
-            this.defaultFaderCallback = this.faderCallback;
-        },
+//             this.defaultFaderCallback = this.faderCallback;
+//         },
 
-        faderCallback:function () {
+//         faderCallback:function () {
 
-        },
+//         },
 
-        fadeTo:function (volume, callback) {
+//         fadeTo:function (volume, callback) {
 
-            this.faderCallback = callback ? callback : this.defaultFaderCallback;
+//             this.faderCallback = callback ? callback : this.defaultFaderCallback;
 
-            this.faderPosition = window.Howler.volume();
-            this.faderTargetVolume = volume;
-            this.fader.postMessage('start');
-        },
+//             this.faderPosition = window.Howler.volume();
+//             this.faderTargetVolume = volume;
+//             this.fader.postMessage('start');
+//         },
 
-        fadeIn:function (callback) {
+//         fadeIn:function (callback) {
 
-            callback = callback || function () {};
+//             callback = callback || function () {};
 
-            this.fadeTo( 1, callback );
-        },
+//             this.fadeTo( 1, callback );
+//         },
 
-        fadeOut:function (callback) {
+//         fadeOut:function (callback) {
 
-            callback = callback || function () {};
+//             callback = callback || function () {};
 
-            this.fadeTo( 0, callback );
-        },
+//             this.fadeTo( 0, callback );
+//         },
 
-        onWorkerMessage:function (e) {
+//         onWorkerMessage:function (e) {
 
-            if (this.faderTargetVolume > window.Howler.volume()) {
+//             if (this.faderTargetVolume > window.Howler.volume()) {
 
-                this.faderPosition += 0.1;
-            }
-            else {
+//                 this.faderPosition += 0.1;
+//             }
+//             else {
 
-                this.faderPosition -= this.FADE_AMOUNT;
-            }
+//                 this.faderPosition -= this.FADE_AMOUNT;
+//             }
 
-            var newVolume = this.faderPosition;
+//             var newVolume = this.faderPosition;
 
-            if (newVolume > 0.999) {
+//             if (newVolume > 0.999) {
 
-                this.setVolume(1);
-                this.fader.postMessage('stop');
-                this.faderCallback();
-            }
-            else if (newVolume < 0.001) {
+//                 this.setVolume(1);
+//                 this.fader.postMessage('stop');
+//                 this.faderCallback();
+//             }
+//             else if (newVolume < 0.001) {
 
-                this.setVolume(0);
-                this.fader.postMessage('stop');
-                this.faderCallback();
-            }
-            else {
-                this.setVolume(newVolume);
-            }
-        },
+//                 this.setVolume(0);
+//                 this.fader.postMessage('stop');
+//                 this.faderCallback();
+//             }
+//             else {
+//                 this.setVolume(newVolume);
+//             }
+//         },
 
-        setupWorker:function () {
+//         setupWorker:function () {
 
-            /*
-             * NOTE: This follows a method that uses Blobs instead of referencing a separate
-             * js file as is usual for workers. This way we can pull it in as plain text with
-             * require, rather than referencing the file directly, which could be tricky when
-             * stuff gets built/combined.
-             *
-             * Info on this method here:
-             * https://stackoverflow.com/questions/5408406/web-workers-without-a-separate-javascript-file
-             */
+//             /*
+//              * NOTE: This follows a method that uses Blobs instead of referencing a separate
+//              * js file as is usual for workers. This way we can pull it in as plain text with
+//              * require, rather than referencing the file directly, which could be tricky when
+//              * stuff gets built/combined.
+//              *
+//              * Info on this method here:
+//              * https://stackoverflow.com/questions/5408406/web-workers-without-a-separate-javascript-file
+//              */
 
-            // Create a Blob to wrap the worker JS so that we don't need to reference the JS file manually
-            var blobURL = URL.createObjectURL(
-                new Blob([FaderWorkerSnippet],{type:'application/javascript'})
-            );
+//             // Create a Blob to wrap the worker JS so that we don't need to reference the JS file manually
+//             var blobURL = URL.createObjectURL(
+//                 new Blob([FaderWorkerSnippet],{type:'application/javascript'})
+//             );
 
-            // Create the worker
-            var fader = new Worker(blobURL);
+//             // Create the worker
+//             var fader = new Worker(blobURL);
 
-            // Clean up the Blob
-            URL.revokeObjectURL(blobURL);
+//             // Clean up the Blob
+//             URL.revokeObjectURL(blobURL);
 
-            return fader;
-        },
+//             return fader;
+//         },
 
-        setVolume: function (volume) {
+//         setVolume: function (volume) {
 
-            window.Howler.volume( volume );
-        }
+//             window.Howler.volume( volume );
+//         }
 
-    };
+//     };
 
-    _.extend(controller, Backbone.Events);
-    controller.init();
+//     _.extend(controller, Backbone.Events);
+//     controller.init();
 
-    return controller;
-});
+//     return controller;
+// });
 /**
  * Created by kev on 2016-04-25.
  */
@@ -25893,10 +25896,10 @@ define('controller/ambient_sound_controller',[
     'model/loader_collection',
     'model/sound_model',
     'events/app_events',
-    'events/sound_states',
+    // 'events/sound_states',
     'visibly',
     'view/modules/common/ambient_player_view',
-    'controller/global_audio_fader_controller',
+    // 'controller/global_audio_fader_controller',
     'text!util/fader-worker.js'
 
 ],function (_,
@@ -25907,10 +25910,10 @@ define('controller/ambient_sound_controller',[
     LoaderCollection,
     SoundModel,
     AppEvents,
-    SoundStates,
+    // SoundStates,
     Visibily,
     AmbientPlayerView,
-    GlobalAudioFaderController,
+    // GlobalAudioFaderController,
     FaderWorkerSnippet) {
     'use strict';
 
@@ -25966,12 +25969,12 @@ define('controller/ambient_sound_controller',[
             Backbone.on(AppEvents.Loader.PreHidden, this.onLo);
 
             // Returned from model
-            SoundModel.on(AppEvents.Audio.Mute,this.onAmbientMute,this);
-            SoundModel.on(AppEvents.Audio.Unmute,this.onAmbientUnmute,this);
-            SoundModel.on(AppEvents.Audio.MuteAmbinet,this.onAmbientMute,this);
-            SoundModel.on(AppEvents.Audio.UnMuteAmbinet,this.onAmbientUnmute,this);
-            SoundModel.on(AppEvents.Audio.Pause,this.onAmbientPause,this);
-            SoundModel.on(AppEvents.Audio.Resume,this.onAmbientResume,this);
+            // SoundModel.on(AppEvents.Audio.Mute,this.onAmbientMute,this);
+            // SoundModel.on(AppEvents.Audio.Mute,this.onAmbientMute,this);
+            // SoundModel.on(AppEvents.Audio.MuteAmbinet,this.onAmbientMute,this);
+            // SoundModel.on(AppEvents.Audio.MuteAmbinet,this.onAmbientMute,this);
+            // SoundModel.on(AppEvents.Audio.Mute,this.onAmbientMute,this);
+            // SoundModel.on(AppEvents.Audio.Mute,this.onAmbient,this);
 
             this.initiatePlayers();
         },
@@ -25982,7 +25985,7 @@ define('controller/ambient_sound_controller',[
             //todo move to main loader
 
             if (SoundModel.get("loaded")) {
-                this.createPlayers();
+                // this.createPlayers();
             } else {
                 var self = this;
                 this.listenTo(SoundModel,"change:loaded",function () {
@@ -25999,7 +26002,7 @@ define('controller/ambient_sound_controller',[
             //create all players
             var player,volume,tracks = SoundModel.get("ambients").tracks;
             for (var i = 0; i < tracks.length; i++) {
-                volume = tracks[i].volume !== undefined ? tracks[i].volume : 1;
+                volume = tracks[i].volume !== undefined ? tracks[i].volume : 0;
                 player = new AmbientPlayerView({
                     src   :Config.CDN + tracks[i].src,
                     volume:volume,
@@ -26052,7 +26055,7 @@ define('controller/ambient_sound_controller',[
         },
 
         onInteractivesHide:function () {
-            SoundModel.unMuteAmbient();
+            SoundModel.muteAmbient();
         },
 
         onChangePage:function () {
@@ -26069,10 +26072,10 @@ define('controller/ambient_sound_controller',[
                 case AppModel.PAGES.WORK:
                     //reset index, alway want to play first track
                     SoundModel.reset();
-                    SoundModel.unMuteAmbient();
+                    SoundModel.muteAmbient();
                     break;
                 default :
-                    SoundModel.unMuteAmbient();
+                    SoundModel.muteAmbient();
                     break;
             }
 
@@ -26088,9 +26091,9 @@ define('controller/ambient_sound_controller',[
                 return;
             }
 
-            var duration = this._currentAmbient.getDuration();
-            var currentTime = this._currentAmbient.getCurrentTime();
-            var playNext = duration - currentTime < this.FADE_OVERLAP;
+            // var duration = this._currentAmbient.getDuration();
+            // var currentTime = this._currentAmbient.getCurrentTime();
+            // var playNext = duration - currentTime < this.FADE_OVERLAP;
 
 
             if (this.fading) {
@@ -26100,60 +26103,60 @@ define('controller/ambient_sound_controller',[
             if (this._triggerNext) {
                 this._triggerNext = false;
                 //force change
-                playNext = true;
+                // playNext = false;
             }
 
-            if (playNext) {
-                this.stageNext();
-            }
+            // if (playNext) {
+            //     this.stageNext();
+            // }
         },
 
 
-        stageNext:function () {
+        // stageNext:function () {
 
-            this._triggerNext = false;
-            this.fading = true;
+        //     this._triggerNext = false;
+        //     this.fading = true;
 
-            var self = this;
+        //     var self = this;
 
-            if (!this._currentAmbient.ready) {
-                return;
-            }
+        //     if (!this._currentAmbient.ready) {
+        //         return;
+        //     }
 
-            var previousPlayer = this._currentAmbient;
-            this._currentAmbient = this.getNextPlayer();
+        //     var previousPlayer = this._currentAmbient;
+        //     this._currentAmbient = this.getNextPlayer();
 
-            // console.log(this._currentAmbient);
+        //     // console.log(this._currentAmbient);
 
-            //check if loaded
-            if (!this._currentAmbient) {
-                return;
-            }
+        //     //check if loaded
+        //     if (!this._currentAmbient) {
+        //         return;
+        //     }
 
-            if (previousPlayer === this._currentAmbient) {
-                //wait for track to end then replay
-                this.listenTo(this._currentAmbient,"audio:ended",function () {
-                    self._currentAmbient.setVolume(0);
-                    this.fading = false;
-                    self.stopListening(this._currentAmbient,"audio:ended");
-                    self.playNext();
-                });
-            } else {
-                if (previousPlayer) {
-                    previousPlayer.fadeOut(function () {
-                        previousPlayer.reset();
-                        self.fading = false;
-                    });
-                }
+        //     if (previousPlayer === this._currentAmbient) {
+        //         //wait for track to end then replay
+        //         this.listenTo(this._currentAmbient,"audio:ended",function () {
+        //             self._currentAmbient.setVolume(0);
+        //             this.fading = false;
+        //             self.stopListening(this._currentAmbient,"audio:ended");
+        //             // self.playNext();
+        //         });
+        //     } else {
+        //         if (previousPlayer) {
+        //             previousPlayer.fadeOut(function () {
+        //                 previousPlayer.reset();
+        //                 self.fading = false;
+        //             });
+        //         }
 
-                this.playNext();
-            }
-        },
+        //         // this.playNext();
+        //     }
+        // },
 
         playNext:function () {
             if (!SoundModel.muted && !SoundModel.ambientMuted) {
-                this._currentAmbient.reset();
-                this._currentAmbient.fadeIn();
+                this._currentAmbient.pause();
+                this._currentAmbient.pause();
                 this._triggerNext = false;
             }
         },
@@ -26176,15 +26179,15 @@ define('controller/ambient_sound_controller',[
         // VISIBLY HANDLERS ------------------------------------------------------
 
         onWindowVisible:function () {
-            SoundModel.update(SoundStates.RESUME);
+            // SoundModel.update(SoundStates.MUTE);
 
-            GlobalAudioFaderController.fadeIn();
+            // GlobalAudioFaderController.fadeIn();
         },
 
         onWindowHidden:function () {
-            SoundModel.update(SoundStates.PAUSE);
+            // SoundModel.update(SoundStates.MUTE);
 
-            GlobalAudioFaderController.fadeOut();
+            // GlobalAudioFaderController.fadeOut();
         },
 
 
@@ -26197,7 +26200,7 @@ define('controller/ambient_sound_controller',[
         onMuteRequest:function () {
 
             // console.log('mute request...');
-            SoundModel.update(SoundStates.MUTE);
+            // SoundModel.update(SoundStates.MUTE);
         },
 
         /*
@@ -26207,19 +26210,19 @@ define('controller/ambient_sound_controller',[
         onUnmuteRequest:function () {
 
             // console.log('unmute request...');
-            SoundModel.update(SoundStates.UNMUTE);
+            // SoundModel.update(SoundStates.MUTE);
         },
 
         onPauseRequest:function () {
 
             // console.log('pause request...');
-            SoundModel.update(SoundStates.PAUSE);
+            // SoundModel.update(SoundStates.MUTE);
         },
 
         onResumeRequest:function () {
 
             // console.log('resume request...');
-            SoundModel.update(SoundStates.RESUME);
+            // SoundModel.update(SoundStates.MUTE);
         },
 
 
@@ -26234,7 +26237,7 @@ define('controller/ambient_sound_controller',[
         onAmbientUnmute:function () {
             // console.log('unmute accepted...');
             //SoundModel.unMuteAmbient();
-            this.ambientOn();
+            this.ambientOff();
         },
 
         onAmbientPause:function () {
@@ -26246,7 +26249,7 @@ define('controller/ambient_sound_controller',[
         onAmbientResume:function () {
 
             // console.log('resume accepted...');
-            this.ambientOn();
+            this.ambientOff();
         },
 
         ambientOn:function () {
@@ -26258,11 +26261,11 @@ define('controller/ambient_sound_controller',[
             //console.log("on");
             if (window.Worker) {
 
-                this._currentAmbient.fadeIn();
+                this._currentAmbient.pause();
             }
             else {
 
-                this._currentAmbient.play();
+                this._currentAmbient.pause();
             }
         },
 
@@ -29249,22 +29252,22 @@ module.exports = function (props) {
     return h(
         "div",
         { "class": "js-project__footer project__footer" },
-        h(
-            "div",
-            { "class": "js-project__awards project__awards" },
-            props.awards ? props.awards.map(function (award) {
-                return h(
-                    "div",
-                    { "class": "awards__item awards__item-" + award.type },
-                    h("div", { "class": "awards__item-icon" }),
-                    h(
-                        "div",
-                        { "class": "awards__item-name" },
-                        award.name
-                    )
-                );
-            }) : null
-        ),
+        // h(
+        //     "div",
+        //     { "class": "js-project__awards project__awards" },
+        //     props.awards ? props.awards.map(function (award) {
+        //         return h(
+        //             "div",
+        //             { "class": "awards__item awards__item-" + award.type },
+        //             h("div", { "class": "awards__item-icon" }),
+        //             h(
+        //                 "div",
+        //                 { "class": "awards__item-name" },
+        //                 award.name
+        //             )
+        //         );
+        //     }) : null
+        // ),
         h(
             "div",
             { "class": "js-project__launch project__launch" },
@@ -29317,7 +29320,7 @@ module.exports = function (props) {
     }
 
     if (!props.clientheader) {
-        props.clientheader = 'AGENCY + CLIENT';
+        props.clientheader = 'Business + Individual';
     }
 
     var launchDom = props.url ? h(
@@ -29454,7 +29457,7 @@ module.exports = function (props) {
                 h(
                     "h4",
                     null,
-                    "RESN ROLE"
+                    "Devflovv Role"
                 ),
                 h(
                     "p",
@@ -29680,7 +29683,7 @@ module.exports = function (props) {
                 h(
                     'h4',
                     null,
-                    'RESN ROLE'
+                    'Devflovv Role'
                 ),
                 h(
                     'p',
@@ -30147,26 +30150,26 @@ arguments[4][9][0].apply(exports,arguments)
 var h = require(2);
 
 module.exports = function (props) {
-    return h(
-        "div",
-        { "class": "js-project__footer project__footer" },
-        h(
-            "div",
-            { "class": "js-project__awards project__awards" },
-            props.awards.map(function (award) {
-                return h(
-                    "div",
-                    { "class": "awards__item awards__item-" + award.type },
-                    h("div", { "class": "awards__item-icon" }),
-                    h(
-                        "div",
-                        { "class": "awards__item-name" },
-                        award.name
-                    )
-                );
-            })
-        )
-    );
+    // return h(
+    //     "div",
+    //     { "class": "js-project__footer project__footer" },
+    //     h(
+    //         "div",
+    //         { "class": "js-project__awards project__awards" },
+    //         props.awards.map(function (award) {
+    //             return h(
+    //                 "div",
+    //                 { "class": "awards__item awards__item-" + award.type },
+    //                 h("div", { "class": "awards__item-icon" }),
+    //                 h(
+    //                     "div",
+    //                     { "class": "awards__item-name" },
+    //                     award.name
+    //                 )
+    //             );
+    //         })
+    //     )
+    // );
 };
 
 },{"2":2}],35:[function(require,module,exports){
@@ -30258,7 +30261,7 @@ module.exports = function (props) {
                 h(
                     'h4',
                     null,
-                    'RESN ROLE'
+                    'Devflovv Role'
                 ),
                 h(
                     'p',
@@ -38230,7 +38233,8 @@ define('view/modules/work/project/project_image_view',[
             this.imageRatio = this.model.src_width / this.model.src_height;
 
             this.$imageEl = this.$('.js-project__image-el');
-            this.$imageEl.css({ 'backgroundImage' : this.generateBgImageString(this.imagePath) });
+            this.$imageEl.css({ 'backgroundImage' : this.generateBgImageString(this.imagePath)
+			 });
 
             var filetype = this.imagePath.split('.').pop().toLowerCase();
             if ( filetype === 'gif' && !Config.IS_EDGE ) {
@@ -122544,7 +122548,7 @@ define('view/modules/background/gem/gem2_view',[
         ANTIALIAS: false,
 
         modelScale: 14,
-        modelYOffset: -8,
+        modelYOffset: -12,
 
         useRefraction: true,
 
@@ -122833,15 +122837,24 @@ define('view/modules/background/gem/gem2_view',[
 
 
             //mesh
-            var loader = new THREE.OBJLoader();
-            var object = loader.parse(LoaderCollection.getResult('GEM_MODEL'));
-
-            this.mesh            = object.children[0];
-            this.mesh.material   = this.material;
-            this.mesh.scale.x    = this.mesh.scale.y = this.mesh.scale.z = this.modelScale;//10;
-            this.mesh.position.y = this.modelYOffset;
-
-            this.meshContainer.add(this.mesh);
+			var loader = new THREE.OBJLoader();
+			var object = loader.parse(LoaderCollection.getResult('GEM_MODEL'));
+			
+			this.mesh = object.children[0];
+			this.mesh.material = this.material;
+			
+			this.mesh.scale.set(
+				-this.modelScale,  // Negative X for flipping
+				this.modelScale,
+				this.modelScale
+			);
+			
+			this.mesh.position.y = this.modelYOffset;
+			
+			// ✅ Fix: Rotate the mesh to the right (clockwise) around the Y-axis
+			this.mesh.rotation.y = Math.PI/ 4; // Rotate 180 degrees (you can tweak this angle)
+			
+			this.meshContainer.add(this.mesh);
             //this.animateIntro();
 
             //render
@@ -122893,7 +122906,7 @@ define('view/modules/background/gem/gem2_view',[
             this.lightenShader = new THREE.ShaderPass( THREE.BrightnessContrastShader );
             this.lightenShader.uniforms[ 'brightness' ].value = this.postOffsetDarkenBrightness;//0.15;
             this.lightenShader.uniforms[ 'contrast' ].value = this.postOffsetDarkenContrast;//0;
-            //this.lightenShader.renderToScreen = true;
+            this.lightenShader.renderToScreen = true;
             this.composer.addPass(this.lightenShader);
 
             this.colorShader = new THREE.ShaderPass( THREE.ColorCorrectionShader );
@@ -123297,8 +123310,8 @@ define('view/modules/background/gem/gem2_view',[
 
                 TweenMax.killTweensOf(this.dragTweenObj);
 
-                this.createTimeout();
-                TweenMax.to(this.dragTweenObj, 1.8, {'progress':1, ease:'Sine.easeIn'});
+                // this.createTimeout();
+                // TweenMax.to(this.dragTweenObj, 1.8, {'progress':1, ease:'Sine.easeIn'});
 
                 this.trigger('GEM:MOUSE:DOWN', e);
             }
@@ -123317,10 +123330,10 @@ define('view/modules/background/gem/gem2_view',[
 
                 TweenMax.killTweensOf(this.dragTweenObj);
 
-                this.createTimeout();
-                TweenMax.to(this.dragTweenObj, 1.8, {'progress':1, ease:'Sine.easeIn'});
+                // this.createTimeout();
+                // TweenMax.to(this.dragTweenObj, 1.8, {'progress':1, ease:'Sine.easeIn'});
 
-                this.trigger('GEM:MOUSE:DOWN', e);
+                 this.trigger('GEM:MOUSE:DOWN', e);
             }
         },
 
@@ -123732,7 +123745,7 @@ define('view/modules/background/background_drop_view',[
             this.gemView.on('GEM:MOUSE:DOWN', this.onDown, this);
             this.gemView.on('GEM:MOUSE:UP', this.onUp, this);
             this.gemView.on('GEM:MOUSE:MOVE', this.onMove, this);
-            this.gemView.on('SHOW:INTERACTIVE', this.onShowInt, this);
+            // this.gemView.on('SHOW:INTERACTIVE', this.onShowInt, this);
             this.gemView.on('START:TRANSITION:INTERACTIVE', this.onShowTransInt, this);
             this.gemView.on('HIDE:INTERACTIVE', this.onHideInt, this);
 
@@ -123754,7 +123767,7 @@ define('view/modules/background/background_drop_view',[
             this.gemView.off('GEM:MOUSE:DOWN', this.onDown, this);
             this.gemView.off('GEM:MOUSE:UP', this.onUp, this);
             this.gemView.off('GEM:MOUSE:MOVE', this.onMove, this);
-            this.gemView.off('SHOW:INTERACTIVE', this.onShowInt, this);
+            // this.gemView.off('SHOW:INTERACTIVE', this.onShowInt, this);
             this.gemView.off('START:TRANSITION:INTERACTIVE', this.onShowTransInt, this);
             this.gemView.off('HIDE:INTERACTIVE', this.onHideInt, this);
 
@@ -123940,7 +123953,7 @@ define('view/modules/background/background_drop_view',[
             if (!this.loading) {
                 this.bar.activate();
                 //this.activationTimer = setTimeout(this.activateInteractive, 2);
-                this.activateInteractive();
+                // this.activateInteractive();
 
 
             } else {
@@ -123954,16 +123967,16 @@ define('view/modules/background/background_drop_view',[
             // console.log('*************activate interactive');
 
             // start interactive with mousepos
-            this.interactiveView.setMousePos(this.showIntMousePos);
+            // this.interactiveView.setMousePos(this.showIntMousePos);
 
-            this.$interactiveHolder.css({'z-index':'1001', 'display': 'block'});
+            // this.$interactiveHolder.css({'z-index':'1001', 'display': 'block'});
 
-            this.interactiveView.activate();
-            this.interactiveView.show();
+            // this.interactiveView.deactivate();
+            // this.interactiveView.hide();
 
-            Backbone.trigger(AppEvents.Interactives.Show, {
-                interactive : this.interactiveView.model
-            });
+            // Backbone.trigger(AppEvents.Interactives.Show, {
+            //     interactive : this.interactiveView.model
+            // });
 
 
         },
@@ -123987,23 +124000,25 @@ define('view/modules/background/background_drop_view',[
         },
 
         createInteractive:function() {
+			
+			
 
-            if (this.interactiveView) {
-                this.interactiveView.deactivate();
-                this.interactiveView.destroy();
-            }
+            // if (this.interactiveView) {
+            //     this.interactiveView.deactivate();
+            //     this.interactiveView.destroy();
+            // }
 
-            this.loading = true;
-            this.currentInteractive = AppModel.getNextInteractive(!this.firstInteractive);
+            // this.loading = true;
+            // this.currentInteractive = AppModel.getNextInteractive(!this.firstInteractive);
 
-            this.bar.setCounter(this.currentInteractive.get('number'), AppModel.get("numInteractives"));
+            // this.bar.setCounter(this.currentInteractive.get('number'), AppModel.get("numInteractives"));
 
-            if (this.currentInteractive.get('loaded')) {
-                this.setupInteractive();
-            } else {
+            // if (this.currentInteractive.get('loaded')) {
+            //     this.setupInteractive();
+            // } else {
 
-                this.currentInteractive.on('change:loaded', this.onInteractiveLoaded);
-            }
+            //     this.currentInteractive.on('change:loaded', this.onInteractiveLoaded);
+            // }
         },
 
         onInteractiveLoaded: function(e) {
@@ -124014,19 +124029,19 @@ define('view/modules/background/background_drop_view',[
 
         setupInteractive: function() {
 
-            this.hideLoadingMessage();
-            //console.log('Setup interactive:', this.currentInteractive.get('id'));
+            // this.hideLoadingMessage();
+            // //console.log('Setup interactive:', this.currentInteractive.get('id'));
 
-            var Class = this.currentInteractive.get('Class');
-            this.interactiveView = new Class({el:this.$interactiveHolder, model: this.currentInteractive});
-            this.interactiveView.onResize();
+            // var Class = this.currentInteractive.get('Class');
+            // // this.interactiveView = new Class({el:this.$interactiveHolder, model: this.currentInteractive});
+            // this.interactiveView.onResize();
 
-            this.loading = false;
+            // this.loading = false;
 
-            if (this.interactiveStarted) {
-                this.interactiveStarted = false;
-                this.onShowTransInt();
-            }
+            // if (this.interactiveStarted) {
+            //     this.interactiveStarted = false;
+            //     this.onShowTransInt();
+            // }
         },
 
         showLoadingMessage:function(){
@@ -124989,7 +125004,8 @@ define('view/modules/background/background_view',[
             this.$('.js-background__drop__gem').css(
             {
                 'position':'fixed',
-                'overflow':'hidden'
+                'overflow':'hidden',
+				'opacity': '0.8',
             });
         },
 
@@ -125004,7 +125020,8 @@ define('view/modules/background/background_view',[
             this.$shards.css(
             {
                 position: 'fixed',
-                overflow: 'hidden'
+                overflow: 'hidden',
+				background: '#000000',
             });
         },
 
@@ -125066,7 +125083,6 @@ define('data/shell/animated_icon_points',[], function() {
 
     return {
         // Normalized and reversed
-        'drop': ["0.4996733135647244,8.328507069476278e-7","0.49967511494954425,0.007449057215236677","0.4996768633524577,0.014897280448808371","0.49967866473727757,0.02234550450974283","0.49968046612209743,0.029793730225402812","0.4996822145250108,0.03724195428633727","0.49968401590983075,0.04469017834727173","0.4996858172946506,0.052138402408206184","0.4996876186794705,0.05958662646914064","0.4996893670823839,0.0670348505300751","0.4996911684672038,0.07448307459100956","0.49969296985202366,0.08193119274951037","0.49969471825493705,0.08937941681044483","0.4996965196397569,0.09682764087137928","0.49969832102457684,0.10427586493231374","0.49970006942749023,0.11172408899324819","0.4997018708123101,0.11917231305418266","0.49970367219712997,0.12662053711511712","0.4997054735819499,0.13406876117605157","0.4997072219848633,0.14151698523698603","0.49970902336968315,0.14896520929792048","0.499710824754503,0.15641343335885494","0.49971257315741646,0.1638616574197894","0.49971437454223633,0.17130988148072385","0.4997161759270562,0.1787581055416583","0.49971792432996964,0.18620632960259278","0.4997197257147895,0.19365455366352724","0.4997215270996094,0.2011027777244617","0.49972327550252277,0.20855100178539615","0.4997250768873427,0.2159992258463306","0.49972687827216256,0.22344733076702722","0.4997286796569824,0.23089555482796167","0.4997304280598958,0.23834377888889613","0.49973222944471574,0.24579200294983058","0.4997340308295356,0.25324022701076504","0.499735779232449,0.26068845107169947","0.49973758061726886,0.26813667513263395","0.4997393820020888,0.27558489919356843","0.4997411304050022,0.28303312325450286","0.49974293178982204,0.29048134731543734","0.4997447331746419,0.29792957137637177","0.49974653455946183,0.30537779543730625","0.4997482829623752,0.3128260194982407","0.4997500843471951,0.32027424355917516","0.49975188573201496,0.3277224676201096","0.4997536341349284,0.3351706916810441","0.49975543551974827,0.3426189157419785","0.49975723690456814,0.350067139802913","0.49975898530748153,0.35751536386384747","0.49976078669230145,0.3649635879247819","0.4997625880771213,0.3724118119857164","0.4997643364800347,0.37985993014421715","0.4997661378648546,0.38730815420515163","0.4997679392496745,0.39475637826608606","0.49976974063449436,0.40220460232702054","0.49977148903740776,0.40965282638795497","0.4997732904222276,0.41710105044888945","0.49977509180704754,0.42454927450982394","0.49977684020996094,0.43199749857075836","0.4997786415947808,0.43944572263169285","0.49978044297960067,0.4468939731682357","0.4997821913825141,0.45434219722917013","0.499783992767334,0.4617904212901046","0.49978579415215385,0.4692386453510391","0.4997875425550673,0.4766868694119735","0.49978934393988717,0.484135093472908","0.49979114532470703,0.49158331753384243","0.4997929467095269,0.4990315415947769","0.49979469511244035,0.5064797656557114","0.4997964964972602,0.5139279897166458","0.4997982978820801,0.5213761078751467","0.49980004628499347,0.5288243319360811","0.4998018476698134,0.5362725559970155","0.49980364905463326,0.54372078005795","0.49980539745754665,0.5511690041188845","0.4998071988423665,0.558617228179819","0.49980900022718644,0.5660654522407533","0.4998108016120063,0.5735136763016878","0.4998125500149197,0.5809619003626223","0.49981435139973956,0.5884101244235568","0.4998161527845595,0.5958583484844912","0.4998179011874729,0.6033065725454256","0.49981970257229275,0.6107547966063601","0.4998215039571126,0.6182030206672946","0.49982325236002606,0.6256512447282291","0.4998250537448459,0.6330994687891635","0.4998268551296658,0.6405476398988811","0.4998286035325792,0.6479958639598156","0.4998304049173991,0.65544408802075","0.499832206302219,0.6628923120816845","0.49983400768703884,0.6703405361426189","0.49983575608995223,0.6777887602035534","0.4988245434231228,0.6852280355088446","0.4944468074374729,0.6925920141838117","0.4870732095506456,0.6998056643542147","0.4770249260796441,0.7068153464374105","0.464680724673801,0.713592837434832","0.4504055447048611,0.7201299299078714","0.4345436890920003,0.7264349901487869","0.4173901345994737,0.7325256509127809","0.39919495582580566,0.7384249989303888","0.38016536500718856,0.7441576565174339","0.36048436164855957,0.7497516348676164","0.3403017785814073,0.7552329330283968","0.31974834865993923,0.7606276559496695","0.2989443673027886,0.7659621203861962","0.27800557348463273,0.7712635432634246","0.2570464611053467,0.7765599887262714","0.23617929882473415,0.7818790443587024","0.21554002496931288,0.7872532222078472","0.19528362486097547,0.792717523028027","0.17559764120313856,0.7983102305490056","0.15673530101776123,0.8040770416709024","0.1390297147962782,0.8100679423423995","0.12294712331559923,0.8163371016583082","0.10824014743169148,0.8228150476221548","0.09502034054862128,0.829489283746769","0.08363132344351874,0.8363709297876839","0.07412449518839519,0.843428744526973","0.06654314862357245,0.8506305865760242","0.060922337902916804,0.85794373208284","0.057287136713663735,0.8653349276832547","0.05565412839253744,0.872770549354585","0.05602096186743842,0.8802168671717138","0.058374908235338,0.8876404159656082","0.062716543674469,0.8950077305672351","0.06903112596935695,0.9022854517099954","0.07729028330908881,0.9094406437370244","0.08745565679338244,0.9164409005036256","0.09947829776340061,0.9232549807918727","0.1133019659254286,0.929852384700875","0.12886170546213785,0.9362038831589452","0.14608758025699192,0.9422808825089986","0.16490242216322157,0.9480563776304546","0.18522315555148655,0.9535038929149011","0.20695943302578396,0.9585989649001653","0.2300154897901747,0.9633179773435436","0.2542889648013645,0.967639220246138","0.27967098024156356,0.9715425721455554","0.306044790479872,0.9750110886524119","0.3332902855343289,0.9780299434259968","0.3612671693166097,0.9805982892468409","0.3898695574866401,0.9826930393844087","0.418980254067315,0.9842943900836081","0.44845522774590385,0.9854043534906782","0.4781574143303765,0.9860238827275221","0.5079544385274252,0.9861542486233434","0.5377171304490831,0.9857971456170807","0.5673185984293619,0.9849554330744421","0.5966337521870931,0.9836329234830393","0.6254808637830946,0.9816033033421654","0.6537978384229872,0.9793136927266842","0.6814462343851725,0.9765589586226188","0.7082992659674751,0.9733458787857225","0.7342279752095541,0.9696821840936518","0.7591002252366807,0.9655761349362312","0.7827809121873643,0.9610377920446572","0.8051301638285319,0.9560775338574276","0.8260050349765353,0.950708386373881","0.8460597991943359,0.9453172111841355","0.8647449811299642,0.9396587382518611","0.8810845481024848,0.9333928089601787","0.8958072662353516,0.9269054376797374","0.9088515175713433,0.9202174871899657","0.9201679229736328,0.9133528914408683","0.9297064675225152,0.9063350548702814","0.9374247656928169,0.8991891822574135","0.9416332244873047,0.8916064621057455","0.9454780154758029,0.8842934225013633","0.9473879072401259,0.8769333622164412","0.9473278257581923,0.869554345395896","0.9452647103203667,0.8621854422577644","0.9411652882893881,0.8548564643371181","0.9326585133870443,0.8473612195956438","0.9242696762084961,0.8402298556161857","0.9163104163275825,0.8334270539371221","0.9037268956502279,0.8265833739186703","0.8889369964599609,0.8199507044992632","0.8682769139607748,0.8128276009096297","0.8512146208021376,0.8067217431464071","0.8327879375881619,0.8008678802240512","0.8133896191914877,0.7952129020720873","0.7933023770650228,0.7897098939124089","0.7727484173244901,0.7843153827960034","0.7518938382466634,0.7789932559929968","0.7308846579657661,0.7737092011148868","0.7098497284783257,0.7684315533340125","0.6888943778143989,0.7631342077004796","0.6681372854444716,0.7577883587523357","0.6476989322238498,0.7523664718568321","0.6277089648776584,0.7468413300885213","0.6083084212409126,0.741186722595075","0.5896707110934787,0.7353742675242757","0.5719921323988173,0.7293779658286625","0.5555104149712456,0.7231727715826777","0.5405071576436361,0.7167381397141932","0.5273094707065158,0.7100615737360387","0.5162878036499023,0.7031436561115993","0.5078150431315104,0.6960056202788214","0.5022466447618272,0.6886919452598373"],
         // Normalized and reversed
         'menu': ["0.49611969835865716,0.9999933445378812","0.4961340025992552,0.9926646400078306","0.4961482538611844,0.9853359354777799","0.49616255810178245,0.9780072309477291","0.4961768093637116,0.9706786318681817","0.4961911136043097,0.9633499273381311","0.49620536486623884,0.9560212228080803","0.4962196691068369,0.9486925182780296","0.49623392036876607,0.9413638137479788","0.49624822460936413,0.9340351092179282","0.4962624758712933,0.9267065101383808","0.49627678011189136,0.91937780560833","0.4962910313738205,0.9120491010782793","0.4963053356144186,0.9047203965482287","0.49631958687634775,0.8973916920181779","0.4963338911169458,0.8900629874881272","0.496348142378875,0.8827343884085798","0.49636244661947304,0.875405683878529","0.4963766978814022,0.8680769793484784","0.49639100212200027,0.8607482748184276","0.49640525338392943,0.8534195702883769","0.4964195576245275,0.8460908657583261","0.4964338088864567,0.8387622666787788","0.4964481131270547,0.8314335621487281","0.49646236438898395,0.8241048576186774","0.496476668629582,0.8167761530886266","0.4964909198915112,0.809447448558576","0.49650522413210924,0.8021187440285252","0.4965194753940384,0.7947900394984745","0.49653377963463646,0.7874614404189271","0.49654803089656563,0.7801327358888764","0.4965623351371637,0.7728040313588257","0.49657663937776175,0.765475326828775","0.4965908906396909,0.7581466222987242","0.496605194880289,0.7508179177686736","0.49661944614221815,0.7434893186891262","0.4966337503828162,0.7361606141590754","0.4966480016447454,0.7288319096290247","0.49666230588534344,0.721503205098974","0.4966765571472726,0.7141745005689233","0.49669086138787066,0.7068457960388725","0.49670511264979983,0.6995171969593251","0.4967194168903979,0.6921884924292745","0.49673366815232706,0.6848597878992237","0.4967479723929251,0.677531083369173","0.4967622236548543,0.6702023788391223","0.49677652789545235,0.6628737270343232","0.49679077915738157,0.6555451279547758","0.4968050833979796,0.6482164234247251","0.4968193346599088,0.6408877188946744","0.49683363890050686,0.6335590143646237","0.496847890162436,0.626230309834573","0.4968621944030341,0.6189016053045222","0.49687644566496325,0.6115729007744716","0.4968907499055613,0.6042443016949242","0.4969050011674905,0.5969155971648734","0.49691930540808854,0.5895868926348227","0.4969335566700177,0.582258188104772","0.49694786091061577,0.5749294835747213","0.49696211217254493,0.5676007790446705","0.496976416413143,0.5602721799651231","0.49699066767507216,0.5529434754350725","0.4970049719156702,0.5456147709050218","0.4970192231775994,0.538286066374971","0.49703352741819745,0.5309573618449203","0.4970478316587955,0.5236286573148696","0.4970620829207247,0.5163000582353222","0.49707638716132274,0.5089713537052715","0.4970906384232519,0.5016426491752207","0.49710494266384997,0.49431394464517003","0.49711919392577913,0.48698524011511934","0.4971334981663772,0.4796565355850686","0.4971477494283064,0.4723279365055212","0.4971620536689044,0.4649992319754705","0.49717630493083365,0.4576705274454198","0.4971906091714317,0.45034182291536906","0.4972048604333609,0.44301311838531837","0.49721916467395894,0.4356844138552676","0.4972334159358881,0.42835570932521694","0.49724772017648616,0.4210271102456695","0.49726197143841533,0.4136984057156188","0.4972762756790134,0.4063697011855681","0.49729052694094256,0.39904099665551734","0.4973048311815406,0.3917123448507183","0.4973190824434698,0.3843836403206676","0.49733338668406785,0.3770549357906169","0.497347637945997,0.3697262839858178","0.4973619421865951,0.3623975794557671","0.49737619344852424,0.35506887492571637","0.4973904976891223,0.3477401703956657","0.49740474895105147,0.3404115185908666","0.49741905319164953,0.3330828667860676","0.4974333044535787,0.32575416225601683","0.49744760869417676,0.3184255104512178","0.497461859956106,0.31109680592116706","0.497476164196704,0.3037681013911164","0.49749046843730205,0.2964394495863173","0.49750471969923127,0.2891107450562666","0.4975190239398293,0.28178204052621586","0.4975332752017585,0.27445338872141684","0.49754757944235656,0.2671246841913661","0.4975618307042857,0.2597959796613154","0.4975761349448838,0.2524673278565163","0.49759038620681295,0.2451386233264656","0.497604690447411,0.2378099187964149","0.4795315473451101,0.23486621527106014","0.4501713518162334,0.23429243271988473","0.4210277860644139,0.2332375849725757","0.3922304624030707,0.2317035965008186","0.36390785410424187,0.22969544984089513","0.3361865801865548,0.22722181829670318","0.3091893922258082,0.2242941168852268","0.28303414127092946,0.2209264232486589","0.25783401624798435,0.2171344758746196","0.23369685523748157,0.2129362936178632","0.21072497329369883,0.2083511739204968","0.1890172286127694,0.20339946872966064","0.168666201418564,0.1981030062995414","0.14976127997015334,0.1924847352959235","0.13238695199973646,0.1865683425381146","0.11662197029860599,0.18037924159741422","0.1025403659341905,0.1739438478249033","0.09020887216228007,0.16728982879638973","0.0796864145073384,0.16044614385634706","0.07102215055175407,0.1534431232057919","0.0642531918530787,0.14631196701239327","0.059403862242662614,0.13908463995996925","0.05648465811927799,0.13179335717728327","0.055494158992365435,0.12447016243603089","0.0564379044439899,0.11714651953013941","0.05930928207404157,0.10985411633585568","0.06411315598655716,0.1026248977650284","0.07083960592578858,0.09549124371283245","0.07946402330004027,0.08848519795096337","0.08994841578139044,0.08163793428446435","0.10224352645244636,0.07497971700778748","0.11629066819275431,0.06853962409722247","0.13202305476785534,0.06234538903514182","0.14936684053566193,0.0564234733072217","0.16824255749285155,0.05079906310711381","0.1885659960452368,0.04549610558505586","0.21024828447576857,0.040537447251657206","0.23319594192320517,0.03594485374986819","0.2573111962541254,0.03173889781382037","0.2824915337442432,0.027938903248246647","0.30862924875972203,0.024562763685428677","0.33561160269318174,0.02162656032712236","0.36332053258101943,0.019144444960405696","0.3916336576981184,0.017128079751879938","0.42042427955784806,0.015585994658664988","0.4495632626548093,0.014523651687299863","0.478920809250242,0.013942894573928501","0.5083685785187801,0.013840144592094568","0.5377845605859893,0.014193126970636396","0.5670419774972356,0.015033524642808499","0.5959874030274376,0.0164048969048015","0.6245442830000612,0.018185527513161378","0.6525080667745543,0.02050061257795163","0.6798988862450919,0.023165966318487403","0.7064186834205455,0.02636406259243875","0.7320362538649439,0.029985727175589966","0.7566466998139013,0.034013653004084085","0.7801487790311848,0.038430061782127455","0.8024435273633234,0.043216684210020354","0.8234341527822703,0.048354697372920634","0.8430254526200449,0.05382471485485905","0.8611220652726603,0.05960671424151823","0.8770708697101431,0.06585571765875932","0.8924471866516902,0.072022528999321","0.9054808928126267,0.07861196618520916","0.9166289821907259,0.0854241477873858","0.9257884642536819,0.09243362069061269","0.9337739390142195,0.09943468391620001","0.9397231256576204,0.10658258696765673","0.9435384374758043,0.1138500049833107","0.9451221818033537,0.12120747113814122","0.9457397011678388,0.12844339240658562","0.9435105706959727,0.1357807175152825","0.9396786235757597,0.1430299387284578","0.9342418466177826,0.15017307673529584","0.9272055376889293,0.1571914667967095","0.9170989029837066,0.16415357265197755","0.9053341418998244,0.17091959329632703","0.8919432535532876,0.17746771365688416","0.8769660249244262,0.18377592094108147","0.8604472759671142,0.1898222287189773","0.8424356410993851,0.19558451874750082","0.8229847877128157,0.201040554151765","0.8021503434097321,0.20616786079325033","0.7799914323846062,0.21094355591273697","0.7565688211706452,0.21534430858636597","0.7319447597037853,0.21934593110493886","0.7061838819600618,0.22292347124310824","0.6793521463822327,0.22605065864423513","0.6515177365171488,0.2287001025400829","0.6245978974129694,0.2310637492093149","0.5949714310942933,0.23269781020872016","0.5664012534757804,0.2340418295987511","0.5371114136191786,0.23484412339061514","0.5090016736119164,0.23541057713181"],
         // Normalized and reversed
@@ -126713,17 +126729,17 @@ define('view/modules/shell/shell_view',[
             //     );
             // }
 
-            this.$buttonSound = this.$(".js-shell__button--sound");
-            this.sound = this.createAnimatedButton(
-                this.$buttonSound,
-                AnimatedIconPoints.sound,
-                72, // Width
-                16, // Height1
-                68, // End range
-                -1, // Label direction
-                AnimatedIconPoints.soundToggle,
-                52 // Toggle end range
-            );
+            // this.$buttonSound = this.$(".js-shell__button--sound");
+            // this.sound = this.createAnimatedButton(
+            //     this.$buttonSound,
+            //     AnimatedIconPoints.sound,
+            //     72, // Width
+            //     16, // Height1
+            //     68, // End range
+            //     -1, // Label direction
+            //     AnimatedIconPoints.soundToggle,
+            //     52 // Toggle end range
+            // );
 
             this.$close = this.$(".js-shell__close");
             this.close = new ShellCloseView({
@@ -126820,10 +126836,10 @@ define('view/modules/shell/shell_view',[
                 if (this.reel) this.reel.on("click", this.onClickReel, this);
                 if (this.reel) this.reel.on("mousedown", this.onDownReel, this);
 
-                this.sound.on("mouseenter", this.onOverSound, this);
-                this.sound.on("mouseleave", this.onOutSound, this);
-                this.sound.on("click", this.onClickSound, this);
-                this.sound.on("mousedown", this.onDownSound, this);
+                // this.sound.on("mouseenter", this.onOverSound, this);
+                // this.sound.on("mouseleave", this.onOutSound, this);
+                // this.sound.on("click", this.onClickSound, this);
+                // this.sound.on("mousedown", this.onDownSound, this);
 
                 this.project.on("mouseenter", this.onOverProject, this);
                 this.project.on("mouseleave", this.onOutProject, this);
@@ -127054,7 +127070,7 @@ define('view/modules/shell/shell_view',[
             }
 
             if (this.reel) this.reel.show(0.09);
-            this.sound.show(0.18);
+            // this.sound.show(0.18);
             this.menu.show(0.34);
 
             if (this.closeButtonActive) {
@@ -127085,7 +127101,7 @@ define('view/modules/shell/shell_view',[
 
             this.drop.hide(0.24);
             if (this.reel) this.reel.hide(0.16);
-            this.sound.hide(0.08);
+            // this.sound.hide(0.08);
             this.menu.hide(0);
 
             if (this.closeButtonActive) {
@@ -127230,7 +127246,7 @@ define('view/modules/shell/shell_view',[
                 case AppModel.PAGES.HOME:
                     this.drop.hide();
                     if (this.reel) this.reel.show(1.62);
-                    this.sound.show(5);
+                    // this.sound.show(5);
                     this.menu.show(5.17);
 
                     this.drop.deactivate();
@@ -127249,7 +127265,7 @@ define('view/modules/shell/shell_view',[
                 case AppModel.PAGES.CONTACT:
                     this.drop.show();
                     if (this.reel) this.reel.show();
-                    this.sound.show();
+                    // this.sound.show();
                     this.menu.show();
 
                     this.drop.deactivate();
@@ -127267,7 +127283,7 @@ define('view/modules/shell/shell_view',[
                 case AppModel.PAGES.MENU:
                     this.drop.show();
                     if (this.reel) this.reel.show();
-                    this.sound.show();
+                    // this.sound.show();
                     this.menu.show();
 
                     this.drop.deactivate();
@@ -127285,7 +127301,7 @@ define('view/modules/shell/shell_view',[
                 case AppModel.PAGES.WORK:
                     this.drop.show();
                     if (this.reel) this.reel.show();
-                    this.sound.show();
+                    // this.sound.show();
                     this.menu.show();
 
                     this.drop.deactivate();
@@ -127301,7 +127317,7 @@ define('view/modules/shell/shell_view',[
                 case AppModel.PAGES.REEL:
                     this.drop.show();
                     if (this.reel) this.reel.show();
-                    this.sound.show();
+                    // this.sound.show();
                     this.menu.show();
 
                     this.drop.deactivate();
@@ -127321,7 +127337,7 @@ define('view/modules/shell/shell_view',[
                 default:
                     this.drop.hide();
                     if (this.reel) this.reel.hide();
-                    this.sound.hide();
+                    // this.sound.hide();
                     this.menu.hide();
 
                     this.drop.deactivate();
@@ -127372,313 +127388,313 @@ define('view/modules/shell/shell_view',[
     });
 });
 
-define('view/modules/resize/resize_view',[
-    'jquery',
-    'underscore',
-    'backbone',
-    'config',
-    'TweenMax',
-    'route/router',
-    'events/app_events',
-    'model/app_model',
-    // 'model/sound_model',
-    "util/anim_frame",
-    "model/loader_collection",
-    'view/common/base_view'
+// define('view/modules/resize/resize_view',[
+//     'jquery',
+//     'underscore',
+//     'backbone',
+//     'config',
+//     'TweenMax',
+//     'route/router',
+//     'events/app_events',
+//     'model/app_model',
+//     // 'model/sound_model',
+//     "util/anim_frame",
+//     "model/loader_collection",
+//     'view/common/base_view'
 
-], function (
-    $,
-    _,
-    Backbone,
-    Config,
-    TweenMax,
-    Router,
-    AppEvents,
-    AppModel,
-    // SoundModel,
-    AnimFrame,
-    LoaderCollection,
-    BaseView
+// ], function (
+//     $,
+//     _,
+//     Backbone,
+//     Config,
+//     TweenMax,
+//     Router,
+//     AppEvents,
+//     AppModel,
+//     // SoundModel,
+//     AnimFrame,
+//     LoaderCollection,
+//     BaseView
 
-) { 'use strict';
+// ) { 'use strict';
 
-    return BaseView.extend({
+//     return BaseView.extend({
 
-        canvas: null,
-        ctx: null,
-        pixelRatio: 1,
+//         canvas: null,
+//         ctx: null,
+//         pixelRatio: 1,
 
-        isAttached: false,
-        sliceNumber: 0,
+//         isAttached: false,
+//         sliceNumber: 0,
 
-        sliceWidth: 53,
-        sliceHeight: 256,
-        faceW:260,
-        faceH:274,
-        sliceImg0: null,
-        sliceImg1: null,
-        sliceImg2: null,
-        sliceImg3: null,
-        faceImg: null,
-        bodyImg: null,
-        legLeftImg: null,
-        footLeftImg: null,
-        legRightImg: null,
-        footRightImg: null,
+//         sliceWidth: 53,
+//         sliceHeight: 256,
+//         faceW:260,
+//         faceH:274,
+//         sliceImg0: null,
+//         sliceImg1: null,
+//         sliceImg2: null,
+//         sliceImg3: null,
+//         faceImg: null,
+//         bodyImg: null,
+//         legLeftImg: null,
+//         footLeftImg: null,
+//         legRightImg: null,
+//         footRightImg: null,
 
-        leftHand: null,
-        rightHand: null,
+//         leftHand: null,
+//         rightHand: null,
 
-        keyIndex: 0,
-        totalKeys : -1,
-        triggerInterval : null,
+//         keyIndex: 0,
+//         totalKeys : -1,
+//         triggerInterval : null,
 
-        progressSound:1,
+//         progressSound:1,
 
-        reduceIndex:0,
+//         reduceIndex:0,
 
-        // SETUP ---------------------------------------------------------------
+//         // SETUP ---------------------------------------------------------------
 
-        initialize: function(options) {
+//         initialize: function(options) {
 
-            this.totalKeys = 6;//SoundModel.getTrackById("accordian").sprites.length;
+//             this.totalKeys = 6;//SoundModel.getTrackById("accordian").sprites.length;
 
-            _.bindAll(this,'updateSound');
-            this.$window = $(window);
-            //this.pixelRatio     = window.devicePixelRatio;
+//             _.bindAll(this,'updateSound');
+//             this.$window = $(window);
+//             //this.pixelRatio     = window.devicePixelRatio;
 
-            this.sliceNumber    = 25;//Config.MIN_WIDTH / this.sliceWidth;
-            this.sliceImg0      = LoaderCollection.getResult('RESIZE_SLICE_0');
-            this.sliceImg1      = LoaderCollection.getResult('RESIZE_SLICE_1');
-            this.sliceImg2      = LoaderCollection.getResult('RESIZE_SLICE_2');
-            this.sliceImg3      = LoaderCollection.getResult('RESIZE_SLICE_3');
-            this.faceImg        = [LoaderCollection.getResult('RESIZE_FACE_0'),LoaderCollection.getResult('RESIZE_FACE_1'),LoaderCollection.getResult('RESIZE_FACE_2'),LoaderCollection.getResult('RESIZE_FACE_3'),LoaderCollection.getResult('RESIZE_FACE_4'),LoaderCollection.getResult('RESIZE_FACE_5')];
-            this.bodyImg        = LoaderCollection.getResult('RESIZE_BODY');
-            this.legLeftImg     = [LoaderCollection.getResult('RESIZE_LEG_LEFT_0'),LoaderCollection.getResult('RESIZE_LEG_LEFT_1'),LoaderCollection.getResult('RESIZE_LEG_LEFT_2'),LoaderCollection.getResult('RESIZE_LEG_LEFT_3'),LoaderCollection.getResult('RESIZE_LEG_LEFT_4'),LoaderCollection.getResult('RESIZE_LEG_LEFT_5')];
-            this.footLeftImg    = LoaderCollection.getResult('RESIZE_FOOT_LEFT');
-            this.legRightImg    = LoaderCollection.getResult('RESIZE_LEG_RIGHT');
-            this.footRightImg   = LoaderCollection.getResult('RESIZE_FOOT_RIGHT');
+//             this.sliceNumber    = 25;//Config.MIN_WIDTH / this.sliceWidth;
+//             // this.sliceImg0      = LoaderCollection.getResult('RESIZE_SLICE_0');
+//             // this.sliceImg1      = LoaderCollection.getResult('RESIZE_SLICE_1');
+//             // this.sliceImg2      = LoaderCollection.getResult('RESIZE_SLICE_2');
+//             // this.sliceImg3      = LoaderCollection.getResult('RESIZE_SLICE_3');
+//             // this.faceImg        = [LoaderCollection.getResult('RESIZE_FACE_0'),LoaderCollection.getResult('RESIZE_FACE_1'),LoaderCollection.getResult('RESIZE_FACE_2'),LoaderCollection.getResult('RESIZE_FACE_3'),LoaderCollection.getResult('RESIZE_FACE_4'),LoaderCollection.getResult('RESIZE_FACE_5')];
+//             // this.bodyImg        = LoaderCollection.getResult('RESIZE_BODY');
+//             // this.legLeftImg     = [LoaderCollection.getResult('RESIZE_LEG_LEFT_0'),LoaderCollection.getResult('RESIZE_LEG_LEFT_1'),LoaderCollection.getResult('RESIZE_LEG_LEFT_2'),LoaderCollection.getResult('RESIZE_LEG_LEFT_3'),LoaderCollection.getResult('RESIZE_LEG_LEFT_4'),LoaderCollection.getResult('RESIZE_LEG_LEFT_5')];
+//             // this.footLeftImg    = LoaderCollection.getResult('RESIZE_FOOT_LEFT');
+//             // this.legRightImg    = LoaderCollection.getResult('RESIZE_LEG_RIGHT');
+//             // this.footRightImg   = LoaderCollection.getResult('RESIZE_FOOT_RIGHT');
 
-            this.leftHand       = [LoaderCollection.getResult('RESIZE_HAND_LEFT_0'),LoaderCollection.getResult('RESIZE_HAND_LEFT_1'),LoaderCollection.getResult('RESIZE_HAND_LEFT_2'),LoaderCollection.getResult('RESIZE_HAND_LEFT_3'),LoaderCollection.getResult('RESIZE_HAND_LEFT_4'),LoaderCollection.getResult('RESIZE_HAND_LEFT_5')];
-            this.rightHand      = [LoaderCollection.getResult('RESIZE_HAND_RIGHT_0'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_1'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_2'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_3'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_4'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_5')];
+//             // this.leftHand       = [LoaderCollection.getResult('RESIZE_HAND_LEFT_0'),LoaderCollection.getResult('RESIZE_HAND_LEFT_1'),LoaderCollection.getResult('RESIZE_HAND_LEFT_2'),LoaderCollection.getResult('RESIZE_HAND_LEFT_3'),LoaderCollection.getResult('RESIZE_HAND_LEFT_4'),LoaderCollection.getResult('RESIZE_HAND_LEFT_5')];
+//             // this.rightHand      = [LoaderCollection.getResult('RESIZE_HAND_RIGHT_0'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_1'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_2'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_3'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_4'),LoaderCollection.getResult('RESIZE_HAND_RIGHT_5')];
 
-            this.create();
-        },
+//             this.create();
+//         },
 
-        create:function(){
+//         create:function(){
 
-            this.canvas = document.createElement('canvas');
-            this.ctx = this.canvas.getContext('2d');
-        },
+//             this.canvas = document.createElement('canvas');
+//             this.ctx = this.canvas.getContext('2d');
+//         },
 
-        triggerSound:function(){
-            //console.log('trigger sound');
-            if(this.triggerInterval){
-                return;
-            }
+//         triggerSound:function(){
+//             //console.log('trigger sound');
+//             if(this.triggerInterval){
+//                 return;
+//             }
 
-            var self = this;
-            this.triggerInterval = setTimeout(function(){
-                self.triggerInterval = null;
-            }, 1000);
+//             var self = this;
+//             this.triggerInterval = setTimeout(function(){
+//                 self.triggerInterval = null;
+//             }, 1000);
 
-            Backbone.trigger(AppEvents.Resize.TriggerSound, { key : self.keyIndex});
+//             Backbone.trigger(AppEvents.Resize.TriggerSound, { key : self.keyIndex});
 
-        },
+//         },
 
-        killSound:function(){
+//         killSound:function(){
 
-            Backbone.trigger(AppEvents.Resize.KillSound,{ key : this.keyIndex});
+//             Backbone.trigger(AppEvents.Resize.KillSound,{ key : this.keyIndex});
 
-            TweenMax.killTweensOf(this);
-            //console.log('kill sound');
-        },
+//             TweenMax.killTweensOf(this);
+//             //console.log('kill sound');
+//         },
 
-        updateSound:function(){
-            Backbone.trigger(AppEvents.Resize.UpdateSound, { volume : this.progressSound });
-            //console.log('change volume to:',this.progressSound);
-        },
+//         updateSound:function(){
+//             Backbone.trigger(AppEvents.Resize.UpdateSound, { volume : this.progressSound });
+//             //console.log('change volume to:',this.progressSound);
+//         },
 
-        onResize: function() {
+//         onResize: function() {
 
-            var width = this.$window.width();
-            var height = this.$window.height();
+//             var width = this.$window.width();
+//             var height = this.$window.height();
 
-            if(width < Config.MIN_WIDTH || height < Config.MIN_HEIGHT){
+//             if(width < Config.MIN_WIDTH || height < Config.MIN_HEIGHT){
 
-                Backbone.trigger(AppEvents.Resize.Attached);
+//                 Backbone.trigger(AppEvents.Resize.Attached);
 
-                if(!this.isAttached){
-                    this.isAttached = true;
-                    this.$el.append(this.canvas);
-                    this.triggerSound();
-                }
+//                 if(!this.isAttached){
+//                     this.isAttached = true;
+//                     this.$el.append(this.canvas);
+//                     this.triggerSound();
+//                 }
 
-                if(this.canvas){
-                    this.canvas.width = width * this.pixelRatio;
-                    this.canvas.height = height * this.pixelRatio;
-                    this.windowW = width;
-                    this.windowH = height;
-                    $(this.canvas).css({
-                        'position':'fixed',
-                        'top':0,
-                        'left':0,
-                        'width':width,
-                        'height':height,
-                        'z-index':1005
-                    });
-                }
+//                 if(this.canvas){
+//                     this.canvas.width = width * this.pixelRatio;
+//                     this.canvas.height = height * this.pixelRatio;
+//                     this.windowW = width;
+//                     this.windowH = height;
+//                     $(this.canvas).css({
+//                         'position':'fixed',
+//                         'top':0,
+//                         'left':0,
+//                         'width':width,
+//                         'height':height,
+//                         'z-index':1005
+//                     });
+//                 }
 
-                if(this.reduceIndex%10 === 0){
-                    if(this.keyIndex + 1 >= this.totalKeys){
-                        this.keyIndex = 0;
-                    }else{
-                        this.keyIndex++;
-                    }
-                    this.triggerSound();
-                }
-                this.reduceIndex++;
+//                 if(this.reduceIndex%10 === 0){
+//                     if(this.keyIndex + 1 >= this.totalKeys){
+//                         this.keyIndex = 0;
+//                     }else{
+//                         this.keyIndex++;
+//                     }
+//                     this.triggerSound();
+//                 }
+//                 this.reduceIndex++;
 
-                this.draw(width, height);
+//                 this.draw(width, height);
 
-                TweenMax.killTweensOf(this);
-                this.progressSound = 1;
-                this.updateSound();
-                TweenMax.to(this,4,{progressSound:0, delay:1, ease:'Sine.easeInOut', onUpdate:this.updateSound});
-            }else{
-                if(this.isAttached){
+//                 TweenMax.killTweensOf(this);
+//                 this.progressSound = 1;
+//                 this.killSound();
+//                 TweenMax.to(this,4,{progressSound:0, delay:1, ease:'Sine.easeInOut', onUpdate:this.updateSound});
+//             }else{
+//                 if(this.isAttached){
 
-                    Backbone.trigger(AppEvents.Resize.Detached);
+//                     Backbone.trigger(AppEvents.Resize.Detached);
 
-                    this.isAttached = false;
-                    $(this.canvas).detach();
-                    this.killSound();
-                }
-            }
-        },
+//                     this.isAttached = false;
+//                     $(this.canvas).detach();
+//                     this.killSound();
+//                 }
+//             }
+//         },
 
-        draw:function(width, height){
-            var deltaTop = 0;
-            var ratio = height / 950;
-            if(ratio > 1){
-                ratio = 1;
-                deltaTop = height - 950;
-            }
-            this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
-            var sliceResizedWidth = this.canvas.width / this.sliceNumber;
-            this.ctx.beginPath();
-            this.ctx.rect(0,0,this.canvas.width,this.canvas.height);
-            this.ctx.fillStyle = "black";
-            this.ctx.fill();
-            this.ctx.closePath();
-            this.drawLegs(ratio, deltaTop);
-            this.drawBody(ratio, deltaTop);
-            this.drawFace(ratio, deltaTop);
-        },
+//         draw:function(width, height){
+//             // var deltaTop = 0;
+//             // var ratio = height / 950;
+//             // if(ratio > 1){
+//             //     ratio = 1;
+//             //     deltaTop = height - 950;
+//             // }
+//             // this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+//             // var sliceResizedWidth = this.canvas.width / this.sliceNumber;
+//             // this.ctx.beginPath();
+//             // this.ctx.rect(0,0,this.canvas.width,this.canvas.height);
+//             // this.ctx.fillStyle = "black";
+//             // this.ctx.fill();
+//             // this.ctx.closePath();
+//             // this.drawLegs(ratio, deltaTop);
+//             // this.drawBody(ratio, deltaTop);
+//             // this.drawFace(ratio, deltaTop);
+//         },
 
-        drawLegs:function(ratio, deltaTop){
-            //left leg
-            this.ctx.save();
+//         drawLegs:function(ratio, deltaTop){
+//             //left leg
+//             // this.ctx.save();
 
-            var angle = (ratio*90 - 90)*3;
-            if(angle>0){angle=0;}
-            if(angle<-90){angle=-90;}
-            this.ctx.translate(this.canvas.width / 2 - 60, deltaTop + ratio * 200 + 370);
-            this.ctx.rotate(-angle*Math.PI/180);
-            this.ctx.drawImage(this.legLeftImg[this.keyIndex], -150/2, 0);
-            this.ctx.restore();
-            //left foot
-            var LFCenter = [this.canvas.width / 2 - 60, deltaTop + ratio * 200 + 370];
-            var LFRadius = 290;
-            var LFAngle = (-angle+90)*Math.PI/180;
-            var LFX = Math.cos(LFAngle) * LFRadius + LFCenter[0];
-            var LFY = Math.sin(LFAngle) * LFRadius + LFCenter[1];
-            this.ctx.save();
-            this.ctx.translate(LFX, LFY);
-            this.ctx.rotate(LFAngle-Math.PI/2);
-            this.ctx.drawImage(this.footLeftImg, -76, -20);
-            this.ctx.restore();
+//             // var angle = (ratio*90 - 90)*3;
+//             // if(angle>0){angle=0;}
+//             // if(angle<-90){angle=-90;}
+//             // this.ctx.translate(this.canvas.width / 2 - 60, deltaTop + ratio * 200 + 370);
+//             // this.ctx.rotate(-angle*Math.PI/180);
+//             // this.ctx.drawImage(this.legLeftImg[this.keyIndex], -150/2, 0);
+//             // this.ctx.restore();
+//             // //left foot
+//             // var LFCenter = [this.canvas.width / 2 - 60, deltaTop + ratio * 200 + 370];
+//             // var LFRadius = 290;
+//             // var LFAngle = (-angle+90)*Math.PI/180;
+//             // var LFX = Math.cos(LFAngle) * LFRadius + LFCenter[0];
+//             // var LFY = Math.sin(LFAngle) * LFRadius + LFCenter[1];
+//             // this.ctx.save();
+//             // this.ctx.translate(LFX, LFY);
+//             // this.ctx.rotate(LFAngle-Math.PI/2);
+//             // this.ctx.drawImage(this.footLeftImg, -76, -20);
+//             // this.ctx.restore();
 
-            //right leg
-            this.ctx.save();
-            this.ctx.translate(this.canvas.width / 2 + 70, deltaTop + ratio * 200 + 370);
-            this.ctx.rotate(angle*Math.PI/180);
-            this.ctx.drawImage(this.legRightImg, -150/2, 0);
-            this.ctx.restore();
-            //right foot
-            var RFCenter = [this.canvas.width / 2 + 70, deltaTop + ratio * 200 + 370];
-            var RFRadius = 290;
-            var RFAngle = (angle+90)*Math.PI/180;
-            var RFX = Math.cos(RFAngle) * RFRadius + RFCenter[0];
-            var RFY = Math.sin(RFAngle) * RFRadius + RFCenter[1];
+//             // //right leg
+//             // this.ctx.save();
+//             // this.ctx.translate(this.canvas.width / 2 + 70, deltaTop + ratio * 200 + 370);
+//             // this.ctx.rotate(angle*Math.PI/180);
+//             // this.ctx.drawImage(this.legRightImg, -150/2, 0);
+//             // this.ctx.restore();
+//             // //right foot
+//             // var RFCenter = [this.canvas.width / 2 + 70, deltaTop + ratio * 200 + 370];
+//             // var RFRadius = 290;
+//             // var RFAngle = (angle+90)*Math.PI/180;
+//             // var RFX = Math.cos(RFAngle) * RFRadius + RFCenter[0];
+//             // var RFY = Math.sin(RFAngle) * RFRadius + RFCenter[1];
 
-            this.ctx.save();
-            this.ctx.translate(RFX, RFY);
-            this.ctx.rotate(RFAngle-Math.PI/2);
-            this.ctx.drawImage(this.footRightImg, -45, -20);
-            this.ctx.restore();
-        },
+//             // this.ctx.save();
+//             // this.ctx.translate(RFX, RFY);
+//             // this.ctx.rotate(RFAngle-Math.PI/2);
+//             // this.ctx.drawImage(this.footRightImg, -45, -20);
+//             // this.ctx.restore();
+//         },
 
-        drawBody:function(ratio, deltaTop){
-            var deltaLeft = 100;
-            var dletaRight = 174;
-            var spaceSlice = this.canvas.width - deltaLeft - dletaRight;
-            if(spaceSlice < 80){
-                spaceSlice = 80;
-            }
-            var sliceResizedWidth = spaceSlice / this.sliceNumber;
-            var offsetX = (this.canvas.width - (deltaLeft + dletaRight + spaceSlice)) * 0.5;
-            if(offsetX > 0){
-                offsetX = 0;
-            }
-            this.ctx.drawImage(this.bodyImg, (this.canvas.width - 300) / 2, deltaTop + ratio * 200);
-            for (var i = 0; i < this.sliceNumber; i++){
-                var img = this.sliceImg0;
-                var bar = this.sliceImg1;
-                if(i % 2 === 0){
-                    img = this.sliceImg2;
-                    bar = this.sliceImg3;
-                }
-                this.ctx.drawImage(
-                    img,
-                    0,
-                    0,
-                    this.sliceWidth,
-                    this.sliceHeight,
-                    i * sliceResizedWidth + deltaLeft + offsetX,
-                    deltaTop + ratio * 300,
-                    sliceResizedWidth,
-                    this.sliceHeight
-                );
-                this.ctx.drawImage(
-                    bar,
-                    i * sliceResizedWidth + deltaLeft + offsetX - 3,
-                    -3 + (i%2) * 18  + deltaTop + ratio * 300
-                );
-            }
+//         drawBody:function(ratio, deltaTop){
+//             // var deltaLeft = 100;
+//             // var dletaRight = 174;
+//             // var spaceSlice = this.canvas.width - deltaLeft - dletaRight;
+//             // if(spaceSlice < 80){
+//             //     spaceSlice = 80;
+//             // }
+//             // var sliceResizedWidth = spaceSlice / this.sliceNumber;
+//             // var offsetX = (this.canvas.width - (deltaLeft + dletaRight + spaceSlice)) * 0.5;
+//             // if(offsetX > 0){
+//             //     offsetX = 0;
+//             // }
+//             // this.ctx.drawImage(this.bodyImg, (this.canvas.width - 300) / 2, deltaTop + ratio * 200);
+//             // for (var i = 0; i < this.sliceNumber; i++){
+//             //     var img = this.sliceImg0;
+//             //     var bar = this.sliceImg1;
+//             //     if(i % 2 === 0){
+//             //         img = this.sliceImg2;
+//             //         bar = this.sliceImg3;
+//             //     }
+//             //     this.ctx.drawImage(
+//             //         img,
+//             //         0,
+//             //         0,
+//             //         this.sliceWidth,
+//             //         this.sliceHeight,
+//             //         i * sliceResizedWidth + deltaLeft + offsetX,
+//             //         deltaTop + ratio * 300,
+//             //         sliceResizedWidth,
+//             //         this.sliceHeight
+//             //     );
+//             //     this.ctx.drawImage(
+//             //         bar,
+//             //         i * sliceResizedWidth + deltaLeft + offsetX - 3,
+//             //         -3 + (i%2) * 18  + deltaTop + ratio * 300
+//             //     );
+//             // }
 
-            this.ctx.drawImage(this.leftHand[this.keyIndex], offsetX, deltaTop + ratio * 300 - 5);
-            this.ctx.drawImage(this.rightHand[this.keyIndex], offsetX + deltaLeft + spaceSlice , deltaTop + ratio * 300 - 5);
-        },
+//             // this.ctx.drawImage(this.leftHand[this.keyIndex], offsetX, deltaTop + ratio * 300 - 5);
+//             // this.ctx.drawImage(this.rightHand[this.keyIndex], offsetX + deltaLeft + spaceSlice , deltaTop + ratio * 300 - 5);
+//         },
 
-        drawFace:function(ratio, deltaTop){
-            var sliceResizedWidth = this.canvas.width / this.sliceNumber;
-            this.ctx.save();
-            this.ctx.translate(this.canvas.width / 2, deltaTop + ratio * 200);
-            //this.ctx.globalAlpha = this.keyIndex%2;
-            var angle = (ratio*90 - 90) * 2;
-            if(angle>0){angle=0;}
-            if(angle<-90){angle=-90;}
-            this.ctx.rotate(angle*Math.PI/180);
-            this.ctx.drawImage(this.faceImg[this.keyIndex], -this.faceW/2, -this.faceH + 80);
-            this.ctx.restore();
-        },
+//         drawFace:function(ratio, deltaTop){
+//             // var sliceResizedWidth = this.canvas.width / this.sliceNumber;
+//             // this.ctx.save();
+//             // this.ctx.translate(this.canvas.width / 2, deltaTop + ratio * 200);
+//             // //this.ctx.globalAlpha = this.keyIndex%2;
+//             // var angle = (ratio*90 - 90) * 2;
+//             // if(angle>0){angle=0;}
+//             // if(angle<-90){angle=-90;}
+//             // this.ctx.rotate(angle*Math.PI/180);
+//             // this.ctx.drawImage(this.faceImg[this.keyIndex], -this.faceW/2, -this.faceH + 80);
+//             // this.ctx.restore();
+//         },
 
-        update: function() {
+//         update: function() {
 
-        }
-    });
-});
+//         }
+//     });
+// });
 define('view/app_view',[
 
     'backbone',
@@ -127703,7 +127719,7 @@ define('view/app_view',[
     'view/modules/work/work_project_view',
     'view/modules/background/background_view',
     'view/modules/shell/shell_view',
-    'view/modules/resize/resize_view',
+    // 'view/modules/resize/resize_view',
     'controller/scale_controller',
     'controller/keyboard_controller',
     "howler",
@@ -127733,7 +127749,7 @@ define('view/app_view',[
     WorkProjectView,
     BackgroundView,
     ShellView,
-    ResizeView,
+    // ResizeView,
     ScaleController,
     KeyboardController,
     Howler,
@@ -127820,9 +127836,9 @@ define('view/app_view',[
             this.background = new BackgroundView({ el:$('.js-background') });
             this.shell = new ShellView({ el:$('.js-shell') });
 
-            if(!Config.TABLET){
-                this.resize_view = new ResizeView({el:$('body')});
-            }
+            // if(!Config.TABLET){
+            //     this.resize_view = new ResizeView({el:$('body')});
+            // }
 
             // this.webAudioFix();
             
@@ -127936,7 +127952,7 @@ define('main_desktop_extended',[
     "controller/tracking_controller",
     "model/loader_collection",
     "model/sound_model",
-    "controller/sound_controller",
+    // "controller/sound_controller",
     "controller/ambient_sound_controller",
     "view/app_view",
     "model/app_model",
@@ -127952,7 +127968,7 @@ define('main_desktop_extended',[
     TrackingController,
     LoaderCollection,
     soundModel,
-    SoundController,
+    // SoundController,
     AmbientSoundController,
     AppView,
     AppModel,
@@ -127992,38 +128008,38 @@ define('main_desktop_extended',[
 
             LoaderCollection.add({src:Config.CDN + '/data/letters.json',id:'letters',group:'main'});
 
-            LoaderCollection.add({group:'main',id:'RESIZE_SLICE_0',src:Config.CDN + '/img/resize/slice0.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_SLICE_2',src:Config.CDN + '/img/resize/slice2.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_SLICE_1',src:Config.CDN + '/img/resize/slice1.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_SLICE_3',src:Config.CDN + '/img/resize/slice3.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FACE_0',src:Config.CDN + '/img/resize/face_0.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FACE_1',src:Config.CDN + '/img/resize/face_1.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FACE_2',src:Config.CDN + '/img/resize/face_2.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FACE_3',src:Config.CDN + '/img/resize/face_3.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FACE_4',src:Config.CDN + '/img/resize/face_4.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FACE_5',src:Config.CDN + '/img/resize/face_5.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_BODY',src:Config.CDN + '/img/resize/body.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_0',src:Config.CDN + '/img/resize/leg_left_0.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_1',src:Config.CDN + '/img/resize/leg_left_1.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_2',src:Config.CDN + '/img/resize/leg_left_2.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_3',src:Config.CDN + '/img/resize/leg_left_3.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_4',src:Config.CDN + '/img/resize/leg_left_4.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_5',src:Config.CDN + '/img/resize/leg_left_5.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FOOT_LEFT',src:Config.CDN + '/img/resize/foot_left.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_LEG_RIGHT',src:Config.CDN + '/img/resize/leg_right.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_FOOT_RIGHT',src:Config.CDN + '/img/resize/foot_right.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_0',src:Config.CDN + '/img/resize/hand_left_0.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_1',src:Config.CDN + '/img/resize/hand_left_1.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_2',src:Config.CDN + '/img/resize/hand_left_2.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_3',src:Config.CDN + '/img/resize/hand_left_3.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_4',src:Config.CDN + '/img/resize/hand_left_4.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_5',src:Config.CDN + '/img/resize/hand_left_5.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_0',src:Config.CDN + '/img/resize/hand_right_0.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_1',src:Config.CDN + '/img/resize/hand_right_1.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_2',src:Config.CDN + '/img/resize/hand_right_2.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_3',src:Config.CDN + '/img/resize/hand_right_3.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_4',src:Config.CDN + '/img/resize/hand_right_4.png'});
-            LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_5',src:Config.CDN + '/img/resize/hand_right_5.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_SLICE_0',src:Config.CDN + '/img/resize/slice0.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_SLICE_2',src:Config.CDN + '/img/resize/slice2.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_SLICE_1',src:Config.CDN + '/img/resize/slice1.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_SLICE_3',src:Config.CDN + '/img/resize/slice3.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FACE_0',src:Config.CDN + '/img/resize/face_0.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FACE_1',src:Config.CDN + '/img/resize/face_1.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FACE_2',src:Config.CDN + '/img/resize/face_2.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FACE_3',src:Config.CDN + '/img/resize/face_3.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FACE_4',src:Config.CDN + '/img/resize/face_4.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FACE_5',src:Config.CDN + '/img/resize/face_5.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_BODY',src:Config.CDN + '/img/resize/body.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_0',src:Config.CDN + '/img/resize/leg_left_0.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_1',src:Config.CDN + '/img/resize/leg_left_1.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_2',src:Config.CDN + '/img/resize/leg_left_2.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_3',src:Config.CDN + '/img/resize/leg_left_3.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_4',src:Config.CDN + '/img/resize/leg_left_4.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_LEG_LEFT_5',src:Config.CDN + '/img/resize/leg_left_5.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FOOT_LEFT',src:Config.CDN + '/img/resize/foot_left.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_LEG_RIGHT',src:Config.CDN + '/img/resize/leg_right.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_FOOT_RIGHT',src:Config.CDN + '/img/resize/foot_right.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_0',src:Config.CDN + '/img/resize/hand_left_0.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_1',src:Config.CDN + '/img/resize/hand_left_1.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_2',src:Config.CDN + '/img/resize/hand_left_2.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_3',src:Config.CDN + '/img/resize/hand_left_3.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_4',src:Config.CDN + '/img/resize/hand_left_4.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_LEFT_5',src:Config.CDN + '/img/resize/hand_left_5.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_0',src:Config.CDN + '/img/resize/hand_right_0.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_1',src:Config.CDN + '/img/resize/hand_right_1.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_2',src:Config.CDN + '/img/resize/hand_right_2.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_3',src:Config.CDN + '/img/resize/hand_right_3.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_4',src:Config.CDN + '/img/resize/hand_right_4.png'});
+            // LoaderCollection.add({group:'main',id:'RESIZE_HAND_RIGHT_5',src:Config.CDN + '/img/resize/hand_right_5.png'});
 
             LoaderCollection.add({group:'main',id:'GRAIN_1',src:Config.CDN + '/img/textures/bg_grain_01.jpg'});
             LoaderCollection.add({group:'main',id:'GRAIN_2',src:Config.CDN + '/img/textures/bg_grain_02.jpg'});

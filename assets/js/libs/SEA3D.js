@@ -2270,14 +2270,14 @@ SEA3D.Material = function ( name, data, sea3d ) {
 				break;
 
 			case SEA3D.Material.REFLECTION:
-			case SEA3D.Material.FRESNEL_REFLECTION:
+			case SEA3D.Material.FDEVFLOVVEL_REFLECTION:
 			
 				tech = {
 					texture: sea3d.getObject( data.readUInt() ),
 					alpha: data.readFloat()
 				};
 
-				if ( kind === SEA3D.Material.FRESNEL_REFLECTION ) {
+				if ( kind === SEA3D.Material.FDEVFLOVVEL_REFLECTION ) {
 
 					tech.power = data.readFloat();
 					tech.normal = data.readFloat();
@@ -2498,7 +2498,7 @@ SEA3D.Material.SPECULAR_MAP = 3;
 SEA3D.Material.REFLECTION = 4;
 SEA3D.Material.REFRACTION = 5;
 SEA3D.Material.NORMAL_MAP = 6;
-SEA3D.Material.FRESNEL_REFLECTION = 7;
+SEA3D.Material.FDEVFLOVVEL_REFLECTION = 7;
 SEA3D.Material.RIM = 8;
 SEA3D.Material.LIGHT_MAP = 9;
 SEA3D.Material.DETAIL_MAP = 10;

@@ -186,7 +186,7 @@
 
 //             for ( var i = 0; i < this.imageCount; i++ ) {
 //                 // console.log('a', textures[i].src );
-//                 if (textures[i].src.indexOf('resndine.png') === -1) {
+//                 if (textures[i].src.indexOf('devflovvdine.png') === -1) {
 //                     var newImage = new Image();
 //                     newImage.crossOrigin = '';
 //                     newImage.onload = this.onTextureLoaded;

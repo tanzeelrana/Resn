@@ -50,7 +50,7 @@ define([
             "can": "aw-can-new",
             "cup": "aw-lol",
             "Cone.1": "aw-vlc-new",
-            "drop": "aw-madeinresn",
+            "drop": "aw-madeindevflovv",
             "Durries.1": "aw-ashtray-05",
             "fire_hydrant.1": "aw-fire-hydrant-siren",
             "joystick.2": "aw-joystick",

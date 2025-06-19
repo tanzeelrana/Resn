@@ -2715,7 +2715,7 @@ THREE.SEA3D.prototype.materialTechnique =
 
 	// REFLECTION
 	techniques[ SEA3D.Material.REFLECTION ] =
-	techniques[ SEA3D.Material.FRESNEL_REFLECTION ] =
+	techniques[ SEA3D.Material.FDEVFLOVVEL_REFLECTION ] =
 	function ( mat, tech ) {
 
 		mat.envMap = tech.texture.tag;

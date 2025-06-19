@@ -22339,9 +22339,7 @@ define('data/tracking_data',[],function () {
 
     return TrackingData;
 });
-/**
- * @author emlyn@resn.co.nz
- */
+
 define('model/tracking_collection',[
 		"jquery",
 		"underscore",
@@ -22712,7 +22710,7 @@ define("sylvester", (function (global) {
     };
 }(this)));
 
-define('util/resn/animation',["jquery","sylvester","modernizr"],function ($,$M,Modernizr) {
+define('util/devflovv/animation',["jquery","sylvester","modernizr"],function ($,$M,Modernizr) {
 
     'use strict';
 
@@ -22948,7 +22946,7 @@ define('view/common/base_view',[
     'underscore',
     'backbone',
     'config',
-    'util/resn/animation'
+    'util/devflovv/animation'
 
 ], function (
 
@@ -26275,7 +26273,7 @@ arguments[4][21][0].apply(exports,arguments)
  * To change this template use File | Settings | File Templates.
  */
 
-define('util/resn/math',[], function() {
+define('util/devflovv/math',[], function() {
 
     "use strict";
 
@@ -26409,8 +26407,8 @@ define('view/mobile/modules/work/menu/work_menu_item_view',[
     'route/router',
     'templates/templates',
     'view/common/base_view',
-    'util/resn/animation',
-    'util/resn/math'
+    'util/devflovv/animation',
+    'util/devflovv/math'
 
 ], function(
 
@@ -28427,7 +28425,7 @@ define('view/mobile/modules/work/work_menu_view',[
     "view/mobile/modules/work/menu/work_menu_link_view",
     "view/mobile/modules/work/menu/work_menu_player_view",
     "util/anim_frame",
-    "util/resn/math"
+    "util/devflovv/math"
 ], function(
     $,
     _,
@@ -29113,7 +29111,7 @@ define('view/mobile/modules/work/project/mobile_project_header_item_view',[
     'TweenMax',
     'config',
     'util/anim_frame',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'route/router',
     'events/app_events',
     'model/app_model',
@@ -29474,7 +29472,7 @@ define('view/mobile/modules/work/project/mobile_project_launch_view',[
     'backbone',
     'TweenMax',
     'config',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'model/app_model',
     'view/common/base_view',
     'view/mobile/modules/work/project/mobile_project_header_item_view',
@@ -34602,7 +34600,7 @@ define('view/mobile/modules/work/project/mobile_project_item_base_view',[
     'events/app_events',
     'model/app_model',
     'util/anim_frame',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'view/common/base_view'
 
 ], function (
@@ -36033,7 +36031,7 @@ define('view/mobile/modules/work/project/mobile_project_image_view',[
     'backbone',
     'config',
     'TweenMax',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'route/router',
     'events/app_events',
     'model/app_model',
@@ -36510,7 +36508,7 @@ define('view/mobile/modules/work/project/mobile_project_mobile_view',[
     'route/router',
     'events/app_events',
     'model/app_model',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'view/mobile/modules/work/project/mobile_project_item_base_view'
 
 ], function (
@@ -36870,7 +36868,7 @@ define('view/modules/common/video/video_timeline_view',[
         'jquery',
         'TweenMax',
         'model/app_model',
-        'util/resn/math',
+        'util/devflovv/math',
         'view/common/base_view',
         'config'
 
@@ -38583,7 +38581,7 @@ define('view/mobile/modules/work/project/carousel/mobile_project_carousel_item_v
     'backbone',
     'config',
     'TweenMax',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'view/common/base_view'
 
 ], function(
@@ -38795,7 +38793,7 @@ define('view/mobile/modules/work/project/carousel/mobile_project_carousel_view',
     "backbone",
     "TweenMax",
     "config",
-    "util/resn/animation",
+    "util/devflovv/animation",
     "route/router",
     "events/app_events",
     "model/app_model",
@@ -39609,7 +39607,7 @@ define('view/modules/work/project/project_item_base_view',[
     'events/app_events',
     'model/app_model',
     'util/anim_frame',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'view/common/base_view'
 
 ], function (
@@ -40348,7 +40346,7 @@ define('view/mobile/modules/work/project/mask/mobile_project_mask_item_view',[
     'controller/keyboard_controller',
     'model/app_model',
     'util/anim_frame',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'view/common/base_view',
     'util/loading/load_image',
     'util/math/clamp',
@@ -40657,7 +40655,7 @@ define('view/mobile/modules/work/project/mask/mobile_project_mask_drag_handle_vi
     'controller/keyboard_controller',
     'model/app_model',
     'util/anim_frame',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'view/common/base_view',
     'util/loading/load_image',
     'util/math/clamp',
@@ -41398,7 +41396,7 @@ define('view/mobile/modules/work/project/mobile_project_awards_view',[
     'backbone',
     'config',
     'TweenMax',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'route/router',
     'events/app_events',
     'model/app_model',
@@ -41989,7 +41987,7 @@ define('view/mobile/modules/work/mobile_work_project_view',[
     'view/mobile/modules/work/project/mobile_project_footer_view',
     'view/mobile/modules/work/project/archive/mobile_project_archivefooter_view',
     'view/mobile/modules/work/project/mobile_project_nav_view',
-    'util/resn/animation'
+    'util/devflovv/animation'
 
 ],function (
 
@@ -42790,9 +42788,9 @@ define('view/mobile/modules/work/overview/mobile_overview_project_item_view',[
     'route/router',
     'templates/templates',
     'view/common/base_view',
-    'util/resn/math',
+    'util/devflovv/math',
     'util/anim_frame',
-    'util/resn/animation'
+    'util/devflovv/animation'
 ], function(
     _,
     $,
@@ -43836,7 +43834,7 @@ define('view/modules/work/work_fullscreen_image_view',[
     'controller/keyboard_controller',
     'model/app_model',
     'util/anim_frame',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'view/common/base_view',
     'util/loading/load_image',
     'util/math/clamp',
@@ -44407,7 +44405,7 @@ define('view/modules/work/fullscreen_carousel/work_fullscreen_carousel_item_view
     "backbone",
     "config",
     "TweenMax",
-    "util/resn/animation",
+    "util/devflovv/animation",
     "view/common/base_view",
 
     "util/math/clamp"
@@ -46338,7 +46336,7 @@ define('view/modules/work/work_fullscreen_carousel_view',[
     'controller/keyboard_controller',
     'model/app_model',
     'util/anim_frame',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'view/common/base_view',
     'view/modules/work/fullscreen_carousel/work_fullscreen_carousel_item_view',
     'view/modules/work/project/carousel/project_carousel_pagination_view',
@@ -46883,7 +46881,7 @@ define('view/mobile/pages/work',[
     "backbone",
     "TweenMax",
     "config",
-    "util/resn/animation",
+    "util/devflovv/animation",
     "util/anim_frame",
     "route/router",
     "events/app_events",
@@ -47308,7 +47306,7 @@ define('util/services/newsletter_subscribe',[
                     ],
                 "context": {
                     "pageUri": window.location.href,
-                    "pageName": "Resn site contact page"
+                    "pageName": "devflovv site contact page"
                 },
             })
         }).done(function(message, state, result){
@@ -48110,7 +48108,7 @@ define('view/mobile/pages/reel',[
     'events/app_events',
     'model/app_model',
     'util/anim_frame',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'view/common/base_view',
     'view/mobile/modules/video/video_view',
     'view/modules/common/video/mobile_video_play_button_view'
@@ -48545,7 +48543,7 @@ define('view/modules/background/interactive/interactive_bar_view',[
     'TweenMax',
     'config',
     'util/anim_frame',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'view/common/base_view'
 
 ], function (
@@ -48805,7 +48803,7 @@ define('view/modules/background/title_message_view',[
 	'TweenMax',
 	'TimelineMax',
 	'util/anim_frame',
-	'util/resn/animation',
+	'util/devflovv/animation',
 	'view/common/base_view'
 
 ], function (
@@ -53812,7 +53810,7 @@ define('view/modules/background/title_message_view',[
 
 	var beginnormal_vertex = "\nvec3 objectNormal = vec3( normal );\n";
 
-	var bsdfs = "float punctualLightIntensityToIrradianceFactor( const in float lightDistance, const in float cutoffDistance, const in float decayExponent ) {\n\t\tif( decayExponent > 0.0 ) {\n#if defined ( PHYSICALLY_CORRECT_LIGHTS )\n\t\t\tfloat distanceFalloff = 1.0 / max( pow( lightDistance, decayExponent ), 0.01 );\n\t\t\tfloat maxDistanceCutoffFactor = pow2( saturate( 1.0 - pow4( lightDistance / cutoffDistance ) ) );\n\t\t\treturn distanceFalloff * maxDistanceCutoffFactor;\n#else\n\t\t\treturn pow( saturate( -lightDistance / cutoffDistance + 1.0 ), decayExponent );\n#endif\n\t\t}\n\t\treturn 1.0;\n}\nvec3 BRDF_Diffuse_Lambert( const in vec3 diffuseColor ) {\n\treturn RECIPROCAL_PI * diffuseColor;\n}\nvec3 F_Schlick( const in vec3 specularColor, const in float dotLH ) {\n\tfloat fresnel = exp2( ( -5.55473 * dotLH - 6.98316 ) * dotLH );\n\treturn ( 1.0 - specularColor ) * fresnel + specularColor;\n}\nfloat G_GGX_Smith( const in float alpha, const in float dotNL, const in float dotNV ) {\n\tfloat a2 = pow2( alpha );\n\tfloat gl = dotNL + sqrt( a2 + ( 1.0 - a2 ) * pow2( dotNL ) );\n\tfloat gv = dotNV + sqrt( a2 + ( 1.0 - a2 ) * pow2( dotNV ) );\n\treturn 1.0 / ( gl * gv );\n}\nfloat G_GGX_SmithCorrelated( const in float alpha, const in float dotNL, const in float dotNV ) {\n\tfloat a2 = pow2( alpha );\n\tfloat gv = dotNL * sqrt( a2 + ( 1.0 - a2 ) * pow2( dotNV ) );\n\tfloat gl = dotNV * sqrt( a2 + ( 1.0 - a2 ) * pow2( dotNL ) );\n\treturn 0.5 / max( gv + gl, EPSILON );\n}\nfloat D_GGX( const in float alpha, const in float dotNH ) {\n\tfloat a2 = pow2( alpha );\n\tfloat denom = pow2( dotNH ) * ( a2 - 1.0 ) + 1.0;\n\treturn RECIPROCAL_PI * a2 / pow2( denom );\n}\nvec3 BRDF_Specular_GGX( const in IncidentLight incidentLight, const in GeometricContext geometry, const in vec3 specularColor, const in float roughness ) {\n\tfloat alpha = pow2( roughness );\n\tvec3 halfDir = normalize( incidentLight.direction + geometry.viewDir );\n\tfloat dotNL = saturate( dot( geometry.normal, incidentLight.direction ) );\n\tfloat dotNV = saturate( dot( geometry.normal, geometry.viewDir ) );\n\tfloat dotNH = saturate( dot( geometry.normal, halfDir ) );\n\tfloat dotLH = saturate( dot( incidentLight.direction, halfDir ) );\n\tvec3 F = F_Schlick( specularColor, dotLH );\n\tfloat G = G_GGX_SmithCorrelated( alpha, dotNL, dotNV );\n\tfloat D = D_GGX( alpha, dotNH );\n\treturn F * ( G * D );\n}\nvec2 ltcTextureCoords( const in GeometricContext geometry, const in float roughness ) {\n\tconst float LUT_SIZE  = 64.0;\n\tconst float LUT_SCALE = (LUT_SIZE - 1.0)/LUT_SIZE;\n\tconst float LUT_BIAS  = 0.5/LUT_SIZE;\n\tvec3 N = geometry.normal;\n\tvec3 V = geometry.viewDir;\n\tvec3 P = geometry.position;\n\tfloat theta = acos( dot( N, V ) );\n\tvec2 uv = vec2(\n\t\tsqrt( saturate( roughness ) ),\n\t\tsaturate( theta / ( 0.5 * PI ) ) );\n\tuv = uv * LUT_SCALE + LUT_BIAS;\n\treturn uv;\n}\nvoid clipQuadToHorizon( inout vec3 L[5], out int n ) {\n\tint config = 0;\n\tif ( L[0].z > 0.0 ) config += 1;\n\tif ( L[1].z > 0.0 ) config += 2;\n\tif ( L[2].z > 0.0 ) config += 4;\n\tif ( L[3].z > 0.0 ) config += 8;\n\tn = 0;\n\tif ( config == 0 ) {\n\t} else if ( config == 1 ) {\n\t\tn = 3;\n\t\tL[1] = -L[1].z * L[0] + L[0].z * L[1];\n\t\tL[2] = -L[3].z * L[0] + L[0].z * L[3];\n\t} else if ( config == 2 ) {\n\t\tn = 3;\n\t\tL[0] = -L[0].z * L[1] + L[1].z * L[0];\n\t\tL[2] = -L[2].z * L[1] + L[1].z * L[2];\n\t} else if ( config == 3 ) {\n\t\tn = 4;\n\t\tL[2] = -L[2].z * L[1] + L[1].z * L[2];\n\t\tL[3] = -L[3].z * L[0] + L[0].z * L[3];\n\t} else if ( config == 4 ) {\n\t\tn = 3;\n\t\tL[0] = -L[3].z * L[2] + L[2].z * L[3];\n\t\tL[1] = -L[1].z * L[2] + L[2].z * L[1];\n\t} else if ( config == 5 ) {\n\t\tn = 0;\n\t} else if ( config == 6 ) {\n\t\tn = 4;\n\t\tL[0] = -L[0].z * L[1] + L[1].z * L[0];\n\t\tL[3] = -L[3].z * L[2] + L[2].z * L[3];\n\t} else if ( config == 7 ) {\n\t\tn = 5;\n\t\tL[4] = -L[3].z * L[0] + L[0].z * L[3];\n\t\tL[3] = -L[3].z * L[2] + L[2].z * L[3];\n\t} else if ( config == 8 ) {\n\t\tn = 3;\n\t\tL[0] = -L[0].z * L[3] + L[3].z * L[0];\n\t\tL[1] = -L[2].z * L[3] + L[3].z * L[2];\n\t\tL[2] =  L[3];\n\t} else if ( config == 9 ) {\n\t\tn = 4;\n\t\tL[1] = -L[1].z * L[0] + L[0].z * L[1];\n\t\tL[2] = -L[2].z * L[3] + L[3].z * L[2];\n\t} else if ( config == 10 ) {\n\t\tn = 0;\n\t} else if ( config == 11 ) {\n\t\tn = 5;\n\t\tL[4] = L[3];\n\t\tL[3] = -L[2].z * L[3] + L[3].z * L[2];\n\t\tL[2] = -L[2].z * L[1] + L[1].z * L[2];\n\t} else if ( config == 12 ) {\n\t\tn = 4;\n\t\tL[1] = -L[1].z * L[2] + L[2].z * L[1];\n\t\tL[0] = -L[0].z * L[3] + L[3].z * L[0];\n\t} else if ( config == 13 ) {\n\t\tn = 5;\n\t\tL[4] = L[3];\n\t\tL[3] = L[2];\n\t\tL[2] = -L[1].z * L[2] + L[2].z * L[1];\n\t\tL[1] = -L[1].z * L[0] + L[0].z * L[1];\n\t} else if ( config == 14 ) {\n\t\tn = 5;\n\t\tL[4] = -L[0].z * L[3] + L[3].z * L[0];\n\t\tL[0] = -L[0].z * L[1] + L[1].z * L[0];\n\t} else if ( config == 15 ) {\n\t\tn = 4;\n\t}\n\tif ( n == 3 )\n\t\tL[3] = L[0];\n\tif ( n == 4 )\n\t\tL[4] = L[0];\n}\nfloat integrateLtcBrdfOverRectEdge( vec3 v1, vec3 v2 ) {\n\tfloat cosTheta = dot( v1, v2 );\n\tfloat theta = acos( cosTheta );\n\tfloat res = cross( v1, v2 ).z * ( ( theta > 0.001 ) ? theta / sin( theta ) : 1.0 );\n\treturn res;\n}\nvoid initRectPoints( const in vec3 pos, const in vec3 halfWidth, const in vec3 halfHeight, out vec3 rectPoints[4] ) {\n\trectPoints[0] = pos - halfWidth - halfHeight;\n\trectPoints[1] = pos + halfWidth - halfHeight;\n\trectPoints[2] = pos + halfWidth + halfHeight;\n\trectPoints[3] = pos - halfWidth + halfHeight;\n}\nvec3 integrateLtcBrdfOverRect( const in GeometricContext geometry, const in mat3 brdfMat, const in vec3 rectPoints[4] ) {\n\tvec3 N = geometry.normal;\n\tvec3 V = geometry.viewDir;\n\tvec3 P = geometry.position;\n\tvec3 T1, T2;\n\tT1 = normalize(V - N * dot( V, N ));\n\tT2 = - cross( N, T1 );\n\tmat3 brdfWrtSurface = brdfMat * transpose( mat3( T1, T2, N ) );\n\tvec3 clippedRect[5];\n\tclippedRect[0] = brdfWrtSurface * ( rectPoints[0] - P );\n\tclippedRect[1] = brdfWrtSurface * ( rectPoints[1] - P );\n\tclippedRect[2] = brdfWrtSurface * ( rectPoints[2] - P );\n\tclippedRect[3] = brdfWrtSurface * ( rectPoints[3] - P );\n\tint n;\n\tclipQuadToHorizon(clippedRect, n);\n\tif ( n == 0 )\n\t\treturn vec3( 0, 0, 0 );\n\tclippedRect[0] = normalize( clippedRect[0] );\n\tclippedRect[1] = normalize( clippedRect[1] );\n\tclippedRect[2] = normalize( clippedRect[2] );\n\tclippedRect[3] = normalize( clippedRect[3] );\n\tclippedRect[4] = normalize( clippedRect[4] );\n\tfloat sum = 0.0;\n\tsum += integrateLtcBrdfOverRectEdge( clippedRect[0], clippedRect[1] );\n\tsum += integrateLtcBrdfOverRectEdge( clippedRect[1], clippedRect[2] );\n\tsum += integrateLtcBrdfOverRectEdge( clippedRect[2], clippedRect[3] );\n\tif (n >= 4)\n\t\tsum += integrateLtcBrdfOverRectEdge( clippedRect[3], clippedRect[4] );\n\tif (n == 5)\n\t\tsum += integrateLtcBrdfOverRectEdge( clippedRect[4], clippedRect[0] );\n\tsum = max( 0.0, sum );\n\tvec3 Lo_i = vec3( sum, sum, sum );\n\treturn Lo_i;\n}\nvec3 Rect_Area_Light_Specular_Reflectance(\n\t\tconst in GeometricContext geometry,\n\t\tconst in vec3 lightPos, const in vec3 lightHalfWidth, const in vec3 lightHalfHeight,\n\t\tconst in float roughness,\n\t\tconst in sampler2D ltcMat, const in sampler2D ltcMag ) {\n\tvec3 rectPoints[4];\n\tinitRectPoints( lightPos, lightHalfWidth, lightHalfHeight, rectPoints );\n\tvec2 uv = ltcTextureCoords( geometry, roughness );\n\tvec4 brdfLtcApproxParams, t;\n\tbrdfLtcApproxParams = texture2D( ltcMat, uv );\n\tt = texture2D( ltcMat, uv );\n\tfloat brdfLtcScalar = texture2D( ltcMag, uv ).a;\n\tmat3 brdfLtcApproxMat = mat3(\n\t\tvec3(   1,   0, t.y ),\n\t\tvec3(   0, t.z,   0 ),\n\t\tvec3( t.w,   0, t.x )\n\t);\n\tvec3 specularReflectance = integrateLtcBrdfOverRect( geometry, brdfLtcApproxMat, rectPoints );\n\tspecularReflectance *= brdfLtcScalar;\n\treturn specularReflectance;\n}\nvec3 Rect_Area_Light_Diffuse_Reflectance(\n\t\tconst in GeometricContext geometry,\n\t\tconst in vec3 lightPos, const in vec3 lightHalfWidth, const in vec3 lightHalfHeight ) {\n\tvec3 rectPoints[4];\n\tinitRectPoints( lightPos, lightHalfWidth, lightHalfHeight, rectPoints );\n\tmat3 diffuseBrdfMat = mat3(1);\n\tvec3 diffuseReflectance = integrateLtcBrdfOverRect( geometry, diffuseBrdfMat, rectPoints );\n\treturn diffuseReflectance;\n}\nvec3 BRDF_Specular_GGX_Environment( const in GeometricContext geometry, const in vec3 specularColor, const in float roughness ) {\n\tfloat dotNV = saturate( dot( geometry.normal, geometry.viewDir ) );\n\tconst vec4 c0 = vec4( - 1, - 0.0275, - 0.572, 0.022 );\n\tconst vec4 c1 = vec4( 1, 0.0425, 1.04, - 0.04 );\n\tvec4 r = roughness * c0 + c1;\n\tfloat a004 = min( r.x * r.x, exp2( - 9.28 * dotNV ) ) * r.x + r.y;\n\tvec2 AB = vec2( -1.04, 1.04 ) * a004 + r.zw;\n\treturn specularColor * AB.x + AB.y;\n}\nfloat G_BlinnPhong_Implicit( ) {\n\treturn 0.25;\n}\nfloat D_BlinnPhong( const in float shininess, const in float dotNH ) {\n\treturn RECIPROCAL_PI * ( shininess * 0.5 + 1.0 ) * pow( dotNH, shininess );\n}\nvec3 BRDF_Specular_BlinnPhong( const in IncidentLight incidentLight, const in GeometricContext geometry, const in vec3 specularColor, const in float shininess ) {\n\tvec3 halfDir = normalize( incidentLight.direction + geometry.viewDir );\n\tfloat dotNH = saturate( dot( geometry.normal, halfDir ) );\n\tfloat dotLH = saturate( dot( incidentLight.direction, halfDir ) );\n\tvec3 F = F_Schlick( specularColor, dotLH );\n\tfloat G = G_BlinnPhong_Implicit( );\n\tfloat D = D_BlinnPhong( shininess, dotNH );\n\treturn F * ( G * D );\n}\nfloat GGXRoughnessToBlinnExponent( const in float ggxRoughness ) {\n\treturn ( 2.0 / pow2( ggxRoughness + 0.0001 ) - 2.0 );\n}\nfloat BlinnExponentToGGXRoughness( const in float blinnExponent ) {\n\treturn sqrt( 2.0 / ( blinnExponent + 2.0 ) );\n}\n";
+	var bsdfs = "float punctualLightIntensityToIrradianceFactor( const in float lightDistance, const in float cutoffDistance, const in float decayExponent ) {\n\t\tif( decayExponent > 0.0 ) {\n#if defined ( PHYSICALLY_CORRECT_LIGHTS )\n\t\t\tfloat distanceFalloff = 1.0 / max( pow( lightDistance, decayExponent ), 0.01 );\n\t\t\tfloat maxDistanceCutoffFactor = pow2( saturate( 1.0 - pow4( lightDistance / cutoffDistance ) ) );\n\t\t\treturn distanceFalloff * maxDistanceCutoffFactor;\n#else\n\t\t\treturn pow( saturate( -lightDistance / cutoffDistance + 1.0 ), decayExponent );\n#endif\n\t\t}\n\t\treturn 1.0;\n}\nvec3 BRDF_Diffuse_Lambert( const in vec3 diffuseColor ) {\n\treturn RECIPROCAL_PI * diffuseColor;\n}\nvec3 F_Schlick( const in vec3 specularColor, const in float dotLH ) {\n\tfloat fdevflovvel = exp2( ( -5.55473 * dotLH - 6.98316 ) * dotLH );\n\treturn ( 1.0 - specularColor ) * fdevflovvel + specularColor;\n}\nfloat G_GGX_Smith( const in float alpha, const in float dotNL, const in float dotNV ) {\n\tfloat a2 = pow2( alpha );\n\tfloat gl = dotNL + sqrt( a2 + ( 1.0 - a2 ) * pow2( dotNL ) );\n\tfloat gv = dotNV + sqrt( a2 + ( 1.0 - a2 ) * pow2( dotNV ) );\n\treturn 1.0 / ( gl * gv );\n}\nfloat G_GGX_SmithCorrelated( const in float alpha, const in float dotNL, const in float dotNV ) {\n\tfloat a2 = pow2( alpha );\n\tfloat gv = dotNL * sqrt( a2 + ( 1.0 - a2 ) * pow2( dotNV ) );\n\tfloat gl = dotNV * sqrt( a2 + ( 1.0 - a2 ) * pow2( dotNL ) );\n\treturn 0.5 / max( gv + gl, EPSILON );\n}\nfloat D_GGX( const in float alpha, const in float dotNH ) {\n\tfloat a2 = pow2( alpha );\n\tfloat denom = pow2( dotNH ) * ( a2 - 1.0 ) + 1.0;\n\treturn RECIPROCAL_PI * a2 / pow2( denom );\n}\nvec3 BRDF_Specular_GGX( const in IncidentLight incidentLight, const in GeometricContext geometry, const in vec3 specularColor, const in float roughness ) {\n\tfloat alpha = pow2( roughness );\n\tvec3 halfDir = normalize( incidentLight.direction + geometry.viewDir );\n\tfloat dotNL = saturate( dot( geometry.normal, incidentLight.direction ) );\n\tfloat dotNV = saturate( dot( geometry.normal, geometry.viewDir ) );\n\tfloat dotNH = saturate( dot( geometry.normal, halfDir ) );\n\tfloat dotLH = saturate( dot( incidentLight.direction, halfDir ) );\n\tvec3 F = F_Schlick( specularColor, dotLH );\n\tfloat G = G_GGX_SmithCorrelated( alpha, dotNL, dotNV );\n\tfloat D = D_GGX( alpha, dotNH );\n\treturn F * ( G * D );\n}\nvec2 ltcTextureCoords( const in GeometricContext geometry, const in float roughness ) {\n\tconst float LUT_SIZE  = 64.0;\n\tconst float LUT_SCALE = (LUT_SIZE - 1.0)/LUT_SIZE;\n\tconst float LUT_BIAS  = 0.5/LUT_SIZE;\n\tvec3 N = geometry.normal;\n\tvec3 V = geometry.viewDir;\n\tvec3 P = geometry.position;\n\tfloat theta = acos( dot( N, V ) );\n\tvec2 uv = vec2(\n\t\tsqrt( saturate( roughness ) ),\n\t\tsaturate( theta / ( 0.5 * PI ) ) );\n\tuv = uv * LUT_SCALE + LUT_BIAS;\n\treturn uv;\n}\nvoid clipQuadToHorizon( inout vec3 L[5], out int n ) {\n\tint config = 0;\n\tif ( L[0].z > 0.0 ) config += 1;\n\tif ( L[1].z > 0.0 ) config += 2;\n\tif ( L[2].z > 0.0 ) config += 4;\n\tif ( L[3].z > 0.0 ) config += 8;\n\tn = 0;\n\tif ( config == 0 ) {\n\t} else if ( config == 1 ) {\n\t\tn = 3;\n\t\tL[1] = -L[1].z * L[0] + L[0].z * L[1];\n\t\tL[2] = -L[3].z * L[0] + L[0].z * L[3];\n\t} else if ( config == 2 ) {\n\t\tn = 3;\n\t\tL[0] = -L[0].z * L[1] + L[1].z * L[0];\n\t\tL[2] = -L[2].z * L[1] + L[1].z * L[2];\n\t} else if ( config == 3 ) {\n\t\tn = 4;\n\t\tL[2] = -L[2].z * L[1] + L[1].z * L[2];\n\t\tL[3] = -L[3].z * L[0] + L[0].z * L[3];\n\t} else if ( config == 4 ) {\n\t\tn = 3;\n\t\tL[0] = -L[3].z * L[2] + L[2].z * L[3];\n\t\tL[1] = -L[1].z * L[2] + L[2].z * L[1];\n\t} else if ( config == 5 ) {\n\t\tn = 0;\n\t} else if ( config == 6 ) {\n\t\tn = 4;\n\t\tL[0] = -L[0].z * L[1] + L[1].z * L[0];\n\t\tL[3] = -L[3].z * L[2] + L[2].z * L[3];\n\t} else if ( config == 7 ) {\n\t\tn = 5;\n\t\tL[4] = -L[3].z * L[0] + L[0].z * L[3];\n\t\tL[3] = -L[3].z * L[2] + L[2].z * L[3];\n\t} else if ( config == 8 ) {\n\t\tn = 3;\n\t\tL[0] = -L[0].z * L[3] + L[3].z * L[0];\n\t\tL[1] = -L[2].z * L[3] + L[3].z * L[2];\n\t\tL[2] =  L[3];\n\t} else if ( config == 9 ) {\n\t\tn = 4;\n\t\tL[1] = -L[1].z * L[0] + L[0].z * L[1];\n\t\tL[2] = -L[2].z * L[3] + L[3].z * L[2];\n\t} else if ( config == 10 ) {\n\t\tn = 0;\n\t} else if ( config == 11 ) {\n\t\tn = 5;\n\t\tL[4] = L[3];\n\t\tL[3] = -L[2].z * L[3] + L[3].z * L[2];\n\t\tL[2] = -L[2].z * L[1] + L[1].z * L[2];\n\t} else if ( config == 12 ) {\n\t\tn = 4;\n\t\tL[1] = -L[1].z * L[2] + L[2].z * L[1];\n\t\tL[0] = -L[0].z * L[3] + L[3].z * L[0];\n\t} else if ( config == 13 ) {\n\t\tn = 5;\n\t\tL[4] = L[3];\n\t\tL[3] = L[2];\n\t\tL[2] = -L[1].z * L[2] + L[2].z * L[1];\n\t\tL[1] = -L[1].z * L[0] + L[0].z * L[1];\n\t} else if ( config == 14 ) {\n\t\tn = 5;\n\t\tL[4] = -L[0].z * L[3] + L[3].z * L[0];\n\t\tL[0] = -L[0].z * L[1] + L[1].z * L[0];\n\t} else if ( config == 15 ) {\n\t\tn = 4;\n\t}\n\tif ( n == 3 )\n\t\tL[3] = L[0];\n\tif ( n == 4 )\n\t\tL[4] = L[0];\n}\nfloat integrateLtcBrdfOverRectEdge( vec3 v1, vec3 v2 ) {\n\tfloat cosTheta = dot( v1, v2 );\n\tfloat theta = acos( cosTheta );\n\tfloat res = cross( v1, v2 ).z * ( ( theta > 0.001 ) ? theta / sin( theta ) : 1.0 );\n\treturn res;\n}\nvoid initRectPoints( const in vec3 pos, const in vec3 halfWidth, const in vec3 halfHeight, out vec3 rectPoints[4] ) {\n\trectPoints[0] = pos - halfWidth - halfHeight;\n\trectPoints[1] = pos + halfWidth - halfHeight;\n\trectPoints[2] = pos + halfWidth + halfHeight;\n\trectPoints[3] = pos - halfWidth + halfHeight;\n}\nvec3 integrateLtcBrdfOverRect( const in GeometricContext geometry, const in mat3 brdfMat, const in vec3 rectPoints[4] ) {\n\tvec3 N = geometry.normal;\n\tvec3 V = geometry.viewDir;\n\tvec3 P = geometry.position;\n\tvec3 T1, T2;\n\tT1 = normalize(V - N * dot( V, N ));\n\tT2 = - cross( N, T1 );\n\tmat3 brdfWrtSurface = brdfMat * transpose( mat3( T1, T2, N ) );\n\tvec3 clippedRect[5];\n\tclippedRect[0] = brdfWrtSurface * ( rectPoints[0] - P );\n\tclippedRect[1] = brdfWrtSurface * ( rectPoints[1] - P );\n\tclippedRect[2] = brdfWrtSurface * ( rectPoints[2] - P );\n\tclippedRect[3] = brdfWrtSurface * ( rectPoints[3] - P );\n\tint n;\n\tclipQuadToHorizon(clippedRect, n);\n\tif ( n == 0 )\n\t\treturn vec3( 0, 0, 0 );\n\tclippedRect[0] = normalize( clippedRect[0] );\n\tclippedRect[1] = normalize( clippedRect[1] );\n\tclippedRect[2] = normalize( clippedRect[2] );\n\tclippedRect[3] = normalize( clippedRect[3] );\n\tclippedRect[4] = normalize( clippedRect[4] );\n\tfloat sum = 0.0;\n\tsum += integrateLtcBrdfOverRectEdge( clippedRect[0], clippedRect[1] );\n\tsum += integrateLtcBrdfOverRectEdge( clippedRect[1], clippedRect[2] );\n\tsum += integrateLtcBrdfOverRectEdge( clippedRect[2], clippedRect[3] );\n\tif (n >= 4)\n\t\tsum += integrateLtcBrdfOverRectEdge( clippedRect[3], clippedRect[4] );\n\tif (n == 5)\n\t\tsum += integrateLtcBrdfOverRectEdge( clippedRect[4], clippedRect[0] );\n\tsum = max( 0.0, sum );\n\tvec3 Lo_i = vec3( sum, sum, sum );\n\treturn Lo_i;\n}\nvec3 Rect_Area_Light_Specular_Reflectance(\n\t\tconst in GeometricContext geometry,\n\t\tconst in vec3 lightPos, const in vec3 lightHalfWidth, const in vec3 lightHalfHeight,\n\t\tconst in float roughness,\n\t\tconst in sampler2D ltcMat, const in sampler2D ltcMag ) {\n\tvec3 rectPoints[4];\n\tinitRectPoints( lightPos, lightHalfWidth, lightHalfHeight, rectPoints );\n\tvec2 uv = ltcTextureCoords( geometry, roughness );\n\tvec4 brdfLtcApproxParams, t;\n\tbrdfLtcApproxParams = texture2D( ltcMat, uv );\n\tt = texture2D( ltcMat, uv );\n\tfloat brdfLtcScalar = texture2D( ltcMag, uv ).a;\n\tmat3 brdfLtcApproxMat = mat3(\n\t\tvec3(   1,   0, t.y ),\n\t\tvec3(   0, t.z,   0 ),\n\t\tvec3( t.w,   0, t.x )\n\t);\n\tvec3 specularReflectance = integrateLtcBrdfOverRect( geometry, brdfLtcApproxMat, rectPoints );\n\tspecularReflectance *= brdfLtcScalar;\n\treturn specularReflectance;\n}\nvec3 Rect_Area_Light_Diffuse_Reflectance(\n\t\tconst in GeometricContext geometry,\n\t\tconst in vec3 lightPos, const in vec3 lightHalfWidth, const in vec3 lightHalfHeight ) {\n\tvec3 rectPoints[4];\n\tinitRectPoints( lightPos, lightHalfWidth, lightHalfHeight, rectPoints );\n\tmat3 diffuseBrdfMat = mat3(1);\n\tvec3 diffuseReflectance = integrateLtcBrdfOverRect( geometry, diffuseBrdfMat, rectPoints );\n\treturn diffuseReflectance;\n}\nvec3 BRDF_Specular_GGX_Environment( const in GeometricContext geometry, const in vec3 specularColor, const in float roughness ) {\n\tfloat dotNV = saturate( dot( geometry.normal, geometry.viewDir ) );\n\tconst vec4 c0 = vec4( - 1, - 0.0275, - 0.572, 0.022 );\n\tconst vec4 c1 = vec4( 1, 0.0425, 1.04, - 0.04 );\n\tvec4 r = roughness * c0 + c1;\n\tfloat a004 = min( r.x * r.x, exp2( - 9.28 * dotNV ) ) * r.x + r.y;\n\tvec2 AB = vec2( -1.04, 1.04 ) * a004 + r.zw;\n\treturn specularColor * AB.x + AB.y;\n}\nfloat G_BlinnPhong_Implicit( ) {\n\treturn 0.25;\n}\nfloat D_BlinnPhong( const in float shininess, const in float dotNH ) {\n\treturn RECIPROCAL_PI * ( shininess * 0.5 + 1.0 ) * pow( dotNH, shininess );\n}\nvec3 BRDF_Specular_BlinnPhong( const in IncidentLight incidentLight, const in GeometricContext geometry, const in vec3 specularColor, const in float shininess ) {\n\tvec3 halfDir = normalize( incidentLight.direction + geometry.viewDir );\n\tfloat dotNH = saturate( dot( geometry.normal, halfDir ) );\n\tfloat dotLH = saturate( dot( incidentLight.direction, halfDir ) );\n\tvec3 F = F_Schlick( specularColor, dotLH );\n\tfloat G = G_BlinnPhong_Implicit( );\n\tfloat D = D_BlinnPhong( shininess, dotNH );\n\treturn F * ( G * D );\n}\nfloat GGXRoughnessToBlinnExponent( const in float ggxRoughness ) {\n\treturn ( 2.0 / pow2( ggxRoughness + 0.0001 ) - 2.0 );\n}\nfloat BlinnExponentToGGXRoughness( const in float blinnExponent ) {\n\treturn sqrt( 2.0 / ( blinnExponent + 2.0 ) );\n}\n";
 
 	var bumpmap_pars_fragment = "#ifdef USE_BUMPMAP\n\tuniform sampler2D bumpMap;\n\tuniform float bumpScale;\n\tvec2 dHdxy_fwd() {\n\t\tvec2 dSTdx = dFdx( vUv );\n\t\tvec2 dSTdy = dFdy( vUv );\n\t\tfloat Hll = bumpScale * texture2D( bumpMap, vUv ).x;\n\t\tfloat dBx = bumpScale * texture2D( bumpMap, vUv + dSTdx ).x - Hll;\n\t\tfloat dBy = bumpScale * texture2D( bumpMap, vUv + dSTdy ).x - Hll;\n\t\treturn vec2( dBx, dBy );\n\t}\n\tvec3 perturbNormalArb( vec3 surf_pos, vec3 surf_norm, vec2 dHdxy ) {\n\t\tvec3 vSigmaX = dFdx( surf_pos );\n\t\tvec3 vSigmaY = dFdy( surf_pos );\n\t\tvec3 vN = surf_norm;\n\t\tvec3 R1 = cross( vSigmaY, vN );\n\t\tvec3 R2 = cross( vN, vSigmaX );\n\t\tfloat fDet = dot( vSigmaX, R1 );\n\t\tvec3 vGrad = sign( fDet ) * ( dHdxy.x * R1 + dHdxy.y * R2 );\n\t\treturn normalize( abs( fDet ) * surf_norm - vGrad );\n\t}\n#endif\n";
 
@@ -94548,7 +94546,7 @@ define('text',['module'], function (module) {
 define('text!data/shaders/gem_vertex.shader',[],function () { return 'varying vec2 vUv;\nvarying vec3 vModelNormal;\nvarying vec3 vViewNormal;\nvarying vec3 vReflect;\nvarying vec3 vRefract;\nvarying vec3 vRefractG;\nvarying vec3 vRefractB;\nvarying vec3 vViewDirection;\n\nuniform float ior;\nuniform float colorAbberation;\n\nuniform float externalReflectionBlend;\n\nvarying vec3 pos;\nvarying float ao;\nvarying float ao2;\nvarying float d;\nuniform float time;\nuniform float weight;\nuniform float periodPn;\n\nvec3 mod289(vec3 x)\n    {\n      return x - floor(x * (1.0 / 289.0)) * 289.0;\n    }\n\n    vec4 mod289(vec4 x)\n    {\n      return x - floor(x * (1.0 / 289.0)) * 289.0;\n    }\n\n    vec4 permute(vec4 x)\n    {\n      return mod289(((x*34.0)+1.0)*x);\n    }\n\n    vec4 taylorInvSqrt(vec4 r)\n    {\n      return 1.79284291400159 - 0.85373472095314 * r;\n    }\n\n    vec3 fade(vec3 t) {\n      return t*t*t*(t*(t*6.0-15.0)+10.0);\n    }\n\n// Classic Perlin noise, periodic variant\n    float pnoise(vec3 P, vec3 rep)\n    {\n      vec3 Pi0 = mod(floor(P), rep); // Integer part, modulo period\n      vec3 Pi1 = mod(Pi0 + vec3(1.0), rep); // Integer part + 1, mod period\n      Pi0 = mod289(Pi0);\n      Pi1 = mod289(Pi1);\n      vec3 Pf0 = fract(P); // Fractional part for interpolation\n      vec3 Pf1 = Pf0 - vec3(1.0); // Fractional part - 1.0\n      vec4 ix = vec4(Pi0.x, Pi1.x, Pi0.x, Pi1.x);\n      vec4 iy = vec4(Pi0.yy, Pi1.yy);\n      vec4 iz0 = Pi0.zzzz;\n      vec4 iz1 = Pi1.zzzz;\n\n      vec4 ixy = permute(permute(ix) + iy);\n      vec4 ixy0 = permute(ixy + iz0);\n      vec4 ixy1 = permute(ixy + iz1);\n\n      vec4 gx0 = ixy0 * (1.0 / 7.0);\n      vec4 gy0 = fract(floor(gx0) * (1.0 / 7.0)) - 0.5;\n      gx0 = fract(gx0);\n      vec4 gz0 = vec4(0.5) - abs(gx0) - abs(gy0);\n      vec4 sz0 = step(gz0, vec4(0.0));\n      gx0 -= sz0 * (step(0.0, gx0) - 0.5);\n      gy0 -= sz0 * (step(0.0, gy0) - 0.5);\n\n      vec4 gx1 = ixy1 * (1.0 / 7.0);\n      vec4 gy1 = fract(floor(gx1) * (1.0 / 7.0)) - 0.5;\n      gx1 = fract(gx1);\n      vec4 gz1 = vec4(0.5) - abs(gx1) - abs(gy1);\n      vec4 sz1 = step(gz1, vec4(0.0));\n      gx1 -= sz1 * (step(0.0, gx1) - 0.5);\n      gy1 -= sz1 * (step(0.0, gy1) - 0.5);\n\n      vec3 g000 = vec3(gx0.x,gy0.x,gz0.x);\n      vec3 g100 = vec3(gx0.y,gy0.y,gz0.y);\n      vec3 g010 = vec3(gx0.z,gy0.z,gz0.z);\n      vec3 g110 = vec3(gx0.w,gy0.w,gz0.w);\n      vec3 g001 = vec3(gx1.x,gy1.x,gz1.x);\n      vec3 g101 = vec3(gx1.y,gy1.y,gz1.y);\n      vec3 g011 = vec3(gx1.z,gy1.z,gz1.z);\n      vec3 g111 = vec3(gx1.w,gy1.w,gz1.w);\n\n      vec4 norm0 = taylorInvSqrt(vec4(dot(g000, g000), dot(g010, g010), dot(g100, g100), dot(g110, g110)));\n      g000 *= norm0.x;\n      g010 *= norm0.y;\n      g100 *= norm0.z;\n      g110 *= norm0.w;\n      vec4 norm1 = taylorInvSqrt(vec4(dot(g001, g001), dot(g011, g011), dot(g101, g101), dot(g111, g111)));\n      g001 *= norm1.x;\n      g011 *= norm1.y;\n      g101 *= norm1.z;\n      g111 *= norm1.w;\n\n      float n000 = dot(g000, Pf0);\n      float n100 = dot(g100, vec3(Pf1.x, Pf0.yz));\n      float n010 = dot(g010, vec3(Pf0.x, Pf1.y, Pf0.z));\n      float n110 = dot(g110, vec3(Pf1.xy, Pf0.z));\n      float n001 = dot(g001, vec3(Pf0.xy, Pf1.z));\n      float n101 = dot(g101, vec3(Pf1.x, Pf0.y, Pf1.z));\n      float n011 = dot(g011, vec3(Pf0.x, Pf1.yz));\n      float n111 = dot(g111, Pf1);\n\n      vec3 fade_xyz = fade(Pf0);\n      vec4 n_z = mix(vec4(n000, n100, n010, n110), vec4(n001, n101, n011, n111), fade_xyz.z);\n      vec2 n_yz = mix(n_z.xy, n_z.zw, fade_xyz.y);\n      float n_xyz = mix(n_yz.x, n_yz.y, fade_xyz.x); \n      return 2.2 * n_xyz;\n    }\n\n    float stripes( float x, float f) {\n        float PI = 3.14159265358979323846264;\n        float t = .5 + .5 * sin( f * 2.0 * PI * x);\n        return t * t - .5;\n      }\n      \n      float turbulence( vec3 p ) {\n        float w = 100.0;\n        float t = -.5;\n        for (float f = 1.0 ; f <= 10.0 ; f++ ){\n          float power = pow( 2.0, f );\n          t += abs( pnoise( vec3( power * p ), vec3( 10.0, 10.0, 10.0 ) ) / power );\n        }\n        return t;\n      }\n\n\nvoid main() {\n    vUv = uv;\n\n    vec4 mPosition = modelMatrix * vec4( position, 1.0 );\n\n    vViewDirection = normalize(cameraPosition - mPosition.xyz);\n\n    vec3 nWorld = normalize( mat3( modelMatrix[0].xyz, modelMatrix[1].xyz, modelMatrix[2].xyz ) * normal );\n\n    vModelNormal = normalize( mat3( modelMatrix[0].xyz, modelMatrix[1].xyz, modelMatrix[2].xyz ) * normal );\n\n    vViewNormal = normalize( mat3( modelViewMatrix[0].xyz, modelViewMatrix[1].xyz, modelViewMatrix[2].xyz ) * normal );\n\n    vReflect = normalize( reflect( normalize( mPosition.xyz - cameraPosition ), vModelNormal ) );\n\n    vRefract = normalize( refract( normalize( mPosition.xyz - cameraPosition ), vModelNormal, ior ) );\n    vRefractG = normalize( refract( normalize( mPosition.xyz - cameraPosition ), vModelNormal, ior * (1.0 - colorAbberation) ) );\n    vRefractB = normalize( refract( normalize( mPosition.xyz - cameraPosition ), vModelNormal, ior * (1.0 - colorAbberation * 2.0) ) );\n\n\n\n    float noise = 20.0 *  .90 * turbulence( .5 * normal + time );\n    float displacement = - weight * noise;\n    displacement += periodPn * pnoise( 0.06 * position + vec3( 2.0 * time ), vec3( 1.5 ) );\n\n\n\n    vec3 newPosition = position  + normal * vec3( displacement );\n\n    gl_Position = projectionMatrix * modelViewMatrix * vec4( newPosition, 1.0 );\n\n}';});
 
 
-define('text!data/shaders/gem_fragment.shader',[],function () { return 'varying vec2 vUv;\nvarying vec3 vModelNormal;\nvarying vec3 vViewNormal;\nvarying vec3 vReflect;\nvarying vec3 vRefract;\nvarying vec3 vRefractG;\nvarying vec3 vRefractB;\nvarying vec3 vViewDirection;\n\nuniform vec2 refractionTiling;\n\nuniform float addReflection;\n\nuniform float externalReflectionBlend;\nuniform float refractionBlend;\n\nuniform float frenselPower;\n\nuniform float reflectionBrightness;\nuniform float refractionBrightness;\n\nuniform float refraction;\n\nuniform float lightDiffuseBrightness;\nuniform float lightSpecularPower;\nuniform float lightSpecularBrightness;\n\nuniform float globalOpacity;\n\nuniform sampler2D relectionTexture;\n\nfloat PI = 3.14159265358979323846264;\n\nfloat random(vec3 scale,float seed){return fract(sin(dot(gl_FragCoord.xyz+seed,scale))*43758.5453+seed);}\n\nvoid main() {\n\n  vec2 reflectionCoord = vec2((vReflect.x * 0.25 + 0.5) * refractionTiling.x, (1.0 - vReflect.y * 0.25 + 0.5) * refractionTiling.y);\n  reflectionCoord.xy = vec2(fract(reflectionCoord.x), fract(reflectionCoord.y));\n  vec3 reflectionColor = texture2D( relectionTexture, reflectionCoord.xy ).rgb;\n\n  reflectionColor *= reflectionBrightness;\n\n  vec2 refractionCoord = vec2((vRefract.x * 0.25 + 0.5) * refractionTiling.x, (vRefract.y * 0.25 + 0.5) * refractionTiling.y);\n  refractionCoord.xy = vec2(fract(refractionCoord.x), fract(refractionCoord.y));\n  vec3 refractionColor = vec3(0.0);\n  refractionColor.r = texture2D( relectionTexture, refractionCoord.xy ).r;\n\n  refractionCoord = vec2((vRefractG.x * 0.25 + 0.5) * refractionTiling.x, (vRefractG.y * 0.25 + 0.5) * refractionTiling.y);\n  refractionCoord.xy = vec2(fract(refractionCoord.x), fract(refractionCoord.y));\n  refractionColor.g = texture2D( relectionTexture, refractionCoord.xy ).g;\n\n  refractionCoord = vec2((vRefractB.x * 0.25 + 0.5) * refractionTiling.x, (vRefractB.y * 0.25 + 0.5) * refractionTiling.y);\n  refractionCoord.xy = vec2(fract(refractionCoord.x), fract(refractionCoord.y));\n  refractionColor.b = texture2D( relectionTexture, refractionCoord.xy ).b;\n\n  refractionColor *= refractionBrightness;\n\n  float fresnelAmount;\n\n  fresnelAmount = 1.0 - dot(vViewNormal, vec3(0.0, 0.0, 1.0));\n\n  fresnelAmount = pow(fresnelAmount, frenselPower);\n  fresnelAmount = 1.0 - (1.0 - fresnelAmount) * refractionBlend;\n\n  refractionColor = mix(vec3(0.0), refractionColor, refraction);\n\n  vec3 blendedColor;\n  if (addReflection == 1.0) {\n    blendedColor = refractionColor + reflectionColor * fresnelAmount;\n  } else {\n    blendedColor = mix(refractionColor, reflectionColor, fresnelAmount);\n  }\n\n  vec3 lightDirection;\n  float diffuseBrightness, specularBrightness;\n\n  lightDirection = normalize(vec3(1.0, 1.0, 1.0));\n  diffuseBrightness = max(0.0, dot(lightDirection, vModelNormal)) * lightDiffuseBrightness;\n  specularBrightness = 0.0;\n  if (dot(vModelNormal, lightDirection) > 0.0) {\n    specularBrightness = pow(max(0.0, dot(reflect(-lightDirection, vModelNormal), vViewDirection)), lightSpecularPower) * lightSpecularBrightness;\n  }\n  blendedColor.xyz += vec3(diffuseBrightness + specularBrightness);\n\n  lightDirection = normalize(vec3(-1.0, 0.75, -0.75));\n  diffuseBrightness = max(0.0, dot(lightDirection, vModelNormal)) * lightDiffuseBrightness;\n  specularBrightness = 0.0;\n  if (dot(vModelNormal, lightDirection) > 0.0) {\n    specularBrightness = pow(max(0.0, dot(reflect(-lightDirection, vModelNormal), vViewDirection)), lightSpecularPower) * lightSpecularBrightness;\n  }\n  blendedColor.xyz += vec3(diffuseBrightness + specularBrightness);\n\n  lightDirection = normalize(vec3(0.5, -0.5, -0.5));\n  diffuseBrightness = max(0.0, dot(lightDirection, vModelNormal)) * lightDiffuseBrightness;\n  specularBrightness = 0.0;\n  if (dot(vModelNormal, lightDirection) > 0.0) {\n    specularBrightness = pow(max(0.0, dot(reflect(-lightDirection, vModelNormal), vViewDirection)), lightSpecularPower) * lightSpecularBrightness ;//0.8; //50\n  }\n  blendedColor.xyz += vec3(diffuseBrightness + specularBrightness);\n\n  gl_FragColor = vec4( blendedColor.xyz, globalOpacity);\n\n}';});
+define('text!data/shaders/gem_fragment.shader',[],function () { return 'varying vec2 vUv;\nvarying vec3 vModelNormal;\nvarying vec3 vViewNormal;\nvarying vec3 vReflect;\nvarying vec3 vRefract;\nvarying vec3 vRefractG;\nvarying vec3 vRefractB;\nvarying vec3 vViewDirection;\n\nuniform vec2 refractionTiling;\n\nuniform float addReflection;\n\nuniform float externalReflectionBlend;\nuniform float refractionBlend;\n\nuniform float frenselPower;\n\nuniform float reflectionBrightness;\nuniform float refractionBrightness;\n\nuniform float refraction;\n\nuniform float lightDiffuseBrightness;\nuniform float lightSpecularPower;\nuniform float lightSpecularBrightness;\n\nuniform float globalOpacity;\n\nuniform sampler2D relectionTexture;\n\nfloat PI = 3.14159265358979323846264;\n\nfloat random(vec3 scale,float seed){return fract(sin(dot(gl_FragCoord.xyz+seed,scale))*43758.5453+seed);}\n\nvoid main() {\n\n  vec2 reflectionCoord = vec2((vReflect.x * 0.25 + 0.5) * refractionTiling.x, (1.0 - vReflect.y * 0.25 + 0.5) * refractionTiling.y);\n  reflectionCoord.xy = vec2(fract(reflectionCoord.x), fract(reflectionCoord.y));\n  vec3 reflectionColor = texture2D( relectionTexture, reflectionCoord.xy ).rgb;\n\n  reflectionColor *= reflectionBrightness;\n\n  vec2 refractionCoord = vec2((vRefract.x * 0.25 + 0.5) * refractionTiling.x, (vRefract.y * 0.25 + 0.5) * refractionTiling.y);\n  refractionCoord.xy = vec2(fract(refractionCoord.x), fract(refractionCoord.y));\n  vec3 refractionColor = vec3(0.0);\n  refractionColor.r = texture2D( relectionTexture, refractionCoord.xy ).r;\n\n  refractionCoord = vec2((vRefractG.x * 0.25 + 0.5) * refractionTiling.x, (vRefractG.y * 0.25 + 0.5) * refractionTiling.y);\n  refractionCoord.xy = vec2(fract(refractionCoord.x), fract(refractionCoord.y));\n  refractionColor.g = texture2D( relectionTexture, refractionCoord.xy ).g;\n\n  refractionCoord = vec2((vRefractB.x * 0.25 + 0.5) * refractionTiling.x, (vRefractB.y * 0.25 + 0.5) * refractionTiling.y);\n  refractionCoord.xy = vec2(fract(refractionCoord.x), fract(refractionCoord.y));\n  refractionColor.b = texture2D( relectionTexture, refractionCoord.xy ).b;\n\n  refractionColor *= refractionBrightness;\n\n  float fdevflovvelAmount;\n\n  fdevflovvelAmount = 1.0 - dot(vViewNormal, vec3(0.0, 0.0, 1.0));\n\n  fdevflovvelAmount = pow(fdevflovvelAmount, frenselPower);\n  fdevflovvelAmount = 1.0 - (1.0 - fdevflovvelAmount) * refractionBlend;\n\n  refractionColor = mix(vec3(0.0), refractionColor, refraction);\n\n  vec3 blendedColor;\n  if (addReflection == 1.0) {\n    blendedColor = refractionColor + reflectionColor * fdevflovvelAmount;\n  } else {\n    blendedColor = mix(refractionColor, reflectionColor, fdevflovvelAmount);\n  }\n\n  vec3 lightDirection;\n  float diffuseBrightness, specularBrightness;\n\n  lightDirection = normalize(vec3(1.0, 1.0, 1.0));\n  diffuseBrightness = max(0.0, dot(lightDirection, vModelNormal)) * lightDiffuseBrightness;\n  specularBrightness = 0.0;\n  if (dot(vModelNormal, lightDirection) > 0.0) {\n    specularBrightness = pow(max(0.0, dot(reflect(-lightDirection, vModelNormal), vViewDirection)), lightSpecularPower) * lightSpecularBrightness;\n  }\n  blendedColor.xyz += vec3(diffuseBrightness + specularBrightness);\n\n  lightDirection = normalize(vec3(-1.0, 0.75, -0.75));\n  diffuseBrightness = max(0.0, dot(lightDirection, vModelNormal)) * lightDiffuseBrightness;\n  specularBrightness = 0.0;\n  if (dot(vModelNormal, lightDirection) > 0.0) {\n    specularBrightness = pow(max(0.0, dot(reflect(-lightDirection, vModelNormal), vViewDirection)), lightSpecularPower) * lightSpecularBrightness;\n  }\n  blendedColor.xyz += vec3(diffuseBrightness + specularBrightness);\n\n  lightDirection = normalize(vec3(0.5, -0.5, -0.5));\n  diffuseBrightness = max(0.0, dot(lightDirection, vModelNormal)) * lightDiffuseBrightness;\n  specularBrightness = 0.0;\n  if (dot(vModelNormal, lightDirection) > 0.0) {\n    specularBrightness = pow(max(0.0, dot(reflect(-lightDirection, vModelNormal), vViewDirection)), lightSpecularPower) * lightSpecularBrightness ;//0.8; //50\n  }\n  blendedColor.xyz += vec3(diffuseBrightness + specularBrightness);\n\n  gl_FragColor = vec4( blendedColor.xyz, globalOpacity);\n\n}';});
 
 define('view/modules/background/gem/gem2_view',[
     "jquery",
@@ -94573,7 +94571,7 @@ define('view/modules/background/gem/gem2_view',[
     "objLoader",
     "TweenMax",
     "util/anim_frame",
-    "util/resn/math",
+    "util/devflovv/math",
     "model/app_model",
     "view/common/base_view",
     "libs/createjs/preloadjs",
@@ -94697,7 +94695,7 @@ define('view/modules/background/gem/gem2_view',[
         REFRACTION_BRIGHTNESS: 0.9,
 
         REFRACTION_IOR: 0.7,
-        REFLECTION_FRESNEL_POWER: 2.75,
+        REFLECTION_FdevflovvEL_POWER: 2.75,
         REFLECTION_BRIGHTNESS: 0.9,
         REFRACTION_BLEND: 0.86,
         REFLECTION_TILING: 4,
@@ -94939,7 +94937,7 @@ define('view/modules/background/gem/gem2_view',[
                     },
                     frenselPower: {
                         type: 'f',
-                        value: this.REFLECTION_FRESNEL_POWER
+                        value: this.REFLECTION_FdevflovvEL_POWER
                     },
                     lightDiffuseBrightness: {
                         type: 'f',
@@ -95761,7 +95759,7 @@ define('view/mobile/modules/background/gem/gem_mobile_view',[
     'config',
     'util/anim_frame',
     'view/modules/background/gem/gem2_view',
-    'util/resn/math'
+    'util/devflovv/math'
 
 ], function(
 
@@ -95955,7 +95953,7 @@ define('view/mobile/modules/background/background_drop_view',[
     'view/modules/background/interactive/interactive_bar_view',
     'view/modules/background/title_message_view',
     'view/mobile/modules/background/gem/gem_mobile_view',
-    'util/resn/animation',
+    'util/devflovv/animation',
     'TweenMax'
 
 ], function (
@@ -97677,7 +97675,7 @@ define('view/mobile/modules/shell/overview_button',[
 	'config',
 	'route/router',
 	'util/anim_frame',
-	'util/resn/animation',
+	'util/devflovv/animation',
 	'view/common/base_view'
 
 ], function (
@@ -98335,7 +98333,7 @@ define('view/mobile/modules/shell/shell_view',[
 //     'model/loader_collection',
 //     'view/common/base_view',
 //     'util/anim_frame',
-//     'util/resn/math'
+//     'util/devflovv/math'
 
 // ], function(
 

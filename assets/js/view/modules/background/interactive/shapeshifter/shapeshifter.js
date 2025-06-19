@@ -8,7 +8,7 @@
 //     'events/app_events',
 //     'model/app_model',
 //     'util/anim_frame',
-//     'util/resn/math',
+//     'util/devflovv/math',
 //     'model/loader_collection',
 //     'view/modules/background/interactive/base_interactive_view',
 //     'view/modules/background/interactive/shapeshifter/point',

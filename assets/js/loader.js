@@ -6917,7 +6917,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             fauxPr: 0,
             fauxClipped: !1,
             init: function(t) {
-                this.el = document.getElementById("preloader"), this.inner = document.getElementsByClassName("js-loader-inner")[0], this.barWrapper = document.getElementsByClassName("js-bar-wrapper")[0], this.barProgress = document.getElementsByClassName("js-bar-progress")[0], this.drop = document.getElementsByClassName("js-drop")[0], this.cnv = document.createElement("canvas"), this.ctx = this.cnv.getContext("2d"), this.cnvDrop = document.createElement("canvas"), this.ctxDrop = this.cnvDrop.getContext("2d"), this.dropImg = new Image, this.dropImg.src = "DF-Mono.png", this.el.appendChild(this.cnv), this.onResize = this.onResize.bind(this), this.onResize(), this.addEvents(), this.setDefault(), this.start()
+                this.el = document.getElementById("preloader"), this.inner = document.getElementsByClassName("js-loader-inner")[0], this.barWrapper = document.getElementsByClassName("js-bar-wrapper")[0], this.barProgress = document.getElementsByClassName("js-bar-progress")[0], this.drop = document.getElementsByClassName("js-drop")[0], this.cnv = document.createElement("canvas"), this.ctx = this.cnv.getContext("2d"), this.cnvDrop = document.createElement("canvas"), this.ctxDrop = this.cnvDrop.getContext("2d"), this.dropImg = new Image, this.dropImg.src = "coding-pulse_logo.png", this.el.appendChild(this.cnv), this.onResize = this.onResize.bind(this), this.onResize(), this.addEvents(), this.setDefault(), this.start()
             },
             addEvents: function() {
                 window.addEventListener("resize", this.onResize)
@@ -6926,17 +6926,17 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 window.removeEventListener("resize", this.onResize)
             },
             setDefault: function() {
-                this.isComplete = !1, this.tgPr = 0, this.pr = 0, this.renderBar = !1, this.tweenObj = {
+                this.isComplete = !1, this.tgPr = 0, this.pr = 0, this.renderBar = !0, this.tweenObj = {
                     bgMaskScaleXPr: 0,
                     bgMaskScaleYPr: 0,
                     alphaDropPr: 0,
                     alphaBgPr: 0
-                }, i.set([this.barWrapper, this.barProgress], {
+                }, i.set([this.barWrapper], {
                     scaleX: 0
-                }), i.to(this, 7, {
-                    fauxPr: this.STARTING_PROGRESS,
-                    ease: "Power1.easeInOut"
-                })
+            }), i.to(this, 3, {
+                tgPr: 1,
+                ease: "Linear.easeNone"
+            })
             },
             start: function() {
                 s.on("anim_frame", this.update, this), i.to(this.tweenObj, .64, {
@@ -7004,22 +7004,22 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             drawBar: function() {
                 i.set(this.barProgress, {
                     scaleX: this.pr,
-                    force3D: !0
+                    force3D: true
                 })
             },
-            update: function() {
-                this.updateProgress(), this.renderBar && (this.pr += .06 * (this.tgPr - this.pr)), this.drawBg(), this.drawBar();
-                var t = this;
-                1 === this.tgPr && this.pr > .99 && t.complete()
-            },
-            updateProgress: function() {
-                window.loadProgress >= .95 && !this.fauxClipped && (this.fauxClipped = !0, i.killTweensOf(this, {
-                    fauxPr: !0
-                }), i.to(this, .3, {
-                    fauxPr: this.STARTING_PROGRESS,
-                    ease: "Power1.easeInOut"
-                })), window.loadProgress <= this.tgPr || (this.tgPr = this.fauxPr + (window.loadProgress || 0) * (1 - this.STARTING_PROGRESS))
-            },
+update: function() {
+    this.updateProgress(), this.renderBar && (this.pr += .06 * (this.tgPr - this.pr)), this.drawBg(), this.drawBar();
+    var t = this;
+    if (this.tgPr >= 1 && this.pr > 0.99) {
+        t.complete();
+    }
+},
+updateProgress: function() {
+    if (this.tgPr === undefined) this.tgPr = 0; 
+    if (this.tgPr < 1) {
+        this.tgPr += 0.01;
+    }
+},
             onFileLoaded: function(t) {},
             onAnimBgComplete: function() {
                 this.renderBar = !0

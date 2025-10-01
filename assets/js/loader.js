@@ -6917,7 +6917,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             fauxPr: 0,
             fauxClipped: !1,
             init: function(t) {
-                this.el = document.getElementById("preloader"), this.inner = document.getElementsByClassName("js-loader-inner")[0], this.barWrapper = document.getElementsByClassName("js-bar-wrapper")[0], this.barProgress = document.getElementsByClassName("js-bar-progress")[0], this.drop = document.getElementsByClassName("js-drop")[0], this.cnv = document.createElement("canvas"), this.ctx = this.cnv.getContext("2d"), this.cnvDrop = document.createElement("canvas"), this.ctxDrop = this.cnvDrop.getContext("2d"), this.dropImg = new Image, this.dropImg.src = "coding-pulse_logo.png", this.el.appendChild(this.cnv), this.onResize = this.onResize.bind(this), this.onResize(), this.addEvents(), this.setDefault(), this.start()
+                this.el = document.getElementById("preloader"), this.inner = document.getElementsByClassName("js-loader-inner")[0], this.barWrapper = document.getElementsByClassName("js-bar-wrapper")[0], this.barProgress = document.getElementsByClassName("js-bar-progress")[0], this.drop = document.getElementsByClassName("js-drop")[0], this.cnv = document.createElement("canvas"), this.ctx = this.cnv.getContext("2d"), this.cnvDrop = document.createElement("canvas"), this.ctxDrop = this.cnvDrop.getContext("2d"), this.dropImg = new Image, this.dropImg.src = "DF-Mono.png", this.el.appendChild(this.cnv), this.onResize = this.onResize.bind(this), this.onResize(), this.addEvents(), this.setDefault(), this.start()
             },
             addEvents: function() {
                 window.addEventListener("resize", this.onResize)

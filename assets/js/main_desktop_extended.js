@@ -350,7 +350,7 @@ if (!console["time"] || !console["timeEnd"])
         var start = timers[id];
         if (start)
         {
-            console.log(id + ": " + (new Date().getTime() - start) + "ms");
+
             delete timers[id];
         }
     };
@@ -427,7 +427,7 @@ define('console',[
          */
         log                 : function ( message ) {
             if ( this._isDebug() ) {
-                console.log(message);
+
             }
         } ,
         /** Only works if there is a URL param debug=true
@@ -436,7 +436,7 @@ define('console',[
          */
         info                : function ( message ) {
             if ( this._isDebug() ) {
-                console.info(message);
+
             }
         } ,
         /** Only works if there is a URL param debug=true
@@ -22109,7 +22109,7 @@ define('controller/app_controller',[
 
         onRouterPage: function(page, pageOptions) {
 
-            console.log('onRouterPage: ', page, pageOptions);
+
 
             AppModel.set('prevPage', AppModel.get('page'));
 
@@ -23949,7 +23949,7 @@ define('model/sound_model',[
                 return Promise.all(promises).then(function () {
                     self.set("loaded",true);
                 }).catch(function (e) {
-                    console.log(e);
+
                     console.error("SOUND LOAD :: " + e.stack);
                 });
 
@@ -24132,12 +24132,12 @@ define('model/sound_model',[
                 try {
                     sound.startTime = Date.now();
                     sound.duration = 0 || 0;
-					console.log("sound.duration-___----", sound.duration);
+
                     sound.endTime = 0 + 0;
 
                     this._sounds.push(sound);
                 } catch (e) {
-                    console.log(e.stack);
+
                 }
             },
 
@@ -25505,7 +25505,7 @@ define('view/modules/common/ambient_player_view',[
                 });
             };
             request.onerror = function(){
-                console.log('error loading ambient sound');
+
             };
             request.send();
 
@@ -43619,7 +43619,7 @@ define('view/modules/work/project/carousel/project_carousel_view',[
 
         showUI: function(delay) {
             delay = delay || 0;
-            console.log("showUI");
+
 
             this.prevArrow.show(delay);
             this.nextArrow.show(delay);
@@ -43631,7 +43631,7 @@ define('view/modules/work/project/carousel/project_carousel_view',[
 
         hideUI: function(delay) {
             delay = delay || 0;
-            console.log("hideUI");
+
 
             this.prevArrow.hide(delay);
             this.nextArrow.hide(delay);
@@ -45056,14 +45056,14 @@ define('view/modules/work/project/btn/work_draghandle_icon_view',[
 
         addAnimFrame: function () {
 
-          console.log('add anim frame');
+
 
             AnimFrame.on('anim_frame', this.onAnimFrame, this);
         },
 
         removeAnimFrame: function () {
 
-            console.log('remove anim frame');
+
 
             AnimFrame.off('anim_frame', this.onAnimFrame, this);
         },
@@ -45589,14 +45589,14 @@ define('view/modules/work/project/project_mask_view',[
         },
 
         onActivate: function (dir) {
-            console.log('onActivate');
+
             this._firstItem.activate();
             this._secondItem.activate();
             this._dragHandle.show();
         },
 
         onDeactivate: function () {
-            console.log('onDeactivate');
+
             this._firstItem.deactivate();
             this._secondItem.deactivate();
             this._dragHandle.hide();
@@ -46609,7 +46609,7 @@ define('view/modules/work/work_project_view',[
 
         show: function (isFast) {
 
-            console.log('WorkProjectView.show', this.model.get('title'));
+
 
             if (!this.visible) {
 
@@ -46662,7 +46662,7 @@ define('view/modules/work/work_project_view',[
             // this.footer.hide();
 
             // this.$el.css('opacity', 0);
-            console.log('onHideComplete', this.$el);
+
             this.$el.detach();
         },
 
@@ -47139,14 +47139,14 @@ define('view/modules/work/overview/overview_dropdown_icon_view',[
 
         addAnimFrame: function () {
 
-          console.log('add anim frame');
+
 
             AnimFrame.on('anim_frame', this.onAnimFrame, this);
         },
 
         removeAnimFrame: function () {
 
-            console.log('remove anim frame');
+
 
             AnimFrame.off('anim_frame', this.onAnimFrame, this);
         },
@@ -53480,7 +53480,7 @@ define(
             },
 
             _onPageOption: function(appModel, pageOptions, options) {
-                console.log('WorkPage.onPageOption: ', pageOptions, options);
+
 
                 var workId = pageOptions[0];
                 var newProjectView = this._getProjectViewByID(workId);
@@ -53500,7 +53500,7 @@ define(
 
             _switchToProjectDetail: function(route, newProjectView) {
 
-                console.log('WorkPage._switchToProjectDetail');
+
 
                 this._mode = modes.MODE_DETAIL;
 
@@ -53586,7 +53586,7 @@ define(
             },
 
             _switchToOverview: function(category) {
-                console.log('WorkPage._switchToOverview');
+
 
                 this._mode = modes.MODE_OVERVIEW;
 
@@ -53627,7 +53627,7 @@ define(
 
             _switchToMenu: function() {
 
-                console.log('WorkPage._switchToMenu');
+
 
                 var fromMode = this._mode;
 
@@ -54401,7 +54401,7 @@ define('view/pages/contact_page',[
 
         onNewsletterClick: function () {
 
-            console.log('onNewsletterClick')
+
             this.showNewsletterForm();
         },
 
@@ -54426,7 +54426,7 @@ define('view/pages/contact_page',[
 
         showNewsletterForm: function () {
 
-            console.log('show news letter')
+
             TweenMax.killTweensOf( [ this.$newsletterInner, this.$newsletterLink ] );
 
             TweenMax.fromTo( this.$newsletterLink, 0.71, {
@@ -54469,7 +54469,7 @@ define('view/pages/contact_page',[
         },
 
         onNewsletterSubmit: function (e) {
-            console.log('submit');
+
             e.preventDefault();
 
             NewsletterSubscribe({
@@ -75952,7 +75952,7 @@ define('view/modules/common/video/video_player_view',[
         },
 
         onPlayerError: function(e) {
-            console.info('player error', e, this.player);
+
         },
 
         onTimeUpdate: function() {
@@ -76160,7 +76160,7 @@ define('view/modules/common/video/video_view',[
 
         onClick: function (e) {
 
-            console.log('click', e);
+
             e.preventDefault();
             e.stopImmediatePropagation();
 
@@ -96923,7 +96923,7 @@ define('view/modules/background/title_message_view',[
 
 	function WebGLRenderer( parameters ) {
 
-		console.log( 'THREE.WebGLRenderer', REVISION );
+
 
 		parameters = parameters || {};
 
@@ -103158,7 +103158,7 @@ define('view/modules/background/title_message_view',[
 					counter --;
 					if ( counter < 0 ) {
 
-						console.log( "Infinite Loop! Holes left:" + indepHoles.length + ", Probably Hole outside Shape!" );
+
 						break;
 
 					}
@@ -118801,7 +118801,7 @@ define('view/modules/background/title_message_view',[
 
 	Curve.create = function ( construct, getPoint ) {
 
-		console.log( 'THREE.Curve.create() has been deprecated' );
+
 
 		construct.prototype = Object.create( Curve.prototype );
 		construct.prototype.constructor = construct;
@@ -122061,7 +122061,7 @@ THREE.OBJLoader.prototype = {
 
 	parse: function ( text ) {
 
-		console.time( 'OBJLoader' );
+
 
 		var state = this._createParserState();
 
@@ -122375,7 +122375,7 @@ THREE.OBJLoader.prototype = {
 
 		}
 
-		console.timeEnd( 'OBJLoader' );
+
 
 		return container;
 
@@ -123791,7 +123791,7 @@ define('view/modules/background/background_drop_view',[
 
             if(AppModel.get('page') === AppModel.PAGES.HOME){
                 // this.showTitleMessage(3);
-                console.log("show initial");
+
                 Backbone.trigger('OVERVIEWBTN:SHOW',4);
                 if(this.firstInteractive){
                     this.showInteractiveMessage(3);

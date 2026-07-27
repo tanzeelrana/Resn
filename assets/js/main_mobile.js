@@ -507,7 +507,7 @@ if (!console["time"] || !console["timeEnd"])
         var start = timers[id];
         if (start)
         {
-            console.log(id + ": " + (new Date().getTime() - start) + "ms");
+
             delete timers[id];
         }
     };
@@ -584,7 +584,7 @@ define('console',[
          */
         log                 : function ( message ) {
             if ( this._isDebug() ) {
-                console.log(message);
+
             }
         } ,
         /** Only works if there is a URL param debug=true
@@ -593,7 +593,7 @@ define('console',[
          */
         info                : function ( message ) {
             if ( this._isDebug() ) {
-                console.info(message);
+
             }
         } ,
         /** Only works if there is a URL param debug=true
@@ -22265,7 +22265,7 @@ define('controller/app_controller',[
 
         onRouterPage: function(page, pageOptions) {
 
-            console.log('onRouterPage: ', page, pageOptions);
+
 
             AppModel.set('prevPage', AppModel.get('page'));
 
@@ -23840,7 +23840,7 @@ define('view/mobile/modules/menu/menu_item_view',[
             var letters = LoaderCollection.getResult('letters');
 
             var textEffectId = this.el.getAttribute('data-text-effect-id');
-            console.log('teid', textEffectId, this.el);
+
             if (textEffectId) {
                 var letterData = _(letters).find({ id: textEffectId });
                 if (letterData) {
@@ -23855,7 +23855,7 @@ define('view/mobile/modules/menu/menu_item_view',[
                         this.effectView.activate();
                     }.bind(this), 0);
 
-                    console.log(letterData);
+
                 }
             }
         },
@@ -42704,7 +42704,7 @@ define(
                     }, this)
                 );
 
-                console.log('OverviewCategoryListView.open');
+
                 this.el.classList.add('is-open');
                 
                 this._projectListView.hideAll();
@@ -42726,7 +42726,7 @@ define(
                 var item;
                 var index = 0;
 
-                console.log('OverviewCategoryListView.close');
+
                 // sets visibility and pointer-events
                 this.el.classList.remove('is-open');
 
@@ -47097,7 +47097,7 @@ define('view/mobile/pages/work',[
         },
 
         _onPageOption: function(appModel, pageOptions, options) {
-            console.log("WorkPage.onPageOption: ", pageOptions, options);
+
 
             var workId = pageOptions[0];
             var newProjectView = this._getProjectViewByID(workId);
@@ -47155,7 +47155,7 @@ define('view/mobile/pages/work',[
         },
 
         _switchToOverview: function(category) {
-            console.log("WorkPage._switchToOverview");
+
 
             this._mode = modes.MODE_OVERVIEW;
 
@@ -47189,7 +47189,7 @@ define('view/mobile/pages/work',[
         },
 
         _switchToMenu: function() {
-            console.log("WorkPage._switchToMenu");
+
 
             this._mode = modes.MODE_MENU;
             var index;
@@ -47931,7 +47931,7 @@ define('view/mobile/modules/video/video_player_view',[
         },
 
         onPlayerError: function(e) {
-            console.info('player error', e, this.player);
+
         },
 
         onTimeUpdate: function() {
@@ -68690,7 +68690,7 @@ define('view/modules/background/title_message_view',[
 
 	function WebGLRenderer( parameters ) {
 
-		console.log( 'THREE.WebGLRenderer', REVISION );
+
 
 		parameters = parameters || {};
 
@@ -74925,7 +74925,7 @@ define('view/modules/background/title_message_view',[
 					counter --;
 					if ( counter < 0 ) {
 
-						console.log( "Infinite Loop! Holes left:" + indepHoles.length + ", Probably Hole outside Shape!" );
+
 						break;
 
 					}
@@ -90568,7 +90568,7 @@ define('view/modules/background/title_message_view',[
 
 	Curve.create = function ( construct, getPoint ) {
 
-		console.log( 'THREE.Curve.create() has been deprecated' );
+
 
 		construct.prototype = Object.create( Curve.prototype );
 		construct.prototype.constructor = construct;
@@ -93828,7 +93828,7 @@ THREE.OBJLoader.prototype = {
 
 	parse: function ( text ) {
 
-		console.time( 'OBJLoader' );
+
 
 		var state = this._createParserState();
 
@@ -94142,7 +94142,7 @@ THREE.OBJLoader.prototype = {
 
 		}
 
-		console.timeEnd( 'OBJLoader' );
+
 
 		return container;
 

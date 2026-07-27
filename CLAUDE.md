@@ -30,20 +30,40 @@ cleanup. Causes and rules:
    `main_desktop_extended.js` alone was 17 versions ≈ 65 MB of history.
    Batch changes to them; don't commit them incrementally.
 
-## History rewrite record
+## Size cleanup — 2026-07-27
 
-- **2026-07-27**: history rewritten with `git filter-repo` to strip the
-  `.mov` and all old (non-tip) blobs ≥ 100 KB across all 6 branches
-  (master, dev, develop, frontend_changes, Refactor/removed_iFit_details,
-  feature/control-progress-bar-speed). All branch tips were protected —
-  current site content unaffected. Force-pushed to origin.
-- Consequence: **checking out pre-rewrite commits gives incomplete trees**
-  (old asset versions are gone). That is intentional.
-- Pre-rewrite backup: `~/Development/Resn-backup.git` (mirror clone,
-  533 MB). Delete it once confident nothing was lost.
-- Anyone with an old clone must re-clone (or hard-reset to the new
-  history) — old clones cannot be pushed/pulled against the rewritten
-  remote.
+Repo was 921 MB (533 MB `.git` + 388 MB assets).
+
+**Done:** images recompressed in place on all 6 branches (JPEG q82
+progressive, ICC preserved; lossless PNG optimize). ~1,024 of 1,456 files
+rewritten per branch, 393 MB → 216 MB of image data. Working tree assets:
+388 MB → 236 MB.
+
+**Not done — history rewrite is still PENDING.** Until it runs, `.git` is
+*larger* than before (740 MB) because it holds both the old and the new
+image blobs. The prepared, ready-to-run step lives in
+`~/Development/Resn-cleanup/`:
+
+```bash
+cd ~/Development/Resn
+python3 ~/Development/Resn-cleanup/build_strip_list.py   # regenerate the list
+python3 ~/Development/Resn-cleanup/git-filter-repo \
+    --strip-blobs-with-ids ~/Development/Resn-cleanup/strip_ids.txt \
+    --prune-empty never --force
+git remote add origin https://github.com/tanzeelrana/Resn   # filter-repo drops it
+git push --force --all origin
+```
+
+The list strips 1,017 blobs (~514 MB): every blob ≥ 100 KB **not** reachable
+from a branch tip (superseded old versions), plus
+`assets/img/projects/coursology/coursology-m-v.mov` (25.6 MB, still at 4 tips
+but referenced by nothing). Branch tips are otherwise protected, so no
+current site content is touched. Re-run `build_strip_list.py` first if any
+new commits have landed.
+
+After it runs: pre-rewrite commits will have incomplete trees (intentional),
+and anyone with an old clone must re-clone. Backup mirror of the *original*
+history: `~/Development/Resn-backup.git` (533 MB) — keep until verified.
 
 ## Branches
 

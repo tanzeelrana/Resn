@@ -1,0 +1,98 @@
+name: Deploy to devflovv.com
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+env:
+  DEPLOY_HOST: ${{ vars.DEPLOY_HOST || '167.172.43.243' }}
+  DEPLOY_USER: ${{ vars.DEPLOY_USER || 'root' }}
+  DEPLOY_PATH: ${{ vars.DEPLOY_PATH || '/var/www/new.devflovv.com' }}
+
+jobs:
+  deploy:
+    name: rsync to droplet
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # every step below runs through a shell that fails on unset vars and on
+    # ANY command in a pipeline failing - the previous version hid rsync's
+    # exit code behind `| tail`, so a failing dry run reported success
+    defaults:
+      run:
+        shell: bash -euo pipefail {0}
+
+    steps:
+      - name: Check out master
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Load deploy key and trust the host
+        run: |
+          test -n "${{ secrets.DEPLOY_SSH_KEY }}" || {
+            echo "::error::secret DEPLOY_SSH_KEY is empty or not set"; exit 1; }
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keygen -y -f ~/.ssh/deploy_key > /dev/null \
+            || { echo "::error::DEPLOY_SSH_KEY is not a valid private key (check for missing BEGIN/END lines)"; exit 1; }
+          ssh-keyscan -T 20 "$DEPLOY_HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
+          test -s ~/.ssh/known_hosts \
+            || { echo "::error::ssh-keyscan returned nothing for $DEPLOY_HOST"; exit 1; }
+          echo "known_hosts entries: $(wc -l < ~/.ssh/known_hosts)"
+          # public fingerprint only - safe to log, tells us WHICH key the secret holds
+          FP="$(ssh-keygen -lf ~/.ssh/deploy_key)"
+          echo "deploy key fingerprint: $FP"
+          echo "::notice title=deploy-key::$FP"
+
+      - name: Verify SSH connectivity
+        run: |
+          set +e
+          OUT=$(ssh -vv -i ~/.ssh/deploy_key -o BatchMode=yes -o ConnectTimeout=20 \
+                "$DEPLOY_USER@$DEPLOY_HOST" \
+                "echo connected as \$(whoami)" 2>&1)
+          RC=$?
+          echo "$OUT"
+          if [ $RC -ne 0 ]; then
+            REASON=$(echo "$OUT" | grep -iE "permission denied|no matching|timed out|refused|unreachable|host key" | head -2 | tr '\n' ' ')
+            echo "::error title=ssh-failed::rc=$RC ${REASON:-see log}"
+            exit $RC
+          fi
+
+      - name: Show what will change (dry run)
+        run: |
+          rsync -rlvz --dry-run --delete --delete-excluded --force --itemize-changes \
+            -e "ssh -i ~/.ssh/deploy_key -o BatchMode=yes" \
+            --exclude '.git/' --exclude '.github/' --exclude '.gitattributes' \
+            --exclude 'CLAUDE.md' --exclude 'README.md' \
+            ./ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/" > /tmp/dryrun.txt
+          echo "changes planned: $(grep -c . /tmp/dryrun.txt)"
+          tail -40 /tmp/dryrun.txt
+
+      - name: Deploy
+        run: |
+          rsync -rlz --delete --delete-excluded --force --human-readable --stats \
+            -e "ssh -i ~/.ssh/deploy_key -o BatchMode=yes" \
+            --exclude '.git/' --exclude '.github/' --exclude '.gitattributes' \
+            --exclude 'CLAUDE.md' --exclude 'README.md' \
+            ./ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/"
+
+      - name: Verify the site responds
+        run: |
+          for i in 1 2 3 4 5; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' https://devflovv.com/ --max-time 20 || echo 000)
+            echo "attempt $i: HTTP $code"
+            if [ "$code" = "200" ]; then exit 0; fi
+            sleep 5
+          done
+          echo "::error::site did not return 200 after deploy"
+          exit 1
+
+      - name: Clean up key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key

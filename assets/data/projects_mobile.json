@@ -1,0 +1,1607 @@
+{
+    "projects": [
+        {
+            "route": "persona-ai",
+            "title": "PERSONA AI ",
+            "enabled": true,
+            "featured": false,
+            "description": "AI tool for researchers' meeting recording and analysis.",
+            "client": "Business",
+            "date": "Jan 2015",
+            "role": "Lead Developer",
+            "url": "",
+            "poster": "img/projects/persona-ai/persona-video.png",
+            "poster_m": "img/projects/persona-ai/persona-video.png",
+            "categories": [
+                "web-applications",
+                "DevOps"
+            ],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/persona-ai/persona-video.png",
+                        "src_width": 1400,
+                        "src_height": 826
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "AWS Lambda, RDS Database, Serverless Architecture"
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/persona-ai/persona-curs2.png",
+                        "src_width": 1400,
+                        "src_height": 826
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/persona-ai/persona-1.png",
+                        "src_width": 1400,
+                        "src_height": 826
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Persona AI needed a smart, automated solution to help researchers efficiently analyze interview recordings by extracting relevant content based on targeted keywords—eliminating the need for time-consuming manual reviews."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/persona-ai/persona-tab1.png",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/persona-ai/persona-tab2.png",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/persona-ai/persona-curs1.png",
+                        "src_width": 1400,
+                        "src_height": 825
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": " Devflovv faced the challenge of building a scalable, serverless backend capable of handling real-time data processing, video analysis, and clip generation, while also preparing the system for secure and future-proof user authentication."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/persona-ai/persona-tab3.png",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/persona-ai/persona-tab4.png",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv developed PersonaAI on serverless architecture, enabling high performance and availability with low operational overhead. RDS Aurora was used as a database layer and AWS ElastiCache(Redis) for server-side caching. Through VAPI APIs, the platform conducts AI-moderated interviews for the researchers created by the research creator. Additionally, Implemented AWS Cognito for the authentication layer. The platform is a powerful web-based AI tool that empowers researchers to extract actionable insights faster and more effectively."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/persona-ai/persona-2.png",
+                        "src_width": 1400,
+                        "src_height": 808
+                    }
+                }
+            ]
+        },
+        {
+            "route": "eventium",
+            "title": "Eventium365",
+            "enabled": true,
+            "featured": true,
+            "description": "Real-time virtual events with secure chat, calls, and booking.",
+            "client": "Business",
+            "date": "Jan 2024",
+            "role": "Lead Developer",
+            "url": "https://eventium.ca/",
+            "poster": "img/projects/eventium/eventium-m-display.webp",
+            "poster_m": "img/projects/eventium/eventium-mobile.png",
+            "categories": [
+                "web-applications",
+                "DevOps"
+            ],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/eventium/eventium-m-display.webp",
+                        "src_width": 1400,
+                        "src_height": 826
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "Laravel | React | MySQL | WebRTC"
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/eventium/eventium2.webp",
+                        "src_width": 1400,
+                        "src_height": 826
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/eventium/eventium3.png",
+                        "src_width": 1400,
+                        "src_height": 826
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Developing a feature-rich virtual event platform to streamline attendee engagement, scheduling, and communication in real-time."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/eventium/eventium-tab1.webp",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/eventium/eventium-tab2.webp",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/eventium/eventium4.webp",
+                        "src_width": 1400,
+                        "src_height": 825
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Building scalable and secure systems for attendee registration and job listing functionalities.Implementing real-time communication features, including text chat and video calls, to enhance interactivity.Ensuring seamless integration between front-end and back-end systems for a user-friendly experience."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/eventium/eventium-tab3.webp",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/eventium/eventium-tab4.webp",
+                        "src_width": 800,
+                        "src_height": 1072
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Leveraged a Laravel and React tech stack with a MySQL database to develop the Eventium platform, implementing key features like one-on-one session booking, attendee registration, and real-time communication. These solutions provided a robust and intuitive experience for users."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/eventium/eventium5.png",
+                        "src_width": 1400,
+                        "src_height": 808
+                    }
+                }
+            ]
+        },
+        {
+            "route": "les-mills-grit",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "edu.OS",
+            "description": "Empowering educators with smart tools for everyday academic success.",
+            "client": "Business",
+            "date": "April, 2019",
+            "role": "Art Direction, Design, Animation, Editing, Sound Design",
+            "platforms": "",
+            "url": "",
+            "poster": "img/projects/edu-os/edu-m-title.png",
+            "poster_m": "img/projects/edu-os/edu-m-display.png",
+            "categories": [
+                "web-applications",
+                "design",
+                "DevOps"
+            ],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/edu-os/edu-m-title.png",
+                        "src_width": 920,
+                        "src_height": 528
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "React | Typescript | Python (Django)"
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/edu-os/edu.webp",
+                        "src_width": 920,
+                        "src_height": 528
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/edu-os/edu-task1.png",
+                        "src_width": 920,
+                        "src_height": 528
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Educators were struggling with fragmented tools for lesson planning, task management, communication, and performance tracking. They needed a unified, intelligent platform to streamline operations and refocus efforts on teaching and learning."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/edu-os/edu-task2.webp",
+                        "src_width": 920,
+                        "src_height": 528
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/edu-os/edu-task3.webp",
+                        "src_width": 920,
+                        "src_height": 528
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Devflovv tackled multiple challenges—integrating seamlessly with third-party platforms like SIS, Google Calendar, and Gmail; building curriculum-aligned AI for personalized lesson planning and insights; designing a clean, intuitive interface for various user roles; and implementing real-time collaboration features while ensuring high performance and scalability."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/edu-os/edu-login2.webp",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/edu-os/edu-login1.webp",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "z_index": 3
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/edu-os/edu-login3.webp",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv delivered an all-in-one EdTech platform that simplifies daily educator workflows. AI-driven features enhance planning and productivity, while real-time collaboration tools support team-based learning environments. Seamless integrations ensure that users can continue using familiar tools within a centralized experience—saving time, improving engagement, and boosting institutional efficiency."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/edu-os/edu-meeting1.webp",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "z_index": 1
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/edu-os/edu-meeting2.webp",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "z_index": 2
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/edu-os/edu-meeting3.webp",
+                        "src_width": 1920,
+                        "src_height": 1080,
+                        "z_index": 3
+                    }
+                }
+            ]
+        },
+        {
+            "route": "keyfree",
+            "title": "KEYFREE",
+            "enabled": true,
+            "featured": false,
+            "description": "Smart automotive platform with IoT, security, scalability, and integration.",
+            "client": "Business",
+            "date": "Feb 2009",
+            "role": "Full-stack Development",
+            "url": "https://play.google.com/store/apps/details?id=com.getkeyfree.rental&hl=en_US",
+            "poster": "img/projects/keyfree/kez-title-m.jpg",
+            "poster_m": "img/projects/keyfree/kez-title-m.jpg",
+            "categories": [
+                "mobile-applications",
+                "DevOps"
+            ],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/keyfree/kez-desc.png",
+                        "src_width": 1400,
+                        "src_height": 875
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "C++ | Node JS | AWS | Docker | Vue JS"
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/keyfree/kez-screens.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Keyfree sought to target automotive challenges with anti-theft solutions, secure trunk deliveries, insurance integration, and fleet management. They wanted to offer effortless integration for businesses."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/keyfree/kez-desc.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Engineers tackling Keyfree's connected car solutions faced obstacles ranging from hardware development to data security, UX/UI design, and regulatory compliance. Ensuring scalability and user adoption were areas that required explicit focus."
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/keyfree/kez-m4.png",
+                        "src_width": 413,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/keyfree/kez-m5.png",
+                        "src_width": 413,
+                        "src_height": 736,
+                        "mobile_pair": true
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv played a decisive role in executing KeyFree’s concept. They developed a robust online web platform, created and designed the anti-theft device, addressing critical technology gaps and ensuring smooth integration into Keyfree's connected car solutions."
+                    }
+                }
+            ]
+        },
+        {
+            "route": "learnez",
+            "title": "LearnEZ AI",
+            "enabled": true,
+            "featured": false,
+            "description": "Boosting productivity with intelligent academic support in one platform.",
+            "client": "Business",
+            "date": "Aug 2016",
+            "role": "Design, Development, UX, UI",
+            "url": "https://learnez.ai",
+            "poster": "img/projects/learnez/learn-desc.webp",
+            "poster_m": "img/projects/learnez/lernez-mobile.jpg",
+            "categories": [
+                "web-applications",
+                "mobile-applications",
+                "design"
+            ],
+            "awards": [
+                {
+                    "type": "fwa-sotd",
+                    "name": "Site of the Day"
+                }
+            ],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/learnez/learn-desc.webp",
+                        "src_width": 1400,
+                        "src_height": 882
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "React (Vite) | Tailwind CSS | Django | PostgreSQL | Clerk | Google Sign-in | Apple Sign-in | Stripe | AWS EC2."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/learnez/learn-3.webp",
+                        "src_width": 1400,
+                        "src_height": 821
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/learnez/learn-ss1.jpg",
+                        "src_width": 1700,
+                        "src_height": 882
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Students often juggle multiple tools for writing, editing, referencing, and detecting AI-generated or plagiarized content—causing friction, wasted time, and inconsistent results. LearnEZ aimed to centralize these academic tasks in one intuitive, AI-powered platform."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/learnez/learn-1.webp",
+                        "src_width": 1400,
+                        "src_height": 882
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "A major hurdle emerged with social media in-app browsers (like TikTok and Instagram), which blocked Google SSO, disrupting the user login experience. Additionally, designing eight feature-rich tools under one clean UI while managing seamless user access through subscriptions required careful planning and execution."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/learnez/learn-2.webp",
+                        "src_width": 1400,
+                        "src_height": 849
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/learnez/learn-m1.webp",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/learnez/learn-m2.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv delivered an all-in-one academic productivity suite with a smooth, subscription-based model and free trial access. A smart browser detection and redirect system ensured reliable authentication, even from restricted environments. Each tool—ranging from grammar and plagiarism checks to AI content analysis—was crafted for maximum value and ease of use, enabling students to boost productivity in one place."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/learnez/learn-pricing.png",
+                        "src_width": 1400,
+                        "src_height": 849
+                    }
+                }
+            ]
+        },
+        {
+            "route": "cousology",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "COURSOLOGY",
+            "description": "AI-powered study aid with seamless access & payments.",
+            "client": "Business",
+            "date": "Dec, 2019",
+            "role": "Lead Developer",
+            "platforms": "",
+            "url": "https://coursology.com/",
+            "poster": "img/projects/coursology/coursology-c-1.png",
+            "poster_m": "img/projects/coursology/display-coursology.png",
+            "categories": [
+                "web-applications",
+                "DevOps"
+            ],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/coursology/coursology-land1.png",
+                        "src_width": 1340,
+                        "src_height": 760
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "JavaScript frameworks | React | styled-components | Emotion | Next.js | Stripe | Node.js | Apple Sign-in | NextAuth.js | OpenAI ChatGPT"
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob1.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob2.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/coursology/coursology-land2.png",
+                        "src_width": 1340,
+                        "src_height": 760
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Devflovv took on the project of making Coursology, a smart study aid, even better for students. The goal was to make sure students could get smart, instant help right where they needed it."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/coursology/coursology-land3.png",
+                        "src_width": 1340,
+                        "src_height": 760
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob3.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob4.webp",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "The team faced the challenge of adding a smart assistant, ChatGPT, into Coursology and making it simple for students to use."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/coursology/coursology-land4.png",
+                        "src_width": 1340,
+                        "src_height": 760
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob5.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob6.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv's solution was to use React for building the platform, ensuring it was easy and friendly for students to ask questions and get answers. They also set up a way for students to pay for services easily and securely sign into their accounts."
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob9.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true,
+                        "mobile_collapse": true
+                    }
+                },
+                {
+                    "type": "mobile",
+                    "data": {
+                        "portrait": true,
+                        "scrollable": false,
+                        "src": "img/projects/coursology/coursology-mob8.png",
+                        "src_width": 414,
+                        "src_height": 736,
+                        "mobile_pair": true
+                    }
+                }
+            ]
+        },
+        {
+            "route": "aivida_ai",
+            "title": "AIVIDA AI",
+            "enabled": true,
+            "featured": false,
+            "description": "AI & ML Solutions for Healthcare and Business intelligence.",
+            "client": "Business",
+            "date": "Oct 2017",
+            "role": "Lead Developer",
+            "url": "https://www.aivida.com/",
+            "poster": "img/projects/aivida/aivida-solutions1.png",
+            "poster_m": "",
+            "categories": [
+                "web-applications",
+                "design"
+            ],
+            "awards": [],
+            "items": [
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "Python | AssemblyAI | OpenAI | AWS Secrets Manager | AWS CodeCommit | NATS | React | AWS EC2 | AWS ECR"
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/aivida/aivida-home.png",
+                        "src_width": 1400,
+                        "src_height": 820
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Devflovv tackled an ambitious project with Aivida, blending healthcare technology with artificial intelligence. Their goal was to enhance an Electronic Health Record (EHR) system with smart AI features, making healthcare processes smoother and improving patient care."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/aivida/aivida-s-1.png",
+                        "src_width": 1397,
+                        "src_height": 820
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/aivida/aivida-s-2.png",
+                        "src_width": 1400,
+                        "src_height": 820
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "The team faced several challenges, including integrating the EPIC EHR system with AI tools like AssemblyAI and OpenAI and efficiently developing both the server and client sides. High security and effective version management were also key priorities."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/aivida/aivida-solutions.png",
+                        "src_width": 1400,
+                        "src_height": 820
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/aivida/aivida-solutions1.png",
+                        "src_width": 1400,
+                        "src_height": 820
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/aivida/aivida-solutions3.png",
+                        "src_width": 1400,
+                        "src_height": 820
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv used Python for backend development and React for a user-friendly frontend. They successfully integrated AI with the EHR system and utilized AWS tools like Secrets Manager and CodeCommit for security and version control. The final product was deployed using AWS EC2 and ECR, resulting in a reliable and advanced healthcare application."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/aivida/aivida-footer.png",
+                        "src_width": 1400,
+                        "src_height": 820
+                    }
+                }
+            ]
+        },
+        {
+            "route": "thdc",
+            "title": "THDC (Total Health Dental Care)",
+            "enabled": true,
+            "featured": true,
+            "description": "Revolutionizing dental care with tech-driven patient solutions.",
+            "clientheader": "Bussiness + Individual",
+            "client": "Business",
+            "date": "Feb 2018",
+            "role": "Full-stack Development, Customer Support Partner",
+            "url": "https://totalhealthdentalcare.com/",
+            "poster": "img/projects/thdc-health-care/thdc1.png",
+            "poster_m": "img/projects/thdc-health-care/display-thdc.jpg",
+            "categories": [
+                "customer-suport"
+            ],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/thdc-health-care/thdc1.png",
+                        "src_width": 1200,
+                        "src_height": 675
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Total Health Dental Care aimed to enhance dental care accessibility and convenience by offering a range of services, an uninsured patient membership, and leveraging technology for seamless scheduling and teledentistry, catering to a diverse patient base."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/thdc-health-care/thdc2.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/thdc-health-care/thdc3.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Devs at Devflovv overcame hurdles like data security, system integration, user-friendliness, and scalability to enhance dental healthcare accessibility and convenience."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/thdc-health-care/thdc3.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/thdc-health-care/thdc4.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv played a crucial role in revitalizing Total Health Dental Care's online platform, and addressing their software challenges. They developed a solution that enabled continuous online scheduling, and teledentistry, and improved accessibility for patients, ultimately amplifying the dental care experience."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/thdc-health-care/thdc-title.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/thdc-health-care/thdc5.png",
+                        "src_width": 1600,
+                        "src_height": 788
+                    }
+                }
+            ]
+        },
+        {
+            "route": "holmetrics",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "HOLMETRICS",
+            "description": "Holmetrics comeback with modern cloud technologies.",
+            "client": "Business",
+            "date": "July, 2018",
+            "role": "Lead Developer",
+            "platforms": "",
+            "url": "https://holmetrics.com/",
+            "poster": "img/projects/holmetrics/holmetrics-home.jpg",
+            "poster_m": "img/projects/holmetrics/display-holmetrics.png",
+            "categories": [
+                "DevOps"
+            ],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/holmetrics-home.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "MERN Stack | Next.js | AWS | Amazon RD | Amazon Redshift | Amazon S3 bucket | AWS Glue ETL Jobs | EC2 | AWS Lambda Function | AWS SageMaker | Docker | Crontab Jobs | Postman | JavaScript | Shell Scripting | GoodData Analytics | Okta"
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/holmetrics.jpg",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/750.png",
+                        "src_width": 750,
+                        "src_height": 756
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/holmetrics-pricing.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/753.png",
+                        "src_width": 750,
+                        "src_height": 631
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Devflovv was approached to bring Holmetrics, a cutting-edge platform combining machine learning with DevOps practices, back online after a prolonged period of inactivity."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/751.png",
+                        "src_width": 750,
+                        "src_height": 752
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Devflovv’s DevOps team surpassed several hurdles, including reactivating key services like AWS and GoodData, resolving authentication issues, and updating the system architecture to improve scalability and reduce maintenance costs."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/holmetrics-contactus.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv successfully re-launched the platform, integrated new workspaces, and fixed critical bugs. They streamlined the code by transitioning to TypeScript and incorporating a serverless architecture, achieving significant cost reductions. Their deployment of AWS SageMaker, Docker, and other modern technologies significantly enhanced the platform’s functionality and user experience."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/holmetrics/752.png",
+                        "src_width": 750,
+                        "src_height": 816
+                    }
+                }
+            ]
+        },
+        {
+            "route": "appiell_ai",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "APPIELL AI",
+            "description": "Smart skincare woth real-time insights.",
+            "client": "Business",
+            "date": "July, 2018",
+            "role": "Lead Developer",
+            "platforms": "",
+            "url": "https://appiell.ai/",
+            "poster": "img/projects/appiell-ai/appiell-title.jpg",
+            "poster_m": "img/projects/appiell-ai/display-appiell.png",
+            "categories": [
+                "mobile-applications",
+                "DevOps"
+            ],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell-ai/appiell-title.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "Python | Django | React | TypeScript | Emotion | styled-components | Nginx | PHP | MySQL"
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell-ai/appiell-home.jpg",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell-ai/appieal-m1.png",
+                        "src_width": 750,
+                        "src_height": 756
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell-ai/appiell-9.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell-ai/appiell-11.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell-ai/appiell-footer.jpg",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell-ai/appiell-7.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell-ai/appiell-8.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell-ai/appieal-m4.png",
+                        "src_width": 750,
+                        "src_height": 631
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Appiell AI needed to offer users a detailed, real-time skin health assessment tool for personalized skincare advice and specialist connections."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell-ai/appiell-15.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell-ai/appieal-m2.png",
+                        "src_width": 750,
+                        "src_height": 752
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell-ai/appiell-16.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Devflovv faced the dual challenge of building a powerful backend for complex data processing and designing a user-friendly frontend for easy interaction and clear information presentation."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell-ai/appiell-17.png",
+                        "src_width": 1600,
+                        "src_height": 900
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv employed Python and Django for a robust backend and used React and TypeScript for a smooth frontend experience. They ensured a stylish and responsive interface using Emotion and styled-components, supported by a solid server and database setup with Nginx, PHP, and MySQL."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/appiell-ai/appieal-m3.png",
+                        "src_width": 750,
+                        "src_height": 816
+                    }
+                }
+            ]
+        },
+        {
+            "route": "living_ai",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "LIVING AI",
+            "description": "Smarter Shopping Through AI Innovation.",
+            "client": "Business",
+            "date": "February, 2020",
+            "role": "Full-stack Development",
+            "platforms": "",
+            "url": "https://www.livingai.com/",
+            "poster": "img/projects/living-ai/living-ai-description-1.jpg",
+            "poster_m": "img/projects/living-ai/living-m-display.png",
+            "categories": [
+                "mobile-applications"
+            ],
+            "awards": [],
+            "items": [
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "Python | Django | OpenAI Chat GPT Integration | Core-js | jQuery | JavaScript | AWS Lamda | CodeCommit | API Gateway | CDK | S3 | DynamoDB | Node-JS | Google Slides | Drive API"
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/living-ai-description.png",
+                        "src_width": 1535,
+                        "src_height": 864,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "z_index": 100
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Devflovv led the charge in integrating groundbreaking AI into the e-commerce space with Living AI, becoming one of the first to feature an app on the ChatGPT store. They aimed to enhance the shopping experience with smart voice commands and a unique AI that could create content on its own."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/living-ai-problem.png",
+                        "src_width": 1536,
+                        "src_height": 864,
+                        "width_columns": 3,
+                        "left_columns": 3,
+                        "z_index": 100
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/living-m-1.png",
+                        "src_width": 519,
+                        "src_height": 921,
+                        "width_columns": 3,
+                        "left_columns": 3,
+                        "z_index": 100
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Their task was to weave this AI seamlessly into the existing platform without losing the simple and engaging feel users love. Plus, we developed the LivingAI plugin, allowing shoppers to make and customize their own avatar videos – a fresh twist for online shopping."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/living-m-home.png",
+                        "src_width": 519,
+                        "src_height": 921,
+                        "width_columns": 3,
+                        "left_columns": 0,
+                        "z_index": 100
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/living-m-3.png",
+                        "src_width": 519,
+                        "src_height": 921,
+                        "width_columns": 3,
+                        "left_columns": 4,
+                        "z_index": 100
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/living-m-2.png",
+                        "src_width": 519,
+                        "src_height": 921,
+                        "width_columns": 3,
+                        "left_columns": 0,
+                        "z_index": 100
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/living-m-4.png",
+                        "src_width": 519,
+                        "src_height": 921,
+                        "width_columns": 3,
+                        "left_columns": 4,
+                        "z_index": 100
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Using Python and Django, Devflovv’s team built a robust system that brought Chat GPT into the mix without a hitch. On the front end, core-js and jQuery made sure everything ran smoothly for users. The LivingAI plugin, now live on the ChatGPT store, is proof of Devflovv's trailblazing spirit and knack for making AI user-friendly."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/living-ai/network.svg",
+                        "src_width": 1535,
+                        "src_height": 864,
+                        "width_columns": 8,
+                        "left_columns": 0,
+                        "z_index": 100
+                    }
+                }
+            ]
+        },
+        {
+            "route": "buildclub",
+            "title": "THE BUILDCLUB",
+            "enabled": true,
+            "featured": false,
+            "description": "A Chrome extension for price comparison across multiple home improvement retailers.",
+            "client": "Business",
+            "date": "Oct 2013",
+            "role": "Lead Developer",
+            "url": "https://deals.buildclub.com/",
+            "poster": "img/projects/buildclub/buildclub1.jpg",
+            "poster_m": "img/projects/buildclub/buildclub1.jpg",
+            "categories": [
+                "e-commerce",
+                "web-applications"
+            ],
+            "awards": [],
+            "items": [
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub1.jpg",
+                        "src_width": 1340,
+                        "src_height": 760
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "React | Next.js | Node.js | TypeScript | MongoDB"
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub2.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub2.jpg",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "BuildClub required a Chrome extension that could compare real-time product prices across Home Depot, Lowe’s, Amazon, and Ace Hardware. It needed to display best deals, integrate affiliate links, and remain user-friendly for shoppers."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub6.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Amazon’s API restrictions made it difficult to perform multiple product searches efficiently. Price accuracy was complicated by varying location-based rates. Integrating affiliate links without cluttering the interface demanded careful UI/UX planning and performance tuning."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub7.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Solution",
+                        "body": "Devflovv developed a React-based Chrome extension using AWS Amplify and Stripe. It dynamically fetches prices, flags the best deals, and supports a Stripe-powered subscription model. The extension is scalable for future updates like barcode scanning and retailer expansion."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/buildclub/buildclub4.png",
+                        "src_width": 1400,
+                        "src_height": 788
+                    }
+                }
+            ]
+        },
+        {
+            "route": "pioneer",
+            "menutitle": "",
+            "enabled": true,
+            "featured": true,
+            "globaltitle": "",
+            "title": "CADE INSIGHTS",
+            "description": "Empowering Businesses with Smart Insights.",
+            "client": "Business",
+            "date": "September, 2019",
+            "role": "Lead Developer",
+            "platforms": "",
+            "url": "https://go.pioneer.com/cornrevolution",
+            "poster": "img/projects/cade-insights/cade1.png",
+            "poster_m": "img/projects/cade-insights/cade-m-display.png",
+            "categories": [
+                "web-applications"
+            ],
+            "awards": [],
+            "items": [
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "TECH STACK",
+                        "body": "Next JS | Python | Parse | Postgres | TypeScript | Neo4J | ML/ AI"
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/cade-insights/cade1.png",
+                        "src_width": 1536,
+                        "src_height": 864
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Problem",
+                        "body": "Devflovv tackled the creation of Cade Insights, a Business Network Intelligence platform aimed at offering in-depth data analysis and interactive reporting. The objective was to design a tool adept at managing complex data while providing a smooth user experience."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/cade-insights/cade4.png",
+                        "src_width": 1536,
+                        "src_height": 864
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/cade-insights/cade3.png",
+                        "src_width": 1536,
+                        "src_height": 864
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "The Challenge",
+                        "body": "Key challenges included developing an engaging, responsive dashboard, implementing an advanced language-model analysis tool, and crafting a user-friendly AI chatbot. These tasks demanded a blend of skills in both frontend and backend development to ensure ease of use and effective data handling."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/cade-insights/cade.jpg",
+                        "src_width": 1536,
+                        "src_height": 864
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/cade-insights/cade5.png",
+                        "src_width": 1536,
+                        "src_height": 864
+                    }
+                },
+                {
+                    "type": "headline",
+                    "data": {
+                        "title": "Solution",
+                        "body": "Devflovv used Next JS and TypeScript for a dynamic front end and Python with Parse, Postgres, and Neo4J for backend data management and analysis. The outcome was Cade Insights, a platform featuring an advanced analysis tool and AI chatbot, boosting user business intelligence capabilities."
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/cade-insights/cade7.png",
+                        "src_width": 1536,
+                        "src_height": 864
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/cade-insights/cade6.png",
+                        "src_width": 1536,
+                        "src_height": 864
+                    }
+                },
+                {
+                    "type": "image",
+                    "data": {
+                        "src": "img/projects/cade-insights/cade2.webp",
+                        "src_width": 1536,
+                        "src_height": 864
+                    }
+                }
+            ]
+        }
+    ]
+}

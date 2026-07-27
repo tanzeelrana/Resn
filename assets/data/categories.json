@@ -1,0 +1,32 @@
+[
+    {
+        "id": "act",
+        "route": "web-applications",
+        "name": "Web Application"
+    },
+    {
+        "id": "cre",
+        "route": "mobile-applications",
+        "name": "Mobile Application"
+    },
+    {
+        "id": "des",
+        "route": "design",
+        "name": "Design"
+    },
+    {
+        "id": "dev",
+        "route": "DevOps",
+        "name": "DevOps"
+    },
+    {
+        "id": "ins",
+        "route": "customer-suport",
+        "name": "Customer Support"
+    },
+    {
+        "id": "soc",
+        "route": "e-commerce",
+        "name": "E-Commerce"
+    }
+]

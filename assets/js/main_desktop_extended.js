@@ -122746,15 +122746,8 @@ define('view/modules/background/gem/gem2_view',[
 
 
 
-            var workGeometry = new THREE.PlaneGeometry( 100, 100, 1 );
-            var workTexture  = new THREE.Texture(LoaderCollection.getResult('GEM_WORK_OVERLAY'));
-            workTexture.needsUpdate = true;
+            /* work overlay removed: it was a leftover decorative photo plane */
 
-            var workMaterial = new THREE.MeshBasicMaterial({ map: workTexture, blending: THREE.AdditiveBlending, transparent: true, opacity: 0 });
-
-            this.workMesh     = new THREE.Mesh(workGeometry, workMaterial);
-
-            this.camera.add(this.workMesh);
 
 
 
@@ -123041,6 +123034,8 @@ define('view/modules/background/gem/gem2_view',[
 
         showWorkOverlay: function() {
 
+            if (!this.workMesh) { return; }
+
             TweenMax.killTweensOf(this.workMesh.material);
             TweenMax.to(this.workMesh.material, 1.08, { opacity: 0.22, ease: 'Sine.easeOut' });
 
@@ -123051,6 +123046,8 @@ define('view/modules/background/gem/gem2_view',[
         },
 
         hideWorkOverlay: function() {
+
+            if (!this.workMesh) { return; }
 
             TweenMax.killTweensOf(this.workMesh.material);
             TweenMax.to(this.workMesh.material, 1.12, { opacity: 0, ease: 'Sine.easeOut' });
@@ -128008,11 +128005,7 @@ define('main_desktop_extended',[
             LoaderCollection.add({group:'main',id:'GEM_TEXT_REEL',src:Config.CDN + '/img/textures/reel.png'});
             LoaderCollection.add({group:'main',id:'GEM_TEXT_AUDIO_ON',src:Config.CDN + '/img/textures/audio_on.png'});
             LoaderCollection.add({group:'main',id:'GEM_TEXT_AUDIO_OFF',src:Config.CDN + '/img/textures/audio_off.png'});
-            LoaderCollection.add({
-                group:'main',
-                id   :'GEM_WORK_OVERLAY',
-                src  :Config.CDN + '/img/textures/zerolandfill_overlay.png'
-            });
+
 
 
 

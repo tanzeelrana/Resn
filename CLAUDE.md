@@ -37,12 +37,12 @@ in those bundles or belonged to commented-out features. `Config.CDN` is
 without a GPU never finishes the WebGL boot, so a completely black site reports
 *zero errors and zero 404s*. Two broken builds shipped to production that way.
 
-Use `~/Development/Resn-cleanup/cdp.py` (a dependency-free Chrome DevTools
+Use `~/Development/devflovv-website-cleanup/cdp.py` (a dependency-free Chrome DevTools
 Protocol client) which runs Chrome with SwiftShader, waits in real time, and
 reports console output, uncaught exceptions and failed requests:
 
 ```bash
-python3 ~/Development/Resn-cleanup/cdp.py https://devflovv.com/ 45 shot.png
+python3 ~/Development/devflovv-website-cleanup/cdp.py https://devflovv.com/ 45 shot.png
 ```
 
 **A healthy boot logs `show initial`.** If that line is missing, the gem never
@@ -84,7 +84,7 @@ which is why assets kept downloading for things that can never run:
 | sound clip playback | 3 | 15 | partly live |
 | shapeshifter / bat / video | some | some | partly live |
 
-Regenerate with `~/Development/Resn-cleanup/commented_inventory.py`.
+Regenerate with `~/Development/devflovv-website-cleanup/commented_inventory.py`.
 
 ## Investigation rules (each one cost real time here)
 
@@ -162,9 +162,9 @@ The droplet is Ubuntu 20.04 (EOL) with root SSH open — treat as production.
 
 ## Housekeeping
 
-- Tooling lives in `~/Development/Resn-cleanup/` (`compress_images.py`,
+- Tooling lives in `~/Development/devflovv-website-cleanup/` (`compress_images.py`,
   `budget_pass.py`, `build_strip_list.py`, `git-filter-repo`).
-- Pre-cleanup backup mirror: `~/Development/Resn-backup.git` — the only copy of
+- Pre-cleanup backup mirror: `~/Development/devflovv-website-backup.git` — the only copy of
   the original history and of the deleted branches.
 - Two unmerged branches are archived as tags **on origin**:
   `archive/frontend-changes` (removes Google Analytics, tracking controller and

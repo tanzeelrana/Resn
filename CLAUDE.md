@@ -31,6 +31,61 @@ Everything else that used to live under `assets/js/` was either already inlined
 in those bundles or belonged to commented-out features. `Config.CDN` is
 `"./assets"`, so `/img/x.png` in the bundles means `assets/img/x.png`.
 
+## Testing: you MUST use a real WebGL browser
+
+`--dump-dom` / request-count checks are **worthless** here. Headless Chrome
+without a GPU never finishes the WebGL boot, so a completely black site reports
+*zero errors and zero 404s*. Two broken builds shipped to production that way.
+
+Use `~/Development/Resn-cleanup/cdp.py` (a dependency-free Chrome DevTools
+Protocol client) which runs Chrome with SwiftShader, waits in real time, and
+reports console output, uncaught exceptions and failed requests:
+
+```bash
+python3 ~/Development/Resn-cleanup/cdp.py https://devflovv.com/ 45 shot.png
+```
+
+**A healthy boot logs `show initial`.** If that line is missing, the gem never
+got revealed - that is the black screen, and it happens with no exception at
+all. Always check both `/` and `/#!/work`, and look at the screenshot.
+
+## Performance (2026-07-27: 43.9s -> 1.06s load)
+
+- **nginx had `gzip on;` but `gzip_types` commented out**, so only HTML was
+  compressed and the 3.9 MB JS bundle shipped raw. Enabling it was the single
+  biggest win (bundle 3,988 KB -> 845 KB). Backup: `/root/nginx.conf.bak`.
+- Work posters must never be preloaded. `WorkMenuPosterView` builds bare
+  `<img>` tags and sets `src` on first `show()`; `addProjectsToLoader()` is a
+  deliberate no-op. Home page fetches 0 project images.
+- Ambient tracks were downloaded twice - Howler fetched them, then
+  `loadAmbients()` re-added them to LoaderCollection under `AMBIENT_TRACKS_*`
+  ids nothing ever read.
+- **Audio cannot be deferred.** The intro sequence is entangled with the sound
+  load; defer it and `show initial` never fires (black screen, no exception).
+  The MP3s are 64kbps mono instead.
+
+## Latent bugs fixed (both only appear when boot gets faster)
+
+- `playNext()` used `this._currentAmbient.pause()` with no null check.
+- `AppModel.get('pageOptions')[0]` is read inside a `requestAnimationFrame`
+  that can fire before the router sets it - intermittent, 2 of 3 runs.
+
+## Commented-out code inventory
+
+**19% of the bundles (44,520 of 234,289 lines) is commented-out code.** The
+previous developer disabled features by commenting them rather than deleting,
+which is why assets kept downloading for things that can never run:
+
+| feature | live refs | commented | status |
+|---|---|---|---|
+| resize-your-window character | 0 | 36 | dead |
+| rotate-your-device character | 0 | 5 | dead |
+| showreel | 0 | 1 | dead |
+| sound clip playback | 3 | 15 | partly live |
+| shapeshifter / bat / video | some | some | partly live |
+
+Regenerate with `~/Development/Resn-cleanup/commented_inventory.py`.
+
 ## Investigation rules (each one cost real time here)
 
 1. **A commented-out reference still looks like usage.** Every naive audit

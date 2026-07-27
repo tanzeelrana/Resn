@@ -3885,3 +3885,26 @@ h2.overlay-text,h3.overlay-text,p.overlay-text,span.overlay-text {
   .about-page-span{
     margin-left: 1rem;
   }
+
+/* ---------------------------------------------------------------------------
+   Readability scrim.
+
+   The animated gem is a WebGL canvas that sits behind every route, and on the
+   inner pages it rendered straight through the copy (the camera zooms into it
+   at cameraDist 40 on ABOUT/CONTACT). Rather than hide the gem, lay a dark
+   translucent sheet between the canvas and the page content so the white text
+   always has contrast. Works at every window size because it is a full-bleed
+   fixed layer, not a fixed-size box.
+   --------------------------------------------------------------------------- */
+.about-page::before,
+.contact-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.82);
+    z-index: -1;
+    pointer-events: none;
+}

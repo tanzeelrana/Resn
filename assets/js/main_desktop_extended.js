@@ -123811,6 +123811,26 @@ define('view/modules/background/background_drop_view',[
 
             this.gemView.setToMode(AppModel.get('page'));
 
+            /* The animated gem belongs to the home screen only. On ABOUT / WORK /
+               CONTACT / REEL it sat behind the copy and made it unreadable, so
+               fade the WebGL canvas out there. HOME, MENU and LOADER keep it. */
+            (function (self) {
+                var page = AppModel.get('page');
+                var alpha = 0;
+                if (page === AppModel.PAGES.HOME || page === AppModel.PAGES.LOADER) {
+                    alpha = 1;
+                } else if (page === AppModel.PAGES.MENU) {
+                    /* the menu labels are 3D letters in this same scene, so the gem
+                       geometry physically occludes them - no z-index can fix that.
+                       Dim it so About / Work / Contact stay legible. */
+                    alpha = 0.35;
+                }
+                var $canvas = self.gemView && self.gemView.renderCanvas;
+                if (!$canvas) { return; }
+                TweenMax.killTweensOf($canvas);
+                TweenMax.to($canvas, 0.5, { autoAlpha: alpha });
+            })(this);
+
             if ( Config.IOS && Config.getIOSVersion() <= 8 ) {
                 if ( AppModel.get('page') === AppModel.PAGES.HOME || AppModel.get('page') === AppModel.PAGES.MENU ) {
 
